@@ -19,4 +19,10 @@ Följande krav ska implementeras för godkänt på uppgiften:
 
 
 ##Registrering för API-nyckel##
-Tillsammans med API:et ska en registreringstjänst utvecklas där utvecklare kan genom att registrera sig med sin e-post få tillgång till en giltig API-nyckel som ska användas i API-anropen för samtliga resurser. Det kan vara en vanlig enkel webbapplikation där användaren registrerar sina kontaktuppgifter och kan därmed få tillgång till en genererad API-nyckel.
+Tillsammans med API:et ska en registreringstjänst utvecklas där utvecklare kan genom att registrera sig med sin e-post få tillgång till en giltig API-nyckel som ska användas i API-anropen för samtliga resurser. Det kan vara en vanlig enkel webbapplikation där användaren registrerar sina kontaktuppgifter och kan därmed få tillgång till en genererad API-nyckel som är giltlig för API-anrop. 
+
+Registreringsapplikationen bör bestå av ett enkelt formulär där utvecklaren registrerar sin applikation och det genereras en hashad API-nyckel som visas för användaren. Användaren registrerar sig med en e-postadress. En registrerad e-post kan endast ha en giltig API-nyckel.
+
+Som administratör till API-nyckelapplikationen ska vi kunna ta bort befintliga API-nycklar om t.ex. någon missköter sig.
+
+Eventuella frågor kring applikationen kan diskuteras under de schemalagda handledningspassen.

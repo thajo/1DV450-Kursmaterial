@@ -1,5 +1,3 @@
-#Kursens praktiska uppgift - TORH (The Open Resource Handler)#
-
 ##Introduktion##
 Under denna kurs ska vi utveckla ett webb-API som stödjer sig tankarna och en RESTful arkitektur samt även en tilltalande klientapplikation (SPA) som använder detta webb-API. Här nedan följer en beskrivning av ett förslag på en tjänst som kursens moment kan byggas kring. Egna idéer kring andra tjänster uppskattas givetvis så länge de har likvärdig omfattning som tjänsten som beskrivs i detta dokument. Kontakta kursansvarig om du har en idé till egen tjänst du vill utveckla under kursens gång för en diskussion kring detta.
 
@@ -31,12 +29,14 @@ Användaren av tjänsten vill kunna göra följande:
 
 Tjänsten ska innehålla/kunna hantera:
 
-* Oändigt antal resurser (hårdvara kan sätta såklart stopp men inte tjänstens arkitektur) - Paginering ska implementeras i API:et
+* Oändigt antal resurser (hårdvara kan sätta såklart stopp men inte tjänstens arkitektur) 
 * Oändligt antal användare
 * Välutformat API-dokumentation riktad till andra utvecklare som vill använda ditt API.
 
 
 Här följer ett förslag på en konceptuell modell som skulle kunna gälla för denna typ av tjänt. Observera att denna modell inte på något sätt är komplett vad gäller den data som ska sparas. Man är fri att modifiera och bygga ut modellen om man har idéer om ytterligare funktionallitet i tjänsten.
 ![Bild av datamodell](http://www.gliffy.com/go/publish/image/5258567/L.png)
+
+Eventuella frågeställningar kring tjänsten tas upp under de schemalagda handledningspassen.
 
 
