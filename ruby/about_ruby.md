@@ -6,7 +6,7 @@ Ska man börja bygga applikationer i Ruby on Rails bör man naturligt få en vis
 
 * En interaktive guide till att börja komma igång med Ruby. [tryruby.org](http://tryruby.org/)
 
-* En kort intervju med skaparen av Ruby för er som är intresserade av programmeringsspråket. http://vimeo.com/52954702
+* En kort intervju med skaparen av Ruby för er som är intresserade av programmeringsspråket. [http://vimeo.com/52954702](http://vimeo.com/52954702)
 
 * Jag kan också rekommendera att läsa minst kapitel 0-3 i [Humble little Ruby book](http://humblelittlerubybook.com/book/html/index.html)  
 
