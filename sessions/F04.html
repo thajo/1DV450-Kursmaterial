@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+
+  <head>
+   
+     <meta charset="utf-8" />
+     <title>Webbteknik II, 1DV449</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    
+    <meta name="description" content="Webben idag och i framtiden, Kalmar, Linnéuniversitetet" />
+    
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,600italic,700italic,300,400,800' rel='stylesheet' type='text/css'>
+    
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <script src='slides.js' media="screen"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<style media="print">
+	         @page {
+	            size: A4 landscape;
+	             @top-right {
+	                content: "Page " counter(page);
+	             }
+	         }
+	          article {
+	            page-break-after: always;
+	            margin: auto;
+	          }
+	          article.next, article.past {
+	            display: block;    
+	          }
+	
+				iframe {
+					display: none;
+				}
+				article img {
+					display: none;
+				}
+	          body {
+	              display: block !important;
+	              font-family: 'Open Sans', Arial, sans-serif;
+	              font-size: 1.5em;
+				  }
+	</style>
+  </head>
+  
+
+
+  <body style='display: none'>
+
+    <section class='slides layout-widescreen template-default'>
+      <!-- http://lights.elliegoulding.com/ -->
+	
+
+	<!-- Första sidan -->
+    <article>
+       	<h3>
+          Webbteknik II, 1DV449
+          <br />
+          <span class="small">Linnéuniversitetet, Ht 2013</span>
+        </h3>
+       
+		
+		<br /><br />
+		<h1 class="big c">HTTP</h1>
+		<p class="very_small" style="margin-top: 60px;">
+				
+		</p>
+		
+		<p class="small_footer">
+			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.sv">
+					<img alt="Creative Commons-licens" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>&nbsp;&nbsp;Denna presentation är licensierat under en 
+					
+						<a rel="license" href="hhttp://creativecommons.org/licenses/by/3.0/deed.sv">Creative Commons Erkännande 3.0 Unported Licens</a>.<br/>
+		</p>
+ 	</article>
+	
+	<!-- Agenda -->
+	<article>
+		<h1>Agenda</h1>
+		<ul>
+			<li>TCP/IP, HTTP</li>
+			<li>Optimering - HTTP</li>
+			<li>HTTP connection - Comet</li>
+			<li>HTTP-Cache</li>
+			<li>HTTP - Komprimering</li>
+		</ul>
+	</article>
+	
+	<!-- HTTP -->
+  	<article class="fill">
+		
+		<h3>Hypertext Transfer Protocol</h3>
+		
+			<img src="http://farm3.staticflickr.com/2189/2467553359_1fa1e53dee_z.jpg" />
+			<p class="cc">Foto cc by: <a href="http://www.flickr.com/photos/knightfoundation/">http://www.flickr.com/photos/knightfoundation/</a> </p>
+ 	
+			<p class="note">
+				HTTP, URL, HTML
+				I vilket sammanhang, ingen säkerhet, ingen skalbarhet, 
+				skyffla dokument med länkar
+			</p>
+	
+	</article>
+	
+		
+	<!-- HTTP karaktär -->
+	<article>
+		<h1>HTTP...</h1>
+		<ul style="list-type-style:none;">
+			<li>...bygger på förfrågan/svar mellan klient/server </li>
+			<li>...definierar dessa i sin "header" och "header fields"</li>
+			<li>...är stateless</li>
+			<li>...använder enkelt textformat för meddelande</li>
+			<li>...använder TCP som transportprotokoll</li>
+		</ul>
+		<p class="note">
+			HTTP needs a reliable connection, standard port 80 - https 443<br />
+			HTTP är textbased<br />
+			HTTP är mer än bara filöverföring<br />
+		</p>	
+	</article>
+	
+	
+	<!-- Recept för att hämta en webbsida -->
+	<article class="fill">
+			<h3>Hämta en webbsida</h3>
+
+			
+			<ol style="list-style-type: none;">
+				<li class="spaced">Hitta adressen till webbservern i fråga</li>
+				<li class="spaced">Hitta vägen till webbservern över Internet</li>
+				<li class="spaced">Ansluta till webbservern och få en garanterad "säker" transport</li>
+				<li class="spaced">Få HTML skickad till webbläsaren via HTTP</li>
+			</ol>
+			
+			<img src="images/internet_overview.png" />
+			<p class="note">
+				
+			</p>
+	</article>
+		
+	<!-- DNS vs IP -->	
+	<article>
+		<h1 class="bg">1. Hitta adressen till webbläsaren</h1>
+		
+		<p class="spaced bgy">Vi gillar domännamn <br /><strong>www.lnu.se</strong></p>
+		
+		<p class="spaced bgy">Datorer gillar IP-adresser <br />
+		<strong>194.173.221.1</strong><br />
+		<strong>2001:0db8:85a3:0000:0000:8a2e:0370:7334</strong></p>
+		
+		<p class="note">
+			På något sätt måste det finnas ett system för möjligheten att översätta
+			IPnummer till domännamn och vice versa...
+		</p>
+	</article>
+	
+	<!-- DNS FTW -->
+	<article>
+		<h1>Domain Name System</h1>
+		
+		<p class="c"><img src="images/dns_system.png" /></p>
+		
+		<p class="note">
+			DNS systemet är centralstyrt system och högst upp i hierarkin finns 13 stycken root servrar.
+			De flesta uppslag vi gör hamnar dock på en betydligt närmare DNS-server än så då det finns
+			massor av namnservrar som kopierar ner listor med uppslag så att man kan minska 
+			anropens längd. Du har även en DNS cache i din lokala dator, både i operativsystemet 
+			och i webbläsaren.<br /><br />
+			DNS-servrarna kommunicerar med varandra internt för att hela tiden försöka ha den senaste 
+			listan. Om du någon gång pekat om en server och uppdaterats dess DNS register vet du att 
+			det kan ta en stund innan DNS:en har pekats om, anledning är just att det finns en viss
+			fördröjning innan all information spridits.
+			<br /><br />
+		</p>
+	</article>
+	
+	<!-- IP, routrar -->
+	<article>
+		<h1 class="bg">2. Vi vet IP, hur hittar vi servern?</h1>
+		
+		<img src="images/route.png" />
+		
+		<p class="c bgy">Internets routrar och IP-protokollet</p>
+		
+		<p class="note">
+			När vi vet IP-numret till den server vi ska ansluta till kommer
+			IP-protokollet och alla miljontals routrar som finns på nätet väl till
+			plats. En router känner till många andra routrar som ligger ute på nätet
+			och kan med hjälp av smarta algoritmer och en specifik routingtabell ta reda på hur 
+			paketen ska skickas vidare för att på bästa sätt hamna hor mottagaren.<br />
+			
+			Vad händer med ett paket som försöks skickas till endress som ingen svarar på?
+			TTL (tim-to-Live)
+		</p>
+	</article>
+	
+	<!-- TCP -->
+	<article>
+		<h1 class="bg">3. Hur ansluter vi? (TCP, UDP)</h1>
+		<p class="c">
+		<img src="images/tcp.png" />
+		</p>
+		<p class="note">
+			TCP är ett transportprotokoll vars uppgift är att se till att
+			alla paket verkligen kommer fram. TCP ansvarar också för anslutningen till 
+			servern vi vill prata med. Man brukar tala om att man ansluter på olika portar<br />
+			En webbserver lyssnar (som standard) på portarna (80 och 443 - https)<br />
+			För varje anslutning till en server genomför TCP en så kallad handskakning 
+			(3-way handshake). Klienten skickar en anslutningsförfrågan till servern, servern 
+			svarar med ett OK (ACK) och ett synkroniseringsnummber och klienten skickar tillbaka 
+			ett OK och anslutningen är nu upprättad.<br />
+			<br />
+			UDP är ett annat transportprotokoll. Det är snabbare men har ingen kontroll 
+			på att allt kommer fram. UDP brukar användas t.ex. vid videoströmmar där man 
+			hellre tar en snabb koppling än att man tappar någon frame då och då.
+			
+		</p>
+	</article>
+	
+	<!-- HTTP -->
+	<article>
+		<h1 class="bg">4. Skicka informationen - HTTP</h1>
+		
+		<img src="images/4_HTTP.png" />
+		
+		<p class="note">
+			HTTP är det vi ska gå lite djupare in i denna kurs och titta på mer i detalj vad
+			som finns i det protokollet och vad som är viktigt för oss webbutvecklare.
+			
+		</p>
+	</article>	
+		
+		
+	<!-- Vad är TCP/IP -->			
+	<article>
+			
+			<img src="images/TCP_IP.png" />
+			
+			<p class="note">
+				Protokollstack, många protokoll (samling regler)<br />
+				Grunden för all kommunikation på nätet<br />
+				Byta ut olika nivåer<br />
+				Paketbaserad<br />
+				Ta olika vägar för att komma fram<br />
+			</p>
+			<p class="note">
+				TCP/IP är grunden för all kommunikation över Internet. Det är en så kallad protokollstack
+				och innehåller mängder av olika protokoll för olika typer av tillämpningar.
+				<br /><br />
+				De olika nivåerna i stacken är separerade från varandra så att man enkelt kan bygga på del
+				och del. TCP/IP delar upp all trafik i mindre paket för att enklare kunna skicka 
+				dessa över Internet. Varje lager i TCP/IP-modellen lägger på sin information på paketet
+				och tar också hand om det på andra sidan.
+				<br /><br />
+			</p>
+	</article>	
+		
+	<!-- hela bilden-->
+	<article>
+			<p class="c">
+			<img src="images/TCP_IP2.png" />
+			</p>
+			<p class="note">
+				
+			</p>
+	</article>
+		
+	<!-- HTTP intro -->
+	<article class="fill">
+		<h3>
+			HTTP - versioner
+		</h3>
+		<ul>
+			<li>Version 0.9 (1991) - Knappt använd</li>
+			<li>Version 1.0 (1996) - Används sällan idag</li>
+			<li>Version 1.1 (1999) - Standard idag</li>
+			<li>Version 2.0 (????) - <a href="https://datatracker.ietf.org/wg/httpbis/charter/">https://datatracker.ietf.org/wg/httpbis/charter/</a>
+		</ul>
+		<p class="small">
+			<a href="http://www.w3.org/Protocols/rfc2616/rfc2616.html">
+				http://www.w3.org/Protocols/rfc2616/rfc2616.html
+			</a>
+		</p>
+		
+		<img src="http://farm3.staticflickr.com/2216/2424654365_93d08147a7_z.jpg?zz=1" />
+		<p class="cc">Foto cc by Macco: <a href="http://www.flickr.com/photos/mako_side_b/">http://www.flickr.com/photos/mako_side_b/</a> </p>
+			
+		<div class="note">
+			Första versionen användes knappt. Hade endast GET.
+			<br />
+			Andra versionen kan idag användas i vissa webproxys.
+			GET, POST, HEAD, Ej standard med multiple connections.
+			<br />
+			Tredje versionen accepterades fort av webbläsare. Används idag.
+			Persistant connections, piplined connections (asynkrona anrop)
+		</div>
+	</article>
+	
+	<!-- Request / response -->
+	<article class="fill">
+		<h3 class="c">
+			REQUEST &lt;--> RESPONSE
+		</h3>
+		<img src="http://farm5.staticflickr.com/4038/4310311185_e77d8fa006_z.jpg?zz=1" />
+		<p class="cc">Foto cc by Tom Magliery: <a href="http://www.flickr.com/photos/mag3737/">http://www.flickr.com/photos/mag3737/</a> </p>
+	</article>
+	
+	<!-- HTTP request -->
+	<article>
+		<h1 class="c bg">HTTP Request/Response</h1>
+		<p class="spaced">
+			<img width="40%" class="bi" src="images/http_request.png" />
+		</p>
+		<p class="spaced">
+			<img width="40%" class="bi" src="images/http_response.png" />
+		</p>
+	</article>
+	
+	<!-- Request Methods -->
+	<article>
+		<h1>HTTP Request Methods</h1>
+		<table class="">
+			<tr class="bgy spaced u">
+			<td class="b">GET</td>
+			<td>Hämta en resurs (via URL), "read-only"</td>
+			</tr>
+			
+			<tr class="u">
+			<td class="b">POST</dt>
+			<td>Posta data (formulär). Skickar data från klient till server</td>
+			</tr>
+			
+			<tr class="bgy spaced u">
+			<td class="b">HEAD</td>
+			<td>Hämta endast HTTP headern - ej ev. dokument</td>
+			</tr>
+			
+			<tr class="u">
+			<td class="b">PUT</td>
+			<td>Ladda upp utpekad resurs</td>
+			</tr>
+			
+			<tr class="bgy spaced u">
+			<td class="b">DELETE</td>
+			<td>Ta bort utpekad resurs</td>
+			</tr>
+			
+			<tr class="u">
+			<td class="b">TRACE</td>
+			<td>Skicka tillbaka förfrågan precis som den kom (upptäcka ändringar på vägen)</td>
+			</tr>
+			
+			<tr class="bgy spaced u">
+			<td class="b">OPTIONS</td>
+			<td>Får tillbaka en lista med vilka HTTP-kommandon som stöds</td>
+			</tr>
+			
+			<tr class="u">
+			<td class="b">CONNECT&nbsp;&nbsp;&nbsp;</td>
+			<td>Används vid SSL-tunnlar</td>
+			</tr>
+		</table>
+		
+		<p class="note">
+			GET och POST vanligast (betraktas som säkra)<br />
+			Ofta inte stöd för andra (många tolkas som GET)<br />
+			REST
+		</p>
+		
+	</article>
+	
+	<!-- Response code -->
+	<article>
+		<h1 class="c bg">Response - Statuskod</h1>
+	
+		<ul>
+				<li><strong>1xx - Informational</strong> (Togs emot men har inte slutförts)</li>
+				<li><strong>2xx - Successful</strong> - 200 OK, 204 No Content</li>
+				<li><strong>3xx - Redirections</strong> -301 Moved Permanently, 302 Found, 304 Not Modified</li>
+				<li><strong>4xx - Client Error</strong> - 400 Bad Request, 401 Unauthorized, 404 Not Found</li>
+				<li><strong>5xx - Server Error</strong> - 500 Internal Server Error</li>
+		</ul>
+			
+				<a class="pretty_small" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">
+					http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+				</a>
+	</article>
+		
+	<!-- Optimering -->
+	<article>
+		<h1 class="c">HTTP - Optimering</h1>
+		<p>
+			<img height="200px" src="http://akamaicovers.oreilly.com/images/9780596529307/lrg.jpg" />
+		</p>
+		<ul>
+			<li>Hantering av statiska filer (minimering, placering, obfuscation)</li>
+		</ul>
+		
+		<ul>
+			<li>HTTP Connection</li>
+			<li>HTTP Caching</li>
+			<li>Komprimering</li>
+		</ul>	
+	</article>
+	
+	<!-- Problem -->
+	<article>
+		<h3 class="c bg">HTTP Connection</h3>
+		
+		<p class="c">
+			<img src="images/http_timeline.png" />
+		</p>
+		
+		
+	</article>
+	
+	<!-- Kvällstidning -->
+	<article class="fill">
+		<h3>Kvällstidningssida</h3>
+		<img src="images/network_ab.png" height="600px"/>
+		
+		<p class="note">
+			335 requests!
+			Hur fungerar det med request/response
+		</p>
+		
+	</article>
+	
+	<!--Att det funkar så bra! -->
+	<article class="fill">
+			<h3>Att det funkar så bra!?!</h3>
+			
+			<img src="images/internet_overview.png" height="800px" />
+			
+			<p class="note">
+				Hur kan det funka så bra!?!
+			</p>
+	</article>
+	
+	
+	<!-- Persistant connection -->
+	<article>
+		<h3 class="bg c">Persistent connection</h3>
+		
+		<p class="c">
+			<img src="images/keep_alive.png" />
+		</p>
+		
+		<p class="note">
+			Kallas också HTTP keep-alive,
+			SPDY [speedy]
+		</p>
+	</article>
+	
+	<!-- Pipline connection -->
+	<article>
+		<h3 class="c bg">Piplined connection</h3>
+		<p class="c">
+			<img src="images/pipeline.png" class="bi" />
+		</p>
+	</article>
+	
+	<!-- realtime webb -->
+	<article class="fill">
+		<h3>Realtidsdata</h3>
+		<img src="images/realtime_docs.png" />
+		
+	</article>	
+		
+	
+	<!-- Realtidswebben och dess problem -->
+	<article>
+		<h3 class="c bg">Problem vid realtidsapplikationer</h3>
+		<p class="c">
+		<img src="images/pull.png" />
+		</p>
+		<p class="c">
+			AJAX Polling
+		</p>
+		<p class="note">
+			Smartare med längre och längre requeststider m.m.
+			Problem med HTTP vs realtid
+		</p>
+		<p>
+		
+	</article>
+	
+	<!-- Lösningar för realtidswebben -->		
+	<article class="fill">
+		<h3 class="c bg">"Lösningar"</h3>
+		<ul>
+			<li class="red">Flash, Java applet, Active X</li>
+			<li>Forever frame</li>
+			<li>(XMLHttpRequest) Long polling</li>
+			<li>XHR Streaming</li>
+			<li class="red">Web Sockets</li>
+			<li class="red">Server-Sent Events</li>
+		</ul>
+		
+	</article>
+
+	<!-- iFrame -->
+	<article>
+		<h3 class="bg c">Forever frame</h3>
+		<p class="spaced">
+			Dold iframe. Servern skickar ut data (i form av javascript) 
+			till webbläsaren när uppdateringar finns.<br /><br />
+			
+		
+			Servern använder "chunked encoding" så iframen uppdateras efter 
+			hand med script som anropar "riktiga" sidan via parent-referensen
+		</p>
+		<p>
+<pre>
+ &lt;iframe name="hidden" id="hidden" src="IFrameLongPolling.php" frameborder="0" 
+ height="0" width="100%">&lt;/iframe>				
+</pre>				
+<pre>
+&lt;?php // IFrameLongPolling.php
+echo "&lt;script type='text/javascript'>parent.updateCount('" . $count . "')&lt;/script>\n";
+flush();	
+</pre>			
+		</p>
+		<p>
+			<a class="small" href="http://www.webreference.com/programming/javascript/rg30/index.html">
+				http://www.webreference.com/programming/javascript/rg30/index.html
+			</a>
+		<p class="note">
+			IE måste br-tagg läggas till
+			Safari minst 1KB,
+			Ingen felhantering.
+		</p>
+	</article>
+
+		
+	<!-- Long Polling -->
+	<article>
+		<h3 class="c bg">Long-Polling</h3>
+		
+		<p class="spaced">
+		En request görs men servern svarar endast när ny data finns<br />
+		Simulerar att servern pushar ut meddelanden<br />
+		<strong>XMLHttpRequest, AJAX</strong>
+		</p>
+		
+		<p class="c">
+			<a href="http://www.youtube.com/watch?v=AsR61oIdkG0"><img src="images/JL_Ajax.png" /></a>
+		</p>
+		
+		<p>
+			Problem att man kan bli liggande med många öppna anslutningar
+		</p>
+		
+		
+	</article>
+	
+	<!-- Long Polling exempel -->
+	<article>
+		<h3 class="c bg">Long-Polling exempel</h3>
+		<p class="c">
+			<img src="images/long_poll.png" />
+		</p>
+	</article>
+	
+	
+	<!-- Streaming XHR -->
+	<article>
+			<h3 class="c bg">Streaming XHR</h3>
+			<p class="c">
+				<img src="images/xhr_stream.png" />
+			</p>
+	</article>
+	
+	<!-- Web Sockets -->	
+	<article>
+		<h1>Men Web Sockets...</h1>
+<pre>
+websocket = new WebSocket("ws://example.com:1337"); 
+websocket.onopen = function(evt) { ... }; 
+websocket.onclose = function(evt) { ... }; 
+websocket.onmessage = function(evt) { ... }; 
+websocket.onerror = function(evt) { ... };
+websocket.send()	
+</pre>	
+
+<ul>
+	<li>WebSockets är inte till för att ersätta Comet-teknologin</li>
+	<li>Web Sockets kan vara svårt att integrera med HTTP-baserade tekniker (OAuth, REST, Caching...)</li>
+	<li>Kräver en server som kan hantera trafiken</li>
+	<li>Brandväggar, proxies, lastbalanserare...</li>
+</ul>	
+	</article>
+	
+	<!-- CACHE -->
+	<article>
+		<h1 class="c">Cache</h1>
+		<img src="images/cache_app.png" />
+	</article>
+	
+	<!-- Typer av cache? -->
+	<article>
+		<h3 class="c bg">Typer av web cache</h3>
+		<ul>
+			<li>Browser cache</li>
+			<li>Proxy cache</li>
+			<li>Gateway cache - Lastbalansering, CDN</li>
+			<li>Serverside cache</li>
+		</ul>
+		
+		<p class="c">
+			<img src="images/cdn.png" height="300px" />
+		</p>
+		<p class="note">
+			Content Delivery Network
+		</p>
+	</article>
+	
+	<!-- http caching -->
+	<article>
+		<h3 class="c bg">HTTP och cache</p>
+		
+		
+		<p class="c">
+			<img src="images/proxy_cache.png" style="max-width: 90%"/>
+		</p>
+		<p class="c bg">
+			Fresh vs. Stale	
+		</p>
+			
+		<p class="note">
+			Spara kompior av ett reponse för att snabbare och effektivare
+			presenter data vid en förfrågan
+			Snabbare svar, mindre trafik
+			statiska sidor vs. dynamiska
+			
+			snabbare och minska trafik
+			
+			Stale - Data som inte är uppdaterad (ej dynamiska sidor)
+			Fräsh data
+		</p>
+	</article>
+	
+	
+	<!-- HTTP - alternativ -->		
+	<article>
+		<h3 class="c bg">Hur HTTP styr cachning</h3>
+			<ul>
+			<li>Expires</li>
+			<li>Cache-Control</li>
+			<li>Last-Modified, If-Modified-Since</li>
+			<li>E-tag, If-None-Match</li>
+		</ul>
+		<p class="c">
+			<img class="bii" src="images/cache_response.png" />
+		</p>
+		
+		<p class="note">
+			Age? Hitta en bild med alla?
+			
+		</p>
+	</article>
+	
+	<!-- Expire -->
+	<article>
+		<p class="c bg">Expires</p>
+				
+		<p class="c">
+			<img src="images/cache_example.png" />
+		</p>
+		
+			
+		</p>
+		<p class="note">
+			HTTP Date - Utgår från GMT
+			Stort stöd
+			Bilder och resuser som får tid långt framåt - Byt filnamn
+			
+			BILD
+			Klockan - Syncproblem
+			Lätt att glömma att man satt en tid långt fram
+		</p>
+	</article>
+			
+	<!-- Cache-control -->
+	<article>
+		<h3 class="c bg">Cache-Control</h3>
+		
+		<ul>
+			<li><strong>max-age</strong> - Antal sekunder som innehållet anses giltigt</li>
+			<li><strong>public</strong> - Fritt fram att cache:a </li>
+			<li><strong>private </strong>- Tillåts endast caching privat - webbläsare</li>
+			<li><strong>no-cache</strong> - Kontrollera med servern för att få släppa cache:at data</li>
+			<li><strong>no-store</strong> - Ingen cache alls!</li>
+			<li><strong>must-revalidate</strong> - Måste följa cache-reglerna ovan (I HTTP finns specialfall)</li>
+			
+		</ul>
+		<p>
+			Om både Expires och Cache-Control finns tar den senare överhand
+		</p>
+	
+		<p class="c"><img class="bi" src="images/cache-control.png" /></p>
+		
+		<p class="note">
+			Introducerades med HTTP 1.1
+			Pragma - Stöds inte av de flesta cache
+		</p>
+	</article>
+	
+	<!-- Etag -->
+	<article>
+		<h3 class="c bg">ETag - Entity Tag</h3>
+		<p class="spaced">
+			Unika identifierare sätts på servern för enklare(?) validering 
+		</p>
+		<p class="c">
+			<img src="images/etag.png" class="bii" />
+		</p>
+		
+		<p class="spaced">
+			<strong>If-None-Match</strong> - Validerar på servern ifall id:t har uppdaterats 
+		</p>
+		
+		<p class="note">
+			Problem vid web frms osv.
+		</p>
+	</article>
+	
+	<!-- Hur cacha som kodare? -->
+	<article>
+		<h3 class="c bg">Cache - i webbservern</h3>
+		<p>
+			De flesta webbservrar har redan cachning påslagen för statiska resurser.<br /><br />
+			Kan dock ställas om i konfigurationsfiler eller verktyg.<br /><br />
+			Sätta på filnivå, filändelsenivå o.s.v.
+		</p>
+		
+		<p class="bg">
+			mod_expires, modul till Apache
+		</p>
+		<p class="c">
+			<img src="images/cache_apache.png" class="bi" />
+		</p>
+		
+		
+		<p class="note">
+			Problem vid web frms osv.
+		</p>
+	</article>
+	
+	<!-- PHP-kod -->
+	<article>
+		<h3 class="c bg">Cache - PHP</h3>
+		
+		<p class="c">
+			<img src="images/php_cache.png" class="bi spaced" />
+		</p>
+			
+		<p class="note">
+			Problem vid web forms osv.
+		</p>
+	</article>
+	
+	<!-- Tips och trix -->
+	<article>
+		<h3>Tips!</h3>
+		<ul>
+			<li>Sätt lång cachetid på resurser som inte uppdateras ofta (bilder, css, script)</li>
+			<li>Om en fil som cachas ändras. Uppdatera dess filnamn på servern.</li>
+			<li>När du uppdaterar din site - flytta bara de filer som ska uppdateras</li>
+			<li>HTTPS är endast för sidor som behövs vara krypterade.</li>
+			<li>Skriv till statiska filer, slippa DB, enklare att cache:a.</li>
+			<li>Använd inte POST i onödan - Den förfrågan cache:as inte</li>
+			<li>Testa din webbplats noga! Hur är cachningen satt! Vad kan bli bättre?</li>
+			<li>Studera välbesökta webbplatser!</li>
+		</ul>
+		
+		<p class="note">
+			När du uppdaterar din site - flytta bara de filer som uppdateras (ändrar inga Last-Modified)
+			HTTPS är endast för sidor som behövs vara säkra. Sämre prestanda och noll cache.
+		</p>
+		
+	</article>
+	
+	<!-- Compression -->
+	<article>
+		<h3 class="bg c">Komprimering i HTTP</h3>
+		<p class="c spaced">
+			<img src="images/gzip.png" />
+		</p>
+		<ul>
+			<li>Mindre filer, mindre nätverkstrafik, snabbare sidor?</li>
+			<li>Vanligast är gzip (GNU), andra är t.ex. deflate</li>
+			<li>HTML, XML, JSON-dokument, Script, CSS...60-70%</li>
+			<li>Komprimera ej bilder, PDF och andra redan komprimerade resurser</li>
+			<li>http://www.gidnetwork.com/tools/gzip-test.php</li>
+			<li>Ej filer &lt; 1Kb</li>
+		</ul>
+		
+	</article>
+	
+	<!-- Compression in HTTP -->
+	<article>
+		<h3 class="bg c">Komprimering i HTTP</h3>
+		<p class="c spaced">
+			<img class="bii" src="images/http_accept.png" />
+			<img class="bi" src="images/http_content.png" />
+		</p>
+		<p class="note">
+			Vary: Accept-encoding
+			Används så att proxies inte ska cache:a komprimerade 
+			anrop och skicka till läsare som inte kan hantera gzip
+			Vary = variera beroende på headers
+		</p>
+		
+	</article>
+		
+	<!-- compression how -->
+	<article>
+		<h3 class="bg c">Komprimering - Hur gör jag?</h3>
+		<p class="bg spaced">
+			I Apache görs detta i .htaccess i modulen <strong>mod_deflate</strong><br />
+		</p>
+		<p class="c">
+			<img src="images/apache_mod_deflate.png" class="bii" />
+		</p>
+		<p class="bg">
+			Kan styras i PHP-kod via <a href="http://php.net/manual/en/function.ob-gzhandler.php">ob_gzhandler</a>
+		</p>
+		<p class="note">
+			Finns en mod_gzip, men är lit eäldre och bökigare
+		</p>
+	</article>
+	
+	
+	
+	
+	<!-- Mätning av prestanda -->	
+	<article>
+		<h1>Mätning</h1>
+		<p class="c">
+		<img src="https://developers.google.com/chrome-developer-tools/images/slide8.jpg" />
+		<a href="https://developers.google.com/chrome-developer-tools/">
+			https://developers.google.com/chrome-developer-tools/
+		</a><br />
+		<a href="http://discover-devtools.codeschool.com/">http://discover-devtools.codeschool.com/</a>
+		</p>
+		<p class="cc">Foto from: <a href="https://developers.google.com/chrome-developer-tools/">https://developers.google.com/chrome-developer-tools/</a> </p>
+	</article>
+	
+	<!-- om laborationen, handledning -->
+	<article class="fill">
+		<h3>Om laborationen</h3>
+		<img src="http://farm1.staticflickr.com/22/28630988_1ac8dd3bc2_o.jpg" />
+		<p class="cc">Foto cc by Justin Gaynor: <a href="http://www.flickr.com/photos/justingaynor/">http://www.flickr.com/photos/justingaynor/</a> </p>
+	</article>	
+	
+    </section>
+  </body>
+</html>
+
+<!-- Status codes 
+
+	
+-->

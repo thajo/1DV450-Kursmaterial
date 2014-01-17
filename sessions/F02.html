@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+
+  <head>
+   
+     <meta charset="utf-8" />
+     <title>Webbteknik II, 1dv449</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    
+    <meta name="description" content="Webben idag och i framtiden, Kalmar, Linnéuniversitetet" />
+    
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,600italic,700italic,300,400,800' rel='stylesheet' type='text/css'>
+    
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <script src='slides.js' media="screen"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<style media="print">
+	         @page {
+	            size: A4 landscape;
+	             @top-right {
+	                content: "Page " counter(page);
+	             }
+	         }
+	          article {
+	            page-break-after: always;
+	            margin: auto;
+	          }
+	          article.next, article.past {
+	            display: block;    
+	          }
+	
+				iframe {
+					display: none;
+				}
+				article img {
+					display: none;
+				}
+	          body {
+	              display: block !important;
+	              font-family: 'Open Sans', Arial, sans-serif;
+	              font-size: 1.5em;
+	          }
+	</style>
+  </head>
+  
+
+
+  <body style='display: none'>
+
+    <section class='slides layout-widescreen template-default'>
+      <!-- http://lights.elliegoulding.com/ -->
+	<!-- Första sidan -->
+    <article>
+       	<h3>
+          Webbteknik II, 1dv449
+          <br />
+          <span class="small">Linnéuniversitetet, Ht 2013</span>
+        </h3>
+       
+		
+		<br /><br />
+		<h1 class="big c">Web of data</h1>
+		<p class="very_small" style="margin-top: 60px;">
+				
+		</p>
+		
+		<p class="small_footer">
+			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.sv">
+					<img alt="Creative Commons-licens" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>&nbsp;&nbsp;Denna presentation är licensierat under en 
+					
+						<a rel="license" href="hhttp://creativecommons.org/licenses/by/3.0/deed.sv">Creative Commons Erkännande 3.0 Unported Licens</a>.<br/>
+		</p>
+ 	</article>
+  		
+	
+	<!-- Agenda -->	
+	<article>
+		<h3>Dagens agenda</h3>
+		<ul>
+			<li>Vad är Web Science?</li>
+			<li>Varför Web Science?</li>
+			<li>Problem inom Web Science</li>
+			<li>Web of data</li>
+			<li>Web mining</li>
+			<li>Webbskrapning</li>
+			<li>Länkad data, Semantiska webben, Microformat</li>
+		</ul>
+	</article>
+	
+	
+	<!-- Vad är Web Science? -->
+	<article class="fill">
+	 	<h3 class="c">Vad är Web Science?</h3>
+		
+		<p class="cc">cc by Paul Downey: 
+			<a href="http://www.flickr.com/photos/psd/">http://www.flickr.com/photos/psd/</a> 
+		</p>
+		<img src="http://farm4.staticflickr.com/3156/2731067095_73f8f62020_b.jpg" height="100%"/>
+		<p class="note">
+			Webben är den största artifakt i människans hitoria.
+			Webben påverkas och utvecklas av männskor, bildar nya beteenden hos människor,
+			Sättet vi sprider information, sättet vi kommunicerar, sättet vi bedriver handel,
+			hälsa sjukvård, goverment många aspekter i samhället.
+			The study of the web.
+			The study of how the people who use the web change the web
+			The study how the web change the people who use it
+			
+			Flickr, visuell nyhetsrapportering, bombning Boston marathon.
+			Twitter handlar ej om vad jag åt. Nyhetsflöde, snabba nyheter
+			Alla data som sparats som kan analyseras. Inse epidimier genom att kombinera twitteruppdateringa roch 
+			lokalisering.
+			
+			Synvinkel som datavetare. Mjukvara. Vad gör din applikation bra eller  inte bra.
+			Nytt område.
+			Hur kunde webben ta över världen?
+		</p>
+	</article>	
+	
+	<!-- a framework for web science -->
+	<article class="fill">
+		<iframe src="http://www.nowpublishers.com/articles/foundations-and-trends-in-web-science/WEB-001;jsessionid=5F26CA1A1C3C2B87EE07B01898E1E67E"></iframe>
+	</article>
+	
+		
+	<!-- Vad är web science ? - Tvärvetenskaplig-->
+    <article class="fill">
+    	
+	   	<p class="cc">Foto cc by Clare Hooper: 
+			<a href="http://www.clarehooper.net/blog/2012/06/dissecting-the-butterfly/websci-heatmap/"> 			http://www.clarehooper.net/blog/2012/06/dissecting-the-butterfly/websci-heatmap/</a>
+		</p>
+	   	<img src="http://www.clarehooper.net/blog/wp-content/uploads/2012/06/websci-heatmap.png" height="100%"/>
+		<p class="note">
+			Web Science är tvärvetenskapligt.
+			Måste se webben ur olika synvinklar
+		</p>
+   	</article>	
+	
+	
+	<!-- Vilka problem? -->
+    <article class="fill">
+    		<h3 class=" small c">Vilka problem studeras</h3>
+   			<p class="small"><strong>Webbteknologier</strong><br />
+					Webbens arkitektur;	Protokoll, standarder</br>
+					Länkad data, semantiska webben</br>
+					Webbprogrammering, Webb-AI</br>
+			</p>
+   			<p class="small"><strong>Analysera webbens innehåll och dess möjligheter</strong><br />
+					Web of data, Web Mining</br>
+					Big Data</br>
+					Open Data</br>
+			</p>
+   			<p class="small"><strong>Webbens roll i samhället</strong><br />
+					Sociala aspekter</br>
+					Integiritet, etik</br>
+					Ekonomi, affärssystem, lagar, myndigheter</br>
+			</p>		
+   			
+   	<p class="cc">Foto cc by Emilian Robert Vicol: <a href="http://www.flickr.com/photos/free-stock/"> http://www.flickr.com/photos/free-stock/</a> </p>
+   	<img src="http://farm9.staticflickr.com/8144/7304232902_aa4cc352c5_h.jpg" width="100%"/>
+	<p class="note">
+		Hur kommer vi använda i denna kurs, peka på de olika delarna
+	</p>
+   	</article>	
+	
+	<!-- resurser om WS -->
+	<article>
+		<h1>Resurser - Web Science</h1>
+		<ul>
+			<li><a href="http://webscience.org/">Web Science Trust</a> (http://webscience.org/)</li>
+			<li><a href="https://www.futurelearn.com/courses/web-science/">MOOC-kurs i Web Science</a> (https://www.futurelearn.com/courses/web-science/)</li>
+			<li><a href="http://www.wais.ecs.soton.ac.uk/">University of Southampton</a>(http://www.wais.ecs.soton.ac.uk/)</li>
+		</ul>
+	</article>
+	   	
+	<!-- Web of data -->
+    <article class="fill">
+ 		<h3 class="c">Web of Data</h3>
+   		<p>
+			<strong>Big Data</strong> - Stora, komplexa datamängder<br />
+			Svårhanterade för vanliga databasapplikationer
+		</p>
+		<p>
+			Utmaningen består i att samla, lagra, analysera och visualisera denna mängd med data
+		</p>
+		<p>
+			Social Media Data, User Activity...
+		<p>
+			Data is the new oil! 
+		</p>
+		
+   		<p class="cc">Foto cc by Cory Doctorow: 
+		<a href="http://www.flickr.com/photos/doctorow/"> http://www.flickr.com/photos/doctorow/</a> </p>
+   		<img src="http://farm4.static.flickr.com/3220/2711081060_ba91f69796.jpg" height="100%"/>
+		<p class="note">
+			I och med att allt mer information genereras och publiceras på webben
+			skapar det mer och mer uppmärksamhet kring denna data. Vilka möjligheter det finns
+			att analysera och bearbeta denna data.
+			
+			Företagen är såklart intresserade av vad som sägs på social media, anpassade annonser
+			o.s.v.
+			
+			Vad händer om data läcker?
+		</p> 
+			
+   	</article>
+
+	<!-- Web of data -->
+    <article class="fill">
+ 		<h3 class="c">Web mining</h3>
+   		<p>
+			Data mining handlar om att anlysera och hitta mönster i stora datasamlingar.
+		</p>
+		
+		<ul>
+			<li>
+				<strong>Web usage mining</strong> - Anlysera data från surfanvändares beteenden, loggar aktiviteter (clickstream data)
+			</li>
+			<li><strong>Web content mining</strong> - Data som redan finns på webben, innehåll i webbsidor, sökmotorer - crawlers, Strukturera ostrukturerad data
+			</li>
+			<li>
+				<strong>Web-structure mining</strong> - Analyserar länkstruktur för att klassificera webbsidor. PageRank algoritmen, Analysera sociala nätverk.
+			</li> 
+		</ul>
+				
+   		<p class="cc">Foto from wikipedia: 
+		<a href="http://upload.wikimedia.org/wikipedia/commons/b/b8/Sao_Paulo_Stock_Exchange.jpg"> http://upload.wikimedia.org/wikipedia/commons/b/b8/Sao_Paulo_Stock_Exchange.jpg</a> </p>
+   		<img src="http://upload.wikimedia.org/wikipedia/commons/b/b8/Sao_Paulo_Stock_Exchange.jpg" height="100%"/>
+		
+   	</article>	
+	
+	
+	
+	
+	<!-- Metoder för webbskrapning -->
+    <article class="fill">
+    	<h3 class="c">Webbskrapning</h3>
+		<ul style="list-style-type:none;">
+			<li>Samlar ostrukturerad data och strukturerar upp det för lagring och/eller analys</li>
+			<li class="c"><img src="images/scraper.jpg" /></li>
+			<li>Spindlar/crawlers - Indexering</li>
+			
+		</ul>
+		
+		<img src="http://farm5.staticflickr.com/4027/4463644938_dd457a50b9_b.jpg" />
+		<p class="cc">Foto cc by Espen Klem: 
+		<a href="http://www.flickr.com/photos/eklem/">http://www.flickr.com/photos/eklem/</a> </p>
+   	</article>
+	
+	<!-- Copy & paste -->
+    <article class="fill">
+ 		<h3 class="c">Copy &amp; paste</h3>
+   		
+		<p class="cc">Foto cc by Esther Vargas: 
+		<a href="http://www.flickr.com/photos/esthervargasc/">http://www.flickr.com/photos/esthervargasc/</a> </p>
+   		<img src="http://farm9.staticflickr.com/8442/7796254068_806efd52dd_o.jpg" height="100%"/>
+   	</article>
+	
+	<!-- mechanical turk -->
+    <article class="fill">
+		<iframe src="https://www.mturk.com/mturk/welcome"></iframe>
+	</article>
+
+	<!-- problem vid webbskrapning -->
+	<article>
+		<h1>Problem vid webbskrapning</h1>
+		<ul>
+			<li>Skriva kod som gör HTTP-anrop</li>
+			<li>Ta hand om resultatet och extrahera ut data</li>
+			<li>Automatiskt följa länkar</li>
+			<li>Skicka med POST-data</li>
+			<li>Hantera sessioner</li>
+			<li>Hantera redirections och fel (301, 404, 500)</li>
+			<li>Tänk på webbplatsägaren!</li>
+		</ul>
+		
+	</article>
+	
+	<article>
+		<h1>Simulera HTTP-anrop</h1>
+		
+		<pre>
+&lt;?php
+			
+$handle = fopen("http://www.example.com/", "r");
+
+
+$data = file_get_contents("http://www.example.com/");
+		
+		</pre>
+	</article>
+	
+	<article>
+		<h1>Kodexempel - cURL</h1>
+		
+		<pre>
+$ch = curl_init();
+
+// curl_setopt ger massor med inställningsmöjligheter 
+// http://us2.php.net/manual/en/function.curl-setopt.php
+curl_setopt($ch, CURLOPT_URL, "http://www.example.com/"); 
+curl_setopt($ch, CURLOPT_HEADER, true);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); 
+$data = curl_exec($ch);
+
+// Läser ut HTTP-status - http://us2.php.net/curl_getinfo
+$http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+// Stäng för att frigöra resurserna
+curl_close($ch);</pre>
+	</article>
+	
+	<article>
+		<h1 class="c">Vi har data<br />Hur extraherar vi den vi vill ha?</h1>
+	
+	</article>
+	
+	<!-- Text grep -->
+    <article class="fill">
+ 		<h3 class="c">Text, reguljära uttryck, grep</h3>
+   		<p class="c">
+			<img src="images/regexscrape.png" height="600px" />
+		</p>
+		<p class="cc">Screendump from: 
+		<a href="http://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454"> http://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454</a> </p>
+   		
+   	</article>
+	
+	<!-- As DOM -->
+    <article>
+ 		<h1 class="c">DOM parsing</h1>
+   		<p>
+			Sättet som webbläsare behandlar HTML, XML och XHTML<br />
+		</p>
+		<p>
+			<br />
+			<img src="images/DOM.png" height="400px"/>
+		</p>
+   	</article>
+	
+	
+	<!-- XMLDOM-->
+    <article class="fill">
+ 		<h3 class="c">DOM Parsing - Exempel</h3>
+   		<pre>
+&lt;?php
+$dom = new DOMDocument();
+
+$b = $dom->loadHTML($data);
+$x = new DOMXPath($dom); 
+// Plocka ut alla länkarna via ett XPath-uttryck
+$items = $x->query('//div[@class="links"]/ul/li/a/@href');
+
+foreach($items as $item) {
+	echo $item->nodeValue;
+}
+		</pre>
+		<p>
+			Det kommer finnas mer handfasta demonstrationsfilmer på kurshemsidan
+		</p>
+   	</article>
+	
+	
+	<!-- Web API:r och mashups -->
+    <article>
+ 		<h1 class="c">Men ska det vara så krångligt?</h1>
+		<p class="c">
+		<img src="http://farm3.staticflickr.com/2150/2012117209_fe1fb68672_b.jpg" height="500px" />
+		</p>
+		<p class="cc">Foto cc by Braden Kowitz: 
+		<a href="http://www.flickr.com/photos/kowitz/">http://www.flickr.com/photos/kowitz/</a> </p>
+   	</article>
+	
+	<!-- Web API:r och mashups -->
+    <article class="fill">
+			<img src="images/webbapi.png" />
+			<p class="cc">From: 
+			<a href="api.github.com"> api.github.com</a> </p>
+   	</article>
+	
+	
+	
+	<!-- Bild på semantiska webben -->
+    <article class="fill">
+		<h3 class="c">
+			Länkad data
+		</h3>
+		<img src="http://farm4.staticflickr.com/3132/3199355352_209749c350_o.png" height=100% />
+		
+	</article>
+	
+	<!-- Bild på semantiska webben -->
+    <article class="fill">
+		<h1 class="c">
+					Semantiska webben
+				</h1>
+				<p>
+					2001
+				</p>
+				<p>
+					Om applikationer förstår meningen bakom informationen, 
+					kan de lära sig vad vi är intresserade av 
+					och hjälpa oss att enklare hitta det vi vill
+				</p>
+				<pre>
+&lt;item rdf:about="http://example.org/semantic-web/">Semantic Web&lt;/item></pre>
+				<p>
+					Mindre tid att leta efter saker, mindre tid att filtrera bort saker, mindre tid att förklara för datorn vad vi vill
+				</p>
+				<p>
+					Tim Bernes-Lee kallar <strong>Länkad data</strong> semantiska webben gjort på rätt sätt
+				</p>
+		
+	</article>
+	
+	
+	
+	<!-- XML vs. HTML -->
+    <article>
+		<h1 class="c">
+			XML vs. HTML
+		</h1>
+		<pre>
+&lt;p>12346&lt;/p></pre>
+
+		<h3>Webbläsaren vet att den ska rendera ut 58 som ett stycke (paragraph)</h3>
+		<br /><br />
+		<h3>Vad betyder 12346?</h3>
+	</article>
+	
+	<!-- XML vs. HTML -->
+    <article>
+		<h1 class="c">
+			XML - eXtensible Markup Language
+		</h1>
+		<p class="c">
+		<img src="images/XML.png" width="500px"/>
+		</p>
+<h3>XML är gjort för att märka upp data och för att vara ett dataformat för webben</h3>
+
+	</article>
+	
+	<!-- Tim Berners-Lee -->
+    <article class="fill">
+		<iframe src="http://www.w3.org/2001/sw/wiki/Main_Page"></iframe>
+	</article>
+		
+	<!-- Från dokument till databas -->
+    <article class="fill">
+ 		<h3 class="c">Antag jag samlar kapsyler...</h3>
+   		
+		<p class="cc">Idé snodd från: http://www.slideshare.net/freekbijl/web-30-explained-with-a-stamp, Foto cc by Joe Holst: 
+		<a href="http://www.flickr.com/photos/jyoseph/"> hhttp://www.flickr.com/photos/jyoseph/</a> </p>
+   		<img src="http://farm3.staticflickr.com/2018/2316883985_bb07a06911_o.jpg" height="100%"/>
+   	</article>	
+	
+	<!-- Från dokument till databas -->
+    <article class="fill">
+ 		<h3 class="c">Efter ett tag...</h3>
+   		
+		<p class="cc">Foto cc by: 
+		<a href="http://www.flickr.com/photos/rothar/"> http://www.flickr.com/photos/rothar/</a> </p>
+   		<img src="http://farm8.staticflickr.com/7292/10232998263_8a0b27ea7f_b.jpg" height="100%"/>
+   	</article>	
+	
+	
+	<!-- Web 1, 2, 3 as web of data -->
+    <article>
+    	<h3 class="c">Dokument</h3>
+   		<p class="c">
+			<img src="images/document_cap.png" width="800px"/>
+		</p>
+   	<p class="cc">CC BY 3.0, John Häggerud </p>
+   	
+   	</article>	
+	
+	
+	<!-- Web 1, 2, 3 as web of data -->
+    <article class="fill">
+    	
+		<img src="images/cap_website.png" width="200px"/>
+		<p class="cc">Screendump from: 
+			<a href="http://www.bottlecaps.de/index/">http://www.bottlecaps.de/</a> </p>
+	</article>	
+	
+	
+	
+	<!-- Hur hittar man informationen om en kapsyl -->
+    <article class="fill">
+    	<h1 class="c">Hur hittar jag en speciell kapsyl?</h1>
+	</article>
+	
+		
+	<!-- Google FTW! -->
+    <article>
+		<h1 class="c">Sökmotorer FTW!</h1>
+    	<img src="images/google.png" width="100%"/>
+		<p class="c">
+			En mängd med länkade dokument har indexerats
+			på nykelord.
+		</p>
+   	</article>	
+	
+	<!-- Mer avancerad fråga? -->
+    <article>
+		<h1 class="c">Hur hittar jag en <strong>röd</strong> kapsyl gjord av ett <strong>småländskt</strong> bryggeri under 		<strong>andra världskriget?</strong></h1>
+    	
+   	</article>	
+	
+	<!-- Ointelligenta svar -->
+    <article>
+		<img src="images/google.png" width="100%"/>
+		<ul>
+			<li>Röd stuga från småland från andra världskriget</li>
+			<li>Röda korset</li>
+			<li>Smålands röda bröders ölfest</li>
+			<li>Andra röda kapsyler</li>
+		</ul>
+		<p>Som människa kan man ju filtrera och söka vidare på ett intelligent sätt</p>
+   	</article>	
+	
+	<!-- Vi måste beskriva data -->
+    <article>
+		<h2 class="c">
+			<strong>Beskriv</strong> data på ett <strong>strukturerat</strong> sätt så
+			att applikationer kan förstå och automatisera sökningen på ett mer omfattande och intelligentare sätt.
+		</h2>
+		<p class="c"><img src="images/larson-oct-1987.gif" height="400px"/></p>
+		
+   	</article>
+	
+	<!-- Struktur via databaser -->
+    <article class="fill">
+		<h1 class="c">
+			Struktur via sammankopplade databaser
+		</h1>
+		<ul>
+			<li>En databas med kapsyler</li>
+			<li>En databas med bryggerier</li>
+			<li>Wikipedias databas</li>
+			<li>Geonames databas</li>
+		</ul>
+		<h1 class="c">Länkad data (linked data)</h1>
+   		
+   	</article>
+	
+	<!-- S0emantiska webben -->
+    <article class="fill">
+		<iframe src="http://embed.ted.com/talks/tim_berners_lee_on_the_next_web.html" width="560" height="315" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+		
+	</article>
+	
+	<!-- Semantiska webben -->
+    <article class="fill">
+		<img src="images/google_wiki.png" width="100%"/>
+		<p class="cc"><a href="http://www.google.com/insidesearch/features/search/knowledge.html">Google knowledge graph</a></p>
+	</article>
+	
+	<!-- Utmaningen -->
+    <article class="fill">
+		<h1 class="c">
+			Utmaningen!
+		</h1>
+		<ul>
+			<li>Länka samman olika typer av data och skapa relationer mellan 
+			dessa så att applikationer kan göra intelligentare operationer.<li />
+			
+			<li>Komma överens om struktur och hur data ska beskrivas.</li> 
+			<li>Vart datan lagras är ointressant.</li>
+		</ul>
+	</article>
+	
+	
+	
+	
+	
+	
+	<!-- Semantiska webben - Standards -->
+    <article class="fill">
+		<h1 class="c">
+			W3C standard
+		</h1>
+		<h2 class="c">
+			XML, XML Schema, RDF, OWL, SPARQL, RDFa, SKOS, RDFS, 
+			GRDDL, POWDER, PROV, RIF, SAWSDL, RDB2RDF
+		</h2>
+	</article>
+	
+	
+	
+		
+	<!-- RDF - semantiska webben -->
+    <article>
+		<h3 class="c">
+			RDF - Resource Description Framework
+		</h3>
+		<p class="c">
+			<img src="images/RDF_example.png" width="800px" />
+			
+		</p>
+		
+	</article>
+		
+	<!-- SPARQL -->
+    <article>
+		<h1 class="c">
+			SPARQL
+		</h1>
+		<p></p>
+		<p>
+			Om standarderna kring semantiska webben 
+			skapar relationer. <br />
+			Genom frågespråket SPARQL kan vi bygga mer avancerade frågor
+		</p>
+		
+		<p class="c">
+			<img src="images/SPARQL.png" />
+		</p>
+		
+	</article>
+	<!-- Exempel på semantiska webben jämf med google sökning -->
+	<!-- Tim Berners-Lee -->
+    <article class="fill">
+		<iframe src="http://factforge.net/sparql"></iframe>
+	</article>
+		
+	
+	<!-- Microformat -->
+    <article class="fill">
+		<iframe src="http://microformats.org/"></iframe>
+	</article>
+	
+	
+    </section>
+  </body>
+</html>
