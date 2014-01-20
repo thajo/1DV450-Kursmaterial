@@ -367,6 +367,11 @@
 		</ul>	
 	</article>
 	
+	<!-- Rails -->
+	<article class="fill">
+		<img src="images/ror_architecture.png" width="80%" height="100%">	
+	</article>
+	
 	<!-- Ruby gems -->
 	<article>
 		<h3>Ruby gems</h3>
@@ -414,7 +419,7 @@
 		<ul>
 			<li>Strong typing (to_s, to_i...)</li>
 			<li>Allt är objekt (Strings, Numbers, arrays, hashes)</li>
-			<li>null is called nil</li>
+			<li>null is called nil, ett objekt som inte reprensenterar något</li>
 			<li>"$foo is a $bar" ==> "#{foo} is a #{bar}"</li>
 			<li>Inga semikolon, 
 		</ul>
@@ -426,21 +431,23 @@
 		<article>
 			<h3>Klasser - egenskaper, metoder, instanser</h3>
 			<pre>
-class LinksController < ApplicationController
+class LinksController &lt; ApplicationController # arv
 
-  def index
-    @links = Link.all  
+  def index # frivilligt med paranteser i parameter anrop
+  #@-tecknet visar att det är en instansvariabel
+    @links = Link.all   # inga semikolon, en sats per rad
+	# return är frivilligt, default returneras sista satsen
   end
 
   def new
-    @link = Link.new
+    @link = Link.new # Anrop till kontrukturn via new
   end
-
+  #Inga måsvingar, standart två tecken indragning  
   def create 
-    @link = Link.new(params[:link])
+    @link = Link.new(params[:link]) # Hashes och symbols
   
     if @link.save
-      redirect_to links_path
+      redirect_to links_path # ramverksspecifika delar
     else
       render :action => "new"
     end
@@ -453,10 +460,7 @@ end</pre>
 		<iframe src="http://tryruby.org"></iframe>	
 	</article>
 	
-	<!-- Rails -->
-	<article class="fill">
-		<img src="images/ror_architecture.png" width="80%" height="100%">	
-	</article>
+	
 	
 	<!-- Demo -->
 	<article class="fill">
