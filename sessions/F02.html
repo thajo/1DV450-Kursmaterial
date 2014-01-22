@@ -15,48 +15,12 @@
 <html>
 
   <head>
-   
-     <meta charset="utf-8" />
-     <title>Webbteknik II, 1dv449</title>
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Föreläsning 2</title>
 
-    
-    <meta name="description" content="Webben idag och i framtiden, Kalmar, Linnéuniversitetet" />
-    
-
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,600italic,700italic,300,400,800' rel='stylesheet' type='text/css'>
-    
-    <link rel="shortcut icon" href="favicon.png" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <script src='slides.js' media="screen"></script>
+    <meta charset='utf-8'>
+    <script src='slides.js'></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<style media="print">
-	         @page {
-	            size: A4 landscape;
-	             @top-right {
-	                content: "Page " counter(page);
-	             }
-	         }
-	          article {
-	            page-break-after: always;
-	            margin: auto;
-	          }
-	          article.next, article.past {
-	            display: block;    
-	          }
-	
-				iframe {
-					display: none;
-				}
-				article img {
-					display: none;
-				}
-	          body {
-	              display: block !important;
-	              font-family: 'Open Sans', Arial, sans-serif;
-	              font-size: 1.5em;
-	          }
-	</style>
+
   </head>
   
 
@@ -64,589 +28,595 @@
   <body style='display: none'>
 
     <section class='slides layout-widescreen template-default'>
-      <!-- http://lights.elliegoulding.com/ -->
-	<!-- Första sidan -->
-    <article>
-       	<h3>
-          Webbteknik II, 1dv449
-          <br />
-          <span class="small">Linnéuniversitetet, Ht 2013</span>
-        </h3>
+      
+		
+		<!-- First page -->
+    	<article>
+	       	<h3>
+	         Webbramverk, 1DV450
+	          <br />
+	          <span class="small">Linnéuniversitetet, Vt 2014</span>
+	        </h3>
        
 		
-		<br /><br />
-		<h1 class="big c">Web of data</h1>
-		<p class="very_small" style="margin-top: 60px;">
+			<br /><br />
+			<h1 class="big c">Active Record</h1>
+			<p class="very_small" style="margin-top: 60px;">
 				
-		</p>
-		
-		<p class="small_footer">
-			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.sv">
-					<img alt="Creative Commons-licens" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>&nbsp;&nbsp;Denna presentation är licensierat under en 
+			</p>
+			<p class="small_footer">
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.sv">
+						<img alt="Creative Commons-licens" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>&nbsp;&nbsp;Denna presentation är licensierat under en 
 					
-						<a rel="license" href="hhttp://creativecommons.org/licenses/by/3.0/deed.sv">Creative Commons Erkännande 3.0 Unported Licens</a>.<br/>
-		</p>
- 	</article>
-  		
-	
-	<!-- Agenda -->	
-	<article>
-		<h3>Dagens agenda</h3>
-		<ul>
-			<li>Vad är Web Science?</li>
-			<li>Varför Web Science?</li>
-			<li>Problem inom Web Science</li>
-			<li>Web of data</li>
-			<li>Web mining</li>
-			<li>Webbskrapning</li>
-			<li>Länkad data, Semantiska webben, Microformat</li>
-		</ul>
-	</article>
-	
-	
-	<!-- Vad är Web Science? -->
-	<article class="fill">
-	 	<h3 class="c">Vad är Web Science?</h3>
-		
-		<p class="cc">cc by Paul Downey: 
-			<a href="http://www.flickr.com/photos/psd/">http://www.flickr.com/photos/psd/</a> 
-		</p>
-		<img src="http://farm4.staticflickr.com/3156/2731067095_73f8f62020_b.jpg" height="100%"/>
-		<p class="note">
-			Webben är den största artifakt i människans hitoria.
-			Webben påverkas och utvecklas av männskor, bildar nya beteenden hos människor,
-			Sättet vi sprider information, sättet vi kommunicerar, sättet vi bedriver handel,
-			hälsa sjukvård, goverment många aspekter i samhället.
-			The study of the web.
-			The study of how the people who use the web change the web
-			The study how the web change the people who use it
-			
-			Flickr, visuell nyhetsrapportering, bombning Boston marathon.
-			Twitter handlar ej om vad jag åt. Nyhetsflöde, snabba nyheter
-			Alla data som sparats som kan analyseras. Inse epidimier genom att kombinera twitteruppdateringa roch 
-			lokalisering.
-			
-			Synvinkel som datavetare. Mjukvara. Vad gör din applikation bra eller  inte bra.
-			Nytt område.
-			Hur kunde webben ta över världen?
-		</p>
-	</article>	
-	
-	<!-- a framework for web science -->
-	<article class="fill">
-		<iframe src="http://www.nowpublishers.com/articles/foundations-and-trends-in-web-science/WEB-001;jsessionid=5F26CA1A1C3C2B87EE07B01898E1E67E"></iframe>
-	</article>
-	
-		
-	<!-- Vad är web science ? - Tvärvetenskaplig-->
-    <article class="fill">
-    	
-	   	<p class="cc">Foto cc by Clare Hooper: 
-			<a href="http://www.clarehooper.net/blog/2012/06/dissecting-the-butterfly/websci-heatmap/"> 			http://www.clarehooper.net/blog/2012/06/dissecting-the-butterfly/websci-heatmap/</a>
-		</p>
-	   	<img src="http://www.clarehooper.net/blog/wp-content/uploads/2012/06/websci-heatmap.png" height="100%"/>
-		<p class="note">
-			Web Science är tvärvetenskapligt.
-			Måste se webben ur olika synvinklar
-		</p>
-   	</article>	
-	
-	
-	<!-- Vilka problem? -->
-    <article class="fill">
-    		<h3 class=" small c">Vilka problem studeras</h3>
-   			<p class="small"><strong>Webbteknologier</strong><br />
-					Webbens arkitektur;	Protokoll, standarder</br>
-					Länkad data, semantiska webben</br>
-					Webbprogrammering, Webb-AI</br>
+							<a rel="license" href="hhttp://creativecommons.org/licenses/by/3.0/deed.sv">Creative Commons Erkännande 3.0 Unported Licens</a>. (Där inte annat anges)<br/>
 			</p>
-   			<p class="small"><strong>Analysera webbens innehåll och dess möjligheter</strong><br />
-					Web of data, Web Mining</br>
-					Big Data</br>
-					Open Data</br>
-			</p>
-   			<p class="small"><strong>Webbens roll i samhället</strong><br />
-					Sociala aspekter</br>
-					Integiritet, etik</br>
-					Ekonomi, affärssystem, lagar, myndigheter</br>
-			</p>		
-   			
-   	<p class="cc">Foto cc by Emilian Robert Vicol: <a href="http://www.flickr.com/photos/free-stock/"> http://www.flickr.com/photos/free-stock/</a> </p>
-   	<img src="http://farm9.staticflickr.com/8144/7304232902_aa4cc352c5_h.jpg" width="100%"/>
-	<p class="note">
-		Hur kommer vi använda i denna kurs, peka på de olika delarna
-	</p>
-   	</article>	
-	
-	<!-- resurser om WS -->
-	<article>
-		<h1>Resurser - Web Science</h1>
-		<ul>
-			<li><a href="http://webscience.org/">Web Science Trust</a> (http://webscience.org/)</li>
-			<li><a href="https://www.futurelearn.com/courses/web-science/">MOOC-kurs i Web Science</a> (https://www.futurelearn.com/courses/web-science/)</li>
-			<li><a href="http://www.wais.ecs.soton.ac.uk/">University of Southampton</a>(http://www.wais.ecs.soton.ac.uk/)</li>
-		</ul>
-	</article>
-	   	
-	<!-- Web of data -->
-    <article class="fill">
- 		<h3 class="c">Web of Data</h3>
-   		<p>
-			<strong>Big Data</strong> - Stora, komplexa datamängder<br />
-			Svårhanterade för vanliga databasapplikationer
-		</p>
-		<p>
-			Utmaningen består i att samla, lagra, analysera och visualisera denna mängd med data
-		</p>
-		<p>
-			Social Media Data, User Activity...
-		<p>
-			Data is the new oil! 
-		</p>
+      	</article>
+  
+  	  	<article class="fill">
+			
+  
 		
-   		<p class="cc">Foto cc by Cory Doctorow: 
-		<a href="http://www.flickr.com/photos/doctorow/"> http://www.flickr.com/photos/doctorow/</a> </p>
-   		<img src="http://farm4.static.flickr.com/3220/2711081060_ba91f69796.jpg" height="100%"/>
-		<p class="note">
-			I och med att allt mer information genereras och publiceras på webben
-			skapar det mer och mer uppmärksamhet kring denna data. Vilka möjligheter det finns
-			att analysera och bearbeta denna data.
-			
-			Företagen är såklart intresserade av vad som sägs på social media, anpassade annonser
-			o.s.v.
-			
-			Vad händer om data läcker?
-		</p> 
-			
-   	</article>
-
-	<!-- Web of data -->
-    <article class="fill">
- 		<h3 class="c">Web mining</h3>
-   		<p>
-			Data mining handlar om att anlysera och hitta mönster i stora datasamlingar.
-		</p>
-		
-		<ul>
-			<li>
-				<strong>Web usage mining</strong> - Anlysera data från surfanvändares beteenden, loggar aktiviteter (clickstream data)
-			</li>
-			<li><strong>Web content mining</strong> - Data som redan finns på webben, innehåll i webbsidor, sökmotorer - crawlers, Strukturera ostrukturerad data
-			</li>
-			<li>
-				<strong>Web-structure mining</strong> - Analyserar länkstruktur för att klassificera webbsidor. PageRank algoritmen, Analysera sociala nätverk.
-			</li> 
-		</ul>
+      	<!-- Intro to modell -->
+		<article class="fill">
+				<h3>
+					Active Record
+				</h3>
+				<img src="images/doll.jpg" height="600px"/>
+				<p style="margin-lef">
 				
-   		<p class="cc">Foto from wikipedia: 
-		<a href="http://upload.wikimedia.org/wikipedia/commons/b/b8/Sao_Paulo_Stock_Exchange.jpg"> http://upload.wikimedia.org/wikipedia/commons/b/b8/Sao_Paulo_Stock_Exchange.jpg</a> </p>
-   		<img src="http://upload.wikimedia.org/wikipedia/commons/b/b8/Sao_Paulo_Stock_Exchange.jpg" height="100%"/>
-		
-   	</article>	
+					Migration<br />
+					<span class="small_italic">Skapa och förändra databasen</span>
+					<br /><br />
+					Modellklasser<br />
+					<span class="small_italic">En tabell = en klass</span>
+					<br /><br />
+					Assocciations<br />	
+					<span class="small_italic">Ange relationen mellan objekt</span>
+					
+					<br /><br />
+					ActiveRecord Query<br />
+					<span class="small_italic">Hämta och manipulera data</span>
+					<br /><br />
+					
+					Validering<br />
+					<span class="small_italic">"Mota Olle i grind"</span>
+				
+				</p>
+		    	
+				<img src="http://farm4.staticflickr.com/3513/3237575990_943eb91c79_b.jpg" />
+				<p class="cc">Foto cc by: 
+					<a href="http://www.flickr.com/photos/adesigna/">http://www.flickr.com/photos/adesigna/</a> 
+				</p>
+			</article>
+				
+		</article>
 	
-	
-	
-	
-	<!-- Metoder för webbskrapning -->
-    <article class="fill">
-    	<h3 class="c">Webbskrapning</h3>
-		<ul style="list-style-type:none;">
-			<li>Samlar ostrukturerad data och strukturerar upp det för lagring och/eller analys</li>
-			<li class="c"><img src="images/scraper.jpg" /></li>
-			<li>Spindlar/crawlers - Indexering</li>
+		<!-- DB stöd -->
+		<article class="fill">
+			<img src="images/db_s.jpg" style="opacity: 0.4"/>
+		    	<h3>
+					Datalagring i Ruby on Rails
+				</h3>
 			
-		</ul>
-		
-		<img src="http://farm5.staticflickr.com/4027/4463644938_dd457a50b9_b.jpg" />
-		<p class="cc">Foto cc by Espen Klem: 
-		<a href="http://www.flickr.com/photos/eklem/">http://www.flickr.com/photos/eklem/</a> </p>
-   	</article>
+				<ul>
+					<li>Default SQLite3 (rekommenderas endast vid utveckling)</li>
+					<li>Intelligensen hos modellen inte i databasen</li>
+					<li>Varje applikation har tre olika: Development, Test, Production</li>
+				</ul>
+				
+		</article>
 	
-	<!-- Copy & paste -->
-    <article class="fill">
- 		<h3 class="c">Copy &amp; paste</h3>
-   		
-		<p class="cc">Foto cc by Esther Vargas: 
-		<a href="http://www.flickr.com/photos/esthervargasc/">http://www.flickr.com/photos/esthervargasc/</a> </p>
-   		<img src="http://farm9.staticflickr.com/8442/7796254068_806efd52dd_o.jpg" height="100%"/>
-   	</article>
-	
-	<!-- mechanical turk -->
-    <article class="fill">
-		<iframe src="https://www.mturk.com/mturk/welcome"></iframe>
-	</article>
-
-	<!-- problem vid webbskrapning -->
-	<article>
-		<h1>Problem vid webbskrapning</h1>
-		<ul>
-			<li>Skriva kod som gör HTTP-anrop</li>
-			<li>Ta hand om resultatet och extrahera ut data</li>
-			<li>Automatiskt följa länkar</li>
-			<li>Skicka med POST-data</li>
-			<li>Hantera sessioner</li>
-			<li>Hantera redirections och fel (301, 404, 500)</li>
-			<li>Tänk på webbplatsägaren!</li>
-		</ul>
 		
-	</article>
-	
-	<article>
-		<h1>Simulera HTTP-anrop</h1>
-		
-		<pre>
-&lt;?php
+		<!-- ActiveRecord -->
+		<article class="grey">
 			
-$handle = fopen("http://www.example.com/", "r");
-
-
-$data = file_get_contents("http://www.example.com/");
+			<h3>
+				Vad är ActiveRecord?
+			</h3>
+			<br /><br />
+			<p>
+				Active record ett design-pattern som kan implementeras av olika språk/ramverk<br /><br />
+				Object-relational mapping (ORM) <br /><br />
+				Mappar modell-objekt direkt till databasen (datalagringen)<br /><br />
+				ActiveRecord objects are intelligent<br /><br />
+				CRUD - Active Record Query<br /><br />
+				<a href="http://guides.rubyonrails.org/active_record_basics.html">
+					http://guides.rubyonrails.org/active_record_basics.html
+				</a>
+			</p>	
+		</article>
 		
-		</pre>
-	</article>
-	
-	<article>
-		<h1>Kodexempel - cURL</h1>
+		<!-- Datamodellen
+		<article>
+					<p class="big_point">En tabell motsvaras av en klass</p>
+					<p class="big_point">En kolumn motsvaras av en egenskap i klassen</p>
+					<p class="big_point">En rad motsvaras av en instans av klassen</p>
+				
+			</article>
+		 -->	
+		<article class="fill">
+			<img src="images/orm.png"  height="600px"/>
+		</article>
 		
-		<pre>
-$ch = curl_init();
+		
+		<!-- ActiveReleation -->
+		<article class="fill">
+			
+			<img src="images/chain.jpg" height="600px" />
+			<h3>
+				Vad är ActiveRelation?
+			</h3>
+			<br /><br />
+			<p>
+				"ARel"<br /><br />
+				"Object-orienterad relations algebra" <br /><br />
+				Förenklar mer komplexa frågor, "chainable", "complex joins"<br /><br />
+				Används mycket av ActiveRecord<br /><br />
+				<a href="https://github.com/rails/arel">https://github.com/rails/arel</a>
+				
+			</p>	
+		</article>
+		
+		<!-- ActiveReleation example-->
+		<article class="grey">
+			
+			<h3>
+				Exempel
+			</h3>
+			<pre>
+# Hur man kodmässigt kan efterfråga data från databasen
 
-// curl_setopt ger massor med inställningsmöjligheter 
-// http://us2.php.net/manual/en/function.curl-setopt.php
-curl_setopt($ch, CURLOPT_URL, "http://www.example.com/"); 
-curl_setopt($ch, CURLOPT_HEADER, true);
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); 
-$data = curl_exec($ch);
+user = User.first
+# SELECT * FROM users ORDER BY users.id ASC LIMIT 1	
 
-// Läser ut HTTP-status - http://us2.php.net/curl_getinfo
-$http_status = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+comments = User.first.comments 
 
-// Stäng för att frigöra resurserna
-curl_close($ch);</pre>
-	</article>
+
+orders = Order.where("total_sum > ?", params[:total_sum])			
+				
+			</pre>
+		</article>
 	
-	<article>
-		<h1 class="c">Vi har data<br />Hur extraherar vi den vi vill ha?</h1>
-	
-	</article>
-	
-	<!-- Text grep -->
-    <article class="fill">
- 		<h3 class="c">Text, reguljära uttryck, grep</h3>
-   		<p class="c">
-			<img src="images/regexscrape.png" height="600px" />
-		</p>
-		<p class="cc">Screendump from: 
-		<a href="http://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454"> http://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454</a> </p>
-   		
-   	</article>
-	
-	<!-- As DOM -->
-    <article>
- 		<h1 class="c">DOM parsing</h1>
-   		<p>
-			Sättet som webbläsare behandlar HTML, XML och XHTML<br />
-		</p>
-		<p>
+		<!-- Naming conventions -->
+		<article>
+			
+			<h3>Convention over configuration - Model</h3>
 			<br />
-			<img src="images/DOM.png" height="400px"/>
-		</p>
-   	</article>
-	
-	
-	<!-- XMLDOM-->
-    <article class="fill">
- 		<h3 class="c">DOM Parsing - Exempel</h3>
-   		<pre>
-&lt;?php
-$dom = new DOMDocument();
-
-$b = $dom->loadHTML($data);
-$x = new DOMXPath($dom); 
-// Plocka ut alla länkarna via ett XPath-uttryck
-$items = $x->query('//div[@class="links"]/ul/li/a/@href');
-
-foreach($items as $item) {
-	echo $item->nodeValue;
-}
-		</pre>
-		<p>
-			Det kommer finnas mer handfasta demonstrationsfilmer på kurshemsidan
-		</p>
-   	</article>
-	
-	
-	<!-- Web API:r och mashups -->
-    <article>
- 		<h1 class="c">Men ska det vara så krångligt?</h1>
-		<p class="c">
-		<img src="http://farm3.staticflickr.com/2150/2012117209_fe1fb68672_b.jpg" height="500px" />
-		</p>
-		<p class="cc">Foto cc by Braden Kowitz: 
-		<a href="http://www.flickr.com/photos/kowitz/">http://www.flickr.com/photos/kowitz/</a> </p>
-   	</article>
-	
-	<!-- Web API:r och mashups -->
-    <article class="fill">
-			<img src="images/webbapi.png" />
-			<p class="cc">From: 
-			<a href="api.github.com"> api.github.com</a> </p>
-   	</article>
-	
-	
-	
-	<!-- Bild på semantiska webben -->
-    <article class="fill">
-		<h3 class="c">
-			Länkad data
-		</h3>
-		<img src="http://farm4.staticflickr.com/3132/3199355352_209749c350_o.png" height=100% />
+			<img src="images/name.jpg" width="300px" height="200px" class="bottom_right_bigger"  />
+			
+			<p>
+				<strong>Tabellnamn:</strong> orders<br /><br />
+				<strong>Klassnamn:</strong> Order<br /><br />
+				<strong>Filnamn:</strong> /app/models/order.rb <br /><br />
+				<strong>Primärnyckel:</strong> id<br /><br />
+				<strong>Främmande nyckel:</strong> customer_id <br /><br />
+				<strong>Kopplingstabell:</strong> items_orders<br /><br />
+			</p>
+			<br />
+			Naming Conventions i Ruby on Rails:<br />
+			<a href="http://itsignals.cascadia.com.au/?p=7">http://itsignals.cascadia.com.au/?p=7</a>
+		</article>
 		
-	</article>
+		<!--migrate -->
+		<article>
+		    <h3>
+				Migrate?
+			</h3>
+			<br />
+			<p>
+				Scriptfil som skapar/ändrar databasen<br />
+				
+				Datamodellen kan ändras under resans gång<br />
+				
+				Migreringsfiler döps med timestamp, varje förändring bör ha en egen fil<br />
+				
+				Kan rulla tillbaka i flera versioner<br /><br />
+				
+				<img src="images/migrate_terminal.png" />
+				
+			</p>
+		</article>
+		
+		
+		<!-- Skapa en modell -->
+		<article>
+		    <h3>
+				Demonstration
+			</h3>
+			<ul>
+				<li>Skapa en ny railsapplikation</li>
+				<li>Skapa en model</li>
+				<li>Generera en databas</li>
+				<li>Använd "rails console" för att ställa frågor</li>
+				<li>Ändra i databasstrukturen - Migrering</li>
+			</ul>
+		</article>
 	
-	<!-- Bild på semantiska webben -->
-    <article class="fill">
-		<h1 class="c">
-					Semantiska webben
-				</h1>
+	
+		<!-- Vad skapas
+		<article>
+		    <h3>
+				Vad hände??
+			</h3>
+			<br /><br />
+			<img src="images/what_created.png" style="float: left"/>
+			<p>
+			<img src="images/user_model.png" style="float: right; margin-bottom: 50px;"/>
+			</p>
+			<p>
+			<img src="images/migration_file.png" style="float: right"/>
+			</p>
+		</article>
+		 -->
+	
+
+		<!-- migrate skapa 	
+	
+		<article>
+		    <h3>
+				Modifierad migrationsfil
+			</h3>
+			<br />
+			<p>
+				<img src="images/migration_file_user.png" />
+			</p> 
+		</article>-->	
+		
+		<!-- migrate change something -->	
+		<article>
+		    <h3>
+				Migration Methods
+			</h3>
+			<pre>
+create_table
+drop_table(table)
+rename_table(table, new_name)
+				
+add_column(table, column, type, options)
+remove_column(table, coulmn)
+rename_column(table, column, new_name)
+change_column(table, column, type, options)
+				
+add_index(table, column, options)
+remove_index(table, column)
+				
+execute("SQL-string")
+	
+# Skapa en migreringsfil med ett bra namn i terminalfönstret				
+# rails generate migration add_column_username_to_users
+				
+# kod i migreringsfilen som skapas ovan 
+add_column("users", "username", :string, :limit => 15)</pre>
+		</article>
+
+		<!-- Rails console
+		<article>
+
+				<h3>Koda mot din modell</h3>
 				<p>
-					2001
+					Rails console - Program där man kan testa av sin modell
+					<br /><br />
+					Skapa och manipulera databasen
+					<br /><br />
+					Lär dig hur man i Ruby kodar mot ActiveRecord (kod som sedan används i controllern)
 				</p>
+				<br /><br />
 				<p>
-					Om applikationer förstår meningen bakom informationen, 
-					kan de lära sig vad vi är intresserade av 
-					och hjälpa oss att enklare hitta det vi vill
+					<img src="images/rails_console.png" class="centered" />
 				</p>
+
+		</article> -->
+
+		<!-- Rails console example 
+		<article class="fill">
+			<img src="images/rails_console_ex.png" width="600px" />
+		</article>-->
+	
+		<!-- Active Record Query Create
+		<article>
+			<h3>CRUD - Create</h3>
+			<pre>
+# new/save 
+				
+u = User.new
+u.first_name = "James"
+u.last_name = "Bond"
+u.save
+				
+u = User.new(:first_name => "James", :last_name => "Bond")
+# do something
+u.save
+
+# create
+u = User.create(:first_name => "James", :last_name => "Bond")
+			</pre>
+		</article>-->
+		
+		<!-- Active Record Query Update
+		<article>
+			<h3>CRUD - Update</h3>
+			<pre>
+# find/update/save
+				
+u = User.find(1)
+u.first_name = "Maggie"
+u.last_name = "Simpson"
+u.save # OK or Error
+				
+
+User.find(1).update_attribute(:first_name , "Maggie") # True / False
+User.find(1).update_attributes(:first_name => "Maggie", :last_name => "Simpson") 
+			</pre>
+		</article>-->
+		
+		<!-- Active Record Query Delete
+		<article>
+				<h3>CRUD - Delete</h3>
 				<pre>
-&lt;item rdf:about="http://example.org/semantic-web/">Semantic Web&lt;/item></pre>
-				<p>
-					Mindre tid att leta efter saker, mindre tid att filtrera bort saker, mindre tid att förklara för datorn vad vi vill
-				</p>
-				<p>
-					Tim Bernes-Lee kallar <strong>Länkad data</strong> semantiska webben gjort på rätt sätt
-				</p>
-		
-	</article>
-	
-	
-	
-	<!-- XML vs. HTML -->
-    <article>
-		<h1 class="c">
-			XML vs. HTML
-		</h1>
-		<pre>
-&lt;p>12346&lt;/p></pre>
 
-		<h3>Webbläsaren vet att den ska rendera ut 58 som ett stycke (paragraph)</h3>
-		<br /><br />
-		<h3>Vad betyder 12346?</h3>
-	</article>
-	
-	<!-- XML vs. HTML -->
-    <article>
-		<h1 class="c">
-			XML - eXtensible Markup Language
-		</h1>
-		<p class="c">
-		<img src="images/XML.png" width="500px"/>
-		</p>
-<h3>XML är gjort för att märka upp data och för att vara ett dataformat för webben</h3>
+u = User.find(1).destroy
+# tas bort i db men finns kvar i minnet för efterarbete
 
-	</article>
-	
-	<!-- Tim Berners-Lee -->
-    <article class="fill">
-		<iframe src="http://www.w3.org/2001/sw/wiki/Main_Page"></iframe>
-	</article>
+u.frozen? # true
+
+# delete är snabbare men missar lite av ramverkets finnesser som görs
+User.find(1).delete
+
+</pre>
+		</article>
+		-->
+		<!-- Active Record Query Delete
+		<article>
+				<h3>CRUD - Finding/Read</h3>
+				<pre>
+
+u = User.find(1) # Ger ActiveRecord object or Error
+
+u = User.find_by_first_name('James') # Object or nil
+u = User.find_by_id(1) # Dynamic finders, kolumner i databasen, attribut i klasserna
+
+array_of_users = User.all
+
+first_user = User.first
+last_user = User.last
+
+# ovanstående förfrågninger kör SQL-anropen direkt
+</pre>
+		</article>-->
 		
-	<!-- Från dokument till databas -->
-    <article class="fill">
- 		<h3 class="c">Antag jag samlar kapsyler...</h3>
-   		
-		<p class="cc">Idé snodd från: http://www.slideshare.net/freekbijl/web-30-explained-with-a-stamp, Foto cc by Joe Holst: 
-		<a href="http://www.flickr.com/photos/jyoseph/"> hhttp://www.flickr.com/photos/jyoseph/</a> </p>
-   		<img src="http://farm3.staticflickr.com/2018/2316883985_bb07a06911_o.jpg" height="100%"/>
-   	</article>	
+			<!--
+		<article>
+					<h3>CRUD - Querys</h3>
+					<pre>
+# Old way (tas bort i rails version 3.2?)
+u = User.find(:all, :condtions => ["first_name = ?", "James"])
+
+# New way return ActiveRelation objects gives better method chaining
+# Returns Object or empty array
+
+# With expression type String (SQL injection!!!)
+u = User.where("first_name = 'Maggie'")
+
+# With expression type Array (SQL injection safe)
+u = User.where(["first_name = ?", "Maggie"])
+
+
+# With expression type Hash (SQL injection safe) (kedja av anrop)
+u = User.where(:name => "Maggie").order("last_name ASC").select("first_name")
+
+# Returnerar ActiveRealation Object
+u.class # ActiveRealation
+u.to_sql # Study the SQL
+u.all # Gör om till array med ActiveRecord och jobba som vanligt, frågan körs
+</pre>
+			</article>
+	-->
 	
-	<!-- Från dokument till databas -->
-    <article class="fill">
- 		<h3 class="c">Efter ett tag...</h3>
-   		
-		<p class="cc">Foto cc by: 
-		<a href="http://www.flickr.com/photos/rothar/"> http://www.flickr.com/photos/rothar/</a> </p>
-   		<img src="http://farm8.staticflickr.com/7292/10232998263_8a0b27ea7f_b.jpg" height="100%"/>
-   	</article>	
-	
-	
-	<!-- Web 1, 2, 3 as web of data -->
-    <article>
-    	<h3 class="c">Dokument</h3>
-   		<p class="c">
-			<img src="images/document_cap.png" width="800px"/>
-		</p>
-   	<p class="cc">CC BY 3.0, John Häggerud </p>
-   	
-   	</article>	
-	
-	
-	<!-- Web 1, 2, 3 as web of data -->
-    <article class="fill">
-    	
-		<img src="images/cap_website.png" width="200px"/>
-		<p class="cc">Screendump from: 
-			<a href="http://www.bottlecaps.de/index/">http://www.bottlecaps.de/</a> </p>
-	</article>	
-	
-	
-	
-	<!-- Hur hittar man informationen om en kapsyl -->
-    <article class="fill">
-    	<h1 class="c">Hur hittar jag en speciell kapsyl?</h1>
-	</article>
-	
+		<!-- Associations -->
+		<article>
+			<h3>Definiera relationer mellan objekten</h3>
+			<p>
+				Konceptuell modell. <br /><br />
+				"Ett projekt har flera användare"
+				<pre>
+Project.find(1).users # Ge mig första projektets alla användare</pre>
+				En relation defineras i båda modellklasserna<br />
+				<img src="images/conceptual_db.png"  width="50%" height="50%"/>
+			</p>
+		</article>
 		
-	<!-- Google FTW! -->
-    <article>
-		<h1 class="c">Sökmotorer FTW!</h1>
-    	<img src="images/google.png" width="100%"/>
-		<p class="c">
-			En mängd med länkade dokument har indexerats
-			på nykelord.
-		</p>
-   	</article>	
-	
-	<!-- Mer avancerad fråga? -->
-    <article>
-		<h1 class="c">Hur hittar jag en <strong>röd</strong> kapsyl gjord av ett <strong>småländskt</strong> bryggeri under 		<strong>andra världskriget?</strong></h1>
-    	
-   	</article>	
-	
-	<!-- Ointelligenta svar -->
-    <article>
-		<img src="images/google.png" width="100%"/>
-		<ul>
-			<li>Röd stuga från småland från andra världskriget</li>
-			<li>Röda korset</li>
-			<li>Smålands röda bröders ölfest</li>
-			<li>Andra röda kapsyler</li>
-		</ul>
-		<p>Som människa kan man ju filtrera och söka vidare på ett intelligent sätt</p>
-   	</article>	
-	
-	<!-- Vi måste beskriva data -->
-    <article>
-		<h2 class="c">
-			<strong>Beskriv</strong> data på ett <strong>strukturerat</strong> sätt så
-			att applikationer kan förstå och automatisera sökningen på ett mer omfattande och intelligentare sätt.
-		</h2>
-		<p class="c"><img src="images/larson-oct-1987.gif" height="400px"/></p>
+		<!-- one-to-one -->
+		<article>
+			<h3>One-to-one (1:1)</h3>
+			<p>
+				"Classroom has_one Smartboard"<br /><br />
+				"SmartBoard belongs_to Classroom"<br /><br />
+				Främmande nyckel hamnar i Smartboard - tabellen, Classroom äger relationen (kan vändas - designfråga)<br /><br />
+				<img src="images/one_to_one.png" class="centered"/>
+			</p>
+		</article>
 		
-   	</article>
+		<article>
+				<h3>One-to-one (1:1)</h3>
+				<pre>
+# Modellklassen för  Classroom (eg. app/modells/classroom.rb)
+					
+class Classroom < ActiveRecord::Base
+ has_one :smartboard # singular (det läses ju så!)					
+end</pre>
+
+<pre>
+# Modellklassen för  Smartboard
 	
-	<!-- Struktur via databaser -->
-    <article class="fill">
-		<h1 class="c">
-			Struktur via sammankopplade databaser
-		</h1>
-		<ul>
-			<li>En databas med kapsyler</li>
-			<li>En databas med bryggerier</li>
-			<li>Wikipedias databas</li>
-			<li>Geonames databas</li>
-		</ul>
-		<h1 class="c">Länkad data (linked data)</h1>
-   		
-   	</article>
-	
-	<!-- S0emantiska webben -->
-    <article class="fill">
-		<iframe src="http://embed.ted.com/talks/tim_berners_lee_on_the_next_web.html" width="560" height="315" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+class Smartboard < ActiveRecord::Base
+ belongs_to :classroom
+end</pre>
+
+<pre>
+# Vi har nu en metod "smartboard" i vårt Classroom-objekt (starta om rails console)
+Classroom.find(1).smartboard = Smartboard.new
+</pre>
+
+			</article>
 		
-	</article>
-	
-	<!-- Semantiska webben -->
-    <article class="fill">
-		<img src="images/google_wiki.png" width="100%"/>
-		<p class="cc"><a href="http://www.google.com/insidesearch/features/search/knowledge.html">Google knowledge graph</a></p>
-	</article>
-	
-	<!-- Utmaningen -->
-    <article class="fill">
-		<h1 class="c">
-			Utmaningen!
-		</h1>
-		<ul>
-			<li>Länka samman olika typer av data och skapa relationer mellan 
-			dessa så att applikationer kan göra intelligentare operationer.<li />
+		<!-- one-to-many -->
+		<article>
+			<h3>One-to-many (1:n)</h3>
+			<p>
+				"Teacher has_many Courses"<br />
+				"Course belongs_to Teacher"<br /><br />
+
+				Främmande nyckel hamnar i Courses<br /><br />
+				
+				Mycket vanliga!<br />
+				<img src="images/one-to-many.png" class="centered"/>
+			</p>
+		</article>
+		
+		
+		<article>
+			<h3>One-to-many (1:n)</h3>
+			<pre>
+# Modellklassen för  Teacher
+
+class Teacher < ActiveRecord::Base
+ has_many :courses # plural 					
+end</pre>
+
+<pre>
+# Modellklassen för  Course
+
+class Course < ActiveRecord::Base
+ belongs_to :teacher
+end</pre>
+
+
+
+		</article>
+		
+		<article>
+			<h3>One-to-many coding</h3>
+<pre>
+# Vi kan plocka ut en array med courses som en teacher har
+t = Teacher.find_by_id(1)
+
+# Assocciationen ger oss metoden courses (plural, array med course-objekt)
+t.courses
+
+# Teacher får en ny course (append operator)
+t.courses << Course.new
+
+# Ta bort en Course (objectet course)
+t.courses.delete(course)
+
+t.courses.size
+t.courses.empty?
+</pre>
+		
+		</article>
+		
+		<!-- many-to-many -->
+		<article>
+				<h3>Many-to-many (m:n)</h3>
+				<p>
+					"Students has_and_belongs_to_many courses"<br /><br />
+					"Course has_and_belongs_to_many students"<br /><br />
+					Vi behöver två främmande nycklar d.v.s. en extra kopplingstabell<br /><br />
+					courses_students, alfabetisk ordning på namnet<br /><br />
+					Skapa en migration som skapar kopplingstabellen (med de två nycklarna)<br /><br />
+					<img src="images/many_to_many.png" class="centered"/>
+				</p>
+		</article>
+		
+		<!-- many-to-many -->
+		<article>
+			<h3>Rails console - Many-to-many</h3>
+			<pre>
+# Modellklassen för  Student
+				
+class Student < ActiveRecord::Base
+ has_and_belongs_to_many :courses 					
+end</pre>
+
+<pre>
+# Modellklassen för  Course
+
+class Course < ActiveRecord::Base
+ has_and_belongs_to_many :courses 
+end</pre>
+		</article>
+
+		<article>
+		<h3>Many-to-many coding</h3>
+	<pre>
+
+# Samma som tidigare exempel men dubbelriktat
+
+s = Student.new
+c = Course.new
+
+c.students << s
+
+s.courses # returnerar en array med de kurser studenter har (objectet c)
+	</pre>
+	<a href="http://guides.rubyonrails.org/association_basics.html">http://guides.rubyonrails.org/association_basics.html</a>
+
+		</article>
+		
+			<article>
+					<h3>Many-to-many (m:n) - Complex</h3>
+					<p>
+						<img src="images/complex_many.png" class="centered"/>
+					</p>
+					<p>
+						Generera upp en egen model som blir den rikare kopplingstabellen med mer information
+					</p>
+			</article>
 			
-			<li>Komma överens om struktur och hur data ska beskrivas.</li> 
-			<li>Vart datan lagras är ointressant.</li>
-		</ul>
-	</article>
-	
-	
-	
-	
-	
-	
-	<!-- Semantiska webben - Standards -->
-    <article class="fill">
-		<h1 class="c">
-			W3C standard
-		</h1>
-		<h2 class="c">
-			XML, XML Schema, RDF, OWL, SPARQL, RDFa, SKOS, RDFS, 
-			GRDDL, POWDER, PROV, RIF, SAWSDL, RDB2RDF
-		</h2>
-	</article>
-	
-	
+				<article>
+						<h3>Many-to-many :through</h3>
+						<p>
+<pre>
+Course.find(1).students # Error - Kopplingstabellen hamnar i vägen
+
+# Bökig lösning
+array_with_students_on_course = course.course_enrollments.collect { |ce| ce.students }
+</pre>							
+							
+<pre>
+class Course < ActiveRecord::Base
+ has_many :course_enrollments
+ has_many :students, through => course_enrollments	
+end	
+
+class Student < ActiveRecord::Base
+ has_many :course_enrollments
+ has_many :courses, through => course_enrollments	
+end
+</pre>	
+
+<pre>
+# Here we go
+Course.find(1).students
+</pre>
+
+				</article>
 	
 		
-	<!-- RDF - semantiska webben -->
-    <article>
-		<h3 class="c">
-			RDF - Resource Description Framework
-		</h3>
-		<p class="c">
-			<img src="images/RDF_example.png" width="800px" />
-			
-		</p>
-		
-	</article>
-		
-	<!-- SPARQL -->
-    <article>
-		<h1 class="c">
-			SPARQL
-		</h1>
-		<p></p>
-		<p>
-			Om standarderna kring semantiska webben 
-			skapar relationer. <br />
-			Genom frågespråket SPARQL kan vi bygga mer avancerade frågor
-		</p>
-		
-		<p class="c">
-			<img src="images/SPARQL.png" />
-		</p>
-		
-	</article>
-	<!-- Exempel på semantiska webben jämf med google sökning -->
-	<!-- Tim Berners-Lee -->
-    <article class="fill">
-		<iframe src="http://factforge.net/sparql"></iframe>
-	</article>
-		
 	
-	<!-- Microformat -->
-    <article class="fill">
-		<iframe src="http://microformats.org/"></iframe>
-	</article>
-	
-	
-    </section>
-  </body>
-</html>
+  
+
+		<article>
+			<h3>db/seed.rb and db/schema.db</h3>
+			<p>
+				seed.db är en scriptfil som ger dig möjliget att fylla databasen från början (när du kör db:migrate)
+			</p>
+			<p>
+				schema.db är en script-fil som representerar hela databasen
+			</p>
+		</article>
+		
+		
+	  </section>
+	  </body>
+	</html>
