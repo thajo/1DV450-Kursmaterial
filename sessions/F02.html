@@ -35,14 +35,14 @@
 	       	<h3>
 	         Webbramverk, 1DV450
 	          <br />
-	          <span class="small">Linnéuniversitetet, Vt 2014</span>
+	          <span class="small">Linnéuniversitetet, vt 2014</span>
 	        </h3>
        
 		
 			<br /><br />
-			<h1 class="big c">Active Record</h1>
-			<p class="very_small" style="margin-top: 60px;">
-				
+			<h1 class="big c">Ruby on Rails</h1>
+			<p class="" style="margin-top: 60px;">
+				Active Record, Active Relation, Datalagring, Migration
 			</p>
 			<p class="small_footer">
 				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.sv">
@@ -52,11 +52,7 @@
 			</p>
       	</article>
   
-  	  	<article class="fill">
-			
-  
-		
-      	<!-- Intro to modell -->
+  	  	<!-- Intro to modell -->
 		<article class="fill">
 				<h3>
 					Active Record
@@ -100,8 +96,10 @@
 			
 				<ul>
 					<li>Default SQLite3 (rekommenderas endast vid utveckling)</li>
+					<li>mySQL, postgreSQL (http://heroku.com/)</li> 
 					<li>Intelligensen hos modellen inte i databasen</li>
-					<li>Varje applikation har tre olika: Development, Test, Production</li>
+					<li>Varje applikation har tre olika databaser: Development, Test, Production</li>
+					<li>Active Record - Med relationsdatabaser i tanken</li>
 				</ul>
 				
 		</article>
@@ -111,11 +109,11 @@
 		<article class="grey">
 			
 			<h3>
-				Vad är ActiveRecord?
+				Vad är Active Record?
 			</h3>
 			<br /><br />
 			<p>
-				Active record ett design-pattern som kan implementeras av olika språk/ramverk<br /><br />
+				Active record ett design-pattern som kan implementeras av olika språk/ramverk (Martin Fowler, 2003)<br /><br />
 				Object-relational mapping (ORM) <br /><br />
 				Mappar modell-objekt direkt till databasen (datalagringen)<br /><br />
 				ActiveRecord objects are intelligent<br /><br />
@@ -169,9 +167,10 @@
 user = User.first
 # SELECT * FROM users ORDER BY users.id ASC LIMIT 1	
 
+# Första användarens alla kommentarer (Association mellan flera tabeller)
 comments = User.first.comments 
 
-
+// Vilkorsfråga med parameter
 orders = Order.where("total_sum > ?", params[:total_sum])			
 				
 			</pre>
@@ -216,7 +215,32 @@ orders = Order.where("total_sum > ?", params[:total_sum])
 				
 			</p>
 		</article>
-		
+		<!-- migrate change something -->	
+		<article>
+		    <h3>
+				Migration Methods (boken kapitel 22)
+			</h3>
+			<pre>
+create_table
+drop_table(table)
+rename_table(table, new_name)
+				
+add_column(table, column, type, options)
+remove_column(table, coulmn)
+rename_column(table, column, new_name)
+change_column(table, column, type, options)
+				
+add_index(table, column, options)
+remove_index(table, column)
+				
+execute("SQL-string")
+	
+# Skapa en migreringsfil med ett bra namn i terminalfönstret				
+# rails generate migration add_column_username_to_users
+				
+# kod i migreringsfilen som skapas ovan 
+add_column("users", "username", :string, :limit => 15)</pre>
+		</article>
 		
 		<!-- Skapa en modell -->
 		<article>
@@ -229,6 +253,7 @@ orders = Order.where("total_sum > ?", params[:total_sum])
 				<li>Generera en databas</li>
 				<li>Använd "rails console" för att ställa frågor</li>
 				<li>Ändra i databasstrukturen - Migrering</li>
+				<li>Koppla till controller, view</li>
 			</ul>
 		</article>
 	
@@ -262,32 +287,7 @@ orders = Order.where("total_sum > ?", params[:total_sum])
 			</p> 
 		</article>-->	
 		
-		<!-- migrate change something -->	
-		<article>
-		    <h3>
-				Migration Methods
-			</h3>
-			<pre>
-create_table
-drop_table(table)
-rename_table(table, new_name)
-				
-add_column(table, column, type, options)
-remove_column(table, coulmn)
-rename_column(table, column, new_name)
-change_column(table, column, type, options)
-				
-add_index(table, column, options)
-remove_index(table, column)
-				
-execute("SQL-string")
-	
-# Skapa en migreringsfil med ett bra namn i terminalfönstret				
-# rails generate migration add_column_username_to_users
-				
-# kod i migreringsfilen som skapas ovan 
-add_column("users", "username", :string, :limit => 15)</pre>
-		</article>
+		
 
 		<!-- Rails console
 		<article>
@@ -416,7 +416,7 @@ u.all # Gör om till array med ActiveRecord och jobba som vanligt, frågan körs
 		<article>
 			<h3>Definiera relationer mellan objekten</h3>
 			<p>
-				Konceptuell modell. <br /><br />
+				Active Record är gjort för relationsdatabaser<br /><br />
 				"Ett projekt har flera användare"
 				<pre>
 Project.find(1).users # Ge mig första projektets alla användare</pre>
@@ -441,7 +441,7 @@ Project.find(1).users # Ge mig första projektets alla användare</pre>
 				<pre>
 # Modellklassen för  Classroom (eg. app/modells/classroom.rb)
 					
-class Classroom < ActiveRecord::Base
+class Classroom &lt; ActiveRecord::Base
  has_one :smartboard # singular (det läses ju så!)					
 end</pre>
 
@@ -468,7 +468,6 @@ Classroom.find(1).smartboard = Smartboard.new
 
 				Främmande nyckel hamnar i Courses<br /><br />
 				
-				Mycket vanliga!<br />
 				<img src="images/one-to-many.png" class="centered"/>
 			</p>
 		</article>
@@ -487,7 +486,7 @@ end</pre>
 # Modellklassen för  Course
 
 class Course < ActiveRecord::Base
- belongs_to :teacher
+ belongs_to :teacher #singular
 end</pre>
 
 
@@ -601,21 +600,6 @@ Course.find(1).students
 </pre>
 
 				</article>
-	
-		
-	
-  
-
-		<article>
-			<h3>db/seed.rb and db/schema.db</h3>
-			<p>
-				seed.db är en scriptfil som ger dig möjliget att fylla databasen från början (när du kör db:migrate)
-			</p>
-			<p>
-				schema.db är en script-fil som representerar hela databasen
-			</p>
-		</article>
-		
 		
 	  </section>
 	  </body>
