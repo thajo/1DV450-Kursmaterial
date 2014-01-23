@@ -42,8 +42,8 @@
 			<br /><br />
 			<h1 class="big c">Ruby on Rails</h1>
 			<p class="c" style="margin-top: 60px;">
-				Active Record, Active Relation, Datalagring, Migration<br />
-				<span class="c">The 'm' in MVC</span>
+				Datalagring, Active Record, Active Relation, Migration<br />
+				<span class="c">The 'M' in MVC</span>
 			</p>
 			<p class="small_footer">
 				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.sv">
@@ -53,7 +53,7 @@
 			</p>
       	</article>
   
-  	  	<!-- Intro to modell -->
+  	  	<!-- Intro to modell 
 		<article class="fill">
 				<h3>
 					Model
@@ -87,6 +87,7 @@
 			</article>
 				
 		</article>
+		-->	
 	
 		<!-- DB stöd -->
 		<article class="fill">
@@ -98,8 +99,8 @@
 				<ul>
 					<li>Default SQLite3 (rekommenderas endast vid utveckling)</li>
 					<li>mySQL, postgreSQL (http://heroku.com/)</li> 
-					<li>Intelligensen hos modellen inte i databasen</li>
-					<li>Varje applikation har tre olika databaser: Development, Test, Production</li>
+					<li>Intelligensen hos modellen inte i datalagringen</li>
+					<li>Varje applikation har tre olika datalagringar: Development, Test, Production</li>
 					<li>Active Record - Med relationsdatabaser i tanken</li>
 				</ul>
 				
@@ -120,8 +121,8 @@
 				Active record ett design-pattern som kan implementeras av olika språk/ramverk (Martin Fowler, 2003)<br /><br />
 				Object-relational mapping (ORM) <br /><br />
 				Mappar modell-objekt direkt till databasen (datalagringen)<br /><br />
-				ActiveRecord objects are intelligent<br /><br />
-				CRUD - Active Record Query<br /><br />
+				Associations - Kopplingar mellan modeller<br /><br />
+				Active Record Query - CRUD<br /><br />
 				<a href="http://guides.rubyonrails.org/active_record_basics.html">
 					http://guides.rubyonrails.org/active_record_basics.html
 				</a>
@@ -141,9 +142,9 @@
 			<img src="images/name.jpg" width="300px" height="200px" class="bottom_right_bigger"  />
 			
 			<p>
-				<strong>Tabellnamn:</strong> orders<br /><br />
 				<strong>Klassnamn:</strong> Order<br /><br />
 				<strong>Filnamn:</strong> /app/models/order.rb <br /><br />
+				<strong>Tabellnamn:</strong> orders<br /><br />
 				<strong>Primärnyckel:</strong> id<br /><br />
 				<strong>Främmande nyckel:</strong> customer_id <br /><br />
 				<strong>Kopplingstabell:</strong> items_orders<br /><br />
@@ -158,14 +159,15 @@
 			
 			<img src="http://farm6.staticflickr.com/5166/5359581911_d07f15db17_b.jpg" />
 			<h3>
-				Vad är ActiveRelation?
+				Vad är Active Relation?
 			</h3>
 			<br /><br />
 			<p>
 				"ARel"<br /><br />
-				"Object-orienterad relations algebra" <br /><br />
+				"Object-orienterad relationsalgebra" <br /><br />
 				Förenklar mer komplexa frågor, "chainable", "complex joins"<br /><br />
-				Används mycket av ActiveRecord<br /><br />
+				Lazy Loading - Databasfrågan körs första när data verkligen behövs<br /><br />
+				Sedan Rails > 3.0<br /><br />
 				<a href="https://github.com/rails/arel">https://github.com/rails/arel</a>
 				
 			</p>
@@ -189,9 +191,10 @@ user = User.first
 # Första användarens alla kommentarer (Association mellan flera tabeller)
 comments = User.first.comments 
 
-// Vilkorsfråga med parameter
+# Vilkorsfråga med parameter
 orders = Order.where("total_sum > ?", params[:total_sum])			
-				
+
+# orders returneras som ett ActiveRelation-objekt - Lazy loading				
 			</pre>
 		</article>
 			
@@ -253,7 +256,7 @@ change_column(table, column, type, options)
 				
 add_index(table, column, options)
 remove_index(table, column)
-				
+create_join_table(table1, table2)			
 execute("SQL-string")
 	
 # Skapa en migreringsfil med ett bra namn i terminalfönstret				
