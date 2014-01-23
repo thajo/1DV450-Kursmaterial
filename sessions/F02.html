@@ -42,7 +42,7 @@
 			<br /><br />
 			<h1 class="big c">Ruby on Rails</h1>
 			<p class="c" style="margin-top: 60px;">
-				Datalagring, Active Record, Active Relation, Migration<br />
+				Datalagring, ActiveRecord, ActiveRelation, Migration<br />
 				<span class="c">The 'M' in MVC</span>
 			</p>
 			<p class="small_footer">
@@ -114,7 +114,7 @@
 				<a href="http://www.flickr.com/photos/fourthfloor/">http://www.flickr.com/photos/fourthfloor/</a> 
 			</p>
 			<h3>
-				Vad är Active Record?
+				Vad är ActiveRecord?
 			</h3>
 			<br /><br />
 			<p>
@@ -122,7 +122,7 @@
 				Object-relational mapping (ORM) <br /><br />
 				Mappar modell-objekt direkt till databasen (datalagringen)<br /><br />
 				Associations - Kopplingar mellan modeller<br /><br />
-				Active Record Query - CRUD<br /><br />
+				ActiveRecord Query - CRUD<br /><br />
 				<a href="http://guides.rubyonrails.org/active_record_basics.html">
 					http://guides.rubyonrails.org/active_record_basics.html
 				</a>
@@ -159,14 +159,14 @@
 			
 			<img src="http://farm6.staticflickr.com/5166/5359581911_d07f15db17_b.jpg" />
 			<h3>
-				Vad är Active Relation?
+				Vad är ActiveRelation?
 			</h3>
 			<br /><br />
 			<p>
 				"ARel"<br /><br />
 				"Object-orienterad relationsalgebra" <br /><br />
 				Förenklar mer komplexa frågor, "chainable", "complex joins"<br /><br />
-				Lazy Loading - Databasfrågan körs första när data verkligen behövs<br /><br />
+				Lazy Loading - Databasfrågan körs först när data verkligen behövs<br /><br />
 				Sedan Rails > 3.0<br /><br />
 				<a href="https://github.com/rails/arel">https://github.com/rails/arel</a>
 				
@@ -216,6 +216,17 @@ orders = Order.where("total_sum > ?", params[:total_sum])
 				<img src="images/migrate_terminal.png" />
 				
 			</p>
+		</article>
+		
+		<!-- migrate example -->
+		<article>
+		    <h3>
+				Modifierad migrationsfil
+			</h3>
+			<br />
+			<p>
+				<img src="images/migration_file_user.png" />
+			</p> 
 		</article>
 		
 		<!-- Skapa en modell -->
