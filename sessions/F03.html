@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+
+  <head>
+    <title>Föreläsning 3</title>
+
+    <meta charset='utf-8' />
+    <script src='slides.js'></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+  </head>
+  
+
+
+  <body style='display: none'>
+
+    <section class='slides layout-widescreen template-default'>
+      
+		
+		<!-- First page -->
+    	<article>
+       	<h1>
+          Webbramverk, 1DV450
+          <br />
+          Linnéuniversitetet<br />
+		  Action Pack
+        </h1>
+		<p class="small_footer">
+			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.sv">
+					<img alt="Creative Commons-licens" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>&nbsp;&nbsp;Denna presentation är licensierat under en 
+				
+						<a rel="license" href="hhttp://creativecommons.org/licenses/by/3.0/deed.sv">Creative Commons Erkännande 3.0 Unported Licens</a>. (Där inte annat anges)<br/>
+		</p>
+		
+      	</article>
+  
+		<!-- Vad är Action Pack? -->
+		<article class="fill">
+				<h3>
+					Action Pack
+				</h3>
+				<dl>
+					<dt>Action Dispatcher</dt>
+					<dd>
+						Hur ska förfrågningar (requests) styras (route) till rätt controller
+					</dd>
+					<dt>Action Controller</dt>
+					<dd>
+						Ansvar hur förfrågan ska behandlas (redirect, hämta data, rendera vy)
+					</dd>
+					<dt>Action View</dt>
+					<dd>
+						Ansvar för att rendera ut vyer (olika dataformat, layouts, templates, partial templates)
+					</dd>
+				</dl>
+		</article>
+		
+		<!-- Rails arkitektur med public folder -->
+		<article class="fill">
+			<image src="images/web_f_new.png" height="100%" width="80%" />	
+		</article>
+		
+		<!-- Om webbservern -->
+		<article>
+			
+			<h3>Webbservern och Ruby on Rails</h3>
+			<br />
+			<p>
+				Apache 2 med Passenger / mod_rails<br /> 
+				<a href="http://www.modrails.com/">http://www.modrails.com/</a>
+			</p>
+			
+			<br />
+			<img src="images/passenger_modrails.gif" class="centered" />
+			<br />
+			<p>
+				WEBrick - Följer med som default <span class="small_italic">(rails server)</span>
+			</p>
+			<br />
+			
+			<br />
+			<p>
+				Stödjer mitt webbhotell Ruby on Rails?
+			</p>
+			
+		</article>
+			
+	
+		<!-- routing -->
+		<article>
+			<h3>Action Dispatch - Routing</h3>
+			<p>
+				config/routes.rb - Stället du definierar hur URL:er mappas mot resurser(controllers)<br />
+				<br />
+				<a href="http://guides.rubyonrails.org/routing.html">http://guides.rubyonrails.org/routing.html</a>	
+			</p><br />
+			<img src="images/routes.png" />
+			
+			
+		</article>
+		
+		<!-- simple route -->
+		<article class="fill">
+			<img src="images/road.jpg" height="600px"/>
+			<h3>
+				Simple route
+			</h3>
+			<pre>
+# läggs till när du skapar en controller - ger direkt tillgång
+# controller#action
+get user#index
+				
+# request /user/index mappas mot controllern user och dess action index 
+match "user#index", :to => "user#index"
+			</pre>
+		</article>
+			
+		<!-- routing REST default -->
+		<article>
+				<h3>Resource Routing: the Rails Default</h3>
+				<pre>
+# sköter routning för users enligt REST
+resources :users
+				</pre>	
+				
+				<p>
+					<table style="font-size: 15pt">
+						<tbody>
+						<tr>
+							<th>HTTP Verb </th>
+							<th>Sökväg</th>
+							<th>Metod i controllern (action) </th>
+							<th>Används för</th>
+						</tr>
+						<tr>
+							<td>GET</td>
+							<td>/users</td>
+							<td>index</td>
+							<td>Listar upp alla användare</td>
+						</tr>
+						<tr>
+							<td>GET</td>
+							<td>/users/new</td>
+							<td>new </td>
+							<td>Returenerar ett HTML-formulär</td>
+						</tr>
+						<tr>
+							<td>POST</td>
+							<td>/users</td>
+							<td>create</td>
+							<td>Försöker skapa i databasen</td>
+						</tr>
+						<tr>
+							<td>GET</td>
+							<td>/users/:id</td>
+							<td>show</td>
+							<td>Visar en användare</td>
+						</tr>
+						<tr>
+							<td>GET</td>
+							<td>/users/:id/edit</td>
+							<td>edit</td>
+							<td>Returnerar ett formulär för ändring</td>
+						</tr>
+						<tr>
+							<td>PUT</td>
+							<td>/users/:id</td>
+							<td>update</td>
+							<td>Updaterar (i db) en användare</td>
+						</tr>
+						<tr>
+							<td>DELETE</td>
+							<td>/users/:id</td>
+							<td>destroy</td>
+							<td>tar bort en användare </td>
+						</tr>
+						</tbody>
+					</table>
+				</p>
+
+		</article>
+		
+		<!-- paths -->
+		<article>
+			<h3>URL Paths</h3>
+			<p>
+				En bra routing ger ocks&#xE5; m&#xF6;jlighet att anv&#xE4;nda s&#xE5; kallade url-helpers
+			</p>
+			<pre>
+# returns /users
+users_path 
+
+#returns /users/new
+new_user_path 
+
+#returns /users/:id/edit - (edit_user_path(10) returns /users/10/edit)
+edit_user_path(:id) 
+
+#returns /users/:id - (user_path(10) returns /users/10)
+user_path(:id) 
+			</pre>
+		</article>
+		
+		<!-- Non resourceful -->
+		<article>
+			<h3>Non-Resourceful Routes </h3>
+			<pre>
+# ex. user/show/1.json				
+match ':controller(/:action(/:id(.:format)))'
+			</pre>
+			<img src="images/crud.png" class="centered" />
+		</article>
+
+		<!-- named and root -->
+		<article>
+			<h3>Named route</h3>
+			<pre>
+# Talar om att /exit ska matchas mot user-controllern och dess exit-action
+# URL helpers heter "logout_path" som returnerar /exit
+match "exit", :to => "user#exit", :as => "logout"</pre>
+			<h3>root route</h3>
+			<pre>
+# rootkatalogen (/) ska matchas mot en controller/action
+root :to => "user#index"</pre>
+			
+			<h3>Nested route</h3>
+			<pre>
+# /projects/:id/users/:id
+# Nästla ej fler gånger
+resources :projects do 
+ resources :users
+end	</pre>
+		</article>
+
+		<!-- Vad har controllern för uppgift-->
+		<article>
+			<h3>Action Controller</h3>
+			<br /><br />
+			<p><strong>Kontrollerns viktigaste uppgifter:</strong><br /><br /><br />
+				Sköta omdirigering (t.ex. vid inloggning)<br /><br />
+				Hämta data från modellen (t.ex. User.find(1) )<br /><br />
+				Rendera en vy (bestämma vilket dataformat)<br /><br />
+			</p>
+		</article>
+
+		<!-- Att skapa en controller -->
+		<article>
+			<h3>Att skapa en controller</h3>
+			<br /><br />
+			<p>
+				<img src="images/generate_ctrl.png" class="centered" />
+			</p>
+			<p>
+				- En kontroller-klass<br />
+				- En helper-klass<br />
+				- En vy-mapp<br />
+				- plus lite annat<br />
+			</p>
+		</article>
+
+
+		<!-- render a template -->
+		<article>
+			<h3>Hur renderar man en vy</h3>
+			<p>
+				Låt säga webbläsaren anropar:<br />
+				<strong>http://localhost:3000/user/index</strong>
+			</p>
+			<p>
+				I filen app/controller/user_controller.rb hittas metoden/action index<br /><br />
+				<img src="images/user_controller.png"/>
+			
+				<img src="images/template.png"  style="float:right;" />
+			</p>
+			<p>
+				En tom action/metod letar alltid efter en template med samma namn
+			</p>
+		</article>
+
+		<!-- render a template part 2 -->
+		<article>
+			<h3>Hur renderar man en vy - Part II</h3>
+		
+			<pre>
+# i app/controller/user_controller.rb
+def index
+ # Kommer leta efter template views/user/other_view.html.erb
+ render('user/other_view') 
+ # Kan i detta fall utesluta 'user' i sökvägen då vi är user_controller
+end
+			</pre>
+			<pre>
+# Laddar in en template från en annan controller
+def index
+ render('home/test')
+end				
+			</pre>
+
+		</article>
+
+	
+		<!-- Redirect -->
+		<article>
+			<h3>Redirect</h3>
+			<p>
+				I user_controller.rb<br /><br />
+				<img src="images/redirect.png" width="60%"/>
+			</p>
+			<br />
+			<p>
+				<strong>OBS!</strong><br />
+				Ett HTTP ska skapas med statuskod "302 Found" och "location" satt till den nya URL:en (user/list)<br /><br />
+				Browsern/klienten frågar sedan om den nya resursen<br /><br />
+				All eventuell data framtagen i controllern förloras <br />
+				- till skillnad från om man kör render() som går direkt till efterfrågad template<br /><br />
+			</p>
+			
+		</article>
+		
+		
+		<!-- View templates -->
+		<article>
+				<h3>Templates</h3>
+				<p>ERb</p>
+				<p>
+					Embedded ruby file - Template language
+				</p>
+				<p>
+					Hittas under app/views/
+				</p>
+				<pre>
+# i en erb-fil
+<% value = 10 %>
+<%= "The value is #{value.to_s}" %>
+				</pre>
+				<pre>
+# i en erb-fil
+<% 3.times do  %>
+ HTML goes here&lt;br />
+<% end %>
+				</pre>
+		</article>
+
+
+		<!-- instance variable -->
+		<article>
+			<h3>Hur får vi data från controller/model till view/template?</h3>
+			<p>
+				Controllern kommer anropa modellen (DB) för att hämta data som vi vill presentera i vyn/template.<br /> 
+				Data sparas i en instansvariabel som template (ERb) kommer åt.
+			</p>
+			<br /><br />
+			<img src="images/list_controller.png"  style="float: left"/> &nbsp;&nbsp;&nbsp;
+			<img src="images/list_template.png" /><br />
+			<img src="images/list.png" class="centered"/><br />
+		</article>
+
+		<!-- link_to -->
+		<article>
+			<h3>Skapa länkar i en template</h3>
+
+			<pre>
+				
+<%= link_to("Användarnas startsida", {:controller => "user", :action => "index"}) %>
+			</pre>
+			<p>
+				Tänk också på att man kan använda de URL path som ramverket skapat åt oss (beroende på route.rb)
+			</p>
+			<br />
+			<pre>
+				
+# new_user_path kommer ersättas med sökvägen till controller = "user" och action = "new"
+<%= link_to("Skapa användare", new_user_path ) %>				
+			</pre>
+		</article>
+
+		<!-- URL Parameters -->
+		<article class="fill">
+			<h3>Hur får vi tag i Querystrings?</h3>
+			<p>
+				/users?page=5&amp;limit=100
+			</p>
+			<pre>
+# GET- och POST-variabler ligger i arrayen params
+
+# i user_controller.rb - Ta hand om dem i controllern och tilldela instansvariabler
+@page = params[:page]
+			</pre>
+			<pre>
+# kan sättas i ERb - OBS :id är reserverat
+<%= link_to("länktext", { :action => "list", :page => 5, :limit => 100, :id => 1}) %>
+# ger länken user/list/1?page=5&amp;limit=100			
+			</pre>
+		</article>
+
+
+		<!-- Controller and CRUD -->
+		<article>
+			<h3>CRUD application</h3>
+			<br />
+			<img src="images/now-what.jpg" width="40%" class="centered"/>
+			<p>
+				Vi vill ju såklart kunna skapa, läsa, ändra och ta bort data!
+			</p>
+			<p>
+				Naturligtvis kan vi använda Active Record Querys för att prata med modellen
+			</p>
+			<p>
+				Uppgiften blir för kontrollern att avgöra vad som ska göras. Hämta data? Bara presentera vy? Göra en redirect?
+			</p>
+			
+			
+		</article>
+
+		
+	
+	  </section>
+	  </body>
+	</html>

@@ -383,16 +383,15 @@ font-family: 'Open Sans', sans-serif;
 }
 
 .slides.template-default > article:not(.nobackground) {
-  background: 	url(images/colorbar.png) 0 200px repeat-x,
-	           	url(images/logo.png) -200px 650px  no-repeat;  
+  background: 	url(images/colorbar.png) 0 200px repeat-x;
+	           
 
   background-size: 230px, 230px;		
   background-color: white;  
 } 
 
 .slides.template-io2011 > article:not(.nobackground):not(.biglogo) {
-  background: url(images/colorbar.png) 0 600px repeat-x,
-              url(images/googleio-logo.png) 640px 625px no-repeat;
+  background: url(images/colorbar.png) 0 600px repeat-x;
 
   background-size: 100%, 225px;  
 
