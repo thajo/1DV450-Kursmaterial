@@ -25,10 +25,16 @@ Extra funktioner som kan implementeras
 * Egna övriga initiativ till funktioner...
 
 ##Registrering för API-nyckel##
-Tillsammans med API:et ska en registreringstjänst utvecklas där utvecklare kan genom att registrera sig med sin e-post få tillgång till en giltig API-nyckel som ska användas i API-anropen för samtliga resurser. Det kan vara en vanlig enkel webbapplikation där användaren registrerar sina kontaktuppgifter och kan därmed få tillgång till en genererad API-nyckel som är giltlig för API-anrop. 
+Tillsammans med API:et ska en registreringsapplikation utvecklas där utvecklare kan genom att registrera sig med sin e-post få tillgång till en giltig API-nyckel som ska användas i API-anropen för samtliga resurser. Detta blir en webbapplikation som är fristående från själva API:et. Det kan vara en vanlig enkel webbapplikation där användaren registrerar sina kontaktuppgifter och kan därmed få tillgång till en genererad API-nyckel som är giltlig för API-anrop. 
 
 Registreringsapplikationen bör bestå av ett enkelt formulär där utvecklaren registrerar sin applikation och det genereras en hashad API-nyckel som visas för användaren. Användaren registrerar sig med en e-postadress. En registrerad e-post kan endast ha en giltig API-nyckel.
 
-Som administratör till API-nyckelapplikationen ska vi kunna ta bort befintliga API-nycklar.
+Som administratör till API-nyckelapplikationen ska vi kunna ta bort befintliga API-nycklar. Vi behöver alltså något sätt för en administratör att logga in och enkelt hantera API-nycklar.
 
-Eventuella frågor kring API:et kan diskuteras under de schemalagda handledningspassen.
+För att sammanfatta de minimala kraven på denna applikation:
+
+* Registreringsformulär för en utvecklare där en giltig API-nyckel skapas vid registrering och sparas undan för att använda när man kontrollerar anrop till API:et
+* Inloggningsformulär för en administratör 
+* En sida där den inloggade administratören kan ta bort(revoke) befintliga API-nycklar
+
+Eventuella frågor kring API:et och registreringsapplikationen kan diskuteras under de schemalagda handledningspassen.
