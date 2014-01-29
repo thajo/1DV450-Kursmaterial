@@ -14,7 +14,7 @@ Följande krav ska implementeras för godkänt på uppgiften:
 * API:et ska grunda sig på teorin kring HATEOAS
 * API:et ska ha en tydlig och genomtänkt felhantering som tydligt visar för användaren eventuella felkoder och meddelande
 * API:et alla anrop ska 
-* API:et ska implementera någon form av säkerhetslösning för "osäkra metoder". Säkra metoder kan vara öppna för de med giltlig API-nyckel
+
 
 Extra funktioner som implementeras (kan anses betyghöjande)
 
