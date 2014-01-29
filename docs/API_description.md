@@ -15,8 +15,8 @@ Följande krav ska implementeras för godkänt på uppgiften:
 * API:et ska ha en tydlig och genomtänkt felhantering som tydligt visar för användaren eventuella felkoder och felmeddelanden
 * API:et ska kunna kunna anropas på så sätt att man kan välja en "offset" och "limit" av resurser
 
-Extra funktioner som implementeras (kan anses betyghöjande)
 
+Extra funktioner som implementeras (kan anses betyghöjande)
 
 * API:et ska implementera en lämplig API rate limit på rekommenderat sätt
 * Genomtänkt versionhantering av API:et
