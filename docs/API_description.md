@@ -10,18 +10,18 @@ Följande krav ska implementeras för godkänt på uppgiften:
 * Till API:et ska en dokumentation skrivas som vänder sig mot målgruppen webbutvecklare
 * API:et ska vara utformat så det, i möjligaste mån, stödjer sig på teorin kring ett RESTful API
 * API:et ska ha stöd för minst två olika dataformat; förslagsvis XML och JSON
-* API:et ska endast kunna anropas av utvecklare som registrerat sig för en API-nyckel
-* API:et ska, i möjligaste mån, grunda sig på teorin kring HATEOAS
+* API:et ska endast kunna anropas av utvecklare som har en giltig API-nyckel
+* API:et ska grunda sig på teorin kring HATEOAS
 * API:et ska ha en tydlig och genomtänkt felhantering som tydligt visar för användaren eventuella felkoder och meddelande
-* Till API:et ska en enkel testapplikation utvecklas som visar på API:ets duglighet.
+
+
+Extra funktioner som implementeras (kan anses betyghöjande)
+
 * API:et ska implementera någon form av säkerhetslösning för "osäkra metoder". Säkra metoder kan vara öppna för de med giltlig API-nyckel
-
-
-Extra funktioner som kan implementeras 
-
 * API:et ska implementera en lämplig API rate limit  
 * Genomtänkt versionhantering av API:et
 * Filtrering av data via anropen
+* Utveckla en enkel testapplikation med ditt valda ramverk
 * Egna övriga initiativ till funktioner...
 
 ##Registrering för API-nyckel##
