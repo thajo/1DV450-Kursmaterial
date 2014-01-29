@@ -25,6 +25,8 @@ Extra funktioner som implementeras (kan anses betyghöjande)
 * Utveckla en enkel testapplikation med ditt valda ramverk
 * Egna övriga initiativ till funktioner...
 
+Observera att bygget av API:et är en itterativ process och visa delar kan senare behöva modifieras och ändras när vi bygger en klientapplikation.
+
 ##Registrering för API-nyckel##
 Tillsammans med API:et ska en registreringsapplikation utvecklas där utvecklare kan genom att registrera sig med sin e-post få tillgång till en giltig API-nyckel som ska användas i API-anropen för samtliga resurser. Detta blir en webbapplikation som är fristående från själva API:et. Det kan vara en vanlig enkel webbapplikation där användaren registrerar sina kontaktuppgifter och kan därmed få tillgång till en genererad API-nyckel som är giltlig för API-anrop. 
 
