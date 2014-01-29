@@ -16,7 +16,9 @@ Följande krav ska implementeras för godkänt på uppgiften:
 * API:et ska kunna kunna anropas på så sätt att man kan välja en "offset" och "limit" av resurser
 
 
-Extra funktioner som implementeras (kan anses betyghöjande)
+
+
+**Ytterligare funktioner som implementeras (kan anses betyghöjande)**
 
 * API:et ska implementera en lämplig API rate limit på rekommenderat sätt
 * Genomtänkt versionhantering av API:et
