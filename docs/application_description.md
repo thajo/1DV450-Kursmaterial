@@ -24,7 +24,7 @@ Användaren av tjänsten vill bl. a. kunna göra följande:
 	* Tagg
 	* Vem som skapade resursen
 	* Licenstyp
-* Logga in (helst via tredje-part - OAuth) och därmed posta nya resurser, ändra sina befintliga resurser, ta bort sina befintliga resurser
+* Logga in och därmed posta nya resurser, ändra sina befintliga resurser, ta bort sina befintliga resurser
 
 
 Tjänsten ska innehålla/kunna hantera:
