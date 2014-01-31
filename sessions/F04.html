@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+
+  <head>
+    <title>Föreläsning 2</title>
+
+    <meta charset='utf-8'>
+    <script src='slides.js'></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+  </head>
+  
+
+
+  <body style='display: none'>
+
+    <section class='slides layout-widescreen template-default'>
+      
+		
+		<!-- First page -->
+    	<article>
+	       	<h3>
+	         Webbramverk, 1DV450
+	          <br />
+	          <span class="small">Linnéuniversitetet, vt 2014</span>
+	        </h3>
+       
+		
+			<br /><br />
+			<h1 class="big c">Ruby on Rails</h1>
+			<p class="c" style="margin-top: 60px;">
+				Datalagring, ActiveRecord, ActiveRelation, Migration<br />
+				<span class="c">The 'M' in MVC</span>
+			</p>
+			<p class="small_footer">
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.sv">
+						<img alt="Creative Commons-licens" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>&nbsp;&nbsp;Denna presentation är licensierat under en 
+					
+							<a rel="license" href="hhttp://creativecommons.org/licenses/by/3.0/deed.sv">Creative Commons Erkännande 3.0 Unported Licens</a>. (Där inte annat anges)<br/>
+			</p>
+      	</article>
+  
+  	  	<!-- Intro to modell 
+		<article class="fill">
+				<h3>
+					Model
+				</h3>
+				<img src="images/doll.jpg" height="600px"/>
+				<p style="margin-lef">
+				
+					Migration<br />
+					<span class="small_italic">Skapa och förändra databasen</span>
+					<br /><br />
+					Modellklasser<br />
+					<span class="small_italic">En tabell = en klass</span>
+					<br /><br />
+					Assocciations<br />	
+					<span class="small_italic">Ange relationen mellan objekt</span>
+					
+					<br /><br />
+					ActiveRecord Query<br />
+					<span class="small_italic">Hämta och manipulera data</span>
+					<br /><br />
+					
+					Validering<br />
+					<span class="small_italic">"Mota Olle i grind"</span>
+				
+				</p>
+		    	
+				<img src="http://farm4.staticflickr.com/3513/3237575990_943eb91c79_b.jpg" />
+				<p class="cc">Foto cc by: 
+					<a href="http://www.flickr.com/photos/adesigna/">http://www.flickr.com/photos/adesigna/</a> 
+				</p>
+			</article>
+				
+		</article>
+		-->	
+	
+		<!-- DB stöd -->
+		<article class="fill">
+			<img src="images/db_s.jpg" style="opacity: 0.4"/>
+		    	<h3>
+					Datalagring i Ruby on Rails
+				</h3>
+			
+				<ul>
+					<li>Default SQLite3 (rekommenderas endast vid utveckling)</li>
+					<li>mySQL, postgreSQL (http://heroku.com/)</li> 
+					<li>Intelligensen hos modellen inte i datalagringen</li>
+					<li>Varje applikation har tre olika datalagringar: Development, Test, Production</li>
+					<li>Active Record - Med relationsdatabaser i tanken</li>
+				</ul>
+				
+		</article>
+	
+		
+		<!-- ActiveRecord -->
+		<article class="grey fill">
+			<img src="http://farm1.staticflickr.com/179/386053702_d7e5dc6321_o.jpg" />
+			<p class="cc">Foto cc by: 
+				<a href="http://www.flickr.com/photos/fourthfloor/">http://www.flickr.com/photos/fourthfloor/</a> 
+			</p>
+			<h3>
+				Vad är ActiveRecord?
+			</h3>
+			<br /><br />
+			<p>
+				Active record ett design-pattern som kan implementeras av olika språk/ramverk (Martin Fowler, 2003)<br /><br />
+				Object-relational mapping (ORM) <br /><br />
+				Mappar modell-objekt direkt till databasen (datalagringen)<br /><br />
+				Associations - Kopplingar mellan modeller<br /><br />
+				ActiveRecord Query - CRUD<br /><br />
+				<a href="http://guides.rubyonrails.org/active_record_basics.html">
+					http://guides.rubyonrails.org/active_record_basics.html
+				</a>
+			</p>	
+		</article>
+		
+		<!-- Bild orm -->	
+		<article class="fill">
+			<img src="images/orm.png"  height="600px"/>
+		</article>
+		
+		<!-- Naming conventions -->
+		<article>
+			
+			<h3>Convention over configuration - Model</h3>
+			<br />
+			<img src="images/name.jpg" width="300px" height="200px" class="bottom_right_bigger"  />
+			
+			<p>
+				<strong>Klassnamn:</strong> Order<br /><br />
+				<strong>Filnamn:</strong> /app/models/order.rb <br /><br />
+				<strong>Tabellnamn:</strong> orders<br /><br />
+				<strong>Primärnyckel:</strong> id<br /><br />
+				<strong>Främmande nyckel:</strong> customer_id <br /><br />
+				<strong>Kopplingstabell:</strong> items_orders<br /><br />
+			</p>
+			<br />
+			Naming Conventions i Ruby on Rails:<br />
+			<a href="http://itsignals.cascadia.com.au/?p=7">http://itsignals.cascadia.com.au/?p=7</a>
+		</article>
+		
+		<!-- ActiveReleation -->
+		<article class="fill">
+			
+			<img src="http://farm6.staticflickr.com/5166/5359581911_d07f15db17_b.jpg" />
+			<h3>
+				Vad är ActiveRelation?
+			</h3>
+			<br /><br />
+			<p>
+				"ARel"<br /><br />
+				"Object-orienterad relationsalgebra" <br /><br />
+				Förenklar mer komplexa frågor, "chainable", "complex joins"<br /><br />
+				Lazy Loading - Databasfrågan körs först när data verkligen behövs<br /><br />
+				Sedan Rails > 3.0<br /><br />
+				<a href="https://github.com/rails/arel">https://github.com/rails/arel</a>
+				
+			</p>
+			<p class="cc">Foto cc by: 
+				<a href="http://www.flickr.com/photos/adesigna/">http://www.flickr.com/photos/adesigna/</a> 
+			</p>	
+		</article>
+		
+		<!-- ActiveReleation example-->
+		<article class="grey">
+			
+			<h3>
+				Exempel
+			</h3>
+			<pre>
+# Hur man kodmässigt kan efterfråga data från databasen
+
+user = User.first
+# SELECT * FROM users ORDER BY users.id ASC LIMIT 1	
+
+# Första användarens alla kommentarer (Association mellan flera tabeller)
+comments = User.first.comments 
+
+# Vilkorsfråga med parameter
+orders = Order.where("total_sum > ?", params[:total_sum])			
+
+# orders returneras som ett ActiveRelation-objekt - Lazy loading				
+			</pre>
+		</article>
+			
+		<!--migrate -->
+		<article>
+		    <h3>
+				Migrate?
+			</h3>
+			<br />
+			<p>
+				Scriptfil som skapar/ändrar databasen<br />
+				
+				Datamodellen kan ändras under resans gång<br />
+				
+				Migreringsfiler döps med timestamp, varje förändring bör ha en egen fil<br />
+				
+				Kan rulla tillbaka i flera versioner<br /><br />
+				
+				<img src="images/migrate_terminal.png" />
+				
+			</p>
+		</article>
+		
+		<!-- migrate example -->
+		<article>
+		    <h3>
+				Modifierad migrationsfil
+			</h3>
+			<br />
+			<p>
+				<img src="images/migration_file_user.png" />
+			</p> 
+		</article>
+		
+		<!-- Skapa en modell -->
+		<article class="fill">
+			<img src="http://farm6.staticflickr.com/5468/6947278752_08528e1b0f_b.jpg" />
+		    <h3>
+				LIVE DEMO
+			</h3>
+			<ul>
+				<li>Skapa en ny railsapplikation</li>
+				<li>Skapa en model</li>
+				<li>Generera en databas</li>
+				<li>Använd "rails console" för att "testa frågor"</li>
+				<li>Ändra i databasstrukturen - Migrering</li>
+				<li>Koppla till controller, view</li>
+			</ul>
+			<p class="cc">Foto cc by: 
+				<a href="http://www.flickr.com/photos/johnroyer/">http://www.flickr.com/photos/johnroyer/</a> 
+			</p>	
+			
+		</article>
+	
+	
+		<!-- migrate change something -->	
+		<article>
+		    <h3>
+				Migration Methods (boken kapitel 22)
+			</h3>
+			<pre>
+create_table
+drop_table(table)
+rename_table(table, new_name)
+				
+add_column(table, column, type, options)
+remove_column(table, coulmn)
+rename_column(table, column, new_name)
+change_column(table, column, type, options)
+				
+add_index(table, column, options)
+remove_index(table, column)
+create_join_table(table1, table2)			
+execute("SQL-string")
+	
+# Skapa en migreringsfil med ett bra namn i terminalfönstret				
+# rails generate migration add_column_username_to_users
+				
+# kod i migreringsfilen som skapas ovan 
+add_column("users", "username", :string, :limit => 15)</pre>
+		</article>
+		
+		<!-- Associations -->
+		<article>
+			<h3>Definiera relationer mellan objekten</h3>
+			<p>
+				Active Record är gjort för relationsdatabaser<br /><br />
+				"Ett projekt har flera användare"
+				<pre>
+Project.find(1).users # Ge mig första projektets alla användare</pre>
+				En relation defineras i båda modellklasserna<br />
+				<img src="images/conceptual_db.png"  width="50%" height="50%"/>
+			</p>
+		</article>
+		
+		<!-- one-to-one -->
+		<article>
+			<h3>One-to-one (1:1)</h3>
+			<p>
+				"Classroom has_one Smartboard"<br /><br />
+				"SmartBoard belongs_to Classroom"<br /><br />
+				Främmande nyckel hamnar i Smartboard - tabellen, Classroom äger relationen (kan vändas - designfråga)<br /><br />
+				<img src="images/one_to_one.png" class="centered"/>
+			</p>
+		</article>
+		
+		<article>
+				<h3>One-to-one (1:1)</h3>
+				<pre>
+# Modellklassen för  Classroom (eg. app/modells/classroom.rb)
+					
+class Classroom &lt; ActiveRecord::Base
+ has_one :smartboard # singular (det läses ju så!)					
+end</pre>
+
+<pre>
+# Modellklassen för  Smartboard
+	
+class Smartboard < ActiveRecord::Base
+ belongs_to :classroom
+end</pre>
+
+<pre>
+# Vi har nu en metod "smartboard" i vårt Classroom-objekt (starta om rails console)
+Classroom.find(1).smartboard = Smartboard.new
+</pre>
+
+		</article>
+		
+		<!-- one-to-many -->
+		<article>
+			<h3>One-to-many (1:n)</h3>
+			<p>
+				"Teacher has_many Courses"<br />
+				"Course belongs_to Teacher"<br /><br />
+
+				Främmande nyckel hamnar i Courses<br /><br />
+				
+				<img src="images/one-to-many.png" class="centered"/>
+			</p>
+		</article>
+		
+		
+		<article>
+			<h3>One-to-many (1:n)</h3>
+			<pre>
+# Modellklassen för  Teacher
+
+class Teacher < ActiveRecord::Base
+ has_many :courses # plural 					
+end</pre>
+
+<pre>
+# Modellklassen för  Course
+
+class Course < ActiveRecord::Base
+ belongs_to :teacher #singular
+end</pre>
+
+
+
+		</article>
+		
+		<article>
+			<h3>One-to-many coding</h3>
+<pre>
+# Vi kan plocka ut en array med courses som en teacher har
+t = Teacher.find_by_id(1)
+
+# Assocciationen ger oss metoden courses (plural, array med course-objekt)
+t.courses
+
+# Teacher får en ny course (append operator)
+t.courses << Course.new
+
+# Ta bort en Course (objectet course)
+t.courses.delete(course)
+
+t.courses.size
+t.courses.empty?
+</pre>
+		
+		</article>
+		
+		<!-- many-to-many -->
+		<article>
+				<h3>Many-to-many (m:n)</h3>
+				<p>
+					"Students has_and_belongs_to_many courses"<br /><br />
+					"Course has_and_belongs_to_many students"<br /><br />
+					Vi behöver två främmande nycklar d.v.s. en extra kopplingstabell<br /><br />
+					courses_students, alfabetisk ordning på namnet<br /><br />
+					Skapa en migration som skapar kopplingstabellen (med de två nycklarna)<br />
+					create_join_table :courses, :students
+					<br />
+					<img src="images/many_to_many.png" class="centered"/>
+				</p>
+		</article>
+		
+		<!-- many-to-many -->
+		<article>
+			<h3>Rails console - Many-to-many</h3>
+			<pre>
+# Modellklassen för  Student
+				
+class Student < ActiveRecord::Base
+ has_and_belongs_to_many :courses 					
+end</pre>
+
+<pre>
+# Modellklassen för  Course
+
+class Course < ActiveRecord::Base
+ has_and_belongs_to_many :students 
+end</pre>
+		</article>
+
+		<article>
+		<h3>Many-to-many coding</h3>
+	<pre>
+
+# Samma som tidigare exempel men dubbelriktat
+
+s = Student.new
+c = Course.new
+
+c.students << s
+
+s.courses # returnerar en array med de kurser studenter har (objectet c)
+	</pre>
+	<a href="http://guides.rubyonrails.org/association_basics.html">http://guides.rubyonrails.org/association_basics.html</a>
+
+		</article>
+		
+		<article>
+					<h3>Many-to-many (m:n) - Complex</h3>
+					<p>
+						<img src="images/complex_many.png" class="centered"/>
+					</p>
+					<p>
+						Generera upp en egen model som blir en rikare kopplingstabellen med mer information
+						än bara nycklar
+					</p>
+		</article>
+			
+		<article>
+						<h3>Many-to-many :through</h3>
+						<p>
+<pre>
+Course.find(1).students # Error - Kopplingstabellen hamnar i vägen
+
+# Bökig lösning
+array_with_students_on_course = course.course_enrollments.collect { |ce| ce.students }
+</pre>							
+							
+<pre>
+class Course < ActiveRecord::Base
+ has_many :course_enrollments
+ has_many :students, through => course_enrollments	
+end	
+
+class Student < ActiveRecord::Base
+ has_many :course_enrollments
+ has_many :courses, through => course_enrollments	
+end
+</pre>	
+
+<pre>
+# Here we go
+Course.find(1).students
+</pre>
+
+				</article>
+				
+		<article class="fill">
+			<h3>Ytterligare resurser</h3>
+			<iframe src="https://coursepress.lnu.se/kurs/webbramverk/" />
+		</article>
+		
+	  </section>
+	  </body>
+	</html>
+	
+		<!-- Vad skapas
+		<article>
+		    <h3>
+				Vad hände??
+			</h3>
+			<br /><br />
+			<img src="images/what_created.png" style="float: left"/>
+			<p>
+			<img src="images/user_model.png" style="float: right; margin-bottom: 50px;"/>
+			</p>
+			<p>
+			<img src="images/migration_file.png" style="float: right"/>
+			</p>
+		</article>
+		 -->
+	
+
+		<!-- migrate skapa 	
+	
+		<article>
+		    <h3>
+				Modifierad migrationsfil
+			</h3>
+			<br />
+			<p>
+				<img src="images/migration_file_user.png" />
+			</p> 
+		</article>-->	
+		
+		
+
+		<!-- Rails console
+		<article>
+
+				<h3>Koda mot din modell</h3>
+				<p>
+					Rails console - Program där man kan testa av sin modell
+					<br /><br />
+					Skapa och manipulera databasen
+					<br /><br />
+					Lär dig hur man i Ruby kodar mot ActiveRecord (kod som sedan används i controllern)
+				</p>
+				<br /><br />
+				<p>
+					<img src="images/rails_console.png" class="centered" />
+				</p>
+
+		</article> -->
+
+		<!-- Rails console example 
+		<article class="fill">
+			<img src="images/rails_console_ex.png" width="600px" />
+		</article>-->
+	
+		<!-- Active Record Query Create
+		<article>
+			<h3>CRUD - Create</h3>
+			<pre>
+# new/save 
+				
+u = User.new
+u.first_name = "James"
+u.last_name = "Bond"
+u.save
+				
+u = User.new(:first_name => "James", :last_name => "Bond")
+# do something
+u.save
+
+# create
+u = User.create(:first_name => "James", :last_name => "Bond")
+			</pre>
+		</article>-->
+		
+		<!-- Active Record Query Update
+		<article>
+			<h3>CRUD - Update</h3>
+			<pre>
+# find/update/save
+				
+u = User.find(1)
+u.first_name = "Maggie"
+u.last_name = "Simpson"
+u.save # OK or Error
+				
+
+User.find(1).update_attribute(:first_name , "Maggie") # True / False
+User.find(1).update_attributes(:first_name => "Maggie", :last_name => "Simpson") 
+			</pre>
+		</article>-->
+		
+		<!-- Active Record Query Delete
+		<article>
+				<h3>CRUD - Delete</h3>
+				<pre>
+
+u = User.find(1).destroy
+# tas bort i db men finns kvar i minnet för efterarbete
+
+u.frozen? # true
+
+# delete är snabbare men missar lite av ramverkets finnesser som görs
+User.find(1).delete
+
+</pre>
+		</article>
+		-->
+		<!-- Active Record Query Delete
+		<article>
+				<h3>CRUD - Finding/Read</h3>
+				<pre>
+
+u = User.find(1) # Ger ActiveRecord object or Error
+
+u = User.find_by_first_name('James') # Object or nil
+u = User.find_by_id(1) # Dynamic finders, kolumner i databasen, attribut i klasserna
+
+array_of_users = User.all
+
+first_user = User.first
+last_user = User.last
+
+# ovanstående förfrågninger kör SQL-anropen direkt
+</pre>
+		</article>-->
+		
+			<!--
+		<article>
+					<h3>CRUD - Querys</h3>
+					<pre>
+# Old way (tas bort i rails version 3.2?)
+u = User.find(:all, :condtions => ["first_name = ?", "James"])
+
+# New way return ActiveRelation objects gives better method chaining
+# Returns Object or empty array
+
+# With expression type String (SQL injection!!!)
+u = User.where("first_name = 'Maggie'")
+
+# With expression type Array (SQL injection safe)
+u = User.where(["first_name = ?", "Maggie"])
+
+
+# With expression type Hash (SQL injection safe) (kedja av anrop)
+u = User.where(:name => "Maggie").order("last_name ASC").select("first_name")
+
+# Returnerar ActiveRealation Object
+u.class # ActiveRealation
+u.to_sql # Study the SQL
+u.all # Gör om till array med ActiveRecord och jobba som vanligt, frågan körs
+</pre>
+			</article>
+	-->

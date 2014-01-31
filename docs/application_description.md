@@ -36,7 +36,7 @@ Tjänsten ska innehålla/kunna hantera:
 
 Här följer ett förslag på en modell som skulle kunna gälla för denna typ av tjänt. Observera att denna modell inte på något sätt är komplett vad gäller den data som ska sparas. Man är fri att modifiera och bygga ut modellen om man har idéer om ytterligare funktionallitet i tjänsten.
 
-![Bild av datamodell](http://www.gliffy.com/go/publish/image/5258567/L.png)
+![Bild av datamodell](db.png)
 
 Eventuella frågeställningar kring tjänsten tas upp under de schemalagda handledningspassen.
 
