@@ -36,7 +36,7 @@ Tjänsten ska innehålla/kunna hantera:
 
 Här följer ett förslag på en modell som skulle kunna gälla för denna typ av tjänt. Observera att denna modell inte på något sätt är komplett vad gäller den data som ska sparas. Man är fri att modifiera och bygga ut modellen om man har idéer om ytterligare funktionallitet i tjänsten.
 
-![Bild av datamodell](db.png)
+![Bild av datamodell](https://raw.github.com/thajo/1DV450-Kursmaterial/master/docs/db.png)
 
 Eventuella frågeställningar kring tjänsten tas upp under de schemalagda handledningspassen.
 
