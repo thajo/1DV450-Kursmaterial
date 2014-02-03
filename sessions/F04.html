@@ -102,7 +102,9 @@
 		    	<h3>
 					För vem skriver man ett API?
 				</h3>
-				
+				<ul>
+					<li>Var tydlig</li>
+				</ul>
 				<p class="cc">Foto cc by: 
 					<a href="http://www.flickr.com/photos/sylvainkalache/">http://www.flickr.com/photos/sylvainkalache/</a> 
 				</p>
@@ -232,6 +234,14 @@
 			</p>
 		</article>
 		
+		<!-- RESTafarian eller pragmatiker? -->
+		<article>
+			<h3>Varför REST?</h3>
+			<ul>
+				<li>RESTafarian eller pragmatiker?</li>
+			</ul>
+		</article>
+		
 		
 		<!-- ReST i  punkter -->
 		<article class="fill">
@@ -312,10 +322,10 @@
 			</p>
 			<ul>
 				<li>GET - Hämta en resurs</li>
-				<li>POST - Skapa? en resurs</li>
-				<li>PUT - Uppdatera? en resurs</li>
+				<li>POST - Skapa en resurs (bl. a.)</li>
+				<li>PUT - Uppdatera en (hel) resurs</li>
 				<li>DELETE - Ta bort en resurs</li>
-				<li>PATCH - Partiell uppdatering</li>
+				<li>PATCH - Partiell uppdatering, Tillägg till HTTP</li>
 				<li>HEAD - Endast headers</li>
 			</ul>
 		</article>
@@ -328,30 +338,41 @@
 		
 		
 		<!-- POST and PUT -->
-		<article>
+		<article class="fill">
+			<img src="http://farm4.staticflickr.com/3405/3435818474_5833f812f3_b.jpg">
 			<h3>POST vs. PUT</h3>
 			<ul>
-				<li>POST-to-Append</li>
+				
+				<li>POST är vagt definierad i HTTP specifikationen, "Data-handling process"</li>
+				<li>POST-to-Append - POST används för att skapa nya resurser</li>
 				<li>PUT - Modifiera en resurs tillstånd. Kan skapa om man skickar med nytt id. Vill man det?</li>
-				<li>Overloaded POST - POST används till det mesta (HTML forms), Data-handling process</li>
+				<li>Overloaded POST - POST används till allt utom get (HTML-formulär) </li>
 			</ul>
+			<p class="cc">Foto cc by: 
+				<a href="http://www.flickr.com/photos/dm-set/">http://www.flickr.com/photos/dm-set/</a> 
+			</p>
 		</article>
 		
 		
 		
 		<!-- Idempotence -->
-		<article>
+		<article class="fill">
 			<h3>Idempotence</h3>
+			<img src="http://farm3.staticflickr.com/2815/9131280504_3f407d7d20_b.jpg">
 			<p>
 				DELETE och PUT kallas idempotenta metoder<br />
-				De kan anropas många gånger med samma resultat
-				
+				De kan anropas många gånger i rad men ger alltid samma resultat
 			</p>
-			<p>
-				Internet är ett osäkert nätverk. Timeouts.
+			<p class="note">
+				
+				
+			
+				Internet är ett osäkert nätverk. Timeouts.<br />
 				Du vet inte om din DELETE slog igenom.
 			</p>
-			
+			<p class="cc">Foto cc by: 
+				<a href="http://www.flickr.com/photos/dannyfowler/">http://www.flickr.com/photos/dannyfowler/</a> 
+			</p>
 		</article>
 		
 		
@@ -383,21 +404,58 @@
 			</a>
 		</article>
 		
-		
-		
-		<!--Ett exempel -->
-		<article class="fill">
-			<h3>Exempel</h3>
-			<p>
-				BILD här
-			</p>
-		</article>
-		
+		<!-- lolcats -->
 		<article>
 			<a href="http://www.flickr.com/photos/girliemac/sets/72157628409467125/">
 				http://www.flickr.com/photos/girliemac/sets/72157628409467125/
 			</a>
 		</article>
+		
+		
+		
+		<!--Ett exempel -->
+		<article>
+			<h3>Exempel - Skapa en resurs</h3>
+			<pre>
+POST http://localhost:3000/products
+Accept: application/json
+Content-Type: application/json
+...
+{
+   "product_name"  : "Bultbräda 2000",
+   "price"  : 324.50
+}			
+			</pre>
+			
+			<pre>
+201 Created
+Content-Type: application/json
+...
+{
+    "status": 201,
+    "message": "A new product was created",
+    "link": "http://localhost:3000/link/123"
+}			
+			</pre>
+		</article>
+		
+		
+		<!--Ett exempel -->
+		<article>
+			<h3>Exempel - Skapa en resurs (postman)</h3>
+			<p class="c">
+				<img src="images/postman_create.png" height="600px">
+			</p>
+		</article>
+		
+		<!--Ett exempel -->
+		<article class="fill">
+			<h3>Exempel - Felmeddelande</h3>
+			<p class="c">
+				<img src="images/postman_error.png" height="550px">
+			</p>
+		</article>
+		
 		
 		
 		<!-- A resource can have multiple representations -->
@@ -418,9 +476,12 @@
 		
 		<!--Ett exempel -->
 		<article class="fill">
-			<p>
-				Exempel på Accept och Content-Type
-			</p>
+			
+			<pre>
+Accept: application/xml; application/json; text/csv
+			</pre>
+			
+		
 			<p>
 				http://www.api.example.com/thajo.json<br />
 				http://www.api.example.com/thajo.xml<br />
@@ -431,25 +492,65 @@
 		<article class="fill">
 			<h3>HATEOAS</h3>
 			<p>
-				Hypermedia as the engine of application state
+				Hypermedia as the engine of application state<br />
+				The model of application is an engine that
+				moves from one state to another by
+				picking alternative state transitions
+				in current set of representations
 			</p>
 			<ul>
 				<li>Hypermedia binder samman resurser med varandra på ett maskinläsbart sätt</li>
-				<li>Jämför med webbsidor och länkar</li>
-				<li>Servern kan leda klienten rätt</li>
+				<li>Med HATEOAS leder servern klienten rätt via hypermedia</li>
+				<li>Inkludera länkar i ditt APIs response?</li>
 			</ul>
 			
 			
 			
 		</article>
 		
-		<article>
-			<p>
-				Exempel
-			</p>
+		<article class="fill">
+			<iframe src="http://developer.github.com/v3/repos/releases/"></iframe>
 				
 		</article>
 		
+		<article class="fill">
+			<h3>Varför HATEOAS?</h3>
+			<ul>
+				<li>Gör det enklare för klienten</li>
+				<li>Flexibelt för förändringar, förändringar kommer ske!</li>
+				<li>Förväntade routes kommer brytas!</li>
+				<li>HATEOAS reducerar detta, lös koppling mellan server klient</li>
+				
+			</ul>			
+			
+		</article>
+		
+		
+		<article>
+			<h3>RoR - hantera API</h3>
+			
+			<pre>
+# request-objektet ger möjlighet att läsa av diverse HTTP headers
+content_type = request.format
+method = request.method
+				
+	
+# Response-objektet använda för att uppdatera response heders			
+response.status = 400
+response.headers['HEADER NAME'] = 'HEADER VALUE'	
+
+
+message_hash = {  
+  "status" => 400, 
+  "message" => "Bad media-type format; use application/json or application/xml"
+}
+
+respond_to do |format|
+  format.xml { render xml:  message_hash.to_xml(:root => 'error')}
+  format.json { render json: message_hash.to_json }
+end			
+			</pre>
+		</article>
 		
 		
 	  </section>
