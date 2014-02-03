@@ -508,14 +508,32 @@ Accept: application/xml; application/json; text/csv
 				<li>Inkludera länkar/URL:er i ditt APIs alla response</li>
 				<li>Klienter bör kunna navigera sig i ditt API precis som man surfar</li>
 			</ul>
-			
-			
-			
 		</article>
+		
+		<article>
+			<h1>Exempel</h1>
+			<pre>
+"firstname": "Joe",
+"lastname": "Doe",
+"links": [ 
+    {"rel": "self", "href":"http://example.org/user/1"},
+    {"rel": "friends", "href":"http://example.org/user/1/friends"}, ... 
+]</pre>
+			<pre>
+&lt;firstname&gt;Joe&lt;/firstname&gt;
+&lt;lastname&gt;Doe&lt;/lastname&gt;			
+&lt;links&gt;
+	&lt;link rel="self" href="http://example.org/user/1" /&gt;
+	&lt;link rel="friends" href="http://example.org/user/1/friends" /&gt;
+&lt;/links&gt;</pre>
+		</article>
+		
+		<!--
+		
 		<article class="fill">
 			<iframe src="http://developer.netflix.com/docs/REST_API_Reference#0_52696"></iframe>
 		</article>
-			
+		-->
 		
 		<article class="fill">
 			<iframe src="http://developer.github.com/v3/repos/releases/"></iframe>
