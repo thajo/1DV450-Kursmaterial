@@ -141,6 +141,10 @@
 	font-size: 0.5em;
 }
 
+article.fill h3.small {
+	font-size: 1.4em;
+}
+
 .pretty_small {
 	font-size: 0.4em;
 }

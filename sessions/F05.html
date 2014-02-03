@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+
+  <head>
+    <title>Föreläsning 2</title>
+
+    <meta charset='utf-8'>
+    <script src='slides.js'></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+  </head>
+  
+
+
+  <body style='display: none'>
+
+    <section class='slides layout-widescreen template-default'>
+      
+		
+		<!-- First page -->
+    	<article>
+	       	<h3>
+	         Webbramverk, 1DV450
+	          <br />
+	          <span class="small">Linnéuniversitetet, vt 2014</span>
+	        </h3>
+       
+		
+			<br /><br />
+			<h1 class="big c">ReST</h1>
+			<p class="c" style="margin-top: 60px;">
+				Att bygga sig ett webb-API <br />
+				<span class="c"></span>
+			</p>
+			<p class="small_footer">
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.sv">
+						<img alt="Creative Commons-licens" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>&nbsp;&nbsp;Denna presentation är licensierat under en 
+					
+							<a rel="license" href="hhttp://creativecommons.org/licenses/by/3.0/deed.sv">Creative Commons Erkännande 3.0 Unported Licens</a>. (Där inte annat anges)<br/>
+			</p>
+      	</article>
+  
+  
+		
+		<!-- definition of GET -->
+		<article class="fill">
+			<h3>GET</h3>
+			<p>
+				<strong>GET /users/1324</strong><br />
+				Efterfråga en representation av en resurs<br/>
+				Read-only, safe, påverkar inte resursen
+			</p>
+			<p>
+				<strong>Servern svarar</strong>
+				200 OK + data<br />
+				301 Moved Permanently<br />
+				404 Not Found
+			</p>
+		</article>
+		
+		<!-- definition of DELETE -->
+		<article class="fill">
+			<h3>DELETE</h3>
+			<p>
+				DELETE /users/1324<br />
+				Tar bort en resurs<br/>
+				Not safe, Idempotent, fler anrop förändrar inte status på resursen<br />
+				
+			</p>
+			<p>
+				200 OK + meddelande och/eller den borttagna resursen<br />
+				202 Accepted <br />
+				204 No Content<br />
+				404 Not Found
+			</p>
+		</article>
+		
+		<!-- definition of POST -->
+		<article class="fill">
+			<h3>POST</h3>
+			<p>
+				POST /users/1325<br />
+				POST-to-append or Overload POST<br/>
+				Data skickas med
+			</p>
+			<p>
+				200 OK<br />
+				301 Moved Permanently
+				</p>
+		</article>
+		
+		<!-- definition of PUT -->
+		<article class="fill">
+			<h3>PUT</h3>
+			<p>
+				PUT /users/1325<br />
+				POST-to-append /<br/>
+				Data skickas med
+			</p>
+			<p>
+				200 OK<br />
+				301 Moved Permanently
+				</p>
+		</article>
+		
+		<!-- definition of PUT -->
+		<article class="fill">
+			<h3>PATCH</h3>
+			<p>
+				PUT /users/1325<br />
+				POST-to-append /<br/>
+				Data skickas med
+			</p>
+			<p>
+				200 OK<br />
+				301 Moved Permanently
+				</p>
+		</article>
+		
+		<!-- HTML and the verbs -->
+		<article class="fill">
+			<h3>HTML forms</h3>
+			<p>
+				HTML har bara stöd för GET och POST!
+			</p>
+		</article>
+		
+		
+		
+		
+		<!-- Tips - Hur börjar man -->
+		<article>
+			<h3>Hur börjar man? Att tänka på!</h3>
+			<p class=" small spaced bgy">
+						Hur ska anropen se ut? <br />
+						Hur ser svaren ut? <br />
+						Vilka parametrar?<br />
+						Vilka headers använder vi?<br />
+						Vilken data ska kommas åt? <br />
+						Behöver vi inloggning?<br />
+			</p>
+			
+		</article>
+		
+		<article>
+					<h1 class="small c s bg">Att tänka på!</h1>
+					<p class=" small spaced bgy">
+						<strong>Gör det enkelt</strong> och inbjudande för utvecklarna att använda ditt API<br /><br />
+						TTFR - <strong>Time to first request</strong><br /><br />
+						<strong>Lyssna på användarna</strong> av ditt API<br /><br />
+						<strong>Använd API-nyckel</strong><br /><br />
+						<strong>Versionshantera ditt API</strong><br /> api.myservice.com/v1 <br />api.myservice.com/v2
+				
+					</p>
+		</article>
+		
+	
+		
+  
+		
+	  </section>
+	  </body>
+	</html>
+	
