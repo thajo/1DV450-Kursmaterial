@@ -218,6 +218,7 @@
 		
 		<!-- Vad REST inte är -->
 		<article class="fill">
+			<img src="http://farm4.staticflickr.com/3652/3407543397_a0e2bec710_b.jpg" />
 			<h3>Vad REST inte är!</h3>
 			<ul>
 				<li>Ingen standard, ingen RFC</li>
@@ -225,35 +226,33 @@
 				<li>Inget filformat</li>
 				<li>Inget utvecklingsramverk</li>
 			</ul>
+			<p>RESTful är en arkitektoniska stil</p>
+			<p class="cc">Foto cc by: 
+				<a href="http://www.flickr.com/photos/rhymereverie/">http://www.flickr.com/photos/rhymereverie/</a> 
+			</p>
 		</article>
 		
-		<!-- Varför använda REST -->
-		<article class="fill">
-			<h3>Vad REST är!</h3>
-			<ul>
-				<li>En arkitektorisk stil</li>
-				<li>Inget protokoll</li>
-				<li>Inget filformat</li>
-				<li>Inget utvecklingsramverk</li>
-			</ul>
-		</article>
 		
-		<!-- ReST i fem punkter -->
+		<!-- ReST i  punkter -->
 		<article class="fill">
+			<img src="http://farm2.staticflickr.com/1418/4609230644_0562580ca5_b.jpg">
 			<h3>Vad är REST?</h3>
 			<ul>
 				<li>Varje "sak" är en resurs (resource)</li>
 				<li>Varje resurs måste kunna adresseras (URL)</li>
 				<li>En representation beskriver en resurs tillstånd</li>
-				<li>En resurs kan ha multipla representationer</li>
+				<li>En resurs kan ha flera representationer</li>
 				<li>REST är tillståndslöst (stateless)</li>
 				<li>Hypermedia as the engine of application state (HATEOAS)</li>
-				<li>Bygger på de arketektoriska principerna för webben</li>
+				<li>Bygger på de arkitektoniska principerna för webben</li>
 			</ul>
+			<p class="cc">Foto cc by: 
+				<a href="http://www.flickr.com/photos/remek/">http://www.flickr.com/photos/remek/</a> 
+			</p>
 		</article>
 		
 		
-		<!-- A resource -->
+		<!-- A resource 
 		<article class="fill">
 			<img src="http://farm4.staticflickr.com/3373/3428379496_ffd0624d95_o.jpg" />
 			<h3 class="small">Varje "sak" är en resurs (resource)</h3>
@@ -269,23 +268,37 @@
 				<a href="http://www.flickr.com/photos/ginnerobot/">http://www.flickr.com/photos/ginnerobot/</a> 
 			</p>
 			
-		</article>
+		</article>-->
 		
 		<!-- A resource -->
 		<article class="fill">
-			<h3 class="small">Varje resurs måste kunna adresseras (URL)</h3>
+			<h3 class="small">Varje resurs måste kunna adresseras via en URL</h3>
 			<p>
-				Vill jag hämta/skapa/förändra data ska jag kunna anropa en URI/URL
+				
+				<ul>
+					<li>http://www.api.example.com/?method=getUsersByUsername</li>
+					<li>http://www.api.example.com/createUser</li>
+					<li>http://www.api.example.com/editUserByID</li>
+					<li>http://www.api.example.com/users/GetProjectsByUserIDOrderByCity</li>
+					<li>...</li>
+				</ul>
+				<p class="note">
+					Svårt att veta olika urler, stökigt
+				</p>
 			</p>
+			
+			
+		</article>
+		
+		
+		<article class="fill">
+			<h3 class="small">Varje resurs måste kunna adresseras via en URL</h3>
 			<ul>
 				<li>http://www.api.example.com/v1/users</li>
 				<li>http://www.api.example.com/v1/users/thajo</li>
-				<li>http://www.api.example.com/v1/users/thajo/projects/1526</li>
-			</ul>
-			<ul>
-				<li>http://www.api.example.com/getUsersByUsername</li>
-				<li>http://www.api.example.com/editUserByID</li>
-				<li>http://www.api.example.com/users/DeleteProjectsByUserIDOrderByCity</li>
+				<li>http://www.api.example.com/v1/users/thajo/projects</li>
+				<li>http://www.api.example.com/v2/projects/132654</li>
+				<li>...</li>
 			</ul>
 			
 		</article>
@@ -295,7 +308,7 @@
 		<article class="fill">
 			<h3 class="small">Använd HTTP-verbs för att beskriva betenden</h3>
 			<p>
-				Ditt api behandlar resursen beroende på vilket HTTP metod som kienten anropar med
+				Ditt api behandlar resursen beroende på vilken HTTP-metod som klienten anropar med
 			</p>
 			<ul>
 				<li>GET - Hämta en resurs</li>
@@ -308,9 +321,39 @@
 		</article>
 		
 		
+		<!-- Tabell över anrop -->
 		<article class="fill">
 			<img src="images/server_klient.png" width="90%"/>
 		</article>
+		
+		
+		<!-- POST and PUT -->
+		<article>
+			<h3>POST vs. PUT</h3>
+			<ul>
+				<li>POST-to-Append</li>
+				<li>PUT - Modifiera en resurs tillstånd. Kan skapa om man skickar med nytt id. Vill man det?</li>
+				<li>Overloaded POST - POST används till det mesta (HTML forms), Data-handling process</li>
+			</ul>
+		</article>
+		
+		
+		
+		<!-- Idempotence -->
+		<article>
+			<h3>Idempotence</h3>
+			<p>
+				DELETE och PUT kallas idempotenta metoder<br />
+				De kan anropas många gånger med samma resultat
+				
+			</p>
+			<p>
+				Internet är ett osäkert nätverk. Timeouts.
+				Du vet inte om din DELETE slog igenom.
+			</p>
+			
+		</article>
+		
 		
 		<!-- Use the principles of the web -->
 		<article class="fill">
