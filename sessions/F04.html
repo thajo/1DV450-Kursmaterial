@@ -42,7 +42,7 @@
 			<br /><br />
 			<h1 class="big c">REST</h1>
 			<p class="c" style="margin-top: 60px;">
-				Att bygga sig ett webb-API <br />
+				Pragmatiskt RESTful webb-API<br />
 				<span class="c"></span>
 			</p>
 			<p class="small_footer">
@@ -492,21 +492,30 @@ Accept: application/xml; application/json; text/csv
 		<article class="fill">
 			<h3>HATEOAS</h3>
 			<p>
-				Hypermedia as the engine of application state<br />
+				Hypermedia As The Engine Of Application State<br />
+				
+			</p>
+			
+			<p>
 				The model of application is an engine that
 				moves from one state to another by
 				picking alternative state transitions
 				in current set of representations
 			</p>
 			<ul>
-				<li>Hypermedia binder samman resurser med varandra på ett maskinläsbart sätt</li>
-				<li>Med HATEOAS leder servern klienten rätt via hypermedia</li>
-				<li>Inkludera länkar i ditt APIs response?</li>
+				<li>Current state - Beskrivs av represenationen och dess dataformat</li>
+				<li>Länkar/URL:er - Beskriver "the transition" till nästa "state"</li>
+				<li>Inkludera länkar/URL:er i ditt APIs alla response</li>
+				<li>Klienter bör kunna navigera sig i ditt API precis som man surfar</li>
 			</ul>
 			
 			
 			
 		</article>
+		<article class="fill">
+			<iframe src="http://developer.netflix.com/docs/REST_API_Reference#0_52696"></iframe>
+		</article>
+			
 		
 		<article class="fill">
 			<iframe src="http://developer.github.com/v3/repos/releases/"></iframe>
