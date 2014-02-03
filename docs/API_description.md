@@ -11,7 +11,7 @@ Följande krav ska implementeras för godkänt på uppgiften:
 * API:et ska vara utformat så det, i möjligaste mån, stödjer sig på teorin kring ett pragmatiskt RESTful API
 * API:et ska ha stöd för minst två olika dataformat; förslagsvis XML och JSON
 * API:et ska endast kunna anropas av klienter/användare som har en giltig API-nyckel
-* <del>API:et ska grunda sig på teorin kring pragmatisk HATEOAS</del>
+* <del>API:et ska grunda sig på teorin kring HATEOAS</del>
 * API:et ska ha en tydlig och genomtänkt felhantering som tydligt visar för användaren eventuella felkoder och felmeddelanden
 * API:et ska kunna kunna anropas på så sätt att man kan välja en "offset" och "limit" av resurser
 
