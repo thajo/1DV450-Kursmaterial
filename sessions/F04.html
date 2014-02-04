@@ -15,7 +15,7 @@
 <html>
 
   <head>
-    <title>Föreläsning 2</title>
+    <title>Föreläsning</title>
 
     <meta charset='utf-8'>
     <script src='slides.js'></script>
@@ -81,6 +81,7 @@
 					
 					<li>Utbyta data mellan system/applikationer</li>
 					<li>Stöd för olika typer av klienter</li>
+					<li>Lös koppling mellan klient och server - Skalbarhet</li>
 					<li>Använd vår data!</li>
 					<li>Krav på öppen maskinläsbar data</li>
 				</ul>
@@ -125,7 +126,7 @@
 					<li>RPC (Remote procedure call)</li>
 					<li>XML</li>
 					<li>Web Service (WS-*)</li>
-					<li>ReSTful Web API</li>
+					<li>RESTful Web API</li>
 				</ul>
 		</article>
   
@@ -144,7 +145,9 @@
 			<div style="clear:both"></div>
 			<p class="bgy c small spaced">
 				Enterprise, "Big Web services"<br />
-				Transaction, Security, Hantering av state....osv</p>
+				Transaction, Security, Hantering av state....osv<br />
+				Krångligt, overhead
+			</p>
 			<p class="pretty_small c">
 				<a href="http://www.w3.org/2002/ws/">http://www.w3.org/2002/ws/</a>
 			</p>
@@ -577,6 +580,10 @@ respond_to do |format|
   format.json { render json: message_hash.to_json }
 end			
 			</pre>
+		</article>
+		
+		<article class="fill">
+			<iframe src="https://coursepress.lnu.se/kurs/webbramverk/rest-1/"></iframe>
 		</article>
 		
 		
