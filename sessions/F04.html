@@ -63,6 +63,7 @@
 				<img src="images/what_is_api.png" width="80%"/>
 				
 				<p class="note">
+					Synliggöra data
 					Application programming interface
 					Skillnaden från en webbapplikation
 					Maskin till maskin
@@ -79,10 +80,10 @@
 				</h3>
 				<ul>
 					
+					<li>Använd vår data!</li>
 					<li>Utbyta data mellan system/applikationer</li>
 					<li>Stöd för olika typer av klienter</li>
 					<li>Lös koppling mellan klient och server - Skalbarhet</li>
-					<li>Använd vår data!</li>
 					<li>Krav på öppen maskinläsbar data</li>
 				</ul>
 				<p class="cc">Foto cc by: 
@@ -103,11 +104,14 @@
 		    	<h3>
 					För vem skriver man ett API?
 				</h3>
-				<ul>
-					<li>Var tydlig</li>
-				</ul>
+				
 				<p class="cc">Foto cc by: 
 					<a href="http://www.flickr.com/photos/sylvainkalache/">http://www.flickr.com/photos/sylvainkalache/</a> 
+				</p>
+				
+				<p class="note">
+					Inga user cases. Vi vet inte hur vårt API kommer att användas.
+					
 				</p>
 				
 		</article>
@@ -146,7 +150,6 @@
 			<p class="bgy c small spaced">
 				Enterprise, "Big Web services"<br />
 				Transaction, Security, Hantering av state....osv<br />
-				Krångligt, overhead
 			</p>
 			<p class="pretty_small c">
 				<a href="http://www.w3.org/2002/ws/">http://www.w3.org/2002/ws/</a>
@@ -185,7 +188,7 @@
 							<p class="c s">VS.</p>
 			
 							<p class="c pretty_small bg">
-								GET http://www.example.org/stockprice/IBM.json
+								GET http://www.example.org/stockprice/IBM.xml
 							</p>
 		</article>
 		
@@ -218,6 +221,10 @@
 					</p>
 					<p>REST användes egentligen som ett exempel på att visa hur webben fungerar
 							</p>
+							
+							<p class="note">
+								Roy författare till HTTP specifikationen, Apache HTTP server project
+							</p>
 					
 		</article>
 		
@@ -231,7 +238,7 @@
 				<li>Inget filformat</li>
 				<li>Inget utvecklingsramverk</li>
 			</ul>
-			<p>RESTful är en arkitektoniska stil</p>
+			<p>RESTful är en arkitektonisk stil</p>
 			<p class="cc">Foto cc by: 
 				<a href="http://www.flickr.com/photos/rhymereverie/">http://www.flickr.com/photos/rhymereverie/</a> 
 			</p>
@@ -239,10 +246,9 @@
 		
 		<!-- RESTafarian eller pragmatiker? -->
 		<article>
-			<h3>Varför REST?</h3>
-			<ul>
-				<li>RESTafarian eller pragmatiker?</li>
-			</ul>
+			<h1>
+				RESTafarian <br />eller pragmatiker?
+			</h1>
 		</article>
 		
 		
@@ -335,8 +341,8 @@
 		
 		
 		<!-- Tabell över anrop -->
-		<article class="fill">
-			<img src="images/server_klient.png" width="90%"/>
+		<article>
+			<img src="images/server_klient.png" width="100%"/>
 		</article>
 		
 		
@@ -346,7 +352,7 @@
 			<h3>POST vs. PUT</h3>
 			<ul>
 				
-				<li>POST är vagt definierad i HTTP specifikationen, "Data-handling process"</li>
+				<li>POST är vagt definierad i HTTP-specifikationen, "Data-handling process"</li>
 				<li>POST-to-Append - POST används för att skapa nya resurser</li>
 				<li>PUT - Modifiera en resurs tillstånd. Kan skapa om man skickar med nytt id. Vill man det?</li>
 				<li>Overloaded POST - POST används till allt utom get (HTML-formulär) </li>
@@ -410,7 +416,7 @@
 		<!-- lolcats -->
 		<article>
 			<a href="http://www.flickr.com/photos/girliemac/sets/72157628409467125/">
-				http://www.flickr.com/photos/girliemac/sets/72157628409467125/
+				HTTP Status Cats
 			</a>
 		</article>
 		
@@ -479,16 +485,19 @@ Content-Type: application/json
 		
 		<!--Ett exempel -->
 		<article class="fill">
-			
+			<h3>Accept-header</h3>
 			<pre>
-Accept: application/xml; application/json; text/csv
-			</pre>
-			
-		
+// I header från klienten
+Accept: application/xml, text/csv, text/plain
+Accept: application/json
+Accept: application/thajo+json</pre>
 			<p>
-				http://www.api.example.com/thajo.json<br />
-				http://www.api.example.com/thajo.xml<br />
+				http://www.api.example.com/users/thajo.json<br />
+				http://www.api.example.com/users/thajo.xml<br />
 			</p>
+			<pre>
+// I header från server - berättar om dataformatet				
+Content-Type: application/thajo+json</pre>	
 		</article>
 		
 		<!-- Hypermedia as the engine of application state (HATEOAS) -->
@@ -506,7 +515,7 @@ Accept: application/xml; application/json; text/csv
 				in current set of representations
 			</p>
 			<ul>
-				<li>Current state - Beskrivs av represenationen och dess dataformat</li>
+				<li>Current state - Beskrivs av representationen och dess dataformat</li>
 				<li>Länkar/URL:er - Beskriver "the transition" till nästa "state"</li>
 				<li>Inkludera länkar/URL:er i ditt APIs alla response</li>
 				<li>Klienter bör kunna navigera sig i ditt API precis som man surfar</li>
