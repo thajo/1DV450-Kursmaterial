@@ -40,7 +40,7 @@
        
 		
 			<br /><br />
-			<h1 class="big c">REST 2</h1>
+			<h1 class="big c">RESTful part 2</h1>
 			<p class="c" style="margin-top: 60px;">
 				Pragmatiskt RESTful webb-API<br />
 				<span class="c"></span>
@@ -58,9 +58,9 @@
 		<article>
 			
 		    	<h1>
-					Vad det är vi bygger
+					Vad bygger vi?
 				</h1>
-				<p>
+				<p class="c">
 				<img src="images/overview_api.png" width="80%"/>
 				</p>
 				<p class="note">
@@ -69,10 +69,27 @@
 		</article>
 		
 		
-		<article>
-			<h3>Vad och varför?</h3>
+		<article class="fill">
+			<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Paul_Signac_-_In_the_Time_of_Harmony-_The_Joy_of_Life--Sunday_by_the_Sea_-_Google_Art_Project.jpg/800px-Paul_Signac_-_In_the_Time_of_Harmony-_The_Joy_of_Life--Sunday_by_the_Sea_-_Google_Art_Project.jpg">
+			<h3>RESTful</h3>
 			<ul>
-				<li><strong>Adresserbara resurser</strong> - Tydlighet och indempotens</li>
+				<li>Enkelhet</li>
+				<li>Tydlighet</li>
+				<li>Oberoende</li>
+				<li>Behjälpligt</li>
+				<li>Pragmatiskt</li>
+				<li>Surfa genom ditt API</li>
+			</ul>
+			<p class="cc">Paul Signac - In the time of harmony: 
+				<a href="http://commons.wikimedia.org/">http://commons.wikimedia.org/</a> 
+			</p>
+		</article>
+		
+		<!--
+		<article>
+			<h3>REST - Vad och varför?</h3>
+			<ul>
+				<li><strong>Adresserbara resurser</strong> - Enkelhet och tydlighet</li>
 				<li><strong>Multipla representationer</strong> av en resurs tillstånd</li>
 				<li><strong>HATEOAS</strong> - Upptäckbarhet av API-användaren, Behjälplig server</li>
 				<li>REST är en <strong>arketonisk stil</strong>, ingen standard</li>
@@ -82,6 +99,7 @@
 				<li>Skalbarhet - fler användare, ökad datamassa, mottaglig för underhåll</li>
 			</ul>
 		</article>
+			-->
 		
 <!-- definition of GET -->
 		<article class="fill">
@@ -89,16 +107,15 @@
 			<p>
 				<strong>GET /products</strong><br />
 				<strong>GET /products/hd-1432</strong><br />
-				Efterfråga en representation av en resurs<br/>
-				Collection resource vs instance(singelton) resource<br />
-				
-				Read-only, safe, påverkar inte resursen
+				&nbsp;&nbsp;Efterfråga en representation av en resurs<br/>
+				&nbsp;&nbsp;Collection resource vs instance(singelton) resource<br />
+				&nbsp;&nbsp;Read-only, safe, påverkar inte resursen
 			</p>
 			<p>
-				<strong>Servern svarar (exempel)</strong>
-				200 OK + data<br />
-				301 Moved Permanently + location<br />
-				404 Not Found + info
+				<strong>Servern svarar (exempel)</strong><br />
+				&nbsp;&nbsp;200 OK + data<br />
+				&nbsp;&nbsp;301 Moved Permanently + location<br />
+				&nbsp;&nbsp;404 Not Found
 			</p>
 		</article>
 
@@ -107,16 +124,16 @@
 			<h3>DELETE</h3>
 			<p>
 				<strong>DELETE /products/hd-1432</strong><br />
-				Tar bort en resurs<br/>
-				Not safe, Idempotent<br />
+				&nbsp;&nbsp;Tar bort en resurs<br/>
+				&nbsp;&nbsp;Not safe, Idempotent<br />
 
 			</p>
 			<p>
-				<strong>Servern svarar (exempel)</strong>
-				200 OK + meddelande och/eller den borttagna resursen<br />
-				202 Accepted <br />
-				204 No Content<br />
-				404 Not Found
+				<strong>Servern svarar (exempel)</strong><br />
+				&nbsp;&nbsp;200 OK + meddelande och/eller den borttagna resursen<br />
+				&nbsp;&nbsp;202 Accepted <br />
+				&nbsp;&nbsp;204 No Content<br />
+				&nbsp;&nbsp;404 Not Found
 			</p>
 		</article>
 
@@ -125,15 +142,14 @@
 			<h3>POST</h3>
 			<p>
 				<strong>POST /products</strong><br />
-				POST-to-append or Overload POST<br/>
-				Data skickas med, tala om förserver vilket format
+				&nbsp;&nbsp;POST-to-append (skapa) or Overload POST<br/>
+				&nbsp;&nbsp;Data skickas med, tala om för servern vilket format man skickar
 			</p>
 			<p>
-				<strong>Servern svarar (exempel)</strong>
-				201 Created + information<br />
-				404 Not Found<br />
-				400 Bad Request<br />
-				401 Unauthorized				
+				<strong>Servern svarar (exempel)</strong><br />
+				&nbsp;&nbsp;201 Created + information<br />
+				&nbsp;&nbsp;400 Bad Request + information<br />
+				&nbsp;&nbsp;403 Forbidden				
 				</p>
 		</article>
 
@@ -142,13 +158,13 @@
 			<h3>PUT</h3>
 			<p>
 				<strong>PUT /products/1325</strong><br />
-				Uppdaterar en resurs, "POST-to-append"<br/>
-				Data skickas med, tala om förserver vilket format
+				&nbsp;&nbsp;Uppdaterar en resurs, Om resursen inte finns skapas resursen?<br/>
+				&nbsp;&nbsp;un-safe, indemptens
 			</p>
 			<p>
 				200 OK<br />
 				204 No content<br />
-				...
+			
 				</p>
 		</article>
 
@@ -157,8 +173,8 @@
 			<h3>PATCH</h3>
 			<p>
 				<strong>PATCH /products/1325</strong><br />
-				Partial update, "POST-to-append"<br/>
-				Data skickas med
+				&nbsp;&nbsp;Partial update<br/>
+				&nbsp;&nbsp;Data skickas med som ska uppdateras
 			</p>
 			<p>
 				200 OK<br />
@@ -168,19 +184,21 @@
 		</article>
 		
 		
-		<article>
-			<h3>Formatera ditt response </h3>
+		<article class="fill">
+			<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Transmediale-2010-Ryoji_Ikeda-Data-Tron-2.jpg/800px-Transmediale-2010-Ryoji_Ikeda-Data-Tron-2.jpg">
+			<h3>Beskriva en resurs tillstånd</h3>
 			<ul>
-				<li>Beskrivande</li>
+				<li>Accept, Content-Type</li>
+				<li>Du vet inte din användares användarfall</li>
 				<li>"Complete auto-discovery"</li>
-				<li>Du vet inet din användares användarfall</li>
 				<li>Var noga med valid JSON/XML</li>
+				<li>Hur gör andra API:er?</li>
 			</ul>
 		</article>
 		
 		
 		<article>
-			<h3>Formatera svaret</h3>
+			<h3>Information och struktur - Instance</h3>
 					
 			<pre>
 GET /notifications/120u76et</pre>
@@ -192,40 +210,41 @@ GET /notifications/120u76et</pre>
     "data" : [
       {"note" : "Köp mjölk!"},
       {"date_posted" : "2014-01-23T05:10:12.930Z"},
-      {"author" : "thajo"},
-      {"category" : "to-do"}
+      {"author" : "thajo"}
     ],
     "links" : [
       {"author" : "http://www.example.com/authors/thajo"},
-      {"category" : "http://www.example.com/category/to-do"}
+      {"author_avatar" : "http://www.example.com/authors/thajo.png"}      
     ]				
   }
 }	
 </pre>
+<p class="small">
+	Inspired by: <a href="http://amundsen.com/media-types/collection/">http://amundsen.com/media-types/collection/</a>
+</p>
 		</article>
 		
 		
 		<article>
-			<h3>Formatera svaret</h3>
+			<h3>Information och struktur - Collection</h3>
 <pre>
 {
   "collection" :
   {
-    "href" : "http://www.example.com/api/v1/notifications",
+    "self" : "http://www.example.com/api/v1/notifications",
     "items" : [
-      {
-	      "self" : "http://www.example.com/api/v1//notifications/120u76et",
+        {
+	      "href" : "http://www.example.com/api/v1//notifications/120u76et",
 	      "data" : [
 	        {"note" : "Köp mjölk!"},
 	        {"date_posted" : "2014-01-23T05:10:12.930Z"},
-	        {"author" : "thajo"},
-	        {"category" : "to-do"}
+	        {"author" : "thajo"}
 	      ],
 	      "links" : [
 	        {"author" : "http://www.example.com/authors/thajo"},
-	        {"category" : "http://www.example.com/category/to-do"}
-	      ]
-		},
+                 {"author_avatar" : "http://www.example.com/authors/thajo.png"}
+          ]	
+        },
         {
           /* ... New item here */
         }
@@ -265,9 +284,8 @@ GET /notifications/120u76et</pre>
 		
 		<!-- Add type -->
 		<article>
-					<h3>Formatera svaret - Definiera datatyper?</h3>
-					<pre>
-		GET /notifications/120u76et</pre>
+					<h3>Information och struktur</h3>
+					<pre>GET /notifications/120u76et</pre>
 		<pre>
 {
   "instance" :
@@ -276,16 +294,15 @@ GET /notifications/120u76et</pre>
     "data" : [
       {"name" : "note", "value" : "Köp mjölk", "type" : "text"},
       {"name" : "date_posted", "value" : "2014-01-23T05:10:12.930Z", "type" : "datetime"},
-      {"name" : "author", "value" : "Sharon Stone", "type" : "string"},
-      {"name": "Category", "value" : "to-do", "type" : "string"}
+      {"name" : "author", "value" : "thajo", "type" : "string"},
+      {"name" : "Category", "value" : "to-do", "type" : "string"}
     ],
     "links" : [
-      {"rel"  :"author", "href" : "http://www.example.com/authors/sharon"},
+      {"rel"  :"author", "href" : "http://www.example.com/authors/thajo"},
       {"rel"  :"category", "href" : "http://www.example.com/category/to-do"}
     ]	
   }
-}	
-		</pre>
+}</pre>
 		</article>
 		
 		
@@ -298,35 +315,18 @@ GET /notifications/120u76et</pre>
 				Det finns möjlighet att definiera egna "kontrakt"/media-typer mellan server och klient.
 			</p>
 			<pre>
-Content-Type: "application/coursepress-data+json"</pre>
+Content-Type: application/vnd.collection+json</pre>	
+<pre>Content-Type: application/vnd.github+json</pre>
+	
+			<pre>
+Content-Type: application/vnd.coursepress-data+json</pre>
 			<p>
-				Man har möjlighet att beskriva strukturen av respresentationerna (dokumenten). Struktur, data, datatyper. Registreras under iana.org
-					XML Schema, JSON Schema	
-					Problemdomän, pragmatiskt?
+				Man har möjlighet att beskriva strukturen av respresentationerna (dokumenten). 
+				<br />
+				Utformad efter egen problemdomän
 			</p>
 		</article>
 		
-		<!-- Partial response and pagnation -->
-		<article>
-			<h3>Partial response &amp; Pagnation</h3>
-			
-			<pre>/users/thajo:(firstname, lastname, email)
-/users/thajo?fields=firstname, lastname, email</pre>
-			
-			<pre>
-/users/thajo?page=3&rrp=25
-/users/thajo?start=100&count=25
-/users/thajo?offset=100&limit=25</pre>
-			<pre>
-{
-  "Prev": "http://localhost/targetprocess/api/v1/UserStories?format=json&take=10&skip=0",
-  "Next": "http://localhost/targetprocess/api/v1/UserStories?format=json&take=20&skip=30"
-}				
-			</pre>
-			<p>
-				I http-protokollet finns Content-Range?
-			</p>
-		</article>
 		
 		<!-- Versioning -->
 		<article>
@@ -339,13 +339,13 @@ Content-Type: "application/coursepress-data+json"</pre>
 				Uppdatera sällan!
 			</p>
 			<pre>
-GET http://www.api.example.com/v1/products					
-GET http://www.api.example.com/v2/products				
+GET http:&frasl;&frasl;www.api.example.com/v1/products					
+GET http:&frasl;&frasl;www.api.example.com/v2/products				
 			</pre>
 			<pre>
 # No fun hacking in browser
-Accept: application/coursepress-data+json;version=2.0
-Accept: application/coursepress-data-v2+json				
+Accept: application/vnd.coursepress-data+json;version=2.0
+Accept: application/vnd.github.v3+json				
 			</pre>
 			<p class="note">
 				http://stackoverflow.com/questions/389169/best-practices-for-api-versioning
@@ -353,12 +353,36 @@ Accept: application/coursepress-data-v2+json
 			</p>
 		</article>
 		
+		
+		<!-- Partial response and pagnation -->
+		<article>
+			<h3>Partial response (filtrering) &amp; Pagination</h3>
+			
+			<pre>&frasl;users&frasl;thajo:(firstname, lastname, email)
+&frasl;users&frasl;thajo?fields=firstname, lastname, email</pre>
+			
+			<pre>
+&frasl;users?page=3&rrp=25
+&frasl;users?start=100&count=25
+&frasl;users?offset=100&limit=25</pre>
+			<pre>
+{
+  "prev": "http://localhost/api/v1/users/?offset=0&limit=25",
+  "next": "http://localhost/api/v1/users/?offset=50&limit=25"
+}</pre>
+			<p>
+				I http-protokollet finns Content-Range?
+			</p>
+		</article>
+		
+		
+		
 		<!-- rate limit -->
 		<article>
 			<h3>Rate limit</h3>
 			<p>
 				Begränsa antalet anrop till ditt API.<br />
-				Headers som börjar med X ansågs som custom headers
+				Headers som börjar med X har använts som custom headers
 			</p>
 			<ul>
 				<li>X-Rate-Limit-Limit - Antalet anrop inom en tidsperiod<li>
@@ -367,7 +391,7 @@ Accept: application/coursepress-data-v2+json
 			</ul>
 			
 			<p>
-				<strong>Servern svarar med:</strong>
+			
 			<pre>
 429 Too Many Requests</pre>	
 		</article>
@@ -387,26 +411,31 @@ Accept: application/coursepress-data-v2+json
 		</article>
 		
 		<article class="fill">
+			<h2><a href="https://ifttt.com/">https://ifttt.com/</a></h2>
 			<iframe src="https://ifttt.com"></iframe>
 		</article>
 		
-		<article>
+		<article class="fill">
+			<img src="http://farm8.staticflickr.com/7194/6987570497_1df1fa3c11_b.jpg">
 			<h3>Dokumentation</h3>
-			<p>
-				HATEOAS - Dokumentation?
-			</p>
 			<ul>
 				<li>Ha en publik öppen dokumentation!</li>
 				<li>Automatgenererad dokumentation?</li>
 				<li>Inkludera exempelkod</li>
 				<li>Inkudera exempel på request och response</li> 
 				<li>Förklara authentication och felhantering</li>
+				<li>Tillåt användaren att "surfa" ditt API</li>
 				<li>
 					<a href="http://www.prestwoodboards.com/aspsuite/kb/document_view.asp?qid=102147">
 						http://www.prestwoodboards.com/aspsuite/kb/document_view.asp?qid=102147
 					</a>
 				</li>
+				
+				<p class="cc">Foto cc by: 
+					<a href="http://www.flickr.com/photos/massimobarbieri/">http://www.flickr.com/photos/massimobarbieri/</a> 
+				</p>
 		</article>
+		
 		
 			
 		<!-- Att tänka på -->		
@@ -416,8 +445,8 @@ Accept: application/coursepress-data-v2+json
 			<strong>Gör det enkelt</strong> och inbjudande för utvecklarna att använda ditt API<br /><br />
 			TTFR - <strong>Time to first request</strong><br /><br />
 			<strong>Lyssna på användarna</strong> av ditt API<br /><br />
-			<strong>Hjälp klienten</strong> genom att förbereda den på nya anrop<br /><br />
-			<strong>Bistå med ett bibliotek?</strong><br /><br />
+			<strong>Var behjälplig</strong> mot klienten<br /><br />
+			<strong>Bistå med programmeringsbibliotek?</strong><br /><br />
 			<strong>Ha en bra dokumentation - från början!</strong><br /><br />
 			<strong>Lättfunnen och väldefinierad Terms of Service</strong><br /><br />
 			<strong>Säkerhet!</strong>
@@ -425,22 +454,30 @@ Accept: application/coursepress-data-v2+json
 		</article>
 
 
-		<article>
-			<h3>Säkerhet och etik</h3>
-			
+		<article class="fill">
+			<h3>Säkerhet</h3>
+			<img src="http://farm8.staticflickr.com/7308/11406985424_457c44045f_b.jpg">
+			<p class="cc">Foto cc by: 
+				<a href="http://www.flickr.com/photos/111692634@N04/">http://www.flickr.com/photos/111692634@N04/</a> 
+			</p>
 			<p class="note">
 				Ett api är inte nåt snabbhackat till din mobilapplikation!
 			</p>
 		</article>
 		
-		<article>
+		<article class="fill">
+			<img src="http://farm9.staticflickr.com/8201/8229504229_47a07ff41f_b.jpg">
 			<h3>HTTPS - HTTP over SSL/TSL</h3>
-			<h2>Is it safe?</h2>
+			
+			<p class="cc">Foto cc by: 
+				<a href="http://www.flickr.com/photos/intelfreepress/">http://www.flickr.com/photos/intelfreepress//</a> 
+			</p>
 		</article>
 		
 		
 		<!-- auth athorize -->
 		<article>
+			
 			<h3>Säkerhet</h3>
 			<p>
 				<strong>Authentication (Autentisering)</strong> - Fastställande av identitet
@@ -448,164 +485,209 @@ Accept: application/coursepress-data-v2+json
 			<p>	
 				<strong>Authorization (Auktorisering)</strong> - Vilka resurser ska en identitet ha tillgång till
 			</p>
+			<p class="c">
+			<img src="http://farm4.staticflickr.com/3094/3163975110_5ecf5f0fb7_o.jpg">
+			</p>
 			
 			<p>
-				REST är stateless - inloggningsuppgifter i varje request
+				REST är stateless - autentisering i varje request
 			</p>	
 		</article>
 		
 		
 		<!-- servern svarar -->
-		<article>
+		<article class="fill">
 			<h3>Felkoder från servern</h3>
 			<p>
 				<strong>401 Unauthorized</strong><br />
-				Statuskoden för Autentiseringsfel<br />
+				Statuskoden för Autentiseringsfel (Authentication)<br />
 				"Du är inte inloggad, din inloggning misslyckades. Var god försök igen!"
 			</p>
 			<p>
-				<strong>403 Forbidden</strong> 
+				<strong>403 Forbidden (Authorization)</strong> <br />
 				Statuskoden för Auktoriseringsfel<br />
-				"Tyvärr! Jag vet vem du är men du är inte tillåten att komma åt dessa resurser. Stör mig inte på denna adressen igen!"
+				"Tyvärr! Jag vet vem du är men du är inte tillåten att komma åt dessa resurser. Stör mig inte på denna adressen igen!"<br />
+				Ibland skickas en 404
 				 
 			</p>
 		</article>
 		
 		
 		<!-- säkerhetsstrategoi för API:er -->
-		<article>
-			<h3>Säkerhetsstrategier för RESTful webb-API</h3>
+		<article class="fill">
+			<img src="http://farm6.staticflickr.com/5165/5295557537_a5b0b7fa59_b.jpg">
+			<h3 class="small">Säkerhetsstrategier för RESTful webb-API</h3>
 			<ul>
-				<li>Öppet? Read-only?</li>
-				<li>Basic Authentication</li>
-				<li>API-keys</li>
+				<li>Öppet? Read-only? API-nyckel endast för statistik</li>
+				<li>Basic Authentication username/password</li>
+				<li>Basic Authentication API-keys</li>
 				<li>OAuth 2- or 3-legged</li>
 				<li>Signed HMAC signature</li>
-				<li></li>
 		</article>
 		
 		
 		
 		<article>
-			<h3>Basic authentication (RFC 2617)</h3>
+			<h3>HTTP Basic authentication (RFC 2617)</h3>
 			<pre>
-# server
+# server HTTP Header
 401 Unauthorized HTTP/1.1
 WWW-Authenticate: Basic realm="my api"</pre>
 			<pre>
-# client (base64-encodat user/pass - ej krypterat)
+# client HTTP header (base64-encodat username/password - ej krypterat)
 Authorization: Basic Kl52GFDS%DH6H12JD#543</pre>
 			<p>
 				MÅSTE ANVÄNDA HTTPS!
 			</p>
+			<p>
+				Enkelt! Alla kan hantera!
+			</p>
 		</article>
 		
 		<article>
-			<h3>Username/password vs. API-key</h3>
+			<h3>Username/password vs. API-key(token-based)</h3>
 			<ul>
-				<li>passwords är inte konfetti!</li>
-				<li>API keys/secrets are usually a long series of random characters that are difficult to guess.</li>  
-				<li> If you use the password as part of your API authentication scheme</li> 
-				<li>Password reset - our developers 10 clients user the same</li>
-				<li>Speed - Brute force attack . slow is good for username/password - API keys is good for api:s</li>
-				<li>Traceability</li> 
-					
+				<li>passwords är inte konfetti, de ska inte spridas!</li>
+				<li>API nycklar är svårare att gissa</li>  
+				<li>Password reset - Användaren av ditt API har flera klienter</li>
+				<li>Ofta snabbare med API-nycklar (bcrypt)</li>
+				<li>Spårbarhet, en nyckel per applikation</li> 
 			</ul>
 			<pre>
 # Clientside
-"Authorization": "Basic " + base64_encode(API Key)			
-			</pre>
-			<pre>
-http://api.example.com/resource/id?token=api_key # beware of history, logging and proxies
+Authorization: Token " + access_token</pre>
 
-auth_				
-			</pre>
+			<pre>
+# beware of history, logging and proxies			
+GET http:&frasl;&frasl;api.example.com/resource/id?token=api_key</pre>
 		</article>
 		
-		<article>
+		<article class="fill">
 			<h3>OAuth</h3>
-			
+			<img width="70%" src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Oauth_logo.svg/598px-Oauth_logo.svg.png">
 			<ul>
 				<li>Google AuthSub</li>
 				<li>Yahoo BBAuth</li>
 				<li>Flickr API</li>
 			</ul>
+			<p class="cc">Foto from Wikipedia 
+			</p>
 		</article>
 		
 		<article>
-			<h3>Why OAuth</h3>
-			
+			<h3>Varför OAuth?</h3>
+			<p class="c">
+			<img src="images/oauth_why.png" width="600px">
+			</p>
 			<ul>
-				<li>Third-party applications store users passwords</li>
-				<li>Servers must handle secure passwords</li>
-				<li>Third-patys get broad access to all protected resources</li>
-				<li>Resource owners can revoke access to thirdparty applictions only by changing pasword</li>
+				<li>Vill undvika att tredjeparts-applikationer (dina API-consumers) hanterar användarnas lösenord</li>
+				<li>Dina API-klienter vill slippa hantera dina användare</li>
+				<li>Man vill begränsa åtkommsten till resurser</li>
+				<li>Som resursägare kan jag återkalla en tredjepartsapplikations rättigheter</li>
 			</ul>
-			<p>
-				OAuth skapar ett lager och separerar ...
-			</p>	
+				
 		</article>
 		
 		<article>
 			<h3>OAuth</h3>
 			
 			<ul>
-				<li>OAuth 1.0a</li>
-				<li>OAuth 2.0</li>
-				<li>3-legged OAuth (user - consumer - service provider)</li>
-				<li>2-legged OAuth (consumer - service provider)</li>
+				<li><s>OAuth 1.0</s></li>
+				<li>OAuth 1.0a (2010)</li>
+				<li>OAuth 2.0 (oktober 2012)</li>
+				<li>3-legged OAuth (user/resource owner - API consumer - service provider)</li>
+				<li>2-legged OAuth (API consumer - service provider)</li>
 			</ul>
 		</article>
-		<article class="fill">
-			<img src="images/ThreeLeggedOAuthDance.png">
+		<article>
+			<p class="c">
+			<img src="images/ThreeLeggedOAuthDance.gif" width="70%">
+			</p>
 		</article>
 		
 		<article class="fill">
 			<img src="images/OAuth2Consent.png">
-			https://github.com/intridea/omniauth/
+			
 		</article>
 		
 		<article>
-			<h3>Should I be a OAuth provider?</h3>
+			<h3>Ska jag implementera en OAuth service?</h3>
 			
 			<p>
-				Många användare av ditt API kommer bygga klienter 
-				där de vill komma åt data som hör till en user
+				Har din tjänst "resource owners"?
+			</p>
+			<p>
+				Kommer många användare av ditt API bygga klienter 
+				där de vill komma åt data som hör till en "resource owners"?
+			</p>
+			<p>
+				Krångligt?
 			</p>
 			
-			<p>
-				https://github.com/applicake/doorkeeper
-			</p>
+			<ul>
+				<li><a href="https://github.com/applicake/doorkeeper">https://github.com/applicake/doorkeeper</a></li>
+				<li><a href="https://github.com/intridea/omniauth/">https://github.com/intridea/omniauth/</a></li>
+			</ul>
 		</article>
 		
 		<article>
-			<h3>2-legged OAuth</h3>
-			<p>Consumer and service provider</p>
-			<img src="images/2-legged.png" />
+			<h3>2-legged (OAuth 2.0)</h3>
+			<p>
+				OAuth 1.0a använde signerade requests. OAuth 2.0 använder en enklare och osäkrare modell med bearer token. Kräver HTTPS
+			</p>
+			<p class="c">
+			<img src="images/2-legged.png">
+			</p>
 			<ol>
-				<li>Consumer registerar sig för en consumer_key and consumer_secret</li>
-				<li>Consumer skickar en request till serviceproviderns "auth-endpoint"</li>
-				<li>Detta request måste vara signerat med consumer_secret</li>
-				<li>Servern kontrollerar det signerade requestet och skickar tillbaka oauth_token och oauth_token_secret</li>
 				<li>
+					Applikationens utvecklare registrerar den hos tjänsten: <br />
+					client_id, client_secret
+				</li>
+				<li>
+					Applikationen skickar en request till 
+					serviceproviderns "auth-endpoint": <br />
+					client_id, client_secret, grant_type=client_credentials
+				</li>
+				<li>
+					Tjänstens server svarar med en access-token (Bearer Token)<br />
+					access_token, expires_in, token_type
+				</li>
+				<li>Nu kan access-token (bearer) användas för giltiga anrop</li>
+				
 			</ol>
+		
+			
+			
 		</article>
 		
-		<article>
-			<a href="https://github.com/Mashape/mashape-oauth/blob/master/FLOWS.md">
-				https://github.com/Mashape/mashape-oauth/blob/master/FLOWS.md
+		<article class="fill">
+			<iframe src="http://oauthbible.com/"></iframe>
+			<h2>
+			<a href="http://oauthbible.com/">
+				http://oauthbible.com/
 			</a>
+			</h2>
 		</article>
 				
 		<article>
 			<h3>2-legged / HMAC</h3>
 			<ul>
-				<li>Verifiera användaren och dess behörighet på resurserna - Credetials</li>
-				<li>In-transit data protection - request signature</li>
-				<li>Protect against reply-attacks - timestamp - nonce</li>
+				<li>Verifiera användaren och dess behörighet på resurserna</li>
+				<li>In-transit data protection - Signera dina request med privat nyckel</li>
+				<li>Skydd mot reply-attacks - timestamp (session-token)</li>
 			</ul>
+		
+		</article>
+		
+		<article>
+			<p class="c"><img src="images/HMAC.png" width="95%"></p>
 			<p>
-				HTTP scheme based on a keyed-HMAC Inspirerad av AWS
+				<a class="small" href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">
+					http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html
+				</a><br /><br />
+				<a class="small" href="http://www.thebuzzmedia.com/designing-a-secure-rest-api-without-oauth-authentication/">
+					http://www.thebuzzmedia.com/designing-a-secure-rest-api-without-oauth-authentication/
+				</a>
 			</p>
 		</article>
 
