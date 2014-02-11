@@ -18,7 +18,7 @@ Följande krav ska implementeras för godkänt på uppgiften:
 
 
 
-**Ytterligare funktioner som implementeras (kan anses betyghöjande)**
+**Ytterligare funktioner som kan implementeras (kan anses betyghöjande)**
 
 * API:et ska implementera en lämplig API rate limit på rekommenderat sätt
 * Genomtänkt versionhantering av API:et
