@@ -43,3 +43,20 @@ För att sammanfatta de minimala kraven på denna applikation:
 * En sida där den inloggade administratören kan ta bort(revoke) befintliga API-nycklar
 
 Eventuella frågor kring API:et och registreringsapplikationen kan diskuteras under de schemalagda handledningspassen.
+
+##[Uppdatering] Hantering av applikation och användare (resursägare)##
+Denna delen har varit vagt beskriven med vilje och implementationen är upp till dig att lösa. Här följer dock ett **litet förslag** efter några frågor jag fått. 
+
+Tjänsten har en administratör(superuser) som kan logga in via ett webbgränssnitt (se ovan) och kan där hantera de registrerade applikationerna (API-nycklar).
+
+Den i registreringformuläret registrerade applikationen får en giltig API-nykel som kan användas vid anrop och för spårbarhet hos API:et. Denna kan egentligen vem som helst skapa som vill bygga en klientapplikation kring API:et.
+
+Användare/resursägare och deras “user credentials" kan skapas “manuellt”(rails console t.ex) tills vidare (även om det skulle kunna vara en feature att skapa dessa via API-anrop men det är inget krav enligt tjänsten). Vi kommer kanske ändra detta med en annan tjänsts OAuth-inloggning till klientdelen i kursen för att ta del av deras inloggning istället och koppla till våra users (även om det kommer bryta mot oberoendet mellan server/klient som ett RESTful API ger). 
+
+Dock bör man lösa en implementation av API:et där både en klientapplikations (API_nyckel) och resursägaren (username/password alt. acces_token) bör kunna säkerställas vid förfrågor med “un-safe” methods. 
+
+Hanteringen av resursägarnas "inloggning" kan man lösa på flera sätt:
+
+* Bli en egen service provider i en 3-legged OAuth-implementation. 
+* Använda någon form av 2-legged lösning för hanteringen av användaren. Studera hur de större aktörerna löser dessa delar via t.ex. en 2-legged OAuth. Eller gör en signerad lösning.
+* HTTP Basic. Genom att använda HTTP-protokollet både för resursägare samt för API-nycklen. Dock får man fundera lite kring hur man gör denna implementation rent tekniskt men det lämnar jag till er.
