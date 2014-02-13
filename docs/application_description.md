@@ -21,7 +21,7 @@ Användaren av tjänsten vill bl. a. kunna göra följande:
 * Läsa ut resurser, resurstyper, taggar, licenstyper, användare
 * Söka resurser
 * Filtrera resurser med avseende på:
-	* Resurstyp
+	* Resurstyp (få ut alla resurser av en specifik resurstyp)
 	* Tagg
 	* Vem som skapade resursen
 	* Licenstyp
