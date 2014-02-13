@@ -18,7 +18,7 @@ Tjänsten är tänkt att användas för att samla länkar och beskrivningar till
 
 Användaren av tjänsten vill bl. a. kunna göra följande:
 
-* Läsa ut resurser, resurstyper, taggar, licenstyper, användare
+* Självklart läsa ut resurser, resurstyper, taggar, licenstyper
 * Söka resurser
 * Filtrera resurser med avseende på:
 	* Resurstyp (få ut alla resurser av en specifik resurstyp)
