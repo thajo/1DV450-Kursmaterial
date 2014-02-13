@@ -50,7 +50,7 @@ Tjänsten har en administratör(superuser) som kan logga in via ett webbgränssn
 
 Den i registreringformuläret registrerade applikationen får en giltig API-nykel som kan användas vid anrop och för spårbarhet hos API:et. Denna kan egentligen vem som helst skapa som vill bygga en klientapplikation kring API:et.
 
-Användare/resursägare och deras “user credentials" kan skapas “manuellt”(rails console/seeds.db t.ex) tills vidare (även om det skulle kunna vara en feature att skapa dessa via API-anrop men det är inget krav enligt tjänsten). Vi kommer kanske ändra detta med en annan tjänsts OAuth-inloggning till klientdelen i kursen för att ta del av deras inloggning istället och koppla till våra users (även om det kommer bryta mot oberoendet mellan server/klient som ett RESTful API ger). 
+Användare/resursägare och deras “user credentials" kan skapas “manuellt” (rails console/seeds.db t.ex) tills denan första examination (även om det skulle kunna vara en feature att skapa dessa via API-anrop men det är inget krav enligt tjänsten). Vi kommer kanske ändra detta med en annan tjänsts OAuth-inloggning till klientdelen i kursen (andra examinationen) för att ta del av deras inloggning istället och koppla till våra users (även om det eventuellt kommer bryta mot oberoendet mellan server/klient som ett RESTful API ger). 
 
 Dock bör man lösa en implementation av API:et där både en klientapplikations (API_nyckel) och resursägaren (username/password alt. acces_token) bör kunna säkerställas vid förfrågor med “un-safe” methods. 
 
