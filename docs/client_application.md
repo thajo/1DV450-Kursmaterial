@@ -30,7 +30,7 @@ Jag kan rekommendera att undersöka gem:et [OmniAuth](https://github.com/intride
 
 ## Extra funktioner som kan anses betygshöjande ##
 
-* Skriv din applikation med testfall
+* Skriv din applikation med tillhörande testfall i AngularJS
 * Implementera en cache-strategi
 * Designmässigt ögongodis så som animationer
 * Ytterligare applikationsmässiga funktioner som höjer upplevelsen
