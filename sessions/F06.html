@@ -226,10 +226,6 @@
 			</p>
 		</article>
 		
-		<!-- Bild över module -->
-		<article class="fill">
-			
-		</article>
 		
 		<!-- Exempel på databindning - HELLO WORLD -->
 		<article class="fill">
@@ -263,7 +259,58 @@
 			</p>
 		</article>
 		
-		<!-- Scope -->
+		<!-- What is scope -->
+		<article>
+			<h3>$scope</h3>
+			<ul>
+				<li>Används som klister mellan domänmodellen och vyn</li>
+				<li>Innehåller både data och funktionallitet</li>
+				<li>ViewModel? Modeller är javascriptobject som deklareras på $scope</li>
+				
+			</ul>
+			<p class="c">
+				<img src="images/ng-scope.png" width="700px"/>
+			</p>
+				
+		</article>
+		
+		<!-- scope heirarchy -->
+		<article>
+			<h3>Scopes skapas i en hierarki</h3>
+			<ul>
+				<li>När en applikation skapas skapas $rootScope</li>
+				<li>Vid t.ex. directivet ng-controller skpas en ny Scope-instans</li>
+				<li>ViewModel? Modeller är javascriptobject som deklareras på $scope</li>
+				<li>Isolerade namespace, undviker namnkrockar, effektiv minneshanering</li>
+			</ul>
+			<br />
+			<p class="c">
+				<img src="images/ng-repeat.png" width="700px" />
+				<img src="images/scope_heirarchy.png" width="700px"/>
+			</p>
+			<p class="cc">Chrome extension: 
+				<a href="https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk">Batarang</a> 
+			</p>
+		</article>
+		
+		<!-- modules and Dependency injection-->
+		<article>
+			<h3>Modules and dependency injection</h3>
+		</article>
+		
+		<!-- Services -->
+		<article>
+			<h3>Services</h3>
+			<ul>
+				<li>Value</li>
+				<li>Services</li>
+				<li>Factories</li>
+				<li>Providers</li>
+			</ul>
+		</article>
+		
+		
+		<!-- Overview -->
 		<article>
 			<p class="c">
 				<img src="images/angular-arch.png" width="90%"/>
@@ -278,7 +325,6 @@
 		<article>
 			<h3>Routing</h3>
 			<ul>
-				
 				<li>Ladda ner angular-route.js</li>
 				<li>Inkludera ngRoute som modul i din applikation</li>
 				<li>Definiera dina routes i applikationens "config"</li>
@@ -286,22 +332,24 @@
 			</ul>
 		</article>
 		
+		
+		
 		<!-- Partial views -->
 		<article>
 			<h3>Partial views</h3>
 			<ul>
-				<li>SPA laddar om states i en och samma sida</li>
+				<li>SPA skiftar "states" och laddar om views i en och samma sida</li>
 				<li>Vi vill kunna tala om vad som ska laddas in</li>
 			</ul>
 			<p class="c">
-				<img src="images/partial_view.png" />
+				<img src="images/partial_view.png" height="500px" />
 			</p>
 			
 		</article>
 		
-		<!-- Routing example -->
-		<article>
-			<h1>Exempel</h1>
+		<!-- Routing Example -->
+		<article class="fill">
+			<img src="images/ng-3.png" />
 		</article>
 		
 		
@@ -319,6 +367,9 @@
 		<!-- Applikationsstruktur -->
 		<article class="fill">
 			<h3>Applikationsstruktur</h3>
+			<p class="c">
+				<img src="images/ng-structure.png" height="500px">
+			</p>
 			<p class="note">
 				Visa ett practice på hur man strukturerar en javascript
 				applikation
@@ -330,7 +381,8 @@
 			<h3>Nästa gång</h3>
 			<ul>
 				<li>Jobba mot ett RESTful API</li>
-				
+				<li>$http, $resource...</li>
+				<li>Custom Directives</li>
 			</ul>
 		</article>
 		
