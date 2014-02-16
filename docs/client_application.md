@@ -9,15 +9,15 @@ En av fördelarna med att bygga ett RESTful API är att vi har ett oberoende mel
 
 Detta kommer förmodligen innebära vissa förändringar i din datamodell till din användarhantering vilket tack och lov underlättas av migreringsmöjligheten som finns i Ruby On Rails. Github har en möjlighet att logga in användare via en 3-legged OAuth2.0. Detta ger oss möjlighet att på serversidan (webb-API:et) få reda på användaruppgifter från github och använda dessa i ditt API och autentisera och aktorisera användarna av ditt API.
 
-Du kan via github (och användarens tillstånd) läsa ut ett användarid (github-id) samt användaruppgifter för att lagra dessa i din User-modell. Var dock noga med att inte spara dubbletter av användare samt att en användare kan ändra vissa uppgifter på sitt github-konto som då också bör ändras i din lagring (github-ID borde dock alltid vara konstant). OAuth-inloggningen borde också ge dig någon form av tillfällig token från github med vilken du kan identifiera användarens anrop med för att kunna avgöra om denne har tillgång till resurserna i tjänsten.
+Du kan via github (och användarens tillstånd) läsa ut ett användarid (github-id) samt användaruppgifter för att lagra dessa i din User-modell. Var dock noga med att inte spara dubbletter av användare samt att en användare kan ändra vissa uppgifter på sitt github-konto som då också bör ändras i din lagring (github-ID borde dock alltid vara konstant). Då OAuth-inloggningen lyckats kan vi generera en access_token för våra API-klienter
 Jag kan rekommendera att undersöka gem:et [OmniAuth](https://github.com/intridea/omniauth) samt denna [railscast](http://railscasts.com/episodes/241-simple-omniauth) för att göra din implementation kring detta.
 
 ##Krav på applikationen##
 
 * Inloggningen av användare (resursägare) ska ske via github via deras OAuth-inloggning. (Se punkt nedan)
-* Klientapplikationen ska vara skriven i angularJS och använda asynkrona anrop mot ditt tidigare skrivna API. Anropen mot en OAuth provider behöver ej vara asynkront.
+* Klientapplikationen ska vara skriven i angularJS och använda asynkrona anrop mot ditt tidigare skrivna API. Anropen mot githubs OAuth-provider behöver ej vara asynkront.
 * Applikationen ska kunna bistå sin användare med följande:
-	* Möjlighet att logga in med sina github uppgifter
+	* Möjlighet att logga in med sina github-uppgifter
 	* Möjlighet att på ett genomtänkt och överskådligt sätt lista tjänstens alla resurser (tänk på att det kan finnas obegränsat antal - Vi kan inte visa alla på en gång)
 	* Möjlighet att kunna söka specifika resurser i tjänsten genom sökord
 	* Möjlighet att kunna filtrera ut resurser beroende på vald tagg, resurstyp, licens och användare
@@ -25,7 +25,7 @@ Jag kan rekommendera att undersöka gem:et [OmniAuth](https://github.com/intride
 * Webbapplikationen ska ha en genomarbetad design och vara responsiv. Ett css-ramverk så som bootstrap eller foundation ska användas.
 * Gränssnittet ska vara utformat på sådant sätt att man intuitivt förstår hur applikationen fungerar. 
 * Applikationen ska bete sig som en Single Page Application
-* Webbläsarens backåt- och framåtknappar ska fungera
+* Webbläsarens bakåt- och framåtknappar ska fungera som på en "vanlig" webbsida
 * Koden ska publiceras på github på ditt repositorie som är kopplat till kursen
 
 ## Extra funktioner som kan anses betygshöjande ##
