@@ -1,16 +1,17 @@
 /**
  * Use this service/factory to handle the teams data
- *
+ * This solution could be little chatty to loacalstorage
+ * but for this example its OK
  */
-app.factory('teamFactory', function(localStorageFactory) {
+app.factory('teamFactory', ['localStorageFactory', function(dataStorage) { // inject localStorageFactory  call it dataStorage
 
     var teams = [];
     var factory = {};
 
     // read from localstorage
     factory.getTeams = function() {
-        if(localStorageFactory.canDo()) {
-            teams = localStorageFactory.load("teams") || [];
+        if(dataStorage.canDo()) {
+            teams = dataStorage.load("teams") || [];
         }
         else {
             alert("Sorry, no support");
@@ -21,18 +22,18 @@ app.factory('teamFactory', function(localStorageFactory) {
     // save to localstorage
     factory.addTeam = function(team) {
         teams.push(team);
-        localStorageFactory.save(team);
+        dataStorage.save(team);
     }
 
 
     factory.deleteTeam = function(team) {
         var i = teams.indexOf(team);
         teams.splice(i, 1);
-        localStorageFactory.delete(team);
+        dataStorage.delete(team);
     }
 
     factory.updateTeam = function(team) {
-        localStorageFactory.update(team);
+        dataStorage.update(team);
 
     }
 
@@ -42,7 +43,7 @@ app.factory('teamFactory', function(localStorageFactory) {
         for(var i = 0; i < teams.length; i++) {
             t = teams[i];
             if(t.name == name) {
-                return localStorageFactory.get(t.id);
+                return dataStorage.get(t.id);
             }
         }
         return null;
@@ -52,4 +53,4 @@ app.factory('teamFactory', function(localStorageFactory) {
     return factory;
 
 
-});
+}]);

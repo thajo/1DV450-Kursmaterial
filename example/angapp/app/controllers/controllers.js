@@ -1,9 +1,10 @@
 
 // register the TeamController - The only controller in this application
 // the controller gets dependence injections; the scope, the routeParameters, location, and the factories
-app.controller("TeamController", function TeamController($scope, $routeParams, $location, teamFactory, localStorageFactory) {
+app.controller("TeamController", function TeamController($scope, $routeParams, $location, teamFactory) {
 
     // get all teams from the factory
+
     $scope.teams = teamFactory.getTeams() || [];
 
     // Don't really  like this !

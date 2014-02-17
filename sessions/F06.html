@@ -305,10 +305,10 @@
 		<article>
 			<h3>Scopes skapas i en hierarki</h3>
 			<ul>
-				<li>När en applikation skapas skapas $rootScope</li>
-				<li>Vid t.ex. directivet ng-controller skpas en ny Scope-instans</li>
+				<li>När en applikation kör igång skapas $rootScope</li>
+				<li>Vid t.ex. directivet ng-controller skapas en ny Scope-instans</li>
 				<li>ViewModel? Modeller är javascriptobject som deklareras på $scope</li>
-				<li>Isolerade namespace, undviker namnkrockar, effektiv minneshanering</li>
+				<li>Isolerade namespace, undviker namnkrockar, effektiv minneshantering</li>
 			</ul>
 			<br />
 			<p class="c">
@@ -323,7 +323,7 @@
 		<!-- Overview -->
 		<article>
 			<p class="c">
-				<img src="images/angular-arch.png" width="90%"/>
+				<img src="images/angular-arch.png" width="80%"/>
 			</p>
 			<p class="cc">Inspired: 
 				<a href="http://weblogs.asp.net/dwahlin/archive/2013/04/12/video-tutorial-angularjs-fundamentals-in-60-ish-minutes.aspx">http://weblogs.asp.net/dwahlin/archive/2013/04/12/video-tutorial-angularjs-fundamentals-in-60-ish-minutes.aspx</a> 
@@ -370,22 +370,32 @@
 				<li>Moduler för att organisera sin kod</li>
 				<li>Men också för att beskriva beroenden - Dependency injections</li>
 				<li>Enkelt att byta ut de olika delarna</li>
-				<li>Registrera "recept" för olika objects skapande</li>
+				<li>Registrera "recept" för olika objekts skapande -använd aldrig "new"</li>
 				<li>"Angular modules solve the problem of removing global state from the application and provide a way of configuring the injector."</li>
-				<li>"Angular modules don't try to solve the problem of script load ordering or lazy script fetching."</li>
+				<li>"Angular modules don't try to solve the problem of script load ordering or lazy script fetching." - require.js</li>
 				
 			</ul>
+			<p>
+				Läs Kozlowski, Darwin sid 27-37!
+			</p>
 		</article>
 		
 		<!-- Services -->
-		<article>
+		<article class="fill">
+			<img src="http://farm9.staticflickr.com/8179/7972185654_e15db45fcc_b.jpg">
 			<h3>Services</h3>
+			<p>
+				Objekt som skapas genom Dependency Injection ($injector) kallas Services
+			</p>
 			<ul>
-				<li>Value</li>
+				
 				<li>Services</li>
 				<li>Factories</li>
 				<li>Providers</li>
 			</ul>
+			<p class="cc">Foto cc by: 
+				<a href="http://www.flickr.com/photos/seattlemunicipalarchives/">http://www.flickr.com/photos/seattlemunicipalarchives/</a> 
+			</p>
 		</article>
 		
 		<!-- Applikationsstruktur -->
@@ -401,11 +411,9 @@
 		</article>
 		
 		<!-- Sista exempel -->
-		<article>
-			<h3>Applikationsstruktur</h3>
-			<p class="c">
-				<img src="images/ng-structure.png" height="500px">
-			</p>
+		<article class="fill">
+			<h3>Applikation</h3>
+			<img src="images/football1.png" >
 			<p class="note">
 				Visa ett practice på hur man strukturerar en javascript
 				applikation
