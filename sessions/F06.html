@@ -106,10 +106,12 @@
 			</p>
 		</article>
 		
+		<!-- Logik på klienten -->
 		<article>
 			<h3>Mer logik på klienten</h3>
+			<br />
 			<p class="c">
-				<img src="images/client_logic.png">
+				<img src="images/client_logic.png" width="70%">
 			</p>
 		</article>
 		
@@ -126,7 +128,7 @@
 		
 		<!-- New tech -->
 		<article class="fill">
-			<h3 class="small">Nya krav på klientapplikationer</h3>
+			<h3 class="small">Nya krav på klientapplikationer - SPA</h3>
 			<ul>
 				<li>DOM-manipulering</li>
 				<li>Offline</li>
@@ -138,10 +140,6 @@
 				<li>More complex javascript software</li>
 			</ul>
 			
-			<p class="note">
-				
-				SPA
-			</p>
 		</article>
 		
 		<!-- Javascript frameworks -->
@@ -170,6 +168,7 @@
 			<ul>
 				<li>Miško Hevery and Adam Abrons, 2009</li>
 				<li>Google</li>
+				<li>version 1.2.13 - 2014-02-17</li>
 				<li><a href="http://angularjs.org/">http://angularjs.org/</a></li>
 				<li><a href="https://github.com/angular/angular.js">https://github.com/angular/angular.js</a></li>
 				<li><a href="http://www.youtube.com/channel/UCm9iiIfgmVODUJxINecHQkA">ng-conf 2014</a></li>
@@ -194,47 +193,14 @@
 				<li>Deklarativ programmering för UI (beskriv VAD som ska göras - inte HUR)</li>
 				<li>Imperativ programmering för logik (beskriv steg för steg vad som ska göras)</li>
 				<li>"Show HTML new tricks"- Utvecklare och designers</li>
-				<li>Data-bindning</li>
+				<li>Data binding</li>
 				<li>Koppla från DOM-manipulering från applikationslogik</li>
+				<li>Modulärt, injections</li>
 				<li>Separation mellan klient och server</li>
-				<li>Modulärt</li>
-				
 			</ul>
 		</article>
 		
-		<!-- Exempel på databindning - HELLO WORLD -->
-		<article class="fill">
-			<h3>Hello World!</h3>
-			<img src="images/ng-1.png" />
-			<p class="note">
-				Visa hello world
-				Prata om directives
-				Bygg vidare med lista på lag
-			</p>
-		</article>
-		
-		
-		<!-- Vad kan angular lösa -->
-		<article class="fill">
-			<h3>AngularJS - Vad löser det?</h3>
-			<ul>
-				<li>DOM-hantering (jqLite)</li>
-				<li>Data Binding</li>
-				<li>Routing</li>
-				<li>Browser History</li>
-				<li>Ajax</li>
-				<li>Modular coding</li>	
-				<li>Cachning</li>
-				<li>Testing</li> 
-				<li>...</li>
-			</ul>
-			<p class="note">
-				Vad ingår i angular
-			</p>
-		</article>
-		
-		
-		<!-- JavaScript ramverk -->
+		<!-- Massa ord! -->
 		<article class="fill">
 			<img src="http://farm9.staticflickr.com/8023/7658298768_e4c2c2635e_b.jpg" />
 			
@@ -257,8 +223,19 @@
 			</p>
 		</article>
 		
+		<!-- Exempel på databindning - HELLO WORLD -->
+		<article class="fill">
+			<h3>Hello World!</h3>
+			<img src="images/ng-1.png" />
+			<p class="note">
+				Visa hello world
+				Prata om directives
+				Bygg vidare med lista på lag
+			</p>
+		</article>
 		
 		
+				
 		<!-- MVC architecture-->
 		<article class="fill">
 			<img src="http://farm5.staticflickr.com/4033/4586127172_bca07fe5b1_b.jpg">
@@ -290,8 +267,8 @@
 		<article>
 			<h3>$scope</h3>
 			<ul>
-				<li>Används som klister mellan domänmodellen och vyn</li>
-				<li>Innehåller både data och funktionallitet</li>
+				<li>Används som klister mellan controller och vyn</li>
+				<li>Innehåller både data och funktionalitet</li>
 				<li>ViewModel? Modeller är javascriptobject som deklareras på $scope</li>
 				
 			</ul>
@@ -369,7 +346,6 @@
 			<ul>
 				<li>Moduler för att organisera sin kod</li>
 				<li>Men också för att beskriva beroenden - Dependency injections</li>
-				<li>Enkelt att byta ut de olika delarna</li>
 				<li>Registrera "recept" för olika objekts skapande -använd aldrig "new"</li>
 				<li>"Angular modules solve the problem of removing global state from the application and provide a way of configuring the injector."</li>
 				<li>"Angular modules don't try to solve the problem of script load ordering or lazy script fetching." - require.js</li>

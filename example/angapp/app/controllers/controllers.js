@@ -1,6 +1,6 @@
 
 // register the TeamController - The only controller in this application
-// the controller gets dependence injections; the scope, the routeParameters, location, and the factories
+// the controller gets dependence injections; the scope, the routeParameters, location, and the teamfactory
 app.controller("TeamController", function TeamController($scope, $routeParams, $location, teamFactory) {
 
     // get all teams from the factory
@@ -18,7 +18,7 @@ app.controller("TeamController", function TeamController($scope, $routeParams, $
                 name: $scope.newTeam.name,
                 nickname : $scope.newTeam.nickname
             });
-        $scope.newTeam = null;
+        $scope.newTeam = null; // just in case
     };
 
     // Remove a team

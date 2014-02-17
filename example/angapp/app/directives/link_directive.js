@@ -6,7 +6,7 @@
 app.directive('activeLink', ['$location', function(location) {
         return {
             restrict: 'A',
-            link: function(scope, element, attrs, controller) {
+            link: function(scope, element, attrs) {
                 var css_class = attrs.activeLink;
                 var path = $(element).children("a")[0].hash.substring(1);
                 scope.location = location;
