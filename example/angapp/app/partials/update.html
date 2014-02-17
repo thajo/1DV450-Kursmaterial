@@ -1,0 +1,13 @@
+<!-- This view is loaded when a team should be updated -->
+<!-- current_team is the team that should be updated -->
+<div class="detail_widget">
+    <h2>Update {{current_team.name}}</h2>
+    <p>
+        <input data-ng-model="current_team.name" /><br />
+        <input data-ng-model="current_team.nickname" /><br />
+    </p>
+    <!-- call the method in the controller -->
+    <button class="btn btn-lg btn-info"  data-ng-click="updateTeam(current_team)">Update</button>
+</div>
+
+

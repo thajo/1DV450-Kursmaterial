@@ -1,0 +1,27 @@
+<div class="widget">
+    <h2>Show all teams</h2>
+    <p>
+        Filter teams: <br />
+        <input type="text" name="team" data-ng-model="teamFilter" /> <br />
+    </p>
+
+    <span class="label label-danger" ng-show="isEmpty(teams)">
+        There is no teams!
+    </span>
+
+    <ul class="list-group">
+        <li data-ng-repeat="team in teams | filter:teamFilter | orderBy: 'name'" class="list-group-item reveal-animation hide-animation teamitem">
+            <p>
+                Name: {{ team.name }}<br />
+                Nickname: {{team.nickname }}<br />
+            </p>
+
+            <!-- Try both button and link (route parameters) -->
+            <a class="btn btn-lg btn-info" href="#/teams/{{team.name}}">Update</a>
+
+            <button class="btn btn-lg btn-danger" data-ng-click="deleteTeam(team)">Remove</button>
+
+        </li>
+    </ul>
+    <a href="#/add">Add new team</a>
+</div>

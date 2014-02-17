@@ -1,0 +1,22 @@
+<!-- This view is loaded when application wants to add a new team -->
+<div class="add_widget">
+    <h2>Add a new team</h2>
+    <p>
+        Name: <br />
+        <input type="text" name="name" data-ng-model="newTeam.name" /> <br />
+        Nickname: <br />
+        <input type="text" name="nick" data-ng-model="newTeam.nickname" /> <br />
+    </p>
+
+
+    <br />
+    <button class="btn btn-lg btn-primary" data-ng-click="addTeam()">Add new team</button>
+    <p>
+        <h3>Current teams</h3>
+    </p>
+    <ul class="list-group">
+        <li class="list-group-item" data-ng-repeat="team in teams | orderBy:'name'">
+            <p>{{ team.name }}</p>
+        </li>
+    </ul>
+</div>
