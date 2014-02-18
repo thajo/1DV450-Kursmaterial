@@ -86,19 +86,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controllers.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="controllers.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="46" selection-start="892" selection-end="892" vertical-scroll-proportion="0.23076923" vertical-offset="0" max-vertical-offset="1300">
+            <state line="20" column="46" selection-start="892" selection-end="892" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teamFactory.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="teamFactory.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/factories/teamFactory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="0" selection-start="856" selection-end="856" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="915">
+            <state line="57" column="4" selection-start="1317" selection-end="1317" vertical-scroll-proportion="0.6576923" vertical-offset="0" max-vertical-offset="1300">
               <folding />
             </state>
           </provider>
@@ -132,10 +132,10 @@
         <option value="$PROJECT_DIR$/app/app-init.js" />
         <option value="$PROJECT_DIR$/app/partials/update.html" />
         <option value="$PROJECT_DIR$/app/partials/all.html" />
-        <option value="$PROJECT_DIR$/app/factories/teamFactory.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/app/directives/link_directive.js" />
         <option value="$PROJECT_DIR$/app/controllers/controllers.js" />
+        <option value="$PROJECT_DIR$/app/factories/teamFactory.js" />
       </list>
     </option>
   </component>
@@ -200,6 +200,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="angapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="factories" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -599,20 +617,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/factories/localstorageFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="5" selection-start="846" selection-end="846" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="885">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/factories/teamFactory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="856" selection-end="856" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="915">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/directives/link_directive.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="8" selection-start="726" selection-end="726" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
@@ -634,9 +638,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/factories/localstorageFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="5" selection-start="846" selection-end="846" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="885">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="46" selection-start="892" selection-end="892" vertical-scroll-proportion="0.23076923" vertical-offset="0" max-vertical-offset="1300">
+        <state line="20" column="46" selection-start="892" selection-end="892" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/factories/teamFactory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="4" selection-start="1317" selection-end="1317" vertical-scroll-proportion="0.6576923" vertical-offset="0" max-vertical-offset="1300">
           <folding />
         </state>
       </provider>

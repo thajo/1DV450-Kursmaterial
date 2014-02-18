@@ -37,6 +37,8 @@ app.factory('teamFactory', ['localStorageFactory', function(dataStorage) { // in
 
     }
 
+
+    // Well....don't like this...but just fpr practice
     factory.getTeamByName= function(name) {
         // find in the teams
         var t;
