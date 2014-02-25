@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+<head>
+    <title>Demo Angular</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+<div id="content" data-ng-controller="TestController">
+
+    <p>
+        {{message}}
+    </p>
+
+    </div>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+
+
+<script>
+   var app = angular.module('app', []);
+
+   app.factory('testFactory', ['$q', '$timeout', function ($q, $timeout) {
+
+       var factory = {};
+
+       /**
+        * En metod som simulerar ett asynkront anrop
+        * @returns {promise|*}
+        */
+       factory.getID = function() {
+            var task = $q.defer();
+
+            // Simulerar ett anrop
+            $timeout(function() {
+                // Data vi fått tillbaka
+                var data =  {id : 54};
+                if(typeof(data) !== "undefined") {
+                    task.resolve(data);
+                }
+                else {
+                    task.reject("Det blev fel");
+                }
+            }, 2000);
+            // returnerar promises
+            return task.promise;
+        }
+
+       /**
+        * Simulerar ett mer synkront anrop, måste ske efter det
+        * asynkrona anropet getID
+        * @param id
+        * @returns {string}
+        */
+       factory.getData = function(id) {
+            // Just to see
+            return "Should get data for id: " +id;
+       }
+       return factory;
+
+   }]);
+
+    function TestController($scope, testFactory) {
+
+        $scope.message = "Nothing Yet!"
+
+        // Chaining
+        testFactory.getID().then(testFactory.getData).then(success, error);
+
+
+        // Handlers
+        function error(err) {
+            $scope.message = "Error: " +err;
+        }
+
+        function success(res) {
+            $scope.message = "Success: " +res;
+        }
+
+
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+<head>
+    <title>Demo Angular</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="assets/styles/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="assets/styles/style.css" />
+</head>
+
+<div class="container">
+    <div class="header">
+        <ul class="nav nav-pills pull-right">
+
+            <li><a active-link="active" href="#/">Show teams</a></li>
+            <li><a active-link="active" href="#/add">Add team</a></li>
+
+        </ul>
+        <h3 class="text-muted">English football teams</h3>
+    </div>
+
+    <div class="jumbotron">
+        <!-- Partial view goes here -->
+        <div data-ng-view=""></div>
+    </div>
+
+
+
+    <div class="footer">
+        <p>This is a demo</p>
+    </div>
+
+</div> <!-- /container -->
+
+
+<!-- core -->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+
+<!-- core modules -->
+<script src="assets/js/core/angular-route.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.js"></script>
+
+<!-- app -->
+<script src="app/app-init.js"></script>
+
+<!-- Controllers -->
+<script src="app/controllers/controllers.js"></script>
+
+<!-- factories/services -->
+
+<script src="app/factories/localstorageFactory.js"></script>
+<script src="app/factories/teamFactory.js"></script>
+
+<!-- Directives -->
+<script src="app/directives/directives.js"></script>
+
+<!-- filters -->
+<script src="app/filters/filters.js"></script>
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+</body>
+</html>

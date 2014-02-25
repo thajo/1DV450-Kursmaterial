@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+<head>
+    <title>Demo Angular</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+<div id="content" data-ng-controller="TestController">
+
+    <p>
+        With promise: {{promise}}
+    </p>
+
+    <p>
+        Without promise: {{noPromise}}
+    </p>
+
+    </div>
+<script src="constants.js"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+
+<script>
+   var app = angular.module('app', []);
+
+   app.factory('testFactory', ['$http', function ($http) {
+
+       var factory = {};
+
+       // Mongolabs har CORS
+       var url = "https://api.mongolab.com/api/1/databases?apiKey=" +API_KEY;
+
+       // Denna metod returnerar när den är klar - vem vet när!
+       factory.query = function() {
+           $http.get(url).success(
+                   function (response) {
+                       return response.data;
+                   });
+       };
+
+       // Denna returnerar ett promise vilket ger klienten
+       // möjlighet att hantera det när det kommer
+       factory.get = function() {
+           return $http.get(url).then(
+                   function (response) {
+                       return response.data;
+                   });
+       }
+
+       return factory;
+
+   }]);
+
+    function TestController($scope, testFactory) {
+
+        $scope.promise = "Nothing Yet!"
+        $scope.noPromise = "Nothing Yet!"
+
+        var data = testFactory.query();
+        $scope.noPromise = data; // undefined
+
+
+        // Använder det promise som kommer
+        testFactory.get().then(successFirstCall, error);
+
+
+        // handlers
+        function successFirstCall(data) {
+            $scope.promise = "In success: " +data;
+        }
+
+        function error(err) {
+            $scope.promise = "In error: " +err.status;
+        }
+
+
+    }
+
+</script>
+
+</body>
+</html>

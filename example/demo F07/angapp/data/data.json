@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Everton FC",
+        "nickname": "The toffees",
+        "city": "Liverpool"
+    },
+    {
+        "name": "Tottenham Hotspur",
+        "nickname": "Spurs",
+        "city": "London"
+    },
+    {
+        "name": "Manchester United",
+        "nickname": "Red devils",
+        "city": "Manchester"
+    }
+]
