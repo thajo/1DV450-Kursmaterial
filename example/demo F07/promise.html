@@ -32,7 +32,7 @@
 
             // Simulerar ett anrop
             $timeout(function() {
-                // Data vi fått tillbaka
+                // Simulerar data vi fått tillbaka
                 var data =  {id : 54};
                 if(typeof(data) !== "undefined") {
                     task.resolve(data);
@@ -63,7 +63,7 @@
 
         $scope.message = "Nothing Yet!"
 
-        // Chaining
+        // Chaining, errorhandling last
         testFactory.getID().then(testFactory.getData).then(success, error);
 
 
