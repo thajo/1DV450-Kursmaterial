@@ -1,0 +1,392 @@
+	
+
+
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+
+  <head>
+    <title>Föreläsning</title>
+
+    <meta charset='utf-8'>
+    <script src='slides.js'></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+  </head>
+  
+
+
+  <body style='display: none'>
+
+    <section class='slides layout-widescreen template-default'>
+      
+		
+		<!-- First page -->
+    	<article>
+	       	<h3>
+	         Webbramverk, 1DV450
+	          <br />
+	          <span class="small">Linnéuniversitetet, vt 2014</span>
+	        </h3>
+       
+		
+			<br /><br />
+			<h1 class="big c">JavaScriptramverk</h1>
+			<p class="c" style="margin-top: 60px;">
+				AngularJS<br />
+				<span class="c"></span>
+			</p>
+			<p class="small_footer">
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.sv">
+						<img alt="Creative Commons-licens" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>&nbsp;&nbsp;Denna presentation är licensierat under en 
+					
+							<a rel="license" href="hhttp://creativecommons.org/licenses/by/3.0/deed.sv">Creative Commons Erkännande 3.0 Unported Licens</a>. (Där inte annat anges)<br/>
+			</p>
+      	</article>
+		
+		
+		<!-- AngularJS -->
+		<article>
+			<h3>AngularJS - Förra gången</h3>
+			<p class="c">
+			<img src="images/angular.png" width="200px" />
+			</p>
+			<ul>
+				<li>BaaS och SPA</li>
+				<li>Directives (imperativ vs. deklarativ)</li>
+				<li>Filters</li>
+				<li>Scope</li>
+				<li>MVW</li>
+				<li>Dependency injection</li>
+				<li>Services</li>
+			</ul>
+			
+		</article>
+		
+		<!-- AngularJS -->
+		<article>
+			<h3>AngularJS - Idag</h3>
+			<p class="c">
+			<img src="images/angular.png" width="200px" />
+			</p>
+			<ul>
+				<li>Synkrona anrop</li>
+				<li>$http, $resources</li>
+				<li>Promise API</li>
+				<li>Custom Directives</li>
+				<li>Custom filters</li>
+			</ul>
+			
+		</article>
+		
+		<!-- Asynkront -->
+		<article>
+			<h3>SPA - Asynkrona anrop</h3>
+			
+			<ul>
+				<li>XMLHttpRequest (XHR)</li>
+				<li>Vi vet inte när vi får svar eller i vilken ordning</li>
+				<li>Asynkron programmeringsmodell</li>
+				<li>Koden kan lätt bli rörig vid många av varandra beroende anrop</li>
+				<li>Anropa en tjänst på en annan server?</li>
+			</ul>
+			
+			<p>
+				<strong>Same-orgin security policy:</strong><br />
+				XHR får ske endast till samma källa (protocol, host, port)
+			</p>
+			<p class="c">
+				<img src="images/secure_cross.png" width="800px">
+			</p>
+			
+		</article>
+
+
+		
+		<article>
+			<h3>Lösningar - Same-orgin security policy</h3>
+			<ul>
+				<li>Proxy</li>
+				<li>JSONP</li>
+				<li>CORS - Cross-orgin resource sharing</li>
+			</ul>
+		</article>
+		
+		<article>
+			<h3>JSONP - JSON with padding</h3>
+			
+			<p>Anrop som körs direkt i webbläsaren</p>
+			<pre>
+// Länka in (eller efterfråga) ett javascript från "den andra servern"
+&lt;script src="http://example.com/jsonp.php?callback=parseData">&lt;/script>	
+
+// Svaret från servern anropar den callback du har i din kod
+parseData({"Name": "Foo", "Id": 1234, "Rank": 7});
+
+// Funktion definierad i din JS
+function parseData(obj) {
+  // Do stuff
+}</pre>
+			
+			<p>
+			Endast GET<br />
+			Felhantering - inga HTTP resonse codes<br />
+			XSS - Cross Site Scripting<br />
+			Servern kan injekta kod rakt in i webbläsaren - i en user session
+			</p>
+		</article>
+		
+		<article>
+			<h3>I angularJS</h3>
+			<pre>
+var url = "http://public-api.wordpress.com/rest/v1/posts?callback=JSON_CALLBACK";
+$http.jsonp(url)
+  .success(function(data){
+    console.log(data.found);
+  }
+);
+			</pre>
+		</article>
+		
+		<article>
+			<h3>CORS (Cross-orgin resource sharing)</h3>
+			<ul>
+				<li>W3C specifikation</li>
+				<li>Kordinerar server och klient - Genom request och response headers</li>
+				<li>Inbyggt i angular</li>
+				<li>Problem med tidigare IE-versioner (delvis stöd i IE8-9 - Ej angular)</li>
+				
+				<li>Simple (GET, POST, HEAD) - non-simple (PUT, DELETE, PATCH)</li>
+				<li>Vid nonsimple måste klienten skicka en OPTIONS och vänta på serverns godkänande</li>
+				
+			</ul>
+			<p class="c">
+				<img width="400px" src="images/cors.png">
+			</p>	
+		</article>
+		
+		<!-- $http -->
+		<article>
+			<h3>XHR i angularJS - $http</h3>
+			
+			<p>
+				AngularJS har ett inbyggt API som inkuderar XHR, JSONP, CORS m.m.<br />
+				
+				<ul>
+					<li>$http.get(url, config)</li>
+					<li>$http.post(url, data, config)</li>
+					<li>$http.put(url, data, config)</li>
+					<li>$http.delete(url, config)</li>
+					<li>$http.head(url, config)</li>
+					<li>$http.jsonp(url, config)</li>
+				</ul>
+		</article>
+		
+		<!-- $http exempel -->
+		<article>
+			<img src="images/simple_get_ng.png">
+			<img src="images/simple_promise.png" width="600px">
+			
+		</article>
+		
+		<article>
+			<p class="c">
+				<img src="images/http_patch.png" width="800px">
+			</p>
+		</article>
+		
+		
+		
+		
+		
+		<!-- Promises -->
+		<article>
+			<h3>Promise API - Varför?</h3>
+			<p>Ett försök att göra asynkron programmering mer lik synkron</p>
+			<ul>
+				<li>Promise API - ej specifikt för angularJS</li>
+				<li>I AngularJS används $q-service (inspirerat från http://github.com/kriskowal/q)</li>
+				<li>Promises ses som "hållare" för framtida resultat - t.ex. en AJAX-förfrågan</li>
+				<li>Kedja metodanrop, enklare felhantering...</li>
+				<li>$http</li>
+			</ul>
+			<!--
+			<pre>
+SomeService.login(token, function(response) {
+  if (response.authResponse) {
+    SomeService.api('/stuff', successCallback); // Vad händer om det går fel här?
+  } else {
+    error_handler('User cancelled login or did not fully authorize.');
+  }
+});</pre>
+				-->
+		</article>
+		
+		<article>
+			<h3>Bök</h3>
+			<pre>
+function fetchData(id, cb){
+  getDataFromServer(id, function(err, result){
+    if(err){
+	  cb(err, null);
+    }else{
+      transformData(result, function(err, transformedResult){
+        if(err){
+          cb(err, null);
+        }else{
+          saveToIndexDB(result, function(err, savedData){
+            cb(err, savedData);
+          });
+        }
+     });
+   }
+ });
+}				
+			</pre>
+		</article>
+		
+		<!-- Promises -->
+		<article>
+			<h3>Promise API i angularJS</h3>
+			<pre>
+// Deferred - "dröjd" - Skapa en uppgift
+var taskToDo = $q.defer() 
+			
+// Ett promise är något som i framtiden kan lyckas eller misslyckas
+var promise = taskToDo.promise;
+			
+// Talar om vad som ska ske i de olika fallen
+promise.then(successHandler, errorHandler);
+			
+
+// När vi ska fullgöra vårt "promise" någon gång i framtiden			
+taskToDo.resolve(params);
+// När något gått fel
+taskToDo.reject(params);
+			</pre>
+			
+		</article>
+		
+		<!-- Active link-->
+		<article class="fill">
+			<h3>Exempel Promise and $http</h3>
+			<img src="images/ng-3.png" />
+		</article>
+		
+		<!-- $resources -->
+		<article>
+			<h3>$resources</h3>
+			<p>
+				Angular har en service som kapslar in RESTful-anrop (CRUD)
+			</p>
+			<p class="c">
+			<img src="images/resource_ng.png" width="800px" />
+			</p>
+		</article>
+		
+		
+		
+		<!-- restangular -->
+		<article>
+			<h3>
+				<a href="https://github.com/mgonto/restangular">
+					https://github.com/mgonto/restangular
+				</a>
+		</article>
+		
+		<!-- Custom directives -->
+		<article>
+			<h3>Custom Directives</h3>
+			<ul>
+				<li>Angular har ett antal built-in directives (ngClick, ngShow)</li>
+				<li>Man kan också utveckla egna! - Utöka HTML</li>
+				<li>Ge möjlighet för mer deklarativ programmering</li>
+				<li>Hanterar DOM-hantering i dina direktiv</li>
+				<li>Återanvända i UI</li>
+			</ul>
+			<p class="c">
+			<img src="images/directives_example.png" width="600px">
+			</p>
+			
+		</article>
+		
+		<!-- Custom directives -->
+		<article>
+			<p>
+			Kan inkluderas som element, attribut, kommentar och CSS-klass
+			<pre>
+&lt;my-directive>&lt;/my-directive>
+&lt;input my-directive="">
+&lt;input class="my-directive">
+&lt;!-- directive: my-directive --&gt;
+</pre>
+			</p>
+			<ol>
+				<li>Browsern skapar DOM-trädet</li>
+				<li>Angular går igenom hela DOM-trädet</li>
+				<li>Matchar element, attribut, css-klasser, kommentarer mot de registrerade "directives" som finns</li>
+				<li>När dessa hittas så körs deras "compile functions" som returnerar "linking functions" - Innan scope skapats</li>
+				<li>Scope skapas och alla "linking functions" anropas</li>
+				<li>Eventuell bindning mellan Scope och DOM kan ske där</li>
+			</ol>
+		</article>
+		
+		<!-- Custom directives -->
+		<article>
+			<p>Deklarativt i HTML</p>
+			<img src="images/dec_example.png" width="600px">
+			
+			<p>Kod i applikationen</p>
+			<img src="images/dir_code.png" width="600px">
+			
+			<p>
+				<a href="http://amitgharat.wordpress.com/2013/06/08/the-hitchhikers-guide-to-the-directive/">
+					http://amitgharat.wordpress.com/2013/06/08/the-hitchhikers-guide-to-the-directive/
+				</a>
+			</p>
+			
+		</article>
+		
+  
+		<!-- Active link-->
+		<article class="fill">
+			<h3>Exempel Custom directives</h3>
+			<img src="images/ng-3.png" />
+		</article>
+		
+		
+		<!-- Custom filters -->
+		<article>
+			<h3>Custom filters</h3>
+			<p class="c">
+				<img src="images/filter.png" width="700px">
+			</p>
+			<p class="c">
+				<img src="images/filter_list.png" width="700px">
+			</p>
+		</article>
+		
+		<!-- Custom filters-->
+		<article class="fill">
+			<h3>ExempelCustom filters</h3>
+			<img src="images/ng-3.png" />
+		</article>
+		
+	  </section>
+	  </body>
+	</html>
+	
+	
+	
