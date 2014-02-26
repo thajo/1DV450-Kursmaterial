@@ -30,7 +30,7 @@ I första granskningen kommer du alltså granska två ReSTful webb-api:er. Du b�
 * Har applikationen implementerat några extra funktioner som inte fanns i kraven så som testfall, cachning m.m.
 
 
-**Dina granskningar ska vara gjord senast fredag vecka 9 , 27:e februari, klockan 17:00 då formuläret stängs**
+**Dina granskningar ska vara gjord senast fredag vecka 9 , 28:e februari, klockan 17:00 då formuläret stängs**
 
 ##Andra examinationen##
 Andra examinationen sker i slutet av kursen och kommer då fokusera på klientdelen och angularJS. Examinationen kommer ske på liknande sätt.
