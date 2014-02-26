@@ -12,11 +12,11 @@ Detta kommer förmodligen innebära vissa förändringar i din datamodell till d
 Du kan via github (och användarens tillstånd) läsa ut ett användarid (github-id) samt användaruppgifter för att lagra dessa i din User-modell. Var dock noga med att inte spara dubbletter av användare samt att en användare kan ändra vissa uppgifter på sitt github-konto som då också bör ändras i din lagring (github-ID borde dock alltid vara konstant). Då OAuth-inloggningen lyckats kan vi generera en access_token för våra API-klienter
 Jag kan rekommendera att undersöka gem:et [OmniAuth](https://github.com/intridea/omniauth) samt denna [railscast](http://railscasts.com/episodes/241-simple-omniauth) för att göra din implementation kring detta.
 
-FILM TILLKOMMER OM FÖRSLAG PÅ OAUTH-LÖSNINGEN
+FILM TILLKOMMER OM FÖRSLAG PÅ OAUTH-LÖSNINGEN VIA GITHUB
 
 ##Krav på applikationen##
 
-* Inloggningen av användare (resursägare) ska ske via github via deras OAuth-inloggning. (Se punkt nedan)
+* Inloggningen av användare (resursägare) ska ske via github via deras OAuth-inloggning - Har du redan implementerat en egen OAUth-provider till ditt API kan du såklart använda den om du vill!
 * Klientapplikationen ska vara skriven i angularJS och använda asynkrona anrop mot ditt tidigare skrivna API. Anropen mot githubs OAuth-provider behöver ej vara asynkront.
 * Applikationen ska kunna bistå sin användare med följande:
 	* Möjlighet att logga in med sina github-uppgifter
