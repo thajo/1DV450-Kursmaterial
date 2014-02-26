@@ -12,6 +12,8 @@ Detta kommer förmodligen innebära vissa förändringar i din datamodell till d
 Du kan via github (och användarens tillstånd) läsa ut ett användarid (github-id) samt användaruppgifter för att lagra dessa i din User-modell. Var dock noga med att inte spara dubbletter av användare samt att en användare kan ändra vissa uppgifter på sitt github-konto som då också bör ändras i din lagring (github-ID borde dock alltid vara konstant). Då OAuth-inloggningen lyckats kan vi generera en access_token för våra API-klienter
 Jag kan rekommendera att undersöka gem:et [OmniAuth](https://github.com/intridea/omniauth) samt denna [railscast](http://railscasts.com/episodes/241-simple-omniauth) för att göra din implementation kring detta.
 
+FILM TILLKOMMER OM FÖRSLAG PÅ OAUTH-LÖSNINGEN
+
 ##Krav på applikationen##
 
 * Inloggningen av användare (resursägare) ska ske via github via deras OAuth-inloggning. (Se punkt nedan)
@@ -22,16 +24,19 @@ Jag kan rekommendera att undersöka gem:et [OmniAuth](https://github.com/intride
 	* Möjlighet att kunna söka specifika resurser i tjänsten genom sökord
 	* Möjlighet att kunna filtrera ut resurser beroende på vald tagg, resurstyp, licens och användare
 * Användaren ska hela tiden veta vad som pågår i applikationen med hjälp av tydliga meddelanden och uppdatering av gränssnitt
+* Minst en "custom directives" och ett "custom filter" ska vara implementerat. Dock inte benom att bara ta samma idé och kod från föreläsningexemplen.
 * Webbapplikationen ska ha en genomarbetad design och vara responsiv. Ett css-ramverk så som bootstrap eller foundation ska användas.
 * Gränssnittet ska vara utformat på sådant sätt att man intuitivt förstår hur applikationen fungerar. 
 * Applikationen ska bete sig som en Single Page Application
 * Webbläsarens bakåt- och framåtknappar ska fungera som på en "vanlig" webbsida
-* Koden ska publiceras på github på ditt repositorie som är kopplat till kursen
+* Koden ska publiceras på github, **som en release**, på ditt repositorie som är kopplat till kursen
+* Du ska i en readme-fil tydligt reflektera över eventuella förändringar du gjort i ditt API under tiden du byggde klientapplikationen.
+* Du ska var nogrann med att också dokumentera eventuella saker som personen som kör en peer-review på ditt projekt behöver veta. ALLA STEG i hur man får igång applikationerna!
 
 ## Extra funktioner som kan anses betygshöjande ##
 
 * Skriv din applikation med tillhörande testfall i AngularJS
-* Implementera en cache-strategi
+* Implementera en cache-strategi på klienten
 * Designmässigt ögongodis så som animationer
 * Ytterligare applikationsmässiga funktioner som höjer upplevelsen
 
