@@ -1,23 +1,12 @@
 ##Introduktion till uppgiften - Klientapplikation via AngularJS##
 I förra uppgiften skapade vi ett restful-inspirerat webb-API som nu förhoppningsvis är redo för användning. Det är nu du ska använda ditt API för att att skapa en webbaserad klientapplikation som genom asynkrona anrop jobbar mot ditt API.
 
-Uppgiften kan innebära vissa förändingar i ditt API och dess datamodell och ditt tidigare utvecklade API.
+Uppgiften kan innebära vissa förändingar i ditt API och dess datamodell och ditt tidigare utvecklade API. Det är alltså helt OK att göra förändningar i sitt API även under detta steg.
 
-
-## Hantering av användare ##
-En av fördelarna med att bygga ett RESTful API är att vi har ett oberoende mellan serv- och klientapplikation. Vi skulle kunna använda den lösning vi implementerade i API-uppgiften för att ha kvar detta men vi kommer delvis bryta det oberoendet genom att nu låta användaren av klientapplikationen logga in via githubs OAuth-lösning och därmed låta github ta hand om själva autensieringen av användarna och använda detta i vårt API. Därför får vi se detta mer som en övning för ert lärande än som en skarp implementation.
-
-Detta kommer förmodligen innebära vissa förändringar i din datamodell till din användarhantering vilket tack och lov underlättas av migreringsmöjligheten som finns i Ruby On Rails. Github har en möjlighet att logga in användare via en 3-legged OAuth2.0. Detta ger oss möjlighet att på serversidan (webb-API:et) få reda på användaruppgifter från github och använda dessa i ditt API och autentisera och aktorisera användarna av ditt API.
-
-Du kan via github (och användarens tillstånd) läsa ut ett användarid (github-id) samt användaruppgifter för att lagra dessa i din User-modell. Var dock noga med att inte spara dubbletter av användare samt att en användare kan ändra vissa uppgifter på sitt github-konto som då också bör ändras i din lagring (github-ID borde dock alltid vara konstant). Då OAuth-inloggningen lyckats kan vi generera en access_token för våra API-klienter
-Jag kan rekommendera att undersöka gem:et [OmniAuth](https://github.com/intridea/omniauth) samt denna [railscast](http://railscasts.com/episodes/241-simple-omniauth) för att göra din implementation kring detta.
-
-FILM TILLKOMMER OM FÖRSLAG PÅ OAUTH-LÖSNINGEN VIA GITHUB
 
 ##Krav på applikationen##
 
-* Inloggningen av användare (resursägare) ska ske via github via deras OAuth-inloggning - Har du redan implementerat en egen OAUth-provider till ditt API kan du såklart använda den om du vill!
-* Klientapplikationen ska vara skriven i angularJS och använda asynkrona anrop mot ditt tidigare skrivna API. Anropen mot githubs OAuth-provider behöver ej vara asynkront.
+* Klientapplikationen ska vara skriven i angularJS och använda asynkrona anrop mot ditt tidigare skrivna API. 
 * Applikationen ska kunna bistå sin användare med följande:
 	* Möjlighet att logga in med sina github-uppgifter
 	* Möjlighet att på ett genomtänkt och överskådligt sätt lista tjänstens alla resurser (tänk på att det kan finnas obegränsat antal - Vi kan inte visa alla på en gång)
@@ -35,8 +24,16 @@ FILM TILLKOMMER OM FÖRSLAG PÅ OAUTH-LÖSNINGEN VIA GITHUB
 
 ## Extra funktioner som kan anses betygshöjande ##
 
+* Inloggningen av användare (resursägare) ska ske via github via deras OAuth-inloggning - Har du redan implementerat en egen OAUth-provider till ditt API kan du såklart använda den om du vill! Anropen mot githubs OAuth-provider behöver ej vara asynkront.
 * Skriv din applikation med tillhörande testfall i AngularJS
 * Implementera en cache-strategi på klienten
 * Designmässigt ögongodis så som animationer
 * Ytterligare applikationsmässiga funktioner som höjer upplevelsen
 
+## Hantering av användare  ##
+En av fördelarna med att bygga ett RESTful API är att vi har ett oberoende mellan serv- och klientapplikation. Vi skulle kunna använda den lösning vi implementerade i API-uppgiften för att ha kvar detta men vi kommer delvis bryta det oberoendet genom att nu låta användaren av klientapplikationen logga in via githubs OAuth-lösning och därmed låta github ta hand om själva autensieringen av användarna och använda detta i vårt API. Därför får vi se detta mer som en övning för ert lärande.
+
+Detta kommer förmodligen innebära vissa förändringar i din datamodell till din användarhantering vilket tack och lov underlättas av migreringsmöjligheten som finns i Ruby On Rails. Github har en möjlighet att logga in användare via en 3-legged OAuth2.0. Detta ger oss möjlighet att på serversidan (webb-API:et) få reda på användaruppgifter från github och använda dessa i ditt API och autentisera och aktorisera användarna av ditt API.
+
+Du kan via github (och användarens tillstånd) läsa ut ett användarid (github-id) samt användaruppgifter för att lagra dessa i din User-modell. Var dock noga med att inte spara dubbletter av användare samt att en användare kan ändra vissa uppgifter på sitt github-konto som då också bör ändras i din lagring (github-ID borde dock alltid vara konstant). Då OAuth-inloggningen lyckats kan vi generera en access_token för våra API-klienter
+Jag kan rekommendera att undersöka gem:et [OmniAuth](https://github.com/intridea/omniauth) samt denna [railscast](http://railscasts.com/episodes/241-simple-omniauth) för att göra din implementation kring detta.
