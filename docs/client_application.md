@@ -11,7 +11,7 @@ Uppgiften kan innebära vissa förändingar i ditt API och dess datamodell och d
 	* Möjlighet att på ett genomtänkt och överskådligt sätt lista tjänstens alla resurser (tänk på att det kan finnas obegränsat antal - Vi kan inte visa alla på en gång)
 	* Möjlighet att kunna söka specifika resurser i tjänsten genom sökord
 	* Möjlighet att kunna filtrera ut resurser beroende på vald tagg, resurstyp, licens och användare
-	* Möjlighet för en resursägare (autentiserad användare) att skapa/ändra och ta bort egna resurser
+	* Möjlighet att autentisera (logga in) användare/resursägare så att dessa kan skapa/ändra och ta bort egna resurser. 
 * Användaren ska hela tiden veta vad som pågår i applikationen med hjälp av tydliga meddelanden och uppdatering av gränssnitt
 * Minst en "custom directives" och ett "custom filter" ska vara implementerat. Dock inte benom att bara ta samma idé och kod från föreläsningexemplen.
 * Webbapplikationen ska ha en genomarbetad design och vara responsiv. Ett css-ramverk så som bootstrap eller foundation ska användas.
