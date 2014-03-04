@@ -43,7 +43,7 @@ För att sammanfatta de minimala kraven på denna applikation:
 
 Eventuella frågor kring API:et och registreringsapplikationen kan diskuteras under de schemalagda handledningspassen.
 
-##[Uppdatering] Hantering av applikation och användare (resursägare)##
+##Hantering av applikation och användare (resursägare)##
 Denna delen har varit vagt beskriven med vilje och implementationen är upp till dig att lösa. Här följer dock ett **litet förslag** efter några frågor jag fått.  
 
 Tjänsten har en administratör(superuser) som kan logga in via ett webbgränssnitt (se ovan) och kan där hantera de registrerade applikationerna (API-nycklar).
