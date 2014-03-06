@@ -1,0 +1,16 @@
+<html>
+<head></head>
+<body>
+
+<script>
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
+    alert("Auth-token: " +getParameterByName("auth_token") +"\n Expires: " +getParameterByName("token_expires"));
+</script>
+</body>
+</html>
