@@ -33,6 +33,11 @@ I första granskningen kommer du alltså granska två ReSTful webb-api:er. Du b�
 **Dina granskningar ska vara gjord senast fredag vecka 9 , 28:e februari, klockan 17:00 då formuläret stängs**
 
 ##Andra examinationen##
-Andra examinationen sker i slutet av kursen och kommer då fokusera på klientdelen och angularJS. Examinationen kommer ske på liknande sätt.
+Andra examinationen sker i slutet av kursen och kommer då fokusera på klientdelen och angularJS. 
+Examinationen går till på liknande sätt som för del ett i kursen.
+Kod redovisas genom en release på github. **release gör senast torsdag 20/3 klockan 23:59**
+Du kommer under fredagen tilldelas två andra projekt att göra en review på. Mer information om detta kommer fås i det mejl som skickas ut.
+Examinator kommer också granska dina applikationer för både för server- och klientdelen för att se att de uppfyller de krav som ställdes.
 
-Mer information om andra examinationen följer...
+Under vecka 12 kommer en muntlig redovisning ske på de delar som tagits upp i kursen under vecka 8, 9 och 10 (kursvecka 6-8). Du ska alltså kunna besvara ett antal frågor.
+
