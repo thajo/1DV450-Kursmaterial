@@ -41,3 +41,5 @@ Examinator kommer också granska dina applikationer för både för server- och 
 
 Under vecka 12 kommer en muntlig redovisning ske på de delar som tagits upp i kursen under vecka 8, 9 och 10 (kursvecka 6-8). Du ska alltså kunna besvara ett antal frågor.
 
+**Dina granskningar ska vara gjord senast fredag vecka 13 , 28:e mars, klockan 17:00 då formuläret stängs**
+
