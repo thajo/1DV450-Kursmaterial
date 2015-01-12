@@ -19,16 +19,27 @@ Följande är de minimala kraven för API-uppgiften
 * Till API:et ska en POSTMAN-fil skapas som tester samtliga anrop man kan göra till API:et
 
 Mer specifika krav till positioneringstjänsten:
+
 * Man ska kunna få ut samtliga händelser på lämpligt sätt
+
 * Man ska kunna få ut en enskild händelse
+
 * Man ska kunna få ut alla händelser tillhörande en viss tagg
+
 * Man ska kunna få ut samtliga taggar i systemet
+
 * Man ska kunna få ut samtliga händelser skapade av en viss användare/resursägare
+
 * Man ska kunna få ut samtliga resursägare
+
 * Man ska kunna få ut samtliga händelser kopplade i närheten till en position (välj själv lämplig nogrannhet)
+
 * Man ska kunna skriva en sökfråga som söker händelse på lämpligt sätt.
+
 * Skapas en resurs med ett nytt taggnamn ska även en ny tagg skapas. Dock ska man undvika dubletter av tagg namn
+
 * Utöver detta är du fri att implementera egna funktioner i ditt API
+
 * Du ska var noggrann med att också dokumentera eventuella saker som personen som kör en peer-review på ditt projekt behöver veta. ALLA STEG i hur man får igång applikationerna!
 
 Observera att bygget av API:et är en itterativ process och visa delar kan senare behöva modifieras och ändras när vi bygger en klientapplikation.
