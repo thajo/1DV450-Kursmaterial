@@ -1,44 +1,31 @@
-##Introduktion##
-Under denna kurs ska vi utveckla ett webb-API som stödjer sig på en RESTful arkitektur. Till detta API ska det sedan byggas en tilltalande klientapplikation (SPA). Här nedan följer en beskrivning av ett förslag på en tjänst som kursens moment kan byggas kring. **Egna idéer kring andra tjänster/API:er uppskattas givetvis** så länge de har likvärdig omfattning som tjänsten som beskrivs i detta dokument. Kontakta kursansvarig om du har en idé till egen tjänst du vill utveckla under kursens gång för en diskussion kring detta.
+##Positioneringstjänst
 
-##Förslag på tjänst (TOERH - The Open Education Resource Handler)##
-Målgruppen till denna tjänst är främst lärare och utbildare som använder sig av öppna digitala lärresurser i sin undervisning, [OER](http://en.wikipedia.org/wiki/Open_educational_resources). Detta kan vara bilder, videoklipp, artiklar, blogginlägg, exempelkod m.m. som kan tänkas länkas in som lärresurser i en kurs. Tjänsten är tänkt att samla liknande resurser för ett kollegium.
+I denna kurs kommer vi jobba med en och samma tjänst genom hela kursen. Tanken är att ni ska bygga någon typ av positioneringstjänst. Vad för typ är du fri att välja men någon form av tjänst som kopplar händelser med en position. Förslag på olika typer av specificerade tjänster kan vara:
 
-Tjänsten är tänkt att användas för att samla länkar och beskrivningar till av kollegiet insamlade resurslänkar. Användaren av tjänsten vill ha information om följande delar kring en resurs:
+* Evenemangshanterings tjänst som visar olika evenemang 
+* Sportfisketjänst med fångstrapporter kopplat till position
+* Turistinformationskarta
+* Cafékarta
+* Platsberättelser, en tjänst där personer kan lägga till berättelser om olika platser
 
-* Lämpligt namn på resursern
-* En utförlig beskrivning av resursen
-* URL till resursen
-* Vad resursen har för typ av licens - Är det Creative Commons (finns olika nivåer), GNU, MIT o.s.v.
-* Vad resursen är för typ (bild, video....)
-* Hur är resursen taggad? En resurs kan har flera taggar som i ett ord kategoriserar resursen.
-* Information om när resursen lagts till
-* Information om vem som lagt till resursen
+Kort sagt ska du utgå från vissa mindre krav på din tjänst och sedan har du möjlighet att utveckla något eget under denna kurs. Tanken är att du ska skriva ett fullfjädrat webb-API med hjälp av backend-teknik samt sedan bygga en SPA-applikation som använder sig av detta API. Utöver detta ska du även skriva en mindre applikation där utvecklare kan begära ut en API-nyckel för att använda ditt API.
 
-
-Användaren av tjänsten vill bl. a. kunna göra följande:
-
-* Självklart läsa ut resurser, resurstyper, taggar, licenstyper
-* Söka resurser
-* Filtrera resurser med avseende på:
-	* Resurstyp (få ut alla resurser av en specifik resurstyp)
-	* Tagg
-	* Vem som skapade resursen
-	* Licenstyp
-* Logga in och därmed posta nya resurser, ändra sina befintliga resurser, ta bort sina befintliga resurser
-
-
-Tjänsten ska innehålla/kunna hantera:
-
-* Oändigt antal resurser (hårdvara kan sätta såklart stopp men inte tjänstens arkitektur) 
-* Oändligt antal användare
-* Välutformat API-dokumentation riktad till andra utvecklare som vill använda ditt API.
-
-
-Här följer ett förslag på en modell som skulle kunna gälla för denna typ av tjänt. Observera att denna modell inte på något sätt är komplett vad gäller den data som ska sparas. Man är fri att modifiera och bygga ut modellen om man har idéer om ytterligare funktionallitet i tjänsten.
+Tjänsten ska kunna hantera händelser/platsbeskrivning med en specifik position (longitude/latitude) knuten till sig. Varje händelse är skapad av en användare som har identifierat sig på tjänsten. Varje händelse/platsbeskrivning kan också taggas med en eller flera taggar som hjälper till att kategorisera informationen i tjänsten. Ett (ej fullständigt) förslag på datamodell skulle kunna se ut som följer:
 
 ![Bild av datamodell](https://raw.github.com/thajo/1DV450-Kursmaterial/master/docs/db.png)
 
+Utöver denna modell är du fri att göra egna implementeringar som specificerar just din applikation. Se denna som en absolut minsta krav för komplexibiliteten i applikationen. Tjänsten ska som minst ha stöd för följande:
+
+* I tjänsten ska en användare kunna logga in och lägga till, uppdatera och ta bort händelser/platsbeskrivningar. Denna del kommer kräva någon form av autentisering och auktorisering.
+* En registrerad användare som kan skapa händelser kan också skapa egna taggar för dessa händelser.
+* En användare av tjänsten ska kunna lista ut de tillagda händelserna sorterat på datum de lagts till.
+* En användare ska kunna lista ut händelser tillhörande en speciell resursägare och/eller en speciell tagg.
+* En användare av tjänsten ska kunna lista händelser i närheten av en angiven position
+
+Tjänsten ska innehålla/kunna hantera:
+* Oändigt antal resurser och användare (hårdvara kan sätta så klart stopp men inte tjänstens arkitektur)
+* Välutformat API-dokumentation riktad till andra utvecklare som vill använda ditt API.
+* Arbetets gång ska tydligt dokumenteras med tydliga commitmeddelanden i tjänstens repositorie på github.
+
+
 Eventuella frågeställningar kring tjänsten tas upp under de schemalagda handledningspassen.
-
-
