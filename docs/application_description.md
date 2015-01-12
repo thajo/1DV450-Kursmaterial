@@ -27,5 +27,13 @@ Tjänsten ska innehålla/kunna hantera:
 * Välutformat API-dokumentation riktad till andra utvecklare som vill använda ditt API.
 * Arbetets gång ska tydligt dokumenteras med tydliga commitmeddelanden i tjänstens repositorie på github.
 
+##Tjänstens tre delar
+Hela tjänsten kommer delas upp i tre efter varandra följande delar;
+
+* En applikation där en utvecklare kan registrera sin applikation och efterfråga efter en API-nyckel för att kunna ställa frågor.
+
+* Ett backend bestående av ett RESTful webb-API som hanterar all data som hanteras av tjänsten. Detta API ska utvecklas i Ruby on Rails.
+
+* En Single Page Application (SPA) som klientapplikation och gränssnitt mot tjänsten.
 
 Eventuella frågeställningar kring tjänsten tas upp under de schemalagda handledningspassen.
