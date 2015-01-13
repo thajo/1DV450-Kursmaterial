@@ -7,6 +7,8 @@ I denna kurs kommer vi jobba med en och samma tjänst genom hela kursen. Tanken 
 * Turistinformationskarta
 * Cafékarta
 * Platsberättelser, en tjänst där personer kan lägga till berättelser om olika platser
+* ...
+
 
 Kort sagt ska du utgå från vissa mindre krav på din tjänst och sedan har du möjlighet att utveckla något eget under denna kurs. Tanken är att du ska skriva ett fullfjädrat webb-API med hjälp av backend-teknik samt sedan bygga en SPA-applikation som använder sig av detta API. Utöver detta ska du även skriva en mindre applikation där utvecklare kan begära ut en API-nyckel för att använda ditt API.
 
@@ -17,23 +19,24 @@ Tjänsten ska kunna hantera händelser/platsbeskrivning med en specifik position
 Utöver denna modell är du fri att göra egna implementeringar som specificerar just din applikation. Se denna som en absolut minsta krav för komplexibiliteten i applikationen. Tjänsten ska som minst ha stöd för följande:
 
 * I tjänsten ska en användare kunna logga in och lägga till, uppdatera och ta bort händelser/platsbeskrivningar. Denna del kommer kräva någon form av autentisering och auktorisering.
-* En registrerad användare som kan skapa händelser kan också skapa egna taggar för dessa händelser.
+* En registrerad användare som kan skapa händelser kan också skapa taggar för dessa händelser.
 * En användare av tjänsten ska kunna lista ut de tillagda händelserna sorterat på datum de lagts till.
 * En användare ska kunna lista ut händelser tillhörande en speciell resursägare och/eller en speciell tagg.
 * En användare av tjänsten ska kunna lista händelser i närheten av en angiven position
 
 Tjänsten ska innehålla/kunna hantera:
+
 * Oändigt antal resurser och användare (hårdvara kan sätta så klart stopp men inte tjänstens arkitektur)
-* Välutformat API-dokumentation riktad till andra utvecklare som vill använda ditt API.
 * Arbetets gång ska tydligt dokumenteras med tydliga commitmeddelanden i tjänstens repositorie på github.
+
 
 ##Tjänstens tre delar
 Hela tjänsten kommer delas upp i tre efter varandra följande delar;
 
-* En applikation där en utvecklare kan registrera sin applikation och efterfråga efter en API-nyckel för att kunna ställa frågor.
+* En applikation där en utvecklare kan [registrera sin applikation](https://coursepress.lnu.se/kurs/webbramverk/registreringsapplikation/) och efterfråga efter en API-nyckel för att kunna ställa frågor.
 
-* Ett backend bestående av ett RESTful webb-API som hanterar all data som hanteras av tjänsten. Detta API ska utvecklas i Ruby on Rails.
+* Ett backend bestående av ett [RESTful webb-API](https://coursepress.lnu.se/kurs/webbramverk/webb-api-back-end/) som hanterar all data som hanteras av tjänsten. Detta API ska utvecklas i Ruby on Rails.
 
-* En Single Page Application (SPA) som klientapplikation och gränssnitt mot tjänsten.
+* En Single Page Application (SPA) som [klientapplikation](https://coursepress.lnu.se/kurs/webbramverk/spa-front-end/) och gränssnitt mot tjänsten.
 
 Eventuella frågeställningar kring tjänsten tas upp under de schemalagda handledningspassen.

@@ -35,7 +35,7 @@ Applikationen ska kunna bistå sin användare med följande:
 * Du ska var nogrann med att också dokumentera eventuella saker som personen som kör en peer-review på ditt projekt behöver veta. ALLA STEG i hur man får igång applikationerna!
 
 
-**Extra funktioner som kan anses betygshöjande
+**Extra funktioner som kan anses betygshöjande**
 
 * Du sköter inloggning på annat sätt än HTTP Basic
 * Skriv din applikation med tillhörande testfall med god “code coverage”
