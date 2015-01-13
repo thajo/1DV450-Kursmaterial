@@ -9,6 +9,9 @@ Du är helt fri att välja din egen utvecklingsmiljö. Du har säkert redan hitt
 
 Jag skulle också rekommendera en helt cloud-baserad lösning där man kan köra RoR samt ha ett webbaserat IDE. Tjänsten heter [https://www.nitrous.io/](https://www.nitrous.io/). Det ska där finns möjlighet att köra en gratisversion som duger gott till utvecklingen i denna kurs. Tjänsten ska också ha integrering till github samt en möjlighet att synka ner kodutvecklingen lokalt till sin favoriteditor. Väl värt att undersöka.
 
+##Installation av Ruby och Rails##
+För att installera Ruby on Rails på ditt eget system (behövs ej om man kör nitrous.io) rekommenderar jag att följa guiderna på [http://railsapps.github.io/installing-rails.html](http://railsapps.github.io/installing-rails.html).
+
 
 ##Github##
 Som vanligt ska all din kod commitas upp till ett github-repositorie som du delar med kursens användare "1DV450". Jag utgår från att du har full koll på hur github och delning av konton fungerar sedan tidigare. Annars finns denna hjälp att tillgå: [http://coursepress.lnu.se/info](http://coursepress.lnu.se/info)
