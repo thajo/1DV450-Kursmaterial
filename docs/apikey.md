@@ -16,5 +16,5 @@ För att sammanfatta de minimala kraven på denna webb-applikation:
 * Inloggningsformulär för en administratör
 * En sida där den inloggade administratören kan ta bort(revoke) befintliga API-nycklar
 * Applikationen ska versionhanteras via ett öppet repo på Github
-* Applikationen ska vara vältestad och det ska i repositoriet finnas en beskrivning hur man installerar och kör igång applikationen (ni kommer göra peer-reviews på varandras applikationer)
+* Applikationen ska fungera väl och det ska i repositoriet finnas en beskrivning hur man installerar och kör igång applikationen (ni kommer göra peer-reviews på varandras applikationer)
 * Eventuella frågor kring registreringsapplikationen kan diskuteras under de schemalagda handledningspassen.
