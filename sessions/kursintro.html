@@ -5,7 +5,7 @@
 
   Authors: Luke Mahé (code)
            Marcin Wichary (code and design)
-           
+
            Dominic Mazzoni (browser compatibility)
            Charles Chen (ChromeVox support)
 
@@ -15,17 +15,17 @@
 <html>
 
   <head>
-   
+
      <meta charset="utf-8" />
      <title>Webbramverk, 1DV450</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
 
-    
+
     <meta name="description" content="1DV450, Kalmar, Linnéuniversitetet" />
-    
+
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,600italic,700italic,300,400,800' rel='stylesheet' type='text/css'>
-    
+
     <link rel="shortcut icon" href="favicon.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <script src='slides.js' media="screen"></script>
@@ -42,9 +42,9 @@
 	            margin: auto;
 	          }
 	          article.next, article.past {
-	            display: block;    
+	            display: block;
 	          }
-	
+
 				iframe {
 					display: none;
 				}
@@ -58,14 +58,14 @@
 	          }
 	</style>
   </head>
-  
+
 
 
   <body style='display: none'>
 
     <section class='slides layout-widescreen template-default'>
       <!-- http://lights.elliegoulding.com/ -->
-	
+
 	<!-- Första sidan -->
     <article>
        	<h3>
@@ -73,27 +73,27 @@
           <br />
           <span class="small">Linnéuniversitetet, Vt 2014</span>
         </h3>
-       
-		
+
+
 		<br /><br />
 		<h1 class="big c">Kursintroduktion</h1>
 		<p class="very_small" style="margin-top: 60px;">
-				
+
 		</p>
-		
+
 		<p class="small_footer">
 			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.sv">
-					<img alt="Creative Commons-licens" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>&nbsp;&nbsp;Denna presentation är licensierat under en 
-					
+					<img alt="Creative Commons-licens" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>&nbsp;&nbsp;Denna presentation är licensierat under en
+
 						<a rel="license" href="hhttp://creativecommons.org/licenses/by/3.0/deed.sv">Creative Commons Erkännande 3.0 Unported Licens</a>. (Där inte annat anges)<br/>
 		</p>
  	</article>
-  	
+
 	<!-- John -->
 	<article class="fill">
-		
+
 		<h3>Kursledningen</h3>
-	
+
 			<div class="lefty" style="padding-left: 200px; margin-top: 100px;">
 				<img src="images/john2.jpg" />
 			</div>
@@ -103,20 +103,20 @@
 				<strong>E-post:</strong> john.haggerud@lnu.se
 			</p>
 			<img src="http://farm7.staticflickr.com/6167/6201159047_dfa2b430db_b.jpg" />
-		<p class="cc">Foto cc by: 
-			<a href="http://www.flickr.com/photos/cybriks/">http://www.flickr.com/photos/cybriks/</a> 
+		<p class="cc">Foto cc by:
+			<a href="http://www.flickr.com/photos/cybriks/">http://www.flickr.com/photos/cybriks/</a>
 		</p>
 	</article>
-	
-		
-	<!-- Varför - motivera denna kurs -->	
+
+
+	<!-- Varför - motivera denna kurs -->
 	<article class="fill">
 		<h3>Varför är vi här?</h3>
 		<img src="http://farm3.staticflickr.com/2524/3718789722_a105a5f0ce_o.jpg" />
-		<p class="cc">Foto cc by: 
-			<a href="http://www.flickr.com/photos/openpad/">http://www.flickr.com/photos/openpad/</a> 
+		<p class="cc">Foto cc by:
+			<a href="http://www.flickr.com/photos/openpad/">http://www.flickr.com/photos/openpad/</a>
 		</p>
-		
+
 		<p class="note">
 			Kursens ursprungliga tanke - få kunskap om två populära webbramverk
 			Mitt mål få erfarenhet av hur ramverk kan vara uppbyggda och hur vi kan få erfarenhet av dessa.
@@ -128,16 +128,16 @@
 	<!-- Vad - Kursens mål? -->
     <article>
       		<h3>Mål ur kursplanen:</h3>
-			
+
 			<q style="font-size: 0.8em; font-style: italic;">
 				Efter kursen förväntas studenten kunna redogöra för begreppet webbramverk och ha förståelse för i vilka sammanhang man som utvecklare kan använda dessa för att underlätta utvecklingsprocessen. <br /><br />
-				
+
 				Studenten förväntas även ha erfarenhet av att praktiskt arbeta med webbramverk samt kunna utveckla fungerande webbapplikationer med hjälp av dessa.
 			</q>
 
 	</article>
-		
-		
+
+
 	<!-- Vad? Mer exakt! -->
     <article class="fill">
 		<h3>...mer exakt</h3>
@@ -145,25 +145,26 @@
 			<li>
 				Praktisk erfarenhet av webbramverk
 				<ul>
-					<li>Serversida - Ruby on Rails (Django)</li>
-					<li>Klientsida - AngularJS</li>
+					<li>För serversida - Ruby on Rails</li>
+					<li>För klientsida - AngularJS</li>
 				</ul>
 			</li>
-			<li>Bygga webb-API</li>
-			<li>ReST (Representational state transfer)</li>
-		
+			<li>Bygga webbapplikation för registrering av applikation (API-key)</li>
+			<li>Bygga ReSTful webb-API</li>
+			<li>Bygga en SPA (Single Page Application) som använder API:et</li>
+
 		</ul>
 		<img src="http://farm4.staticflickr.com/3606/3373250340_963e2a3c72_b.jpg" />
-		<p class="cc">Foto cc by: 
-			<a href="http://www.flickr.com/photos/rafolio/">http://www.flickr.com/photos/rafolio/</a> 
+		<p class="cc">Foto cc by:
+			<a href="http://www.flickr.com/photos/rafolio/">http://www.flickr.com/photos/rafolio/</a>
 		</p>
 	</article>
-	
+
 	<!-- Praktisk information -->
 	<article>
-		<h3>Praktiska saker</h3>
+		<h3>Innan du börjar</h3>
 		<ol>
-			<li>Förkunskapskrav
+			<li>Uppfyller förkunskapskrav
 				<ul>
 					<li>OOAD</li>
 					<li>PHP (serversida - DB)</li>
@@ -172,42 +173,60 @@
 				</ul>
 			</li>
 			<li>Registrera dig på kursen</li>
-			<li>Github - Dela ditt repo med användaren "1dv450"</li>
+			<li>Github - Dela ditt öppna repo med användaren "1dv450"</li>
 			<li>Treveckorsreglen</li>
-			<li>
-				Anmälan till redovisningar/examinationer
+
+		</ol>
+	</article>
+	<article>
+		<h3>Kursens upplägg</h3>
+		<ul>
+			<li>1. Skapa en applikation för registrering av applikation
 				<ul>
-					<li>Praktiska uppgift - kod</li>
-					<li>Muntlig redovisning av teori</li>
-					<li>Peer-review: Kolla varandras kod och dokumentation</li>
+					<li>En applikation ska kunna registreras och få en API-nyckel</li>
+					<li>Peer-review via GitHub (feedback via issues)</li>
 				</ul>
 			</li>
-		</ol>	
+			<li>2. Skapa ett RESTfull-API
+				<ul>
+					<li>Bygga ett API kring specificerad tjänst/li>
+					<li>Peer-review via GitHub (feedback via issues)</li>
+				</ul></li>
+			<li>3. Skapa en SPA - klientapplikation som använder ditt API
+				<ul>
+					<li>Använda ett klientramverk</li>
+					<li>Peer-review via GitHub (feedback via issues)</li>
+					<li>Slutlig granskning av tjänst av examinatorn</li>
+				</ul>
+			</li>
+			<li>Slutlig muntlig examination</li>
+
+		</ul>
 	</article>
-	
+
 	<!-- Kurshemsidan -->
 	<article class="fill">
 		<iframe src="https://coursepress.lnu.se/kurs/webbramverk"></iframe>
 	</article>
-	
-	
+
+
 	<!-- Frågor -->
 	<article class="fill">
 		<img src="http://farm5.staticflickr.com/4052/4380126801_b337c4c7ea_b.jpg" />
-		<p class="cc">Foto cc by: 
-			<a href="http://www.flickr.com/photos/matthewmcvickar/">http://www.flickr.com/photos/matthewmcvickar/</a> 
+		<p class="cc">Foto cc by:
+			<a href="http://www.flickr.com/photos/matthewmcvickar/">http://www.flickr.com/photos/matthewmcvickar/</a>
 		</p>
 	</article>
-		
-	
-		
-	
+
+
+
+
 	<!-- Vad är ett ramverk? -->
    	<article class="fill">
       		<h3>Vad är ett webbramverk?</h3>
 			<img src="images/framework.jpg" />
 	</article>
-	
+
 	<!-- WAF vs library -->
 	<article>
 		<h3>Webbramverk</h3>
@@ -216,15 +235,15 @@
 		</q>
 		<a class="small" href="http://en.wikipedia.org/wiki/Web_application_framework">http://en.wikipedia.org/wiki/Web_application_framework</a>
 	</article>
-	
-	
+
+
 	<!-- Definition av ramverk -->
 	<article>
 		<h3>Mjukvaruramverk</h3>
 		<p>
-			Generell och återanvändningsbar kod som stödjer processen att utveckla mjukvara. 
+			Generell och återanvändningsbar kod som stödjer processen att utveckla mjukvara.
 		</p>
-		
+
 		<ul>
 			<li>Kompilatorer för olika programmeringsspråk och plattformar</li>
 			<li>Kod-bibliotek</li>
@@ -232,57 +251,57 @@
 			<li>Domänramverk</li>
 			<li>Arkitekturramverk (Enterprise architecture framework)</li>
 		</ul>
-		
+
 		<p class="note">
-			
+
 		</p>
 	</article>
-	
-	
-	
+
+
+
 	<!-- Nyckelbegrepp för webbramverk -->
 	<article class="fill">
 		<h3>Nyckelbegrepp</h3>
 		<img src="http://farm4.staticflickr.com/3003/2750924335_e102172782_b.jpg" />
 		<ul>
-			<li><strong>Inversion of control</strong> - Programmets flöde styrs inte direkt av den som anropar koden utan av ramverket</li> 
+			<li><strong>Inversion of control</strong> - Programmets flöde styrs inte direkt av den som anropar koden utan av ramverket</li>
 			<li><strong>Default behavior</strong> - Ett ramverk har en "default behaivor" som leder till någon nytta för utvecklingen</li>
 			<li><strong>Extensibility</strong> - Ett ramverk kan byggas ut av dess användare antingen genom överskuggning eller egen skriven utökad funktionallitet.</li>
 			<li><strong>Non-modifiable framework code</strong> - Ramverkets kod är inte tänkt att bli ändrad i (förutom utökning - extends)</li>
 		</ul>
-		<p class="cc">Foto cc by: 
-			<a href="http://www.flickr.com/photos/danarjordan/">http://www.flickr.com/photos/danarjordan/</a> 
+		<p class="cc">Foto cc by:
+			<a href="http://www.flickr.com/photos/danarjordan/">http://www.flickr.com/photos/danarjordan/</a>
 		</p>
 	</article>
-	
+
 	<article class="fill">
 		<h3>Varför använda ramverk?</h3>
 		<img src="http://farm2.staticflickr.com/1162/966175236_cd878e3bd9_o.jpg" height="80%"/>
-		<p class="cc">Foto cc by: 
-			<a href="http://www.flickr.com/photos/slworking/">http://www.flickr.com/photos/slworking/</a> 
+		<p class="cc">Foto cc by:
+			<a href="http://www.flickr.com/photos/slworking/">http://www.flickr.com/photos/slworking/</a>
 		</p>
 	</article>
-	
+
 	<!-- Varför vill jag använda ramverk -->
 	<article class="fill">
 		<h3>Varför ramverk?</h3>
 		<ul>
 			<li>Göra repetativa och tråkiga saker mer automatiserat</li>
 			<li>Spara tid?</li>
-			
+
 			<li>Utprövad "best practice"</li>
 			<li>Implementation av designmönster, filosofi</li>
 			<li>Flera utvecklare, gemensam bakgrund, gemensamma värdegrunder och riktlinjer</li>
-			
-			
+
+
 			<li>Fokusera på applikationen === utvecklarglädje! </li>
 		</ul>
 		<img src="images/cleaning.jpg" />
-		<p class="cc">Foto cc by: 
-			<a href="http://labautomationrobotics.wordpress.com/">http://labautomationrobotics.wordpress.com/</a> 
+		<p class="cc">Foto cc by:
+			<a href="http://labautomationrobotics.wordpress.com/">http://labautomationrobotics.wordpress.com/</a>
 		</p>
 	</article>
-		
+
 	<!-- Varför vill jag inte använda ramverk -->
 	<article class="fill">
 		<h3>Varför inte ramverk?</h3>
@@ -290,25 +309,25 @@
 			<li>Behövs det ett ramverk till din applikation?</li>
 			<li>"Det händer massa automagiska saker! Jag vill ha kontroll!"</li>
 			<li>Tappar kontrollen - ramverket står i vägen för mer avancerade lösningar</li>
-			
-			
+
+
 			<li>Säkerhet?</li>
 			<li>Prestanda?</li>
 			<li>Versionshelvetet! Beroenden!</li>
-			
+
 			<li>Tappar förståelse för programmeringslogik?</li>
-						
+
 			<li>"Det slutar ändå med att man gjort ett eget ramverk"</li>
 		</ul>
 		<!--
 		<img src="http://farm5.staticflickr.com/4153/4832958771_9008f87d30_b.jpg" height="80%"/>
-		<p class="cc">Foto cc by: 
-			<a href="http://www.flickr.com/photos/bluekdesign/">http://www.flickr.com/photos/bluekdesign/</a> 
+		<p class="cc">Foto cc by:
+			<a href="http://www.flickr.com/photos/bluekdesign/">http://www.flickr.com/photos/bluekdesign/</a>
 		</p>
 			-->
 	</article>
-	
-		
+
+
 	<!-- Hur väljer man ett ramverk-->
 	<article class="fill">
 		<h3>Hur väljer du ett ramverk?</h3>
@@ -324,32 +343,32 @@
 		</ul>
 		<img src="images/choose.jpg" />
 	</article>
-	
-	
+
+
 	<!-- Kursens webbramverk -->
 	<article class="fill">
-		
+
 		<h3>Kursens ramverk</h3>
 		<p class="big" style="margin-top: 300px">
 			Ruby On Rails (Django)<br />
-		
+
 			AngularJS
 		</p>
-		
+
 		<img src="http://farm6.staticflickr.com/5226/5640073125_ec83e3ed33_b.jpg" />
-		<p class="cc">Foto cc by: 
-			<a href="http://www.flickr.com/photos/cobalt/">http://www.flickr.com/photos/cobalt/</a> 
+		<p class="cc">Foto cc by:
+			<a href="http://www.flickr.com/photos/cobalt/">http://www.flickr.com/photos/cobalt/</a>
 		</p>
 	</article>
-	
-	
+
+
 	<!-- Introduktion Ruby on Rails -->
 	<article class="fill">
 		<h3 style="margin-bottom: 15px">Ruby on Rails</h3>
 		<div class="lefty">
 			<img src="images/david.jpg" width="160px" />
 		</div>
-		
+
 		<div class="righty" style="width: 800px;">
 		<ul>
 			<li>David Heinemeier Hansson, 37signals, Basecamp</li>
@@ -360,16 +379,16 @@
 		</ul>
 		</div>
 		<img src="http://farm1.staticflickr.com/74/177722693_8aca6c7e82_o.jpg" width="80%"/>
-		
+
 	</article>
-	
+
 	<!-- Den visuella utvecklingen -->
 	<article class="fill">
 		<iframe width="640" height="360" src="http://www.youtube.com/embed/r0ji8FDNTj0?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
-		
+
 	</article>
-	
-	
+
+
 	<!-- Egenskaper -->
 	<article>
 		<h3>Vad har RoR?</h3>
@@ -380,14 +399,14 @@
 			<li>Templates views</li>
 			<li>Scaffolding, form helpers, validering, migration m.m.</li>
 			<li>"Optimized for programmer happiness and beautiful code"</li>
-		</ul>	
+		</ul>
 	</article>
-	
+
 	<!-- Rails -->
 	<article class="fill">
-		<img src="images/ror_architecture.png" width="80%" height="100%">	
+		<img src="images/ror_architecture.png" width="80%" height="100%">
 	</article>
-	
+
 	<!-- Ruby gems -->
 	<article>
 		<h3>Ruby gems</h3>
@@ -398,20 +417,20 @@
 			<li>Finns en mängd olika gems som man kan inkludera i sin Ruby-applikation (gem-file) t.ex. kryptering, mailhantering, utökningar av ramverket</li>
 			<li><a href="http://rubygems.org/">http://rubygems.org/</a></li>
 		</ul>
-		
+
 	</article>
-	
-	
+
+
 	<!-- Programmeringsspråket RUBY -->
 	<article class="fill">
 		<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Ruby_logo.png/599px-Ruby_logo.png" width="80%"/>
 		<h3>Ruby</h3>
-		
+
 		<div class="lefty">
 			<img src="http://upload.wikimedia.org/wikipedia/commons/7/76/Yukihiro_Matsumoto.JPG" width="200px" />
-		
+
 		</div>
-		
+
 		<div class="righty">
 		<ul>
 			<li>Yukihiro "Matz" Matsumoto</li>
@@ -422,28 +441,28 @@
 		</ul>
 		</div>
 	</article>
-	
+
 	<!-- Skillnader från PHP -->
 	<article>
-		
+
 		<h3>Några likheter med PHP</h3>
 		<ul>
 			<li>Dynamisk typning (ingen variabeldeklaration)</li>
 			<li>Klasser (private, protected, private)</li>
 			<li>Exceptions</li>
 		</ul>
-		
+
 		<h3>Några skillnader från PHP</h3>
 		<ul>
 			<li>Strong typing (to_s, to_i...)</li>
 			<li>Allt är objekt (Strings, Numbers, arrays, hashes)</li>
 			<li>null is called nil, ett objekt som inte representerar något</li>
 			<li>"$foo is a $bar" ==> "#{foo} is a #{bar}"</li>
-			<li>Inga semikolon, inga klammerparanteser runt kodblock 
+			<li>Inga semikolon, inga klammerparanteser runt kodblock
 		</ul>
 		<a href="http://www.phptoruby.com/">http://www.phptoruby.com/</a>
 	</article>
-	
+
 	<!-- Exempel på Ruby-kod -->
 		<!-- klasser -->
 		<article>
@@ -458,10 +477,10 @@ class LinksController &lt; ApplicationController # arv
   def new
     @link = Link.new # Anrop till kontrukturn via new
   end
-  #Inga klammerparanteser, inget krav på tab men standard  
-  def create 
+  #Inga klammerparanteser, inget krav på tab men standard
+  def create
     @link = Link.new(params[:link]) # Hashes och symbols
-  
+
     if @link.save
       redirect_to links_path # ramverksspecifik metod anrop
     else
@@ -470,20 +489,20 @@ class LinksController &lt; ApplicationController # arv
   end
 end</pre>
 		</article>
-	
+
 	<!-- Try ruby-->
 	<article class="fill">
-		<iframe src="http://tryruby.org"></iframe>	
+		<iframe src="http://tryruby.org"></iframe>
 	</article>
-	
-	
-	
+
+
+
 	<!-- Demo -->
 	<article class="fill">
 		<h3><a href="http://orion.lnu.se/pub/education/course/1DV450/VT12/movies/intro.mp4">Demofilm</a></h3>
 		<img src="images/TV.jpg" width="80%" height="100%" />
 	</article>
-	
+
     </section>
   </body>
 </html>

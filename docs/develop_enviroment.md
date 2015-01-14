@@ -7,7 +7,7 @@ Som utgångspunkt för backend kommer vi i år använda Ruby on Rails vilket kur
 Du är helt fri att välja din egen utvecklingsmiljö. Du har säkert redan hittat din favoriteditor. Jag rekommenderar att använda editorn [RubyMine](https://www.jetbrains.com/ruby/) till Ruby on Rails och [WebStorm](https://www.jetbrains.com/webstorm/) till javascriptutvecklingen. Som student har man möjlighet att få en gratis version genom att efterfråga detta här [https://www.jetbrains.com/student/](https://www.jetbrains.com/student/)
 
 
-Jag skulle också rekommendera en helt cloud-baserad lösning där man kan köra RoR samt ha ett webbaserat IDE. Tjänsten heter [https://www.nitrous.io/](https://www.nitrous.io/). Det ska där finns möjlighet att köra en gratisversion som duger gott till utvecklingen i denna kurs. Tjänsten ska också ha integrering till github samt en möjlighet att synka ner kodutvecklingen lokalt till sin favoriteditor. Väl värt att undersöka.
+Jag skulle också rekommendera en helt cloud-baserad lösning där man kan köra RoR samt ha ett webbaserat IDE. Tjänsten heter [https://www.nitrous.io/](https://www.nitrous.io/join/uAKtv1dIf0s?utm_source=nitrous.io&utm_medium=copypaste&utm_campaign=referral). Det ska där finns möjlighet att köra en gratisversion som duger gott till utvecklingen i denna kurs. Tjänsten ska också ha integrering till github samt en möjlighet att synka ner kodutvecklingen lokalt till sin favoriteditor. Väl värt att undersöka.
 
 ##Installation av Ruby och Rails##
 För att installera Ruby on Rails på ditt eget system (behövs ej om man kör nitrous.io) rekommenderar jag att följa guiderna på [http://railsapps.github.io/installing-rails.html](http://railsapps.github.io/installing-rails.html).
