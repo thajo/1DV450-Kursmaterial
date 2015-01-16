@@ -1,8 +1,8 @@
 ##Webbapplikation för API-nyckel
 
-Till tjänsten ska en registreringsapplikation utvecklas där utvecklare (som vill använda ditt API) kan få tillgång till en giltig API-nyckel som kan användas i API-anropen för samtliga resurser. 
+Till tjänsten ska en registreringsapplikation utvecklas där utvecklare (som vill använda ditt API) ska kunna få tillgång till en giltig API-nyckel som kan användas i API-anropen för samtliga resurser. 
 
-Detta blir en webbapplikation som är fristående från själva API:et. Applikationen ska skrivas i Ruby on Rails.
+Detta blir en webbapplikation som är fristående från själva API:et. 
 
 Registreringsapplikationen bör bestå av ett enkelt formulär där utvecklaren registrerar sin applikation och det genereras en hashad API-nyckel som visas för användaren. 
 
