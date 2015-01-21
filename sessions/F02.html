@@ -5,7 +5,7 @@
 
   Authors: Luke Mahé (code)
            Marcin Wichary (code and design)
-           
+
            Dominic Mazzoni (browser compatibility)
            Charles Chen (ChromeVox support)
 
@@ -22,125 +22,134 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
   </head>
-  
+
 
 
   <body style='display: none'>
 
     <section class='slides layout-widescreen template-default'>
-      
-		
+
+
 		<!-- First page -->
     	<article>
 	       	<h3>
 	         Webbramverk, 1DV450
 	          <br />
-	          <span class="small">Linnéuniversitetet, vt 2014</span>
+	          <span class="small">Linnéuniversitetet, vt 2015</span>
 	        </h3>
-       
-		
+
+
 			<br /><br />
-			<h1 class="big c">Ruby on Rails</h1>
+			<h1 class="big c">Ruby on Rails I</h1>
 			<p class="c" style="margin-top: 60px;">
-				Datalagring, ActiveRecord, ActiveRelation, Migration<br />
-				<span class="c">The 'M' in MVC</span>
+
 			</p>
 			<p class="small_footer">
 				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.sv">
-						<img alt="Creative Commons-licens" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>&nbsp;&nbsp;Denna presentation är licensierat under en 
-					
+						<img alt="Creative Commons-licens" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>&nbsp;&nbsp;Denna presentation är licensierat under en
+
 							<a rel="license" href="hhttp://creativecommons.org/licenses/by/3.0/deed.sv">Creative Commons Erkännande 3.0 Unported Licens</a>. (Där inte annat anges)<br/>
 			</p>
       	</article>
-  
-  	  	<!-- Intro to modell 
+
+
+		<!-- Rails -->
+	<article class="fill">
+		<img src="images/ror_architecture.png" width="80%" height="100%">
+	</article>
+  	  	<!-- Intro to modell
 		<article class="fill">
 				<h3>
 					Model
 				</h3>
 				<img src="images/doll.jpg" height="600px"/>
 				<p style="margin-lef">
-				
+
 					Migration<br />
 					<span class="small_italic">Skapa och förändra databasen</span>
 					<br /><br />
 					Modellklasser<br />
 					<span class="small_italic">En tabell = en klass</span>
 					<br /><br />
-					Assocciations<br />	
+					Assocciations<br />
 					<span class="small_italic">Ange relationen mellan objekt</span>
-					
+
 					<br /><br />
 					ActiveRecord Query<br />
 					<span class="small_italic">Hämta och manipulera data</span>
 					<br /><br />
-					
+
 					Validering<br />
 					<span class="small_italic">"Mota Olle i grind"</span>
-				
+
 				</p>
-		    	
+
 				<img src="http://farm4.staticflickr.com/3513/3237575990_943eb91c79_b.jpg" />
-				<p class="cc">Foto cc by: 
-					<a href="http://www.flickr.com/photos/adesigna/">http://www.flickr.com/photos/adesigna/</a> 
+				<p class="cc">Foto cc by:
+					<a href="http://www.flickr.com/photos/adesigna/">http://www.flickr.com/photos/adesigna/</a>
 				</p>
 			</article>
-				
+
 		</article>
-		-->	
-	
+		-->
+
 		<!-- DB stöd -->
 		<article class="fill">
 			<img src="images/db_s.jpg" style="opacity: 0.4"/>
 		    	<h3>
 					Datalagring i Ruby on Rails
 				</h3>
-			
+
 				<ul>
-					<li>Default SQLite3 (rekommenderas endast vid utveckling)</li>
-					<li>mySQL, postgreSQL (http://heroku.com/)</li> 
-					<li>Intelligensen hos modellen inte i datalagringen</li>
-					<li>Varje applikation har tre olika datalagringar: Development, Test, Production</li>
+					<li>Tre databaser (development, test, production)</li>
+					<li>Default SQLite3 (rekommenderas endast vid utveckling och test)</li>
+					<li>mySQL, postgreSQL (produktion)</li>
+					<li>Intelligensen hos modellen inte i databasen</li>
 					<li>Active Record - Med relationsdatabaser i tanken</li>
 				</ul>
-				
+
 		</article>
-	
-		
-		<!-- ActiveRecord -->
+
+
+		<!-- ActiveRecord-->
 		<article class="grey fill">
 			<img src="http://farm1.staticflickr.com/179/386053702_d7e5dc6321_o.jpg" />
-			<p class="cc">Foto cc by: 
-				<a href="http://www.flickr.com/photos/fourthfloor/">http://www.flickr.com/photos/fourthfloor/</a> 
+			<p class="cc">Foto cc by:
+				<a href="http://www.flickr.com/photos/fourthfloor/">http://www.flickr.com/photos/fourthfloor/</a>
 			</p>
 			<h3>
-				Vad är ActiveRecord?
+				Vad är Active Record?
 			</h3>
-			<br /><br />
+
 			<p>
 				Active record ett design-pattern som kan implementeras av olika språk/ramverk (Martin Fowler, 2003)<br /><br />
 				Object-relational mapping (ORM) <br /><br />
-				Mappar modell-objekt direkt till databasen (datalagringen)<br /><br />
 				Associations - Kopplingar mellan modeller<br /><br />
-				ActiveRecord Query - CRUD<br /><br />
+				Validering<br /><br />
+				ActiveRecord Query - Databasfrågor på ett objektorienterat sätt<br /><br />
+				Convention over configuration
+
+			</p>
+		</article>
+
+		<!-- Bild orm -->
+		<article class="fill">
+			<img src="images/orm.png"  height="600px"/>
+			<p class="cc">Resurs:
 				<a href="http://guides.rubyonrails.org/active_record_basics.html">
 					http://guides.rubyonrails.org/active_record_basics.html
 				</a>
-			</p>	
+			</p>
+
 		</article>
-		
-		<!-- Bild orm -->	
-		<article class="fill">
-			<img src="images/orm.png"  height="600px"/>
-		</article>
-		
+
 		<!-- Naming conventions -->
 		<article>
-			
+
 			<h3>Convention over configuration - Model</h3>
 			<br />
 			<img src="images/name.jpg" width="300px" height="200px" class="bottom_right_bigger"  />
-			
+
 			<p>
 				<strong>Klassnamn:</strong> Order<br /><br />
 				<strong>Filnamn:</strong> /app/models/order.rb <br /><br />
@@ -153,10 +162,112 @@
 			Naming Conventions i Ruby on Rails:<br />
 			<a href="http://itsignals.cascadia.com.au/?p=7">http://itsignals.cascadia.com.au/?p=7</a>
 		</article>
-		
-		<!-- ActiveReleation -->
+
 		<article class="fill">
-			
+			<img src="https://farm9.staticflickr.com/8057/8226451812_88007f08df_b.jpg" alt="">
+			<h3>Kort om tester</h3>
+			<ul>
+				<li>Egen oberoende databas för testdata</li>
+				<li>Fixures</li>
+				<li>Unit test - Models</li>
+				<li>Functional test - Controllers, Views</li>
+				<li>Integration test - Applikationens flöde</li>
+			</ul>
+			<p class="cc">Foto by cc:
+				<a href="https://www.flickr.com/photos/86530412@N02/">
+					 StockMonkeys.com
+				</a>
+			</p>
+		</article>
+
+		<article class="fill">
+			<iframe src="http://guides.rubyonrails.org/testing.html" frameborder="0"></iframe>
+		</article>
+
+		<!-- DEMO -->
+		<article class="fill">
+			<img src="http://farm6.staticflickr.com/5468/6947278752_08528e1b0f_b.jpg" />
+
+			<p class="cc">Foto cc by:
+				<a href="http://www.flickr.com/photos/johnroyer/">http://www.flickr.com/photos/johnroyer/</a>
+			</p>
+
+		</article>
+
+		<!--migrate -->
+		<article>
+		    <h3>
+				Migrate?
+			</h3>
+			<br />
+			<p>
+				Scriptfil som skapar/ändrar databasen<br />
+
+				Datamodellen kan ändras under resans gång<br />
+
+				Migreringsfiler döps med timestamp, varje förändring bör ha en egen fil<br />
+
+				<ul>
+					<li>rake db:migrate - Kör migrationer som inte körts ännu (skapar db om inte finns)</li>
+					<li>rake db:rollback STEP=3 - Rullar tillbaka i historiken</li>
+					<li>rake db:drop - Tar bort databasen</li>
+					<li>rake db:create - Skapar databasen utifrån migreringsfilerna</li>
+					<li>rake db:setup - db:create, db:schema:load, db:seed</li>
+					<li>rake db:reset - db:drop, db:setup</li>
+					<li>rake db:migrate RAILS_ENV=production</li>
+				</ul>
+
+
+
+			</p>
+		</article>
+
+		<!-- migrate example -->
+		<article>
+		    <h3>
+				Modifierad migrationsfil
+			</h3>
+			<br />
+			<p>
+				<img src="images/migration_file_user.png" />
+			</p>
+		</article>
+
+
+		<article class="fill">
+			<iframe src="http://guides.rubyonrails.org/active_record_migrations.html" frameborder="0"></iframe>
+		</article>
+
+		<article>
+			<h3>Active Record Query Interface</h3>
+			<ul>
+				<li>Hur jobbar vi med data i en railsapplikation?</li>
+				<li>rails console</li>
+			</ul>
+			<p>
+				<img src="images/railsconsole.png" alt="">
+			</p>
+		</article>
+
+		<article class="fill">
+			<iframe src="http://guides.rubyonrails.org/active_record_querying.html" frameborder="0"></iframe>
+		</article>
+
+		<article>
+			<h3>Seeds and fixures</h3>
+			<ul>
+				<li>Fyll på med data - läses in vid migrering</li>
+				<li>Seeds = development, production</li>
+				<li>db/seeds.rb</li>
+				<li>fixures - testning (vid varje testkörning)</li>
+			</ul>
+
+		</article>
+
+
+		<!-- ActiveReleation
+		<article class="fill">
+
 			<img src="http://farm6.staticflickr.com/5166/5359581911_d07f15db17_b.jpg" />
 			<h3>
 				Vad är ActiveRelation?
@@ -169,16 +280,16 @@
 				Lazy Loading - Databasfrågan körs först när data verkligen behövs<br /><br />
 				Sedan Rails > 3.0<br /><br />
 				<a href="https://github.com/rails/arel">https://github.com/rails/arel</a>
-				
+
 			</p>
-			<p class="cc">Foto cc by: 
-				<a href="http://www.flickr.com/photos/adesigna/">http://www.flickr.com/photos/adesigna/</a> 
-			</p>	
-		</article>
-		
-		<!-- ActiveReleation example-->
+			<p class="cc">Foto cc by:
+				<a href="http://www.flickr.com/photos/adesigna/">http://www.flickr.com/photos/adesigna/</a>
+			</p>
+		</article>-->
+
+		<!-- ActiveReleation example
 		<article class="grey">
-			
+
 			<h3>
 				Exempel
 			</h3>
@@ -186,50 +297,21 @@
 # Hur man kodmässigt kan efterfråga data från databasen
 
 user = User.first
-# SELECT * FROM users ORDER BY users.id ASC LIMIT 1	
+# SELECT * FROM users ORDER BY users.id ASC LIMIT 1
 
 # Första användarens alla kommentarer (Association mellan flera tabeller)
-comments = User.first.comments 
+comments = User.first.comments
 
 # Vilkorsfråga med parameter
-orders = Order.where("total_sum > ?", params[:total_sum])			
+orders = Order.where("total_sum > ?", params[:total_sum])
 
-# orders returneras som ett ActiveRelation-objekt - Lazy loading				
+# orders returneras som ett ActiveRelation-objekt - Lazy loading
 			</pre>
 		</article>
-			
-		<!--migrate -->
-		<article>
-		    <h3>
-				Migrate?
-			</h3>
-			<br />
-			<p>
-				Scriptfil som skapar/ändrar databasen<br />
-				
-				Datamodellen kan ändras under resans gång<br />
-				
-				Migreringsfiler döps med timestamp, varje förändring bör ha en egen fil<br />
-				
-				Kan rulla tillbaka i flera versioner<br /><br />
-				
-				<img src="images/migrate_terminal.png" />
-				
-			</p>
-		</article>
-		
-		<!-- migrate example -->
-		<article>
-		    <h3>
-				Modifierad migrationsfil
-			</h3>
-			<br />
-			<p>
-				<img src="images/migration_file_user.png" />
-			</p> 
-		</article>
-		
-		<!-- Skapa en modell -->
+-->
+
+
+		<!-- Skapa en modell
 		<article class="fill">
 			<img src="http://farm6.staticflickr.com/5468/6947278752_08528e1b0f_b.jpg" />
 		    <h3>
@@ -243,14 +325,14 @@ orders = Order.where("total_sum > ?", params[:total_sum])
 				<li>Ändra i databasstrukturen - Migrering</li>
 				<li>Koppla till controller, view</li>
 			</ul>
-			<p class="cc">Foto cc by: 
-				<a href="http://www.flickr.com/photos/johnroyer/">http://www.flickr.com/photos/johnroyer/</a> 
-			</p>	
-			
-		</article>
-	
-	
-		<!-- migrate change something -->	
+			<p class="cc">Foto cc by:
+				<a href="http://www.flickr.com/photos/johnroyer/">http://www.flickr.com/photos/johnroyer/</a>
+			</p>
+
+		</article>-->
+
+
+		<!-- migrate change something
 		<article>
 		    <h3>
 				Migration Methods (boken kapitel 22)
@@ -259,37 +341,37 @@ orders = Order.where("total_sum > ?", params[:total_sum])
 create_table
 drop_table(table)
 rename_table(table, new_name)
-				
+
 add_column(table, column, type, options)
 remove_column(table, coulmn)
 rename_column(table, column, new_name)
 change_column(table, column, type, options)
-				
+
 add_index(table, column, options)
 remove_index(table, column)
-create_join_table(table1, table2)			
+create_join_table(table1, table2)
 execute("SQL-string")
-	
-# Skapa en migreringsfil med ett bra namn i terminalfönstret				
+
+# Skapa en migreringsfil med ett bra namn i terminalfönstret
 # rails generate migration add_column_username_to_users
-				
-# kod i migreringsfilen som skapas ovan 
+
+# kod i migreringsfilen som skapas ovan
 add_column("users", "username", :string, :limit => 15)</pre>
-		</article>
-		
+		</article> -->
+
 		<!-- Associations -->
 		<article>
 			<h3>Definiera relationer mellan objekten</h3>
 			<p>
 				Active Record är gjort för relationsdatabaser<br /><br />
-				"Ett projekt har flera användare"
+				"Ett lag har flera spelare"
 				<pre>
-Project.find(1).users # Ge mig första projektets alla användare</pre>
+Team.find(1).players # Ge mig första lagets alla spelare</pre>
 				En relation defineras i båda modellklasserna<br />
 				<img src="images/conceptual_db.png"  width="50%" height="50%"/>
 			</p>
 		</article>
-		
+
 		<!-- one-to-one -->
 		<article>
 			<h3>One-to-one (1:1)</h3>
@@ -300,19 +382,19 @@ Project.find(1).users # Ge mig första projektets alla användare</pre>
 				<img src="images/one_to_one.png" class="centered"/>
 			</p>
 		</article>
-		
+
 		<article>
 				<h3>One-to-one (1:1)</h3>
 				<pre>
 # Modellklassen för  Classroom (eg. app/modells/classroom.rb)
-					
+
 class Classroom &lt; ActiveRecord::Base
- has_one :smartboard # singular (det läses ju så!)					
+ has_one :smartboard # singular (det läses ju så!)
 end</pre>
 
 <pre>
 # Modellklassen för  Smartboard
-	
+
 class Smartboard < ActiveRecord::Base
  belongs_to :classroom
 end</pre>
@@ -323,7 +405,7 @@ Classroom.find(1).smartboard = Smartboard.new
 </pre>
 
 		</article>
-		
+
 		<!-- one-to-many -->
 		<article>
 			<h3>One-to-many (1:n)</h3>
@@ -332,19 +414,19 @@ Classroom.find(1).smartboard = Smartboard.new
 				"Course belongs_to Teacher"<br /><br />
 
 				Främmande nyckel hamnar i Courses<br /><br />
-				
+
 				<img src="images/one-to-many.png" class="centered"/>
 			</p>
 		</article>
-		
-		
+
+
 		<article>
 			<h3>One-to-many (1:n)</h3>
 			<pre>
 # Modellklassen för  Teacher
 
 class Teacher < ActiveRecord::Base
- has_many :courses # plural 					
+ has_many :courses # plural
 end</pre>
 
 <pre>
@@ -357,7 +439,7 @@ end</pre>
 
 
 		</article>
-		
+
 		<article>
 			<h3>One-to-many coding</h3>
 <pre>
@@ -365,7 +447,9 @@ end</pre>
 t = Teacher.find_by_id(1)
 
 # Assocciationen ger oss metoden courses (plural, array med course-objekt)
+# returnerar en collectionproxy
 t.courses
+
 
 # Teacher får en ny course (append operator)
 t.courses << Course.new
@@ -376,9 +460,19 @@ t.courses.delete(course)
 t.courses.size
 t.courses.empty?
 </pre>
-		
+
 		</article>
-		
+<!-- DEMO -->
+		<article class="fill">
+			<img src="http://farm6.staticflickr.com/5468/6947278752_08528e1b0f_b.jpg" />
+
+			<p class="cc">Foto cc by:
+				<a href="http://www.flickr.com/photos/johnroyer/">http://www.flickr.com/photos/johnroyer/</a>
+			</p>
+
+		</article>
+
+
 		<!-- many-to-many -->
 		<article>
 				<h3>Many-to-many (m:n)</h3>
@@ -393,22 +487,22 @@ t.courses.empty?
 					<img src="images/many_to_many.png" class="centered"/>
 				</p>
 		</article>
-		
+
 		<!-- many-to-many -->
 		<article>
 			<h3>Rails console - Many-to-many</h3>
 			<pre>
 # Modellklassen för  Student
-				
+
 class Student < ActiveRecord::Base
- has_and_belongs_to_many :courses 					
+ has_and_belongs_to_many :courses
 end</pre>
 
 <pre>
 # Modellklassen för  Course
 
 class Course < ActiveRecord::Base
- has_and_belongs_to_many :students 
+ has_and_belongs_to_many :students
 end</pre>
 		</article>
 
@@ -428,7 +522,7 @@ s.courses # returnerar en array med de kurser studenter har (objectet c)
 	<a href="http://guides.rubyonrails.org/association_basics.html">http://guides.rubyonrails.org/association_basics.html</a>
 
 		</article>
-		
+
 		<article>
 					<h3>Many-to-many (m:n) - Complex</h3>
 					<p>
@@ -439,28 +533,31 @@ s.courses # returnerar en array med de kurser studenter har (objectet c)
 						än bara nycklar
 					</p>
 		</article>
-			
+
+
+<!--
+
 		<article>
 						<h3>Many-to-many :through</h3>
 						<p>
+
 <pre>
 Course.find(1).students # Error - Kopplingstabellen hamnar i vägen
 
 # Bökig lösning
 array_with_students_on_course = course.course_enrollments.collect { |ce| ce.students }
-</pre>							
-							
+</pre>
 <pre>
 class Course < ActiveRecord::Base
  has_many :course_enrollments
- has_many :students, through => course_enrollments	
-end	
+ has_many :students, through => course_enrollments
+end
 
 class Student < ActiveRecord::Base
  has_many :course_enrollments
- has_many :courses, through => course_enrollments	
+ has_many :courses, through => course_enrollments
 end
-</pre>	
+</pre>
 
 <pre>
 # Here we go
@@ -468,16 +565,18 @@ Course.find(1).students
 </pre>
 
 				</article>
-				
+
+-->
+
 		<article class="fill">
-			<h3>Ytterligare resurser</h3>
-			<iframe src="https://coursepress.lnu.se/kurs/webbramverk/" />
+
+			<iframe src="https://coursepress.lnu.se/kurs/webbramverk/ror-model/" />
 		</article>
-		
+
 	  </section>
 	  </body>
 	</html>
-	
+
 		<!-- Vad skapas
 		<article>
 		    <h3>
@@ -493,10 +592,10 @@ Course.find(1).students
 			</p>
 		</article>
 		 -->
-	
 
-		<!-- migrate skapa 	
-	
+
+		<!-- migrate skapa
+
 		<article>
 		    <h3>
 				Modifierad migrationsfil
@@ -504,10 +603,10 @@ Course.find(1).students
 			<br />
 			<p>
 				<img src="images/migration_file_user.png" />
-			</p> 
-		</article>-->	
-		
-		
+			</p>
+		</article>-->
+
+
 
 		<!-- Rails console
 		<article>
@@ -527,22 +626,22 @@ Course.find(1).students
 
 		</article> -->
 
-		<!-- Rails console example 
+		<!-- Rails console example
 		<article class="fill">
 			<img src="images/rails_console_ex.png" width="600px" />
 		</article>-->
-	
+
 		<!-- Active Record Query Create
 		<article>
 			<h3>CRUD - Create</h3>
 			<pre>
-# new/save 
-				
+# new/save
+
 u = User.new
 u.first_name = "James"
 u.last_name = "Bond"
 u.save
-				
+
 u = User.new(:first_name => "James", :last_name => "Bond")
 # do something
 u.save
@@ -551,24 +650,24 @@ u.save
 u = User.create(:first_name => "James", :last_name => "Bond")
 			</pre>
 		</article>-->
-		
+
 		<!-- Active Record Query Update
 		<article>
 			<h3>CRUD - Update</h3>
 			<pre>
 # find/update/save
-				
+
 u = User.find(1)
 u.first_name = "Maggie"
 u.last_name = "Simpson"
 u.save # OK or Error
-				
+
 
 User.find(1).update_attribute(:first_name , "Maggie") # True / False
-User.find(1).update_attributes(:first_name => "Maggie", :last_name => "Simpson") 
+User.find(1).update_attributes(:first_name => "Maggie", :last_name => "Simpson")
 			</pre>
 		</article>-->
-		
+
 		<!-- Active Record Query Delete
 		<article>
 				<h3>CRUD - Delete</h3>
@@ -603,7 +702,7 @@ last_user = User.last
 # ovanstående förfrågninger kör SQL-anropen direkt
 </pre>
 		</article>-->
-		
+
 			<!--
 		<article>
 					<h3>CRUD - Querys</h3>

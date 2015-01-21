@@ -6,7 +6,7 @@ Detta blir en webbapplikation som är fristående från själva API:et.
 
 Registreringsapplikationen bör bestå av ett enkelt formulär där utvecklaren registrerar sin applikation och det genereras en hashad API-nyckel som visas för användaren. 
 
-Användaren registrerar sig med en e-postadress. En registrerad e-post kan endast ha en giltig API-nyckel. Den registerade applikationsutvecklaren ska kunna logga in i systemet och se/ta bort sin genererade API-nyckel.
+Applikationsutvecklaren registrerar sig med en e-postadress och gärna lämplig information kring applikationen. En registrerad e-post kan endast ha en giltig API-nyckel. Den registerade applikationsutvecklaren ska kunna logga in i systemet och se/ta bort sin genererade API-nyckel.
 Applikationen ska ha ett administratörskonto (OK att hårdkoda in) med rättigheter att kunna ta bort befintliga API-nycklar (revoke application). Vi behöver alltså även något sätt för en administratör att logga in och enkelt hantera API-nycklar.
 
 För att sammanfatta de minimala kraven på denna webb-applikation:
