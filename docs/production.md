@@ -21,8 +21,13 @@ Vill man kan man också använda git för att pusha upp sian filer till servern.
 
 Då git inte lär vara installerat på servern från början bör du göra det innan du följer guiden med två enkla kommando i terminalen (på din droplet såklart!)
 
-´´´
+```
 apt-get update
 apt-get install git
-´´´
+```
 Om du följer guiden ser du att du på din lokala maskin behöver lägga till en koppling till din droplet för att kunna ha två olika "remotes" att pusha till. Vanlig koduppdatering till GitHub och publicering till din droplet/webbserver. Har du gjort rätt kommer dina pushningar till dropleten kopieras över till din applikationsmapp och ligga redo för din applikation.
+
+Du kommer förmodligen få använda det lösenord du fått till din droplet. Vill du slipp alösenord kan du ställa in uppkopplingen med hjälp av SSH-nycklar. Det är dock något som går utanför denna guide. Det finns dock gott om hjälp att läsa in för att få det att fungera.
+
+## Få applikationen att fungera i produktionsläge
+För att applikationen ska fungera på din droplet behöver man göra vissa inställningar som sätter applikationen i produktionsläge. Jag har spelat in en mindre film om detta.
