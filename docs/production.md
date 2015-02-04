@@ -21,8 +21,7 @@ Vill man kan man också använda git för att pusha upp sian filer till servern.
 
 Då git inte lär vara installerat på servern från början bör du göra det innan du följer guiden med två enkla kommando i terminalen (på din droplet såklart!)
 
-<pre><code>
-apt-get update
+<pre><code>apt-get update
 apt-get install git
 </code></pre>
 Om du följer guiden ser du att du på din lokala maskin behöver lägga till en koppling till din droplet för att kunna ha två olika "remotes" att pusha till. Vanlig koduppdatering till GitHub och publicering till din droplet/webbserver. Har du gjort rätt kommer dina pushningar till dropleten kopieras över till din applikationsmapp och ligga redo för din applikation.
@@ -41,36 +40,31 @@ Man kan också få fel på att "config/secrets.yml" i produktionsläge inte får
 I produktionsläge vill vi undvika att köra SQLite3 som databashanterare och eftersom digital ocean automatiskt ger oss en mysql bör vi kunna använda den. Det finns två saker vi då måste göra.
 1. Lägg till gem "mysql2" i din Gemfile och kör "bundle install"
 2. i filen config/database.yml lägger du på inställningarna i produktionsläge:
-	production:
+<pre><code>production:
 	  adapter: mysql2
 	  encoding: utf8
 	  database: rails
 	  username: rails
 	  password: *lösenord här*
 	  host: 127.0.0.1
-	  port: 3306
+	  port: 3306</pre></code>
 
 Därefter måste vi såklart köra en migrering på alla våra migreringsfiler
 
-´´´
-rake db:migrate RAILS_ENV=production
-´´´
+<pre><code>rake db:migrate RAILS_ENV=production</pre></code>
 Detta kör migreringen till produktionsdatabasen. Du kan nu också köra in eventuella seeds.
 
 ###Kompilera alla statiska filer
 Försöker man nu köra sidan kommer man förmodligen få fel sökvägar till sina assets. Vi måste även se till att dessa förkompileras så att vi kan använda dessa som det är tänkt i produktionsläge.
 
-´´´
-rake assets:precompile RAILS_ENV=production
-´´´
+<pre><code>rake assets:precompile RAILS_ENV=production</pre></code>
 
 Detta tar mycket resurser att göra om man t.ex. har större bibliotek så som bootstrap installerat. Det kan till och med vara som så att har man en lite server kan minnet ta slut. Då finns ett enkelt trick för att fixa detta på en linuxmaskin, nämligen att skapa en swapfil som utökar arbetsminnet. Digital Ocean har en guide över detta:
 https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04
 
 ### Startar om servern och testa
 Det brukar vara idé att starta om servern efter man gjort alla stegen för att ladda om applikationen:
-´´´
-service unicorn restart
-´´´
+
+<pre><code>service unicorn restart</pre></code>
 
 Testa sedan applikationen genom att skriva in ip-nummret till den (om du inte bundigt något domännamn till din droplet)
