@@ -5,7 +5,7 @@
 
   Authors: Luke Mahé (code)
            Marcin Wichary (code and design)
-           
+
            Dominic Mazzoni (browser compatibility)
            Charles Chen (ChromeVox support)
 
@@ -22,31 +22,49 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
   </head>
-  
+
 
 
   <body style='display: none'>
 
     <section class='slides layout-widescreen template-default'>
-      
-		
+
+
 		<!-- First page -->
     	<article>
-       	<h1>
-          Webbramverk, 1DV450
-          <br />
-          Linnéuniversitetet<br />
-		 
-        </h1>
-		<p class="small_footer">
-			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.sv">
-					<img alt="Creative Commons-licens" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>&nbsp;&nbsp;Denna presentation är licensierat under en 
-				
-						<a rel="license" href="hhttp://creativecommons.org/licenses/by/3.0/deed.sv">Creative Commons Erkännande 3.0 Unported Licens</a>. (Där inte annat anges)<br/>
-		</p>
-		
+	       	<h3>
+	         Webbramverk, 1DV450
+	          <br />
+	          <span class="small">Linnéuniversitetet, vt 2015</span>
+	        </h3>
+
+
+			<br /><br />
+			<h1 class="big c">Ruby on Rails II</h1>
+			<p class="c" style="margin-top: 60px;">
+
+			</p>
+			<p class="small_footer">
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.sv">
+						<img alt="Creative Commons-licens" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>&nbsp;&nbsp;Denna presentation är licensierat under en
+
+							<a rel="license" href="hhttp://creativecommons.org/licenses/by/3.0/deed.sv">Creative Commons Erkännande 3.0 Unported Licens</a>. (Där inte annat anges)<br/>
+			</p>
       	</article>
-  
+
+      	<article>
+      		<h3>Några mer tester för modellen</h3>
+      		<p class="c">
+      			<img src="images/teamplayer.png" alt="">
+
+      		</p>
+      		<ul>
+      			<li>"En metod som returnerar en text om lagetsnamn och dess smeknamn"</li>
+      			<li>"När ett lag tas bort ska alla spelare i detta laget också tas bort" (dum logik i verkligheten)</li>
+
+      		</ul>
+      	</article>
+
 		<!-- Vad är Action Pack? -->
 		<article class="fill">
 				<h3>
@@ -59,7 +77,7 @@
 					</dd>
 					<dt>Action Controller</dt>
 					<dd>
-						Ansvar hur förfrågan ska behandlas (redirect, hämta data, rendera vy)
+						Ansvar hur förfrågan ska behandlas (hanterar request, redirect, hämta data, rendrering)
 					</dd>
 					<dt>Action View</dt>
 					<dd>
@@ -67,75 +85,68 @@
 					</dd>
 				</dl>
 		</article>
-		
-		<!-- Rails arkitektur med public folder -->
-		<article class="fill">
-			<image src="images/web_f_new.png" height="100%" width="80%" />	
-		</article>
-		
-		<!-- Om webbservern -->
+
+
 		<article>
-			
-			<h3>Webbservern och Ruby on Rails</h3>
-			<br />
+
+			<h3>Skriv tester för routing/URLer</h3>
+
+			<ul>
+				<li>GET /teams - ska lista alla lagen</li>
+				<li>GET /teams/spurs - Ska visa laget med nickname=spurs</li>
+				<li>GET /teams/1/players - Ska lista alla spelare i laget med id=1</li>
+			</ul>
+
 			<p>
-				Apache 2 med Passenger / mod_rails<br /> 
-				<a href="http://www.modrails.com/">http://www.modrails.com/</a>
+				Vi kommer prata mer om hur URLer ska se ut och varför under REST-perioden.
 			</p>
-			
-			<br />
-			<img src="images/passenger_modrails.gif" class="centered" />
-			<br />
+
 			<p>
-				WEBrick - Följer med som default <span class="small_italic">(rails server)</span>
+				Var ska dessa anrop hamna...i vilken kontroller?
 			</p>
-			<br />
-			
-			<br />
-			<p>
-				Stödjer mitt webbhotell Ruby on Rails?
-			</p>
-			
 		</article>
-			
-	
-		<!-- routing -->
-		<article>
-			<h3>Action Dispatch - Routing</h3>
-			<p>
-				config/routes.rb - Stället du definierar hur URL:er mappas mot resurser(controllers)<br />
-				<br />
-				<a href="http://guides.rubyonrails.org/routing.html">http://guides.rubyonrails.org/routing.html</a>	
-			</p><br />
-			<img src="images/routes.png" />
-			
-			
-		</article>
-		
+
+
+
+
 		<!-- simple route -->
 		<article class="fill">
 			<img src="images/road.jpg" height="600px"/>
 			<h3>
-				Simple route
+				Exempel
 			</h3>
 			<pre>
 # läggs till när du skapar en controller - ger direkt tillgång
-# controller#action
-get user#index
-				
-# request /user/index mappas mot controllern user och dess action index 
-match "user#index", :to => "user#index"
+# controller#action, root => webbroot => startsidan
+root 'welcome#index'
+
+# request /users mappas mot controllern user och dess action index
+get 'users' => 'users#index'
+post 'users' => 'users#create'
+delete 'users' => 'users#delete'
+
+# Låt ramverket sköta det á la REST
+resources :users
+
+# Genererar upp en URL-helper
+get 'users/todos' => 'user#todo', as :user_todo
+# redirect_to(user_todo_path) - Läser ut rätt URL till resurser.
+# Definiera URLer ENDAST i routes.rb
+
+
+
 			</pre>
+			<a href="http://guides.rubyonrails.org/routing.html">http://guides.rubyonrails.org/routing.html</a>
 		</article>
-			
+
 		<!-- routing REST default -->
 		<article>
 				<h3>Resource Routing: the Rails Default</h3>
 				<pre>
 # sköter routning för users enligt REST
 resources :users
-				</pre>	
-				
+				</pre>
+
 				<p>
 					<table style="font-size: 15pt">
 						<tbody>
@@ -192,39 +203,41 @@ resources :users
 				</p>
 
 		</article>
-		
+
 		<!-- paths -->
 		<article>
-			<h3>URL Paths</h3>
+			<h3>URL Path helpers</h3>
 			<p>
 				En bra routing ger ocks&#xE5; m&#xF6;jlighet att anv&#xE4;nda s&#xE5; kallade url-helpers
 			</p>
 			<pre>
-# returns /users
-users_path 
+# in the controller, returns /users
+redirect_to users_path
 
-#returns /users/new
-new_user_path 
+#In the view, returns /users/new
+<%= link_to new_user_path %>
 
-#returns /users/:id/edit - (edit_user_path(10) returns /users/10/edit)
-edit_user_path(:id) 
+#returns /users/:id/edit - (edit_user_path(@user) returns t.ex. /users/10/edit)
+edit_user_path(:id)
 
-#returns /users/:id - (user_path(10) returns /users/10)
-user_path(:id) 
+#returns /users/:id - (user_path(@user) returns /users/10)
+user_path(:id)
 			</pre>
+			<p>
+				använd <strong>rake routes</strong> i terminalen för att enkelt lista dina routes och URL-helpers
 		</article>
-		
-		<!-- Non resourceful -->
+
+		<!-- Non resourceful
 		<article>
 			<h3>Non-Resourceful Routes </h3>
 			<pre>
-# ex. user/show/1.json				
+# ex. user/show/1.json
 match ':controller(/:action(/:id(.:format)))'
 			</pre>
 			<img src="images/crud.png" class="centered" />
 		</article>
-
-		<!-- named and root -->
+-->
+		<!-- named and root
 		<article>
 			<h3>Named route</h3>
 			<pre>
@@ -235,17 +248,17 @@ match "exit", :to => "user#exit", :as => "logout"</pre>
 			<pre>
 # rootkatalogen (/) ska matchas mot en controller/action
 root :to => "user#index"</pre>
-			
+
 			<h3>Nested route</h3>
 			<pre>
 # /projects/:id/users/:id
 # Nästla ej fler gånger
-resources :projects do 
+resources :projects do
  resources :users
 end	</pre>
-		</article>
+		</article>-->
 
-		<!-- Vad har controllern för uppgift-->
+		<!-- Vad har controllern för uppgift
 		<article>
 			<h3>Action Controller</h3>
 			<br /><br />
@@ -254,51 +267,90 @@ end	</pre>
 				Hämta data från modellen (t.ex. User.find(1) )<br /><br />
 				Rendera en vy (bestämma vilket dataformat)<br /><br />
 			</p>
-		</article>
+		</article>-->
 
 		<!-- Att skapa en controller -->
 		<article>
-			<h3>Att skapa en controller</h3>
-			<br /><br />
-			<p>
-				<img src="images/generate_ctrl.png" class="centered" />
-			</p>
-			<p>
-				- En kontroller-klass<br />
-				- En helper-klass<br />
-				- En vy-mapp<br />
-				- plus lite annat<br />
-			</p>
+			<h3>Controllers</h3>
+
+			<ul>
+				<li>Skriv en test som kontrollerar att vi hamnar i rätt controller </li>
+				<li>Låt kontrollern generera json och med 200 OK</li>
+				<li>Skriv ett test som kontrollerar controllerns json-response</li>
+				<li>Utöka med några tester (om tid finns)</li>
+			</ul>
+
+
 		</article>
 
+		<!-- Redirect -->
+		<article>
+			<h3>Redirect</h3>
+<pre>
+# in users_controller.rb
+def create
+   @user = User.new(user_params)
+   if @user.save
+      redirect_to @user
+   else
+      render 'new' # leter upp en vy som körs (felmeddelanden finns kvar)
+   end
+end
+</pre>
+
+		<ul>
+			<li>Ett HTTP ska skapas med statuskod "302 Found" och "location" satt till den nya URL:en (user/:id)</li>
+			<li>All eventuell state-data försvinner</li>
+			<li>Kör man render() som går man direkt till efterfrågad template</li>
+		</ul>
+
+		</article>
+
+		<!-- URL Parameters -->
+		<article class="fill">
+			<h3>Hur får vi tag i Querystrings?</h3>
+			<p>
+				/users?page=5&amp;limit=100
+			</p>
+			<pre>
+# GET- och POST-variabler ligger i arrayen params
+
+# i user_controller.rb - Ta hand om dem i controllern och tilldela instansvariabler
+@page = params[:page]
+			</pre>
+			<pre>
+# kan sättas i ERb - OBS :id är reserverat till ramverket
+<%= link_to("länktext", { :action => "list", :page => 5, :limit => 100, :id => 1}) %>
+# ger länken user/list/1?page=5&amp;limit=100
+			</pre>
+		</article>
 
 		<!-- render a template -->
 		<article>
 			<h3>Hur renderar man en vy</h3>
+
 			<p>
-				Låt säga webbläsaren anropar:<br />
-				<strong>http://localhost:3000/user/index</strong>
+				Skriv en test som kontrollerar urlen /teams/1/players
 			</p>
-			<p>
-				I filen app/controller/user_controller.rb hittas metoden/action index<br /><br />
-				<img src="images/user_controller.png"/>
-			
-				<img src="images/template.png"  style="float:right;" />
-			</p>
-			<p>
-				En tom action/metod letar alltid efter en template med samma namn
-			</p>
+			<ul>
+				<li>Att rätt controller efterfrågar rätt lag med dess spelare</li>
+				<li>Att instansvariablerna sätts korrekt i controllern</li>
+				<li>Att den resulterade vyn får rätt titel</li>
+				<li>Att vyn renderar ut laget med namn och nickname</li>
+				<li>Att vyn renderar ut rätt antal spelare</li>
+				<li>Att vyn renderar ut en länk till sidan med alla lag</li>
+			</ul>
 		</article>
 
 		<!-- render a template part 2 -->
 		<article>
 			<h3>Hur renderar man en vy - Part II</h3>
-		
+
 			<pre>
 # i app/controller/user_controller.rb
 def index
  # Kommer leta efter template views/user/other_view.html.erb
- render('user/other_view') 
+ render('user/other_view')
  # Kan i detta fall utesluta 'user' i sökvägen då vi är user_controller
 end
 			</pre>
@@ -306,32 +358,16 @@ end
 # Laddar in en template från en annan controller
 def index
  render('home/test')
-end				
+end
 			</pre>
 
 		</article>
 
-	
-		<!-- Redirect -->
-		<article>
-			<h3>Redirect</h3>
-			<p>
-				I user_controller.rb<br /><br />
-				<img src="images/redirect.png" width="60%"/>
-			</p>
-			<br />
-			<p>
-				<strong>OBS!</strong><br />
-				Ett HTTP ska skapas med statuskod "302 Found" och "location" satt till den nya URL:en (user/list)<br /><br />
-				Browsern/klienten frågar sedan om den nya resursen<br /><br />
-				All eventuell data framtagen i controllern förloras <br />
-				- till skillnad från om man kör render() som går direkt till efterfrågad template<br /><br />
-			</p>
-			
-		</article>
-		
-		
-		<!-- View templates -->
+
+
+
+
+		<!-- View templates
 		<article>
 				<h3>Templates</h3>
 				<p>ERb</p>
@@ -352,28 +388,28 @@ end
  HTML goes here&lt;br />
 <% end %>
 				</pre>
-		</article>
+		</article>-->
 
 
-		<!-- instance variable -->
+		<!-- instance variable
 		<article>
 			<h3>Hur får vi data från controller/model till view/template?</h3>
 			<p>
-				Controllern kommer anropa modellen (DB) för att hämta data som vi vill presentera i vyn/template.<br /> 
+				Controllern kommer anropa modellen (DB) för att hämta data som vi vill presentera i vyn/template.<br />
 				Data sparas i en instansvariabel som template (ERb) kommer åt.
 			</p>
 			<br /><br />
 			<img src="images/list_controller.png"  style="float: left"/> &nbsp;&nbsp;&nbsp;
 			<img src="images/list_template.png" /><br />
 			<img src="images/list.png" class="centered"/><br />
-		</article>
+		</article>-->
 
-		<!-- link_to -->
+		<!-- link_to
 		<article>
 			<h3>Skapa länkar i en template</h3>
 
 			<pre>
-				
+
 <%= link_to("Användarnas startsida", {:controller => "user", :action => "index"}) %>
 			</pre>
 			<p>
@@ -381,52 +417,380 @@ end
 			</p>
 			<br />
 			<pre>
-				
+
 # new_user_path kommer ersättas med sökvägen till controller = "user" och action = "new"
-<%= link_to("Skapa användare", new_user_path ) %>				
+<%= link_to("Skapa användare", new_user_path ) %>
 			</pre>
-		</article>
+		</article> -->
 
-		<!-- URL Parameters -->
-		<article class="fill">
-			<h3>Hur får vi tag i Querystrings?</h3>
-			<p>
-				/users?page=5&amp;limit=100
-			</p>
-			<pre>
-# GET- och POST-variabler ligger i arrayen params
 
-# i user_controller.rb - Ta hand om dem i controllern och tilldela instansvariabler
-@page = params[:page]
-			</pre>
-			<pre>
-# kan sättas i ERb - OBS :id är reserverat
-<%= link_to("länktext", { :action => "list", :page => 5, :limit => 100, :id => 1}) %>
-# ger länken user/list/1?page=5&amp;limit=100			
-			</pre>
-		</article>
 
 
 		<!-- Controller and CRUD -->
-		<article>
-			<h3>CRUD application</h3>
+	<article>
+		<h3>CRUD application</h3>
 			<br />
 			<img src="images/now-what.jpg" width="40%" class="centered"/>
 			<p>
-				Vi vill ju såklart kunna skapa, läsa, ändra och ta bort data!
+				I en vanlig CRUD-applikation vill vi kunna skapa, läsa, ändra och ta bort data!
 			</p>
 			<p>
-				Naturligtvis kan vi använda Active Record Querys för att prata med modellen
+				Naturligtvis kan vi använda Active Record Querys för att hantera modellen
 			</p>
 			<p>
-				Uppgiften blir för kontrollern att avgöra vad som ska göras. Hämta data? Bara presentera vy? Göra en redirect?
+				Vi kommer använda ramverkets REST-routing och "naming convention"
 			</p>
-			
-			
+
+
+	</article>
+
+	<!-- Bild över allt -->
+	<article>
+			<h3>Vår applikation ska ha Users</h3>
+			<p>resources :users (i routes.rb)</p>
+			<table style="font-size: 17pt">
+				<tbody><tr>
+									<th>HTTP Verb </th>
+						<th>Sökväg</th>
+						<th>Metod i controllern (action) </th>
+						<th>Används för</th>
+					</tr>
+					<tr>
+						<td>GET</td>
+						<td>/users</td>
+						<td>index</td>
+						<td>Listar upp alla användare</td>
+					</tr>
+					<tr>
+						<td>GET</td>
+						<td>/users/new</td>
+						<td>new </td>
+						<td>Returnerar ett HTML-formulär</td>
+					</tr>
+					<tr>
+						<td>POST</td>
+						<td>/users</td>
+						<td>create</td>
+						<td>Försöker skapa i databasen</td>
+					</tr>
+					<tr>
+						<td>GET</td>
+						<td>/users/:id</td>
+						<td>show</td>
+						<td>Visar en användare</td>
+					</tr>
+					<tr>
+						<td>GET</td>
+						<td>/users/:id/edit</td>
+						<td>edit</td>
+						<td>Returnerar ett formulär för ändring</td>
+					</tr>
+					<tr>
+						<td>PUT</td>
+						<td>/users/:id</td>
+						<td>update</td>
+						<td>Uppdaterar (i db) en användare</td>
+					</tr>
+					<tr>
+						<td>DELETE</td>
+						<td>/users/:id</td>
+						<td>destroy</td>
+						<td>tar bort en användare </td>
+					</tr>
+				</tbody>
+			</table>
 		</article>
 
-		
-	
+	<!-- READ -->
+	<article>
+			<h3>READ</h3>
+			<p>
+				Vi har två actions:<br />
+				<strong>index:</strong> Listar alla resurser<br />
+				<strong>show:</strong> Visar en enskild resurs<br />
+			</p>
+			<p>
+
+				<img src="images/read_controller.png" style="float: left;" />&nbsp;&nbsp;
+				<img src="images/list_view.png" /><br />
+				<img src="images/show_view.png" /><br />
+
+			</p>
+		</article>
+
+	<!-- Delete -->
+	<article>
+			<h3>Delete</h3>
+			<p>
+				<br /><br />
+				<img src="images/delete.png" width="50%" class="centered"/>
+			</p>
+		</article>
+
+	<!-- Create -->
+	<article>
+			<h3>Create - att skapa en resurs</h3>
+			<p>
+				<strong>new:</strong> Laddar ett formulär som användaren kan fylla i<br />
+				<strong>create:</strong> Tar användarens uppgifter och sparar (om det går bra)<br />
+			</p>
+			<p>
+				<img src="images/form_seq.png" height="78%"/>
+			</p>
+
+		</article>
+
+	<!-- Create steps -->
+	<article>
+				<p>
+					Men hur gör man med formulär? HTML och använda "params"?<br />
+					Validering och meddelanden? Behålla formulärvärden över postbacks<br />
+				</p>
+				<pre>
+&lt;form name="boring_form" method="POST" action="user/create">
+ &lt;input type="text" name="first_name" />
+ &lt;input type="text" name="last_name" />
+ &lt;input type="submit" />
+&lt;/form>
+</pre>
+<pre>
+def create
+  @user = User.new
+  @user.first_name = params[:first_name]; # o.s.v.
+  if @user.save
+    redirect_to user_path(@user)
+  else
+    # error handling
+  end
+end
+</pre>
+		</article>
+
+	<!-- Formshelper - form_tag -->
+	<article>
+		<h3>Form helpers</h3>
+		<p style="margin-bottom: 4px">
+			Såklart ger oss ramverket mycket hjälp med allt som har med formulärhantering att göra!<br />
+		</p>
+
+		<h3 style="margin-top: 30px">form_tag &amp; form_for</h3>
+
+<pre>
+<%= form_tag users_path do %>
+   <%= label_tag :email %>
+   <%= text_field_tag :email, params[:email] %>
+
+   <%= label_tag :password %>
+   <%= password_field_tag :password %>
+
+   <%= submit_tag "Logga in", class: "btn" %>
+<% end %>
+</pre>
+
+	</article>
+
+	<!-- Ett steg till
+	<article>
+		<h3>*_tag.</h3>
+		<ul>
+			<li>label_tag</li>
+			<li>text_field_tag</li>
+			<li>submit_tag</li>
+			<li>check_box_tag</li>
+			<li>radio_button_tag</li>
+			<li>text_area_tag</li>
+			<li>o.s.v.</li>
+		</ul>
+		<img src="images/form_tag.png" />
+		<h2>Men finns det inget bättre sätt?</h2>
+	</article>-->
+
+	<!-- helpers kopplade till modellklasser
+	<article>
+		<h3>Form helper for models</h3>
+		<p>
+			Ramverket tillhandahåller möjligheter att smidigare koppla
+			formulärskomponenter till det objekt du jobbar med
+		</p>
+		<p class="small">
+			<img src="images/user_new_controller.png" /><br />
+		<p>
+			<img src="images/text_field.png" /><br />
+			<span class="small">first_name och last_name är egenskaper/kolumner</span>
+		</p>
+		<p>
+			<img src="images/text_field_source.png" />
+		</p>
+		<p>
+			Namngivningen av input-fälten" styrs av ramverket.<br />
+			Ramverket tar emot värdena i:
+			<pre>params[:user_to_create][:first_name]</pre>
+
+	</article> -->
+
+	<!-- form_for -->
+	<article>
+			<h3 style="margin-bottom: 5px">form_for - (Forms For The Win)</h3>
+
+			<p>
+			<img src="images/form_for.png"  /><br />
+			</p>
+			<p>
+				<img src="images/form_for_source.png"  /><br /><br />
+			</p>
+			<p style="margin-top: 0px">
+
+				<img src="images/create_user.png" />
+			</p>
+
+			<p>Kapitel 7.2.1 i railstutorial.org</p>
+	</article>
+
+	<!-- mass_assignment -->
+	<article>
+			<h3>Strong parameters</h3>
+			<p>
+				Du måste specifikt tala om vilka egenskaper du vill kunna göra en mass-assignment på.
+			</p>
+
+			<pre>
+@user_to_create = User.new(params[:user])</pre>
+
+			<pre>
+# Mohahaha!
+http://www.example.com/user/signup?user[name]=owned&amp;user[admin]=1</pre>
+
+			<p>
+				Se film på kursens webbplats
+			</p>
+		</article>
+
+	<!-- Update
+	<article>
+			<h3>Update</h3>
+			<p>
+				edit: Laddar ett formulär som användaren kan uppdatera<br />
+				update: Uppdaterar egenskaperna hos objektet
+			</p>
+			<p>
+					<img src="images/update_controller.png" />
+			</p>
+			<pre>
+&lt;input name="_method" type="hidden" value="put" /></pre>
+		</article> -->
+
+
+
+	<!-- Select -->
+	<article>
+
+
+				<h3>The select helper</h3>
+				<p>
+					Många formulär vill använda en select-box/dropdown och i många fall vill man koppla den
+					mot en annan Model (ex. "lägg till ett city_id för en person")
+				</p>
+				<pre>
+# select-tagg där team_id är främmande nyckel i players-tabellen
+<%= f.select :team_id,
+options_from_collection_for_select(Team.all, :id, :name) %>
+				</pre>
+				<pre>
+&lt;select id="player_team_id" name="player[team_id]">
+  &lt;option value="1">Tottenham Hotspur FC&lt;/option>
+&lt;/select></pre>
+				<a href="http://guides.rubyonrails.org/form_helpers.html#making-select-boxes-with-ease">
+					http://guides.rubyonrails.org/form_helpers.html#making-select-boxes-with-ease
+				</a>
+	</article>
+
+	<!-- Data validation -->
+	<article>
+				<h3>Data validation</h3>
+				<p>
+					Hur validerar vi data så vi inte får felaktig data i databasen?<br /><br />
+					Validering kan ske i databas, på klienten, i controllern, i modellen<br /><br />
+					Active Record har inbyggt stöd för viss typ av validering i modellen<br /><br />
+
+				</p>
+				<img src="images/not_pass.jpg" class="centered" />
+			</article>
+
+	<!-- Form errors-->
+	<article>
+				<h3>Visa fel som hör till formuläret</h3>
+				<p>
+					Naturligvis kan vi ha validering på det som ska in till databasen.
+					Då kan det hända vi får fel och vi måste visa detta för användaren
+				</p>
+				<pre>
+# i modell-klassen user.rb
+# simple validation
+validate :firstname,
+         :presence => {message: "Need to add a firstname!"},
+         :lenght => {minium: 2, maximum: 30, message: "Should be between 2 and 30 characters"}
+				</pre>
+
+			<pre>
+# du hittar felen i errors (är en array)
+User.errors
+
+# Itterera genom alla errors
+User.errors.full_message # Samling med felmeddelanden att visa upp</pre>
+	<p>Självklart kan vi koppla dessa till flashnotiser eller felmeddelanden i formulären</p>
+			</article>
+
+	<!-- När körs valideringen -->
+	<article>
+				<h3>När körs valideringen</h3>
+				<p>
+					När vi bygger en webbapplikation så kollas valideringen
+					när följande metoder körs på ett objekt
+				</p>
+				<p>
+					create<br />
+					create!<br />
+					save<br />
+					save!<br />
+					update<br />
+					update_attributes<br />
+					update_attributes!<br />
+				</p>
+				<img src="images/bang.jpeg" style="float: right" />
+				<br />
+				<p>
+					create! kallas bang-method och genererar ett error istället för att returnera true/false
+				</p>
+
+				<a href="http://guides.rubyonrails.org/active_record_validations.html">
+						http://guides.rubyonrails.org/active_record_validations.html
+					</a>
+			</article>
+
+			<article>
+				<h3>Användarhantering - railstutorial.org</h3>
+				<ul>
+					<li>Kapitel 6.3 - has_sequre_password</li>
+					<li>Kapitel 7 och 8 - Hantering av användare och byggande av inloggningssystem</li>
+				</ul>
+
+				<h3>Railscast</h3>
+				<ul>
+					<li>http://railscasts.com/episodes/270-authentication-in-rails-3-1</li>
+				</ul>
+
+
+
+				<h3>Massa demofilmer på kurshemsidan</h3>
+
+
+			</article>
+
+
+			<article class="fill">
+				<iframe src="https://coursepress.lnu.se/kurs/webbramverk/ror-cv-och-routing/" frameborder="0"></iframe>
+			</article>
+
 	  </section>
 	  </body>
 	</html>

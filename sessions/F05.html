@@ -5,7 +5,7 @@
 
   Authors: Luke Mahé (code)
            Marcin Wichary (code and design)
-           
+
            Dominic Mazzoni (browser compatibility)
            Charles Chen (ChromeVox support)
 
@@ -22,23 +22,23 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
   </head>
-  
+
 
 
   <body style='display: none'>
 
     <section class='slides layout-widescreen template-default'>
-      
-		
+
+
 		<!-- First page -->
     	<article>
 	       	<h3>
 	         Webbramverk, 1DV450
 	          <br />
-	          <span class="small">Linnéuniversitetet, vt 2014</span>
+	          <span class="small">Linnéuniversitetet, vt 2015</span>
 	        </h3>
-       
-		
+
+
 			<br /><br />
 			<h1 class="big c">RESTful part 2</h1>
 			<p class="c" style="margin-top: 60px;">
@@ -47,16 +47,16 @@
 			</p>
 			<p class="small_footer">
 				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.sv">
-						<img alt="Creative Commons-licens" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>&nbsp;&nbsp;Denna presentation är licensierat under en 
-					
+						<img alt="Creative Commons-licens" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>&nbsp;&nbsp;Denna presentation är licensierat under en
+
 							<a rel="license" href="hhttp://creativecommons.org/licenses/by/3.0/deed.sv">Creative Commons Erkännande 3.0 Unported Licens</a>. (Där inte annat anges)<br/>
 			</p>
       	</article>
-  
-  
+
+
 		<!-- Webb-API -->
 		<article>
-			
+
 		    	<h1>
 					Vad bygger vi?
 				</h1>
@@ -64,11 +64,11 @@
 				<img src="images/overview_api.png" width="80%"/>
 				</p>
 				<p class="note">
-					
+
 				</p>
 		</article>
-		
-		
+
+
 		<article class="fill">
 			<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Paul_Signac_-_In_the_Time_of_Harmony-_The_Joy_of_Life--Sunday_by_the_Sea_-_Google_Art_Project.jpg/800px-Paul_Signac_-_In_the_Time_of_Harmony-_The_Joy_of_Life--Sunday_by_the_Sea_-_Google_Art_Project.jpg">
 			<h3>RESTful</h3>
@@ -80,11 +80,11 @@
 				<li>Pragmatiskt</li>
 				<li>Surfa genom ditt API</li>
 			</ul>
-			<p class="cc">Paul Signac - In the time of harmony: 
-				<a href="http://commons.wikimedia.org/">http://commons.wikimedia.org/</a> 
+			<p class="cc">Paul Signac - In the time of harmony:
+				<a href="http://commons.wikimedia.org/">http://commons.wikimedia.org/</a>
 			</p>
 		</article>
-		
+
 		<!--
 		<article>
 			<h3>REST - Vad och varför?</h3>
@@ -100,7 +100,7 @@
 			</ul>
 		</article>
 			-->
-		
+
 <!-- definition of GET -->
 		<article class="fill">
 			<h3>GET</h3>
@@ -149,7 +149,7 @@
 				<strong>Servern svarar (exempel)</strong><br />
 				&nbsp;&nbsp;201 Created + information<br />
 				&nbsp;&nbsp;400 Bad Request + information<br />
-				&nbsp;&nbsp;403 Forbidden				
+				&nbsp;&nbsp;403 Forbidden
 				</p>
 		</article>
 
@@ -164,7 +164,7 @@
 			<p>
 				200 OK<br />
 				204 No content<br />
-			
+
 				</p>
 		</article>
 
@@ -182,8 +182,8 @@
 				...
 				</p>
 		</article>
-		
-		
+
+
 		<article class="fill">
 			<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Transmediale-2010-Ryoji_Ikeda-Data-Tron-2.jpg/800px-Transmediale-2010-Ryoji_Ikeda-Data-Tron-2.jpg">
 			<h3>Beskriva en resurs tillstånd</h3>
@@ -195,11 +195,11 @@
 				<li>Hur gör andra API:er?</li>
 			</ul>
 		</article>
-		
-		
+
+
 		<article>
 			<h3>Information och struktur - Instance</h3>
-					
+
 			<pre>
 GET /notifications/120u76et</pre>
 <pre>
@@ -214,17 +214,17 @@ GET /notifications/120u76et</pre>
     ],
     "links" : [
       {"author" : "http://www.example.com/authors/thajo"},
-      {"author_avatar" : "http://www.example.com/authors/thajo.png"}      
-    ]				
+      {"author_avatar" : "http://www.example.com/authors/thajo.png"}
+    ]
   }
-}	
+}
 </pre>
 <p class="small">
 	Inspired by: <a href="http://amundsen.com/media-types/collection/">http://amundsen.com/media-types/collection/</a>
 </p>
 		</article>
-		
-		
+
+
 		<article>
 			<h3>Information och struktur - Collection</h3>
 <pre>
@@ -243,45 +243,45 @@ GET /notifications/120u76et</pre>
 	      "links" : [
 	        {"author" : "http://www.example.com/authors/thajo"},
                  {"author_avatar" : "http://www.example.com/authors/thajo.png"}
-          ]	
+          ]
         },
         {
           /* ... New item here */
         }
      ]
    }
-}	
+}
 </pre>
 <p>
 	Inspired by: http://amundsen.com/media-types/collection/
 </p>
 
 		</article>
-		
-		
-		
+
+
+
 		<!-- Felmeddelanden -->
-		
+
 		<article>
 			<h3>Formatera svaret - Felmeddelanden</h3>
-			
+
 <pre>
-# 404 Not Found	
+# 404 Not Found
 {
     "status": 404,
     "code": 40483,
     "message": "Oops! It looks like that url does not exists.",
-    "developerMessage": "The resource 'http://www.example.com/api/produkter' 
+    "developerMessage": "The resource 'http://www.example.com/api/produkter'
                          does not exist.",
     links : [
        {"moreInfo": "http://www.example.com/api/errors/40483"},
        {"documentation" : "http://www.example.com/api/doc"}
     ]
-}	
+}
 </pre>
 		</article>
-		
-		
+
+
 		<!-- Add type -->
 		<article>
 					<h3>Information och struktur</h3>
@@ -300,14 +300,14 @@ GET /notifications/120u76et</pre>
     "links" : [
       {"rel"  :"author", "href" : "http://www.example.com/authors/thajo"},
       {"rel"  :"category", "href" : "http://www.example.com/category/to-do"}
-    ]	
+    ]
   }
 }</pre>
 		</article>
-		
-		
+
+
 		<!-- Egna media types -->
-		
+
 		<article>
 			<h3>Egen mediatyp (Custom media-type)</h3>
 			<p>
@@ -315,19 +315,19 @@ GET /notifications/120u76et</pre>
 				Det finns möjlighet att definiera egna "kontrakt"/media-typer mellan server och klient.
 			</p>
 			<pre>
-Content-Type: application/vnd.collection+json</pre>	
+Content-Type: application/vnd.collection+json</pre>
 <pre>Content-Type: application/vnd.github+json</pre>
-	
+
 			<pre>
 Content-Type: application/vnd.coursepress-data+json</pre>
 			<p>
-				Man har möjlighet att beskriva strukturen av respresentationerna (dokumenten). 
+				Man har möjlighet att beskriva strukturen av respresentationerna (dokumenten).
 				<br />
 				Utformad efter egen problemdomän
 			</p>
 		</article>
-		
-		
+
+
 		<!-- Versioning -->
 		<article>
 			<h3>Versioning</h3>
@@ -339,28 +339,28 @@ Content-Type: application/vnd.coursepress-data+json</pre>
 				Uppdatera sällan!
 			</p>
 			<pre>
-GET http:&frasl;&frasl;www.api.example.com/v1/products					
-GET http:&frasl;&frasl;www.api.example.com/v2/products				
+GET http:&frasl;&frasl;www.api.example.com/v1/products
+GET http:&frasl;&frasl;www.api.example.com/v2/products
 			</pre>
 			<pre>
 # No fun hacking in browser
 Accept: application/vnd.coursepress-data+json;version=2.0
-Accept: application/vnd.github.v3+json				
+Accept: application/vnd.github.v3+json
 			</pre>
 			<p class="note">
 				http://stackoverflow.com/questions/389169/best-practices-for-api-versioning
 				URL:er bör hållas kontakta så lnge som möjligt
 			</p>
 		</article>
-		
-		
+
+
 		<!-- Partial response and pagnation -->
 		<article>
 			<h3>Partial response (filtrering) &amp; Pagination</h3>
-			
+
 			<pre>&frasl;users&frasl;thajo:(firstname, lastname, email)
 &frasl;users&frasl;thajo?fields=firstname, lastname, email</pre>
-			
+
 			<pre>
 &frasl;users?page=3&rrp=25
 &frasl;users?start=100&count=25
@@ -374,9 +374,9 @@ Accept: application/vnd.github.v3+json
 				I http-protokollet finns Content-Range?
 			</p>
 		</article>
-		
-		
-		
+
+
+
 		<!-- rate limit -->
 		<article>
 			<h3>Rate limit</h3>
@@ -389,13 +389,13 @@ Accept: application/vnd.github.v3+json
 				<li>X-Rate-Limit-Remaining - Antal kvarstående anrop</li>
 				<li>X-Rate-Limit-Reset - Antal sekunder kvar tills nästa "nollställning"</li>
 			</ul>
-			
+
 			<p>
-			
+
 			<pre>
-429 Too Many Requests</pre>	
+429 Too Many Requests</pre>
 		</article>
-		
+
 		<article>
 			<h3>"Web hooks"</h3>
 			<p>
@@ -409,12 +409,12 @@ Accept: application/vnd.github.v3+json
 				<img src="images/web_hook.png">
 			</p>
 		</article>
-		
+
 		<article class="fill">
 			<h2><a href="https://ifttt.com/">https://ifttt.com/</a></h2>
 			<iframe src="https://ifttt.com"></iframe>
 		</article>
-		
+
 		<article class="fill">
 			<img src="http://farm8.staticflickr.com/7194/6987570497_1df1fa3c11_b.jpg">
 			<h3>Dokumentation</h3>
@@ -422,7 +422,7 @@ Accept: application/vnd.github.v3+json
 				<li>Ha en publik öppen dokumentation!</li>
 				<li>Automatgenererad dokumentation?</li>
 				<li>Inkludera exempelkod</li>
-				<li>Inkudera exempel på request och response</li> 
+				<li>Inkudera exempel på request och response</li>
 				<li>Förklara authentication och felhantering</li>
 				<li>Tillåt användaren att "surfa" ditt API</li>
 				<li>
@@ -430,15 +430,15 @@ Accept: application/vnd.github.v3+json
 						http://www.prestwoodboards.com/aspsuite/kb/document_view.asp?qid=102147
 					</a>
 				</li>
-				
-				<p class="cc">Foto cc by: 
-					<a href="http://www.flickr.com/photos/massimobarbieri/">http://www.flickr.com/photos/massimobarbieri/</a> 
+
+				<p class="cc">Foto cc by:
+					<a href="http://www.flickr.com/photos/massimobarbieri/">http://www.flickr.com/photos/massimobarbieri/</a>
 				</p>
 		</article>
-		
-		
-			
-		<!-- Att tänka på -->		
+
+
+
+		<!-- Att tänka på -->
 		<article>
 			<h3>Att tänka på!</h3>
 			<p>
@@ -457,44 +457,44 @@ Accept: application/vnd.github.v3+json
 		<article class="fill">
 			<h3>Säkerhet</h3>
 			<img src="http://farm8.staticflickr.com/7308/11406985424_457c44045f_b.jpg">
-			<p class="cc">Foto cc by: 
-				<a href="http://www.flickr.com/photos/111692634@N04/">http://www.flickr.com/photos/111692634@N04/</a> 
+			<p class="cc">Foto cc by:
+				<a href="http://www.flickr.com/photos/111692634@N04/">http://www.flickr.com/photos/111692634@N04/</a>
 			</p>
 			<p class="note">
 				Ett api är inte nåt snabbhackat till din mobilapplikation!
 			</p>
 		</article>
-		
+
 		<article class="fill">
 			<img src="http://farm9.staticflickr.com/8201/8229504229_47a07ff41f_b.jpg">
 			<h3>HTTPS - HTTP over SSL/TSL</h3>
-			
-			<p class="cc">Foto cc by: 
-				<a href="http://www.flickr.com/photos/intelfreepress/">http://www.flickr.com/photos/intelfreepress//</a> 
+
+			<p class="cc">Foto cc by:
+				<a href="http://www.flickr.com/photos/intelfreepress/">http://www.flickr.com/photos/intelfreepress//</a>
 			</p>
 		</article>
-		
-		
+
+
 		<!-- auth athorize -->
 		<article>
-			
+
 			<h3>Säkerhet</h3>
 			<p>
 				<strong>Authentication (Autentisering)</strong> - Fastställande av identitet
 			</p>
-			<p>	
+			<p>
 				<strong>Authorization (Auktorisering)</strong> - Vilka resurser ska en identitet ha tillgång till
 			</p>
 			<p class="c">
 			<img src="http://farm4.staticflickr.com/3094/3163975110_5ecf5f0fb7_o.jpg">
 			</p>
-			
+
 			<p>
 				REST är stateless - autentisering i varje request
-			</p>	
+			</p>
 		</article>
-		
-		
+
+
 		<!-- servern svarar -->
 		<article class="fill">
 			<h3>Felkoder från servern</h3>
@@ -508,11 +508,11 @@ Accept: application/vnd.github.v3+json
 				Statuskoden för Auktoriseringsfel<br />
 				"Tyvärr! Jag vet vem du är men du är inte tillåten att komma åt dessa resurser. Stör mig inte på denna adressen igen!"<br />
 				Ibland skickas en 404
-				 
+
 			</p>
 		</article>
-		
-		
+
+
 		<!-- säkerhetsstrategoi för API:er -->
 		<article class="fill">
 			<img src="http://farm6.staticflickr.com/5165/5295557537_a5b0b7fa59_b.jpg">
@@ -524,9 +524,9 @@ Accept: application/vnd.github.v3+json
 				<li>OAuth 2- or 3-legged</li>
 				<li>Signed HMAC signature</li>
 		</article>
-		
-		
-		
+
+
+
 		<article>
 			<h3>HTTP Basic authentication (RFC 2617)</h3>
 			<pre>
@@ -543,25 +543,25 @@ Authorization: Basic Kl52GFDS%DH6H12JD#543</pre>
 				Enkelt! Alla kan hantera!
 			</p>
 		</article>
-		
+
 		<article>
 			<h3>Username/password vs. API-key(token-based)</h3>
 			<ul>
 				<li>passwords är inte konfetti, de ska inte spridas!</li>
-				<li>API nycklar är svårare att gissa</li>  
+				<li>API nycklar är svårare att gissa</li>
 				<li>Password reset - Användaren av ditt API har flera klienter</li>
 				<li>Ofta snabbare med API-nycklar (bcrypt)</li>
-				<li>Spårbarhet, en nyckel per applikation</li> 
+				<li>Spårbarhet, en nyckel per applikation</li>
 			</ul>
 			<pre>
 # Clientside
 Authorization: Token " + access_token</pre>
 
 			<pre>
-# beware of history, logging and proxies			
+# beware of history, logging and proxies
 GET http:&frasl;&frasl;api.example.com/resource/id?token=api_key</pre>
 		</article>
-		
+
 		<article class="fill">
 			<h3>OAuth</h3>
 			<img width="70%" src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Oauth_logo.svg/598px-Oauth_logo.svg.png">
@@ -570,10 +570,10 @@ GET http:&frasl;&frasl;api.example.com/resource/id?token=api_key</pre>
 				<li>Yahoo BBAuth</li>
 				<li>Flickr API</li>
 			</ul>
-			<p class="cc">Foto from Wikipedia 
+			<p class="cc">Foto from Wikipedia
 			</p>
 		</article>
-		
+
 		<article>
 			<h3>Varför OAuth?</h3>
 			<p class="c">
@@ -585,12 +585,12 @@ GET http:&frasl;&frasl;api.example.com/resource/id?token=api_key</pre>
 				<li>Man vill begränsa åtkommsten till resurser</li>
 				<li>Som resursägare kan jag återkalla en tredjepartsapplikations rättigheter</li>
 			</ul>
-				
+
 		</article>
-		
+
 		<article>
 			<h3>OAuth</h3>
-			
+
 			<ul>
 				<li><s>OAuth 1.0</s></li>
 				<li>OAuth 1.0a (2010)</li>
@@ -604,32 +604,32 @@ GET http:&frasl;&frasl;api.example.com/resource/id?token=api_key</pre>
 			<img src="images/ThreeLeggedOAuthDance.gif" width="70%">
 			</p>
 		</article>
-		
+
 		<article class="fill">
 			<img src="images/OAuth2Consent.png">
-			
+
 		</article>
-		
+
 		<article>
 			<h3>Ska jag implementera en OAuth service?</h3>
-			
+
 			<p>
 				Har din tjänst "resource owners"?
 			</p>
 			<p>
-				Kommer många användare av ditt API bygga klienter 
+				Kommer många användare av ditt API bygga klienter
 				där de vill komma åt data som hör till en "resource owners"?
 			</p>
 			<p>
 				Krångligt?
 			</p>
-			
+
 			<ul>
 				<li><a href="https://github.com/applicake/doorkeeper">https://github.com/applicake/doorkeeper</a></li>
 				<li><a href="https://github.com/intridea/omniauth/">https://github.com/intridea/omniauth/</a></li>
 			</ul>
 		</article>
-		
+
 		<article>
 			<h3>2-legged (OAuth 2.0)</h3>
 			<p>
@@ -644,7 +644,7 @@ GET http:&frasl;&frasl;api.example.com/resource/id?token=api_key</pre>
 					client_id, client_secret
 				</li>
 				<li>
-					Applikationen skickar en request till 
+					Applikationen skickar en request till
 					serviceproviderns "auth-endpoint": <br />
 					client_id, client_secret, grant_type=client_credentials
 				</li>
@@ -653,13 +653,13 @@ GET http:&frasl;&frasl;api.example.com/resource/id?token=api_key</pre>
 					access_token, expires_in, token_type
 				</li>
 				<li>Nu kan access-token (bearer) användas för giltiga anrop</li>
-				
+
 			</ol>
-		
-			
-			
+
+
+
 		</article>
-		
+
 		<article class="fill">
 			<iframe src="http://oauthbible.com/"></iframe>
 			<h2>
@@ -668,7 +668,7 @@ GET http:&frasl;&frasl;api.example.com/resource/id?token=api_key</pre>
 			</a>
 			</h2>
 		</article>
-				
+
 		<article>
 			<h3>2-legged / HMAC</h3>
 			<ul>
@@ -676,9 +676,9 @@ GET http:&frasl;&frasl;api.example.com/resource/id?token=api_key</pre>
 				<li>In-transit data protection - Signera dina request med privat nyckel</li>
 				<li>Skydd mot reply-attacks - timestamp (session-token)</li>
 			</ul>
-		
+
 		</article>
-		
+
 		<article>
 			<p class="c"><img src="images/HMAC.png" width="95%"></p>
 			<p>
@@ -692,12 +692,11 @@ GET http:&frasl;&frasl;api.example.com/resource/id?token=api_key</pre>
 		</article>
 
 
-  
-		
-		
+
+
+
 	  </section>
 	  </body>
 	</html>
-	
-	
-	
+
+
