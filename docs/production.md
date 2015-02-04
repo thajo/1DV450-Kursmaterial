@@ -21,10 +21,10 @@ Vill man kan man också använda git för att pusha upp sian filer till servern.
 
 Då git inte lär vara installerat på servern från början bör du göra det innan du följer guiden med två enkla kommando i terminalen (på din droplet såklart!)
 
-```
+`
 apt-get update
 apt-get install git
-```
+`
 Om du följer guiden ser du att du på din lokala maskin behöver lägga till en koppling till din droplet för att kunna ha två olika "remotes" att pusha till. Vanlig koduppdatering till GitHub och publicering till din droplet/webbserver. Har du gjort rätt kommer dina pushningar till dropleten kopieras över till din applikationsmapp och ligga redo för din applikation.
 
 Du kommer förmodligen få använda det lösenord du fått till din droplet. Vill du slipp alösenord kan du ställa in uppkopplingen med hjälp av SSH-nycklar. Det är dock något som går utanför denna guide. Det finns dock gott om hjälp att läsa in för att få det att fungera.
@@ -35,7 +35,7 @@ Det räcker dock inte att bara flytta över sin applikation för att få den i p
 ### Problem med filer som innehåller hemliga nycklar
 Skickar man över sina filer via git finns en stor risk att applikationen inte skickar med filerna "config/secrets.yml" och "config/initializers/secret_token.rb" vilket kan göra att applikationen inte fungerar. Detta få rman då göra manuellt.
 
-Man kan också få fel på att "config/secrets.yml" i produktionsläge inte får någon "secret_key_base". Tittar man i denna fil ser man att man där istället försöker läsa in en så kallad miljövariabel. Den lär dock inte vara stt på servern så för att lösa detta kan man lägga in en egen nyckel. Antingen kopiera från test eller development eller skapa en ny (http://www.jamesbadger.ca/2012/12/18/generate-new-secret-token/). Detta gör man alltså manuellt på webbservern.
+Man kan också få fel på att "config/secrets.yml" i produktionsläge inte får någon "secret_key_base". Tittar man i denna fil ser man att man där istället försöker läsa in en så kallad miljövariabel. Den lär dock inte vara stt på servern så för att lösa detta kan man lägga in en egen nyckel. Antingen kopiera från test eller development eller skapa en ny ([http://www.jamesbadger.ca/2012/12/18/generate-new-secret-token/]http://www.jamesbadger.ca/2012/12/18/generate-new-secret-token/). Detta gör man alltså manuellt på webbservern.
 
 ### Migrera databasen för produktion
 I produktionsläge vill vi undvika att köra SQLite3 som databashanterare och eftersom digital ocean automatiskt ger oss en mysql bör vi kunna använda den. Det finns två saker vi då måste göra.
