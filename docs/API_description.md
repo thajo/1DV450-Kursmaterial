@@ -24,7 +24,7 @@ Följande är de minsta kraven för godkänt API-uppgiften
 * En publik användare ska kunna skriva en sökfråga som söker händelse på lämpligt sätt.
 * Skapas en resurs med ett nytt taggnamn ska även en ny tagg skapas. Dock ska man undvika dubletter av taggnamn   
 
-Krav tagna från [beskrivningen av tjänsten](https://coursepress.lnu.se/kurs/webbramverk/tjansten-toerh/):
+Krav (för godkänt) tagna från [beskrivningen av tjänsten](https://coursepress.lnu.se/kurs/webbramverk/tjansten-toerh/):
 
 * I tjänsten ska en användare kunna logga in och lägga till, uppdatera och ta bort sina egna händelser/platsbeskrivningar. Denna del kommer kräva någon form av autentisering och auktorisering.
 * En registrerad användare som kan skapa händelser kan också skapa taggar för dessa händelser.
