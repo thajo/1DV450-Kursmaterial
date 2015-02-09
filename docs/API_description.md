@@ -2,7 +2,7 @@
 
 En av de stora delarna i denna kurs är att få erfarenhet av "API driven development” d.v.s. att bygga en tjänst som har ett webb-API i backend och en klient som efterfrågar data via detta API. För enförståelse för tjänsten läses
 [beskrivningen av tjänsten](https://coursepress.lnu.se/kurs/webbramverk/tjansten-toerh/).
-Tanken med denna del är alltså att vi denna uppgift ska utveckla ett Webb-API som webbutvecklare senare kan bygga applikationer kring. Detta API ska utvecklas med stöd från de arkitektoniska tankarna som hör till REST (Representational State Transfer) vars teori kommer tas upp under kursen.
+Tanken med denna del är alltså att vi denna uppgift ska utveckla ett Webb-API som webbutvecklare senare kan bygga applikationer kring. Detta API ska utvecklas med stöd från de arkitektoniska tankarna som hör till REST (Representational State Transfer) vars teori kommer tas upp under kursen.   
 
 Följande är de minsta kraven för godkänt API-uppgiften
 
@@ -22,7 +22,7 @@ Följande är de minsta kraven för godkänt API-uppgiften
 * En publik användare ska kunna få ut samtliga resursägare
 * En publik användare ska kunna få ut samtliga händelser kopplade i närheten till en position (välj själv lämplig noggrannhet)
 * En publik användare ska kunna skriva en sökfråga som söker händelse på lämpligt sätt.
-* Skapas en resurs med ett nytt taggnamn ska även en ny tagg skapas. Dock ska man undvika dubletter av taggnamn
+* Skapas en resurs med ett nytt taggnamn ska även en ny tagg skapas. Dock ska man undvika dubletter av taggnamn   
 
 Krav tagna från [beskrivningen av tjänsten](https://coursepress.lnu.se/kurs/webbramverk/tjansten-toerh/):
 
@@ -30,7 +30,7 @@ Krav tagna från [beskrivningen av tjänsten](https://coursepress.lnu.se/kurs/we
 * En registrerad användare som kan skapa händelser kan också skapa taggar för dessa händelser.
 * En publik användare av tjänsten ska kunna lista ut de tillagda händelserna sorterat på datum de lagts till.
 * En publik användare ska kunna lista ut händelser tillhörande en speciell resursägare och/eller en speciell tagg.
-* En publik användare av tjänsten ska kunna lista händelser i närheten av en angiven position
+* En publik användare av tjänsten ska kunna lista händelser i närheten av en angiven position   
 
 Tjänsten ska innehålla/kunna hantera:
 
