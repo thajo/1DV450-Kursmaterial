@@ -378,11 +378,15 @@
 
 		<!-- Idempotence -->
 		<article class="fill">
-			<h3>Idempotence</h3>
+			<h3>Idempotent vs. Safe Methods</h3>
 			<img src="http://farm3.staticflickr.com/2815/9131280504_3f407d7d20_b.jpg">
 			<p>
 				GET, HEAD, DELETE och PUT kallas idempotenta metoder<br />
 				De kan anropas många gånger i rad men ger alltid samma resultat
+			</p>
+
+			<p>
+				GET, HEAD anses som safe methods då dessa inte förändrar en resurs
 			</p>
 			<p class="note">
 
@@ -394,6 +398,55 @@
 			<p class="cc">Foto cc by:
 				<a href="http://www.flickr.com/photos/dannyfowler/">http://www.flickr.com/photos/dannyfowler/</a>
 			</p>
+		</article>
+		<!-- A resource can have multiple representations -->
+		<article class="fill">
+			<h3>Multipla representationer</h3>
+			<img src="http://farm4.staticflickr.com/3363/3432040190_a743501d95_o.jpg">
+			<ul>
+				<li>En representation av en resurs kan ges i flera dataformat</li>
+				<li>Klienten ska kunna efterfråga det dataformat man önskar via sin HTTP förfrågan</li>
+				<li>Anges inte detta av klienten bör resursen returneras i ett "default" dataformat</li>
+				<li>I sitt svar talar servern om i vilket dataformat svaret är</li>
+			</ul>
+			<p class="cc">Foto cc by:
+				<a href="http://www.flickr.com/photos/crobj/">http://www.flickr.com/photos/crobj/</a>
+			</p>
+		</article>
+
+
+		<!--Ett exempel -->
+		<article class="fill">
+			<h3>Accept-header</h3>
+			<pre>
+// I header från klienten
+Accept: application/xml, text/csv, text/plain
+Accept: application/json
+Accept: application/thajo+json</pre>
+			<p>
+				http://www.api.example.com/users/thajo.json<br />
+				http://www.api.example.com/users/thajo.xml<br />
+			</p>
+			<pre>
+// I header från server - berättar om dataformatet
+Content-Type: application/thajo+json</pre>
+		</article>
+
+		<article>
+			<h3>En resurs - Olika representationer</h3>
+
+			<pre>
+http://www.example.com/api/v1/users.xml</pre>
+<img src="images/postman_accept.png" alt="" style="border: 1px black solid">
+
+		<ul>
+			<li>JSON</li>
+			<li>XML</li>
+			<li>CSV, YML</li>
+			<li>application/vnd.github.v3+json</li>
+		</ul>
+
+
 		</article>
 
 
@@ -438,26 +491,38 @@
 		<article>
 			<h3>Exempel - Skapa en resurs</h3>
 			<pre>
-POST http://localhost:3000/products
+POST http://example.com/products
 Accept: application/json
 Content-Type: application/json
 ...
 {
    "product_name"  : "Bultbräda 2000",
-   "price"  : 324.50
-}
-			</pre>
+   "price"  : 324.50,
+   "category" : 3
+}</pre>
 
+
+		</article>
+
+		<article>
+			<h3>Exempel - Skapa en resurs </h3>
 			<pre>
 201 Created
 Content-Type: application/json
 ...
 {
-    "status": 201,
-    "message": "A new product was created",
-    "link": "http://localhost:3000/link/123"
-}
-			</pre>
+   "id" : 123
+   "message": "A new product was created",
+   "link": "http://example.com/products/123",
+   "created_at": "2015-01-14T16:00:49Z",
+   "updated_at": "2015-01-14T16:00:49Z",
+   "category" {
+     "id": 3,
+     "category_name": "Toys",
+     "url": "http://example.com/categories/3"
+     "category_url" : "http://example.com/categories"
+  }
+}</pre>
 		</article>
 
 
@@ -479,38 +544,7 @@ Content-Type: application/json
 
 
 
-		<!-- A resource can have multiple representations -->
-		<article class="fill">
-			<h3>Multipla representationer</h3>
-			<img src="http://farm4.staticflickr.com/3363/3432040190_a743501d95_o.jpg">
-			<ul>
-				<li>En representation av en resurs kan ges i flera dataformat</li>
-				<li>Klienten ska kunna efterfråga det dataformat man önskar via sin HTTP förfrågan</li>
-				<li>Anges inte detta av klienten bör resursen returneras i ett "default" dataformat</li>
-				<li>I sitt svar talar servern om i vilket dataformat svaret är</li>
-			</ul>
-			<p class="cc">Foto cc by:
-				<a href="http://www.flickr.com/photos/crobj/">http://www.flickr.com/photos/crobj/</a>
-			</p>
-		</article>
 
-
-		<!--Ett exempel -->
-		<article class="fill">
-			<h3>Accept-header</h3>
-			<pre>
-// I header från klienten
-Accept: application/xml, text/csv, text/plain
-Accept: application/json
-Accept: application/thajo+json</pre>
-			<p>
-				http://www.api.example.com/users/thajo.json<br />
-				http://www.api.example.com/users/thajo.xml<br />
-			</p>
-			<pre>
-// I header från server - berättar om dataformatet
-Content-Type: application/thajo+json</pre>
-		</article>
 
 		<!-- Hypermedia as the engine of application state (HATEOAS) -->
 		<article class="fill">
@@ -529,8 +563,10 @@ Content-Type: application/thajo+json</pre>
 			<ul>
 				<li>Current state - Beskrivs av representationen och dess dataformat</li>
 				<li>Länkar/URL:er - Beskriver "the transition" till nästa "state"</li>
-				<li>Inkludera länkar/URL:er i ditt APIs alla response</li>
+				<li>Inkludera länkar/URL:er i ditt APIs response</li>
 				<li>Klienter bör kunna navigera sig i ditt API precis som man surfar</li>
+				<li>En klient ska aldrig behöva bygga ihop en URL</li>
+				<li>hypertext should be used to find your way through the API. - See more at: http://restcookbook.com/Basics/hateoas/#sthash.1KSs5ZCy.dpuf</li>
 			</ul>
 		</article>
 
@@ -550,6 +586,13 @@ Content-Type: application/thajo+json</pre>
 	&lt;link rel="self" href="http://example.org/user/1" /&gt;
 	&lt;link rel="friends" href="http://example.org/user/1/friends" /&gt;
 &lt;/links&gt;</pre>
+		</article>
+
+		<article class="fill">
+			<iframe src="http://restcookbook.com/Basics/hateoas/" frameborder="0"></iframe>
+			<p class="cc">
+				<a href="http://restcookbook.com/Basics/hateoas/">http://restcookbook.com/Basics/hateoas/</a>
+			</p>
 		</article>
 
 		<!--
@@ -576,6 +619,7 @@ Content-Type: application/thajo+json</pre>
 
 		</article>
 
+		<!--
 
 		<article>
 			<h3>RoR - hantera API</h3>
@@ -606,7 +650,7 @@ end
 		<article class="fill">
 			<iframe src="https://coursepress.lnu.se/kurs/webbramverk/rest-1/"></iframe>
 		</article>
-
+-->
 
 	  </section>
 	  </body>

@@ -27,7 +27,7 @@ Följande är de minsta kraven för godkänt API-uppgiften
 
 Krav (för godkänt) tagna från [beskrivningen av tjänsten](https://coursepress.lnu.se/kurs/webbramverk/tjansten-toerh/):
 
-* I tjänsten ska en användare kunna logga in och lägga till, uppdatera och ta bort sina egna händelser/platsbeskrivningar. Denna del kommer kräva någon form av autentisering och auktorisering byggs in i APIet. 
+* I tjänsten ska en användare kunna logga in och lägga till, uppdatera och ta bort sina egna händelser/platsbeskrivningar dvs alla un-safe methods i ditt API. Denna del kommer kräva någon form av autentisering och auktorisering byggs in i APIet. 
 * En inloggad användare som kan skapa händelser kan också skapa taggar för dessa händelser.
  
 
