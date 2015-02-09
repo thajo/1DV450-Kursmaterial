@@ -25,7 +25,7 @@ Följande är de minsta kraven för godkänt API-uppgiften
 * En publik användare ska kunna skriva en sökfråga som söker händelse på lämpligt sätt.
 * Skapas en resurs med ett nytt taggnamn ska även en ny tagg skapas. Dock ska man undvika dubletter av taggnamn
 
-_Krav tagna från [beskrivningen av tjänsten](https://coursepress.lnu.se/kurs/webbramverk/tjansten-toerh/):
+Krav tagna från [beskrivningen av tjänsten](https://coursepress.lnu.se/kurs/webbramverk/tjansten-toerh/):
 * I tjänsten ska en användare kunna logga in och lägga till, uppdatera och ta bort sina egna händelser/platsbeskrivningar. Denna del kommer kräva någon form av autentisering och auktorisering.
 * En registrerad användare som kan skapa händelser kan också skapa taggar för dessa händelser.
 * En publik användare av tjänsten ska kunna lista ut de tillagda händelserna sorterat på datum de lagts till.
@@ -35,7 +35,7 @@ _Krav tagna från [beskrivningen av tjänsten](https://coursepress.lnu.se/kurs/w
 Tjänsten ska innehålla/kunna hantera:
 
 * Oändigt antal resurser och användare (hårdvara kan sätta så klart stopp men inte tjänstens arkitektur)
-* Arbetets gång ska tydligt dokumenteras med tydliga commitmeddelanden i tjänstens repositorie på github tillsammans med övrig relevant information för andra utvecklare som ska kunna forka (ta en kopia av din kod) och köra din aapplikationer._
+* Arbetets gång ska tydligt dokumenteras med tydliga commitmeddelanden i tjänstens repositorie på github tillsammans med övrig relevant information för andra utvecklare som ska kunna forka (ta en kopia av din kod) och köra din applikationer.
 
 * Utöver detta är du fri att implementera egna funktioner i ditt API för att skräddarsy din tjänst och visa din kunskapsnivå
 * Du ska var noggrann med att också dokumentera eventuella saker som personen som kör en peer-review på ditt projekt behöver veta. ALLA STEG i hur man får igång applikationerna!
