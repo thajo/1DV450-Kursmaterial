@@ -14,7 +14,7 @@ Följande är de minsta kraven för godkänt API-uppgiften
 * API:et ska i möjligaste mån grunda sig på HATEOAS
 * API:et ska ha en tydlig och genomtänkt felhantering som tydligt visar för användaren eventuella felkoder och felmeddelanden
 * API:et ska kunna kunna anropas på så sätt att man kan välja en "offset" och "limit" av resurser
-* Till API:et ska en [https://www.google.se/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0CCAQFjAA&url=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fpostman-rest-client%2Ffdmmgilgnpjigdojojpjoooidkmcomcm&ei=cXXYVMX8EcqkygPhsoHYBA&usg=AFQjCNFL71vN61QG0LKlw7VDJvIZDprjHA&sig2=pq3-HnenvWt4SuqSIqo4xw](POSTMAN-fil) skapas som tester samtliga anrop man kan göra till API:et
+* Till API:et ska en [POSTMAN-fil](https://www.google.se/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0CCAQFjAA&url=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fpostman-rest-client%2Ffdmmgilgnpjigdojojpjoooidkmcomcm&ei=cXXYVMX8EcqkygPhsoHYBA&usg=AFQjCNFL71vN61QG0LKlw7VDJvIZDprjHA&sig2=pq3-HnenvWt4SuqSIqo4xw) skapas som tester samtliga anrop man kan göra till API:et
 * En publik användare (ej inloggad) ska kunna få ut samtliga händelser sorterat på senaste datum 
 * En publik användare ska kunna få ut en enskild händelse
 * En publik användare ska kunna få ut alla händelser tillhörande en viss tagg
@@ -25,7 +25,7 @@ Följande är de minsta kraven för godkänt API-uppgiften
 * En publik användare ska kunna skriva en sökfråga som söker händelse på lämpligt sätt.
 * Skapas en resurs med ett nytt taggnamn ska även en ny tagg skapas. Dock ska man undvika dubletter av taggnamn
 
-_Krav tagna från [https://coursepress.lnu.se/kurs/webbramverk/tjansten-toerh/](beskrivningen av tjänsten):
+_Krav tagna från [beskrivningen av tjänsten](https://coursepress.lnu.se/kurs/webbramverk/tjansten-toerh/):
 * I tjänsten ska en användare kunna logga in och lägga till, uppdatera och ta bort sina egna händelser/platsbeskrivningar. Denna del kommer kräva någon form av autentisering och auktorisering.
 * En registrerad användare som kan skapa händelser kan också skapa taggar för dessa händelser.
 * En publik användare av tjänsten ska kunna lista ut de tillagda händelserna sorterat på datum de lagts till.
