@@ -9,19 +9,20 @@ Följande är de minsta kraven för godkänt API-uppgiften
 * API:et ska stödja de funktioner som beskrivs i tjänstens problembeskrivning
 * API:et ska vara utformat så det, i möjligaste mån, stödjer sig på teorin kring ett pragmatiskt RESTful API. Avvikelser ska kunna motiveras.
 * API:et ska ha stöd för JSON
+* Varje anrop ska kräva en giltig API-nyckel skapad i applikationen gjord i första delen
 * API:et ska endast kunna anropas av klienter/användare som har en giltig API-nyckel
 * API:et ska i möjligaste mån grunda sig på HATEOAS
 * API:et ska ha en tydlig och genomtänkt felhantering som tydligt visar för användaren eventuella felkoder och felmeddelanden
 * API:et ska kunna kunna anropas på så sätt att man kan välja en "offset" och "limit" av resurser
 * Till API:et ska en [POSTMAN-fil](https://www.google.se/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0CCAQFjAA&url=https%3A%2F%2Fchrome.google.com%2Fwebstore%2Fdetail%2Fpostman-rest-client%2Ffdmmgilgnpjigdojojpjoooidkmcomcm&ei=cXXYVMX8EcqkygPhsoHYBA&usg=AFQjCNFL71vN61QG0LKlw7VDJvIZDprjHA&sig2=pq3-HnenvWt4SuqSIqo4xw) skapas som tester samtliga anrop man kan göra till API:et
-* En publik användare (ej inloggad) ska kunna få ut samtliga händelser sorterat på senaste datum 
-* En publik användare ska kunna få ut en enskild händelse
-* En publik användare ska kunna få ut alla händelser tillhörande en viss tagg
-* En publik användare ska kunna få ut samtliga taggar i systemet
-* En publik användare ska kunna få ut samtliga händelser skapade av en viss användare/resursägare
-* En publik användare ska kunna få ut samtliga resursägare
-* En publik användare ska kunna få ut samtliga händelser kopplade i närheten till en position (välj själv lämplig noggrannhet)
-* En publik användare ska kunna skriva en sökfråga som söker händelse på lämpligt sätt.
+* Anrop med giltig API-nyckel ska kunna få ut samtliga händelser sorterat på senaste datum 
+* Anrop med giltig API-nyckel ska kunna få ut en enskild händelse
+* Anrop med giltig API-nyckel ska kunna få ut alla händelser tillhörande en viss tagg
+* Anrop med giltig API-nyckel ska kunna få ut samtliga taggar i systemet
+* Anrop med giltig API-nyckelska kunna få ut samtliga händelser skapade av en viss användare/resursägare
+* Anrop med giltig API-nyckel ska kunna få ut samtliga resursägare
+* Anrop med giltig API-nyckel ska kunna få ut samtliga händelser kopplade i närheten till en position (välj själv lämplig noggrannhet)
+* Anrop med giltig API-nyckel ska kunna skriva en sökfråga som söker händelse på lämpligt sätt.
 * Skapas en resurs med ett nytt taggnamn ska även en ny tagg skapas. Dock ska man undvika dubletter av taggnamn   
 
 Krav (för godkänt) tagna från [beskrivningen av tjänsten](https://coursepress.lnu.se/kurs/webbramverk/tjansten-toerh/):
