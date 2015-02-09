@@ -1,9 +1,8 @@
 ##Introduktion till Webb-APIet
 
-En av de stora delarna i denna kurs är att få erfarenhet av "API driven development” d.v.s. att bygga en tjänst som har ett webb-API i backend och en klient som efterfrågar data via detta API. 
+En av de stora delarna i denna kurs är att få erfarenhet av "API driven development” d.v.s. att bygga en tjänst som har ett webb-API i backend och en klient som efterfrågar data via detta API. För enförståelse för tjänsten läses
+[beskrivningen av tjänsten](https://coursepress.lnu.se/kurs/webbramverk/tjansten-toerh/).
 Tanken med denna del är alltså att vi denna uppgift ska utveckla ett Webb-API som webbutvecklare senare kan bygga applikationer kring. Detta API ska utvecklas med stöd från de arkitektoniska tankarna som hör till REST (Representational State Transfer) vars teori kommer tas upp under kursen.
-Följande krav ska implementeras för godkänt på uppgiften:
-
 
 Följande är de minsta kraven för godkänt API-uppgiften
 
