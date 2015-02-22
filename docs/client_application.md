@@ -1,7 +1,7 @@
 ##Introduktion till uppgiften - Klientapplikation via AngularJS##
 I förra uppgiften skapade vi ett webb-API som nu förhoppningsvis är redo för användning. Det är nu du ska använda ditt API för att att skapa en webbaserad klientapplikation som genom asynkrona anrop jobbar mot ditt API.
 
-Uppgiften kan innebära vissa förändingar i ditt API och dess datamodell och ditt tidigare utvecklade API. Det är alltså helt OK att göra förändningar i sitt API även under detta steg.
+Uppgiften kan innebära vissa förändingar i ditt API och dess datamodell och ditt tidigare utvecklade API. Det är alltså helt OK att göra förändningar i sitt API även under detta steg. Naturligtvis vill vi kunna följa REST-principer så som HATEOAS i möjligaste mån men naturligtvis kan man behöva frångå dessa i vissa fall.
 
 
 ##Krav på applikationen##
@@ -41,6 +41,8 @@ Applikationen ska kunna bistå sin användare med följande:
 * Skriv din applikation med tillhörande testfall med god “code coverage”
 * Implementera en cache-strategi på klienten
 * Paginering av resurser i klienten
+* Stöd för deep-linking
+* Egna intressanta implementationer som visar på ökad kunskap om ramverket
 * Ytterligare applikationsmässiga funktioner som höjer upplevelsen
 
 
