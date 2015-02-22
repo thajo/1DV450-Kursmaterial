@@ -10,7 +10,7 @@ Klientapplikationen ska vara skriven i angularJS och använda asynkrona anrop mo
 
 Applikationen ska kunna bistå sin användare med följande:
 
-* Möjlighet att på ett genomtänkt och överskådligt sätt visa tjänstens alla resurser (tänk på att det kan finnas obegränsat antal - Vi kan inte visa alla på en gång). Någon form av karttjänst bör användas.
+* Möjlighet att på ett genomtänkt och överskådligt sätt visa tjänstens alla resurser. Någon form av karttjänst bör användas.
 
 * Möjlighet att kunna söka specifika resurser i tjänsten genom sökord
 
@@ -20,13 +20,13 @@ Applikationen ska kunna bistå sin användare med följande:
 
 * Användaren ska hela tiden veta vad som pågår i applikationen med hjälp av tydliga meddelanden och uppdatering av gränssnitt
 
-* Minst en "custom directives" och ett "custom filter" ska vara implementerat.
+* Minst en "custom directives" ~~och ett "custom filter"~~ ska vara implementerat.
 
-* Webbapplikationen ska ha en genomarbetad design och vara responsiv. Ett css-ramverk så som bootstrap eller foundation ska användas.
+* Webbapplikationen ska ha en genomarbetad design och vara responsiv. Ett css-ramverk så som bootstrap eller foundation bör användas.
 
 * Gränssnittet ska vara utformat på sådant sätt att man intuitivt förstår hur applikationen fungerar.
 
-* Applikationen ska bete sig som en Single Page Application
+* Applikationen ska i möjligaste mån bete sig som en Single Page Application
 
 * Webbläsarens bakåt- och framåtknappar ska fungera som på en "vanlig" webbsida
 
@@ -40,7 +40,7 @@ Applikationen ska kunna bistå sin användare med följande:
 * Du sköter inloggning på annat sätt än HTTP Basic
 * Skriv din applikation med tillhörande testfall med god “code coverage”
 * Implementera en cache-strategi på klienten
-* Full responsiv applikation med genomarbetad design
+* Paginering av resurser i klienten
 * Ytterligare applikationsmässiga funktioner som höjer upplevelsen
 
 
