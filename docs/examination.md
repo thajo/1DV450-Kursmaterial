@@ -1,45 +1,11 @@
-##Hur kommer examinationen gå till?##
+#Om kursens examinitation#
 
-Uppgiften i denna kurs är ju först att bygga ett ReSTful webb-API till en tjänst och sedan använda detta API för att bygga en klientapplikation med hjälp av angularJS. I schemat finns två examinationstillfällen, ett för API:et och ett för klientapplikationen.
-Dessa examinationstillfällen kommer fokusera på mer teoretiska frågor dels kring saker som ni har varit tvungen att tänka på vid utvecklingen och dels från den teorin som finns samlad under de olika delarna i kursen. Denna teori kommer examineras muntligen med frågor ni kommer få svara på under den examinationstid ni bokar. 
+Uppgiften i denna kurs är ju först att bygga ett ReSTful webb-API till en tjänst och sedan använda detta API för att bygga en klientapplikation med hjälp av angularJS. 
 
 Koden ni producerar kommer studeras genom en så kallad peer-review, eller [referentgranskning](http://sv.wikipedia.org/wiki/Referentgranskning).
-Det innebär att ni som ett examinationsmoment kommer få granska varandras kod och lämna in synpunkter och feedback på denna. Varje student kommer tilldelas två andra projekt för granskning. **Detta kommer ske genom att man en vecka innan de schemalagda examinationen (deadline för uppgiften) gör en release på sin kod (API + registreringsapplikation) samt bokar en [redovisningstid](https://coursepress.lnu.se/kurs/webbramverk/gruppregistrering-distans/) till den muntliga examinationen. Registreringen stänger torsdag 20:e februari klockan 23:59** Kursledningen kommer då att under följande dag skicka dig två andra projekt(annonyma) i form av två zipfiler som du ska studera och ge feedback på inom en veckas tid.
+Det innebär att ni som ett examinationsmoment kommer få granska varandras kod och lämna in synpunkter och feedback på denna. Dett aär en examinerade del, dels era kommentarer som avspeglar er förmåga att läsa och förstå ramverkskod samt också de kommentarer du får på din egen kod. Examinator kommer efter varje peer-review granska din kod och de kommentarer du fått på den.
 
-**OBS!** Skriv gärna en readme-fil till din release där du kortfattat hur applikationen fungerar om det skulle vara några oklarheter kring detta.
+#Slutlig examination#
+I slutet av kursen kommer examinator gå igenom din kod och se hur du tagit till dig av kritiken samt hur den slutliga produkten blivit av detta.
 
-##Första examinationen ##
-I denna examination kommer vi fokusera på webb-API:et. Den muntliga redovisningen kommer ske genom frågor kring skapandet av ett webb-API med det ramverk du valt (RoR eller Django) samt också kring REST och den teori som tagits upp där. **Frågorna på "muntan" kan vara hämtade från föreläsningar, de extra resurser som funnits eller frågor kring det ramverk du använt och den applikation du byggt.** Den muntliga examinationen kommer ta ca 20-30 minuter och du bokar en redovisningstid till detta via registreringsformuläret. Campusstudenter kommer upp till Johns kontor, distansstudenter möts upp i virtuella redovisnings/handledningsrummet.
-
-Du kommer också, som ovan nämnts, få två stycken projekt att granska. Detta ska alltså ses som en lärandeprocess att studera och granska andras kod och implementationer. Kanske du hittar delar som du kan implementera i ditt API. Du granskar dessa enligt de punkter som följer nedan. Du redovisar din granskning via ett [formulär i google docs](https://docs.google.com/forms/d/1YS_rkdPRQ1vbTch6HOyKo5cstOm7M6zp14bGSQbgkSs/). Där kommer du svara på ett antal frågor kring de projekt du granskat. Skulle din granskning vara otillräcklig (ej hittat felaktigheter i kod/implementation, för tunnt reflekterat m.m.) ges en komplettering med två nya projekt att granska. Observera att examinatorn kommer granska alla applikationerna och de granskningar som gjorts vilket innebär att missar man delar som granskare kan man bli underkänd och få komplettera med två nya applikationer. 
-
-**Granskningen sker anonymt** (så länge den du granskar inte råkat avslöja sig i koden) så du vet inte vem som granskar din kod och du vet inte vem som gett feedback på din kod. Kursledningen kommer dock veta vem som granskar vem.
-
-I första granskningen kommer du alltså granska två ReSTful webb-api:er. Du bör då fokusera på följande delar (kommer återfinnas i formuläret):
-
-* Hur enkelt förstår man att använda API:et utan att läsa dokumentationen?
-* Hur skiljer sig implementationen ifrån hur du löst uppgiften?
-* Fungerar API:et så som dokumentationen säger?
-* Hittar du några buggar i applikationen?
-* Anser du att API:et i möjligaste mån följer teorin kring REST? Vad skulle du i annat fall vilja ändra på?
-* Hur är felhanteringen i API:et, förstår du de felmeddelanden som kan förekomma och är de korrekta?
-* Vilka eventuella förbättringar ser du man skulle kunna göra i applikationen du granskat?
-* Hittar du några säkerhetsproblem?
-* Anser du API:et uppfyller de krav som fanns beskrivet i uppgiften
-* Fungerar registreringsapplikationen enligt de krav som fanns?
-* Har applikationen implementerat några extra funktioner som inte fanns i kraven så som testfall, cachning m.m.
-
-
-**Dina granskningar ska vara gjord senast fredag vecka 9 , 28:e februari, klockan 17:00 då formuläret stängs**
-
-##Andra examinationen##
-Andra examinationen sker i slutet av kursen och kommer då fokusera på klientdelen och angularJS. 
-Examinationen går till på liknande sätt som för del ett i kursen.
-Kod redovisas genom en release på github. **release gör senast torsdag 20/3 klockan 23:59**
-Du kommer under fredagen tilldelas två andra projekt att göra en review på. Mer information om detta kommer fås i det mejl som skickas ut.
-Examinator kommer också granska dina applikationer för både för server- och klientdelen för att se att de uppfyller de krav som ställdes.
-
-Under vecka 12 kommer en muntlig redovisning ske på de delar som tagits upp i kursen under vecka 8, 9 och 10 (kursvecka 6-8). Du ska alltså kunna besvara ett antal frågor.
-
-**Dina granskningar ska vara gjord senast fredag vecka 13 , 28:e mars, klockan 17:00 då formuläret stängs**
-
+För att kontrolla din kunskapsnivå kommer också en muntlig examination ske där du får boka en tid och kommer få ett antal frågor kring det kursen tagit upp och kasnke även kring din kod. Frågorna kommer främst grund asig på det föreläsningingarna tagit upp samt de läshänvisingar/artiklar som funnits till varje del.

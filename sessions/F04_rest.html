@@ -5,7 +5,7 @@
 
   Authors: Luke Mahé (code)
            Marcin Wichary (code and design)
-
+           
            Dominic Mazzoni (browser compatibility)
            Charles Chen (ChromeVox support)
 
@@ -22,76 +22,76 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
   </head>
-
+  
 
 
   <body style='display: none'>
 
     <section class='slides layout-widescreen template-default'>
-
-
+      
+		
 		<!-- First page -->
     	<article>
 	       	<h3>
 	         Webbramverk, 1DV450
 	          <br />
-	          <span class="small">Linnéuniversitetet, vt 2015</span>
+	          <span class="small">Linnéuniversitetet, vt 2014</span>
 	        </h3>
-
-
+       
+		
 			<br /><br />
-			<h1 class="big c">RESTful WebbAPI</h1>
-
+			<h1 class="big c">REST</h1>
+			<p class="c" style="margin-top: 60px;">
+				Pragmatiskt RESTful webb-API<br />
+				<span class="c"></span>
+			</p>
 			<p class="small_footer">
 				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.sv">
-						<img alt="Creative Commons-licens" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>&nbsp;&nbsp;Denna presentation är licensierat under en
-
+						<img alt="Creative Commons-licens" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>&nbsp;&nbsp;Denna presentation är licensierat under en 
+					
 							<a rel="license" href="hhttp://creativecommons.org/licenses/by/3.0/deed.sv">Creative Commons Erkännande 3.0 Unported Licens</a>. (Där inte annat anges)<br/>
 			</p>
       	</article>
-
-
-		<article>
-			<img style="margin-left: -65px; margin-top: -30px" src="images/applicationoverview.png" alt="">
-		</article>
-
+  
+  
 		<!-- Webb-API -->
 		<article>
-
+			
 		    	<h1>
-					Vad är ett (webb)API?
+					Vad är ett webb-api?
 				</h1>
 				<img src="images/what_is_api.png" width="80%"/>
-
+				
 				<p class="note">
 					Synliggöra data
 					Application programming interface
 					Skillnaden från en webbapplikation
 					Maskin till maskin
 					Distribuerade system
-
+					
 				</p>
 		</article>
 
-
+		<article>
+			API is UI to Data
+		</article>
+		
 		<!-- Varför -->
 		<article class="fill">
 			<img src="http://farm6.staticflickr.com/5293/5537894072_c4e46bfce1_b.jpg"/>
 		    	<h3>
-					API Driven development
+					Varför?
 				</h3>
 				<ul>
-					<li>Modulärt, "separation of concerns"</li>
-					<li>Utbyta data mellan system/applikationer</li>
+					
 					<li>Använd vår data!</li>
-					<li>Stöd för olika typer av klienter/plattformer</li>
-					<li>Lös koppling mellan klient och server (stateless) - Cachebarhet, Skalbarhet</li>
-					<li>Krav på öppen maskinläsbar data (Öppna data)</li>
+					<li>Utbyta data mellan system/applikationer</li>
+					<li>Stöd för olika typer av klienter</li>
+					<li>Lös koppling mellan klient och server - Skalbarhet</li>
+					<li>Krav på öppen maskinläsbar data</li>
 				</ul>
-
-
-				<p class="cc">Foto cc by:
-					<a href="http://www.flickr.com/photos/teegardin/">http://www.flickr.com/photos/teegardin/</a>
+				<p class="cc">Foto cc by: 
+					<a href="http://www.flickr.com/photos/teegardin/">http://www.flickr.com/photos/teegardin/</a> 
 				</p>
 				<p class="note">
 					Vi har data, utveckla ni (twitter)
@@ -99,44 +99,36 @@
 					Skalbarhet, utbyggningsbart
 					Mashups, en backend olika frontends
 				</p>
-
+				
 		</article>
-
+		
 		<!-- Min data, din data -->
 		<article class="fill">
 			<img src="http://farm4.staticflickr.com/3670/9975202885_a0e0e6d59d_b.jpg"/>
 		    	<h3>
 					För vem skriver man ett API?
 				</h3>
-				<p>
-					"API is UI to Data"
+				
+				<p class="cc">Foto cc by: 
+					<a href="http://www.flickr.com/photos/sylvainkalache/">http://www.flickr.com/photos/sylvainkalache/</a> 
 				</p>
-				<p>
-					Du vet inte dina användares användningsfall
-				</p>
-
-
-				<p class="cc">Foto cc by:
-					<a href="http://www.flickr.com/photos/sylvainkalache/">http://www.flickr.com/photos/sylvainkalache/</a>
-				</p>
-
+				
 				<p class="note">
 					Inga user cases. Vi vet inte hur vårt API kommer att användas.
-
+					
 				</p>
-
+				
 		</article>
-
+		
 		<!-- XML -->
 		<article class="fill">
-
+			
 		    	<h3>Historik</h3>
 				<p>
 					Behov av att kunna utbyta information mellan applikationer,
-					tjänsteorienterad arkitektur, SOA<br />
-					Web Services...
+					tjänsteorienterad arkitektur, SOA
 				</p>
-
+				
 				<ul>
 					<li>CORBA / DCOM</li>
 					<li>RPC (Remote procedure call)</li>
@@ -145,8 +137,8 @@
 					<li>RESTful Web API</li>
 				</ul>
 		</article>
-
-
+  
+  	  	
 		<!-- Web Service -->
 		<article class="fill">
 			<h3>Web Service</h3>
@@ -166,20 +158,20 @@
 			<p class="pretty_small c">
 				<a href="http://www.w3.org/2002/ws/">http://www.w3.org/2002/ws/</a>
 			</p>
-
+			
 						<p class="note">
 							Web Service dumt namn
 							mycket automatiskt, mycket overhead
 						</p>
 		</article>
-
+	
 		<!-- Web Service historik -->
 		<article class="fill">
-
+			
 				<img src="images/ws_overview.png" height="80%"/>
 		</article>
-
-
+		
+		
 		<!-- XML -->
 		<article class="fill">
 			   	<h3>
@@ -187,10 +179,10 @@
 				</h3>
 				<img src="images/WSDL.png" />
 		</article>
-
+		
 		<!-- WS-* -->
 		<article class="fill">
-
+	
 		    	<h3>
 					SOAP
 				</h3>
@@ -198,48 +190,48 @@
 								<img src="images/soap_request.png" class="bi" />
 							</p>
 							<p class="c s">VS.</p>
-
+			
 							<p class="c pretty_small bg">
 								GET http://www.example.org/stockprice/IBM.xml
 							</p>
 		</article>
-
-
-
+		
+		
+		
 		<!-- ReST -->
 		<article class="fill">
 			<img src="http://farm1.staticflickr.com/188/419914250_91b67e0849_b.jpg"/>
 		    	<h3>
 					REST
 				</h3>
-
-				<p class="cc">Foto cc by:
-					<a href="http://www.flickr.com/photos/joeshlabotnik/">http://www.flickr.com/photos/joeshlabotnik/</a>
+				
+				<p class="cc">Foto cc by: 
+					<a href="http://www.flickr.com/photos/joeshlabotnik/">http://www.flickr.com/photos/joeshlabotnik/</a> 
 				</p>
 		</article>
-
+		
 		<!-- Vad är rest? -->
 		<article class="fill">
 			<h1>REST</h1>
 				<p>Representational State Transfer</p>
 				<p>Roy Fielding, 2000 <br />
 					”Architectural styles and the design of networked-based architecture”
-					<br />
+					<br />		
 					<a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">
 								http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm
 					</a><br /><br />
-
-					<img src="images/roy.png" style="width: 200px; margin-left: 10px" class="righty" />
+							
+					<img src="images/roy.png" style="width: 200px;" class="righty" />
 					</p>
 					<p>REST användes egentligen som ett exempel på att visa hur webben fungerar
 							</p>
-
+							
 							<p class="note">
 								Roy författare till HTTP specifikationen, Apache HTTP server project
 							</p>
-
+					
 		</article>
-
+		
 		<!-- Vad REST inte är -->
 		<article class="fill">
 			<img src="http://farm4.staticflickr.com/3652/3407543397_a0e2bec710_b.jpg" />
@@ -251,240 +243,152 @@
 				<li>Inget utvecklingsramverk</li>
 			</ul>
 			<p>RESTful är en arkitektonisk stil</p>
-			<p class="cc">Foto cc by:
-				<a href="http://www.flickr.com/photos/rhymereverie/">http://www.flickr.com/photos/rhymereverie/</a>
+			<p class="cc">Foto cc by: 
+				<a href="http://www.flickr.com/photos/rhymereverie/">http://www.flickr.com/photos/rhymereverie/</a> 
 			</p>
 		</article>
-
+		
 		<!-- RESTafarian eller pragmatiker? -->
 		<article>
 			<h1>
 				RESTafarian <br />eller pragmatiker?
 			</h1>
-			<p class="c">
-				<img src="http://lh5.ggpht.com/-k1SJpIAlBPY/UviIyrYyEsI/AAAAAAAAGbM/EKzhj9VEskQ/readImage2.png?imgmax=800" alt="">
-			</p>
-			<p class="cc">Foto linked from:
-				<a href="http://lh5.ggpht.com/-k1SJpIAlBPY/UviIyrYyEsI/AAAAAAAAGbM/EKzhj9VEskQ/readImage2.png?imgmax=800">http://lh5.ggpht.com/-k1SJpIAlBPY/UviIyrYyEsI/AAAAAAAAGbM/EKzhj9VEskQ/readImage2.png?imgmax=800</a>
-			</p>
-
 		</article>
-
-
+		
+		
 		<!-- ReST i  punkter -->
 		<article class="fill">
 			<img src="http://farm2.staticflickr.com/1418/4609230644_0562580ca5_b.jpg">
 			<h3>Vad är REST?</h3>
 			<ul>
-				<li>Varje "sak" i vår tjänst/applikation är en resurs (resource)</li>
-				<li>Varje resurs måste kunna adresseras (URL/addressability)</li>
+				<li>Varje "sak" är en resurs (resource)</li>
+				<li>Varje resurs måste kunna adresseras (URL)</li>
 				<li>En representation beskriver en resurs tillstånd</li>
 				<li>En resurs kan ha flera representationer</li>
 				<li>REST är tillståndslöst (stateless)</li>
 				<li>Hypermedia as the engine of application state (HATEOAS)</li>
 				<li>Bygger på de arkitektoniska principerna för webben</li>
 			</ul>
-			<p class="cc">Foto cc by:
-				<a href="http://www.flickr.com/photos/remek/">http://www.flickr.com/photos/remek/</a>
+			<p class="cc">Foto cc by: 
+				<a href="http://www.flickr.com/photos/remek/">http://www.flickr.com/photos/remek/</a> 
 			</p>
 		</article>
-
-
-		<!-- A resource-->
+		
+		
+		<!-- A resource 
 		<article class="fill">
 			<img src="http://farm4.staticflickr.com/3373/3428379496_ffd0624d95_o.jpg" />
 			<h3 class="small">Varje "sak" är en resurs (resource)</h3>
 			<ul>
 				<li>En resurs kan vara ett meningsfullt koncept</li>
 				<li>Något man sparar i den databas</li>
-				<li>Något du vill kunna länka till/användaren skulle vilja kunna få ut</li>
-				<li>En produkt, en användare, en lista med filmer, alla kursen en student går, Användaren en annan användare följer...</li>
+				<li>Något du vill kunna länka till</li>
+				<li>En produkt, en användare, en lista med filmer...</li>
 				<li>Resource instance, Resource collection</li>
-				<li>Håll det enkelt och förutsägbart. Du vet inte dina användares användarfall</li>
+				<li>Håll det enkelt. Du vet inte dina användares användarfall</li>
 			</ul>
-			<p class="cc">Foto cc by:
-				<a href="http://www.flickr.com/photos/ginnerobot/">http://www.flickr.com/photos/ginnerobot/</a>
+			<p class="cc">Foto cc by: 
+				<a href="http://www.flickr.com/photos/ginnerobot/">http://www.flickr.com/photos/ginnerobot/</a> 
 			</p>
-
-		</article>
-
-		<!-- URLs -->
-		<article class="fill">
-			<h3 class="small">Varje resurs måste kunna adresseras via en URL</h3>
-			<ul>
-				<li>http://www.api.example.com/v1/users</li>
-				<li>http://www.api.example.com/v1/users/thajo</li>
-				<li>http://www.api.example.com/v1/users/234617</li>
-				<li>http://www.api.example.com/v1/users/thajo/projects</li>
-				<li>http://www.api.example.com/v2/projects/132654</li>
-			</ul>
-			<p>
-				Singular vs. plural? <br />
-				id vs. name?<br />
-				Olika versioner av APIer?<br />
-				Hur djupt ska man nästla?
-			</p>
-
-		</article>
-
+			
+		</article>-->
+		
 		<!-- A resource -->
 		<article class="fill">
-			<h3 class="small">URLer - Anti-pattern</h3>
+			<h3 class="small">Varje resurs måste kunna adresseras via en URL</h3>
 			<p>
-
+				
 				<ul>
 					<li>http://www.api.example.com/?method=getUsersByUsername</li>
-					<li>http://www.api.example.com/getUser</li>
 					<li>http://www.api.example.com/createUser</li>
 					<li>http://www.api.example.com/editUserByID</li>
 					<li>http://www.api.example.com/users/GetProjectsByUserIDOrderByCity</li>
 					<li>...</li>
 				</ul>
-
 				<p class="note">
 					Svårt att veta olika urler, stökigt
 				</p>
 			</p>
-
-
+			
+			
 		</article>
-
-
-
-
-
+		
+		
+		<article class="fill">
+			<h3 class="small">Varje resurs måste kunna adresseras via en URL</h3>
+			<ul>
+				<li>http://www.api.example.com/v1/users</li>
+				<li>http://www.api.example.com/v1/users/thajo</li>
+				<li>http://www.api.example.com/v1/users/thajo/projects</li>
+				<li>http://www.api.example.com/v2/projects/132654</li>
+				<li>...</li>
+			</ul>
+			
+		</article>
+		
+		
 		<!-- Use the principles of the web -->
 		<article class="fill">
 			<h3 class="small">Använd HTTP-verbs för att beskriva betenden</h3>
 			<p>
-				Ditt api behandlar resursen beroende på vilken HTTP-metod som klienten anropar din URL med
+				Ditt api behandlar resursen beroende på vilken HTTP-metod som klienten anropar med
 			</p>
-			<pre>
-http://www.api.example.com/v1/users
-http://www.api.example.com/v1/users/129387</pre>
-			<ul style="margin-top: -30px">
+			<ul>
 				<li>GET - Hämta en resurs</li>
-				<li>POST - Skapa en ny resurs (bl. a.)</li>
+				<li>POST - Skapa en resurs (bl. a.)</li>
 				<li>PUT - Uppdatera en (hel) resurs</li>
 				<li>DELETE - Ta bort en resurs</li>
 				<li>PATCH - Partiell uppdatering, Tillägg till HTTP</li>
 				<li>HEAD - Endast headers</li>
 			</ul>
 		</article>
-
-
+		
+		
 		<!-- Tabell över anrop -->
 		<article>
 			<img src="images/server_klient.png" width="100%"/>
 		</article>
-
-
+		
+		
 		<!-- POST and PUT -->
 		<article class="fill">
 			<img src="http://farm4.staticflickr.com/3405/3435818474_5833f812f3_b.jpg">
 			<h3>POST vs. PUT</h3>
 			<ul>
-
+				
 				<li>POST är vagt definierad i HTTP-specifikationen, "Data-handling process"</li>
 				<li>POST-to-Append - POST används för att skapa nya resurser</li>
-				<li>Overloaded POST - POST används till allt utom get (HTML-formulär) </li>
 				<li>PUT - Modifiera en resurs tillstånd. Kan skapa om man skickar med nytt id. Vill man det?</li>
-
+				<li>Overloaded POST - POST används till allt utom get (HTML-formulär) </li>
 			</ul>
-			<p class="cc">Foto cc by:
-				<a href="http://www.flickr.com/photos/dm-set/">http://www.flickr.com/photos/dm-set/</a>
+			<p class="cc">Foto cc by: 
+				<a href="http://www.flickr.com/photos/dm-set/">http://www.flickr.com/photos/dm-set/</a> 
 			</p>
 		</article>
-
-
-
+		
+		
+		
 		<!-- Idempotence -->
 		<article class="fill">
-			<h3>Idempotent vs. Safe Methods</h3>
+			<h3>Idempotence</h3>
 			<img src="http://farm3.staticflickr.com/2815/9131280504_3f407d7d20_b.jpg">
 			<p>
-				Metoder som kan anropas flera gånger efter varandra och ge samma resultat kallas <strong>idempotenta</strong>.<br />
-				PUT /products/123 {"id": 1, "product_name": "Trolldeg"}
-			</p>
-			<p>
-				Vad händer om vi får en timeout? Har resursen ändrats?<br />
-				Responsen kan vara annorlunda mellan olika anrop<br />
-				Första gången:  204 (No Content)<br />
-				Resterande gånger: 404 (Not found)
-			</p>
-
-
-			<p>
-				GET, HEAD anses som <strong>safe methods</strong> då dessa inte förändrar en resurs<br /><br />
-				GET /products/123/delete<br />
-				DELETE /products/123
+				GET, HEAD, DELETE och PUT kallas idempotenta metoder<br />
+				De kan anropas många gånger i rad men ger alltid samma resultat
 			</p>
 			<p class="note">
-
-
-
+				
+				
+			
 				Internet är ett osäkert nätverk. Timeouts.<br />
 				Du vet inte om din DELETE slog igenom.
 			</p>
-			<p class="cc">Foto cc by:
-				<a href="http://www.flickr.com/photos/dannyfowler/">http://www.flickr.com/photos/dannyfowler/</a>
+			<p class="cc">Foto cc by: 
+				<a href="http://www.flickr.com/photos/dannyfowler/">http://www.flickr.com/photos/dannyfowler/</a> 
 			</p>
 		</article>
-
-		<article>
-			<h2>Vilka metoder är idempotenta?</h2>
-			<ul>
-				<li>GET</li>
-				<li>POST</li>
-				<li>DELETE</li>
-				<li>PATCH</li>
-
-			</ul>
-			<p class="note">
-				PUT skickar alltid en ny represenation = indempotent
-				PATCH kan appliceras på flera sätt och kan vara idempotent
-				men man vill hålla den fri från det kravet
-				PATCH {change: 'Name' from: 'benjamin franklin' to: 'john doe'}
-			</p>
-		</article>
-
-		<!-- A resource can have multiple representations -->
-		<article class="fill">
-			<h3>Multipla representationer</h3>
-			<img src="http://farm4.staticflickr.com/3363/3432040190_a743501d95_o.jpg">
-			<ul>
-				<li>En representation av en resurs kan ges i flera dataformat</li>
-				<li>Klienten ska kunna efterfråga det dataformat man önskar via sin HTTP förfrågan</li>
-				<li>Anges inte detta av klienten bör resursen returneras i ett "default" dataformat</li>
-				<li>I sitt svar talar servern om i vilket dataformat svaret är (Content-Type)</li>
-			</ul>
-			<p class="cc">Foto cc by:
-				<a href="http://www.flickr.com/photos/crobj/">http://www.flickr.com/photos/crobj/</a>
-			</p>
-		</article>
-
-
-		<!--Ett exempel -->
-		<article class="fill">
-			<h3>Accept-header</h3>
-			<pre>
-// I header från klienten
-Accept: application/xml, text/csv, text/plain
-Accept: application/json
-Accept: application/thajo+json
-Accept: application/vnd.github.v3+json</pre>
-			<p>
-				http://www.api.example.com/users/thajo.json<br />
-				http://www.api.example.com/users/thajo.xml<br />
-			</p>
-			<pre>
-// I header från server - berättar om dataformatet
-Content-Type: application/thajo+json</pre>
-		</article>
-
-
-
-
+		
+		
 		<!-- Use the principles of the web -->
 		<article class="fill">
 			<h3 class="small">HTTP Status Code</h3>
@@ -498,7 +402,7 @@ Content-Type: application/thajo+json</pre>
 				<li>4xx - Client Error</li>
 				<li>5xx - Server Error</li>
 			</ul>
-
+			
 			<ul class="righty">
 				<li>200 OK</li>
 				<li>201 Created</li>
@@ -507,61 +411,48 @@ Content-Type: application/thajo+json</pre>
 				<li>401 Unauthorized</li>
 				<li>403 Forbidden</li>
 			</ul>
-
+			
 			<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">
 				http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
 			</a>
 		</article>
-
+		
 		<!-- lolcats -->
-		<article class="fill">
+		<article>
 			<a href="http://www.flickr.com/photos/girliemac/sets/72157628409467125/">
 				HTTP Status Cats
 			</a>
-			<img src="http://upload.wikimedia.org/wikipedia/commons/c/cb/Felix-laff.jpg" alt="">
 		</article>
-
-
-
+		
+		
+		
 		<!--Ett exempel -->
 		<article>
 			<h3>Exempel - Skapa en resurs</h3>
 			<pre>
-POST http://example.com/products
+POST http://localhost:3000/products
 Accept: application/json
 Content-Type: application/json
 ...
 {
    "product_name"  : "Bultbräda 2000",
-   "price"  : 324.50,
-   "category" : 3
-}</pre>
-
-
-		</article>
-
-		<article>
-			<h3>Exempel - Skapa en resurs </h3>
+   "price"  : 324.50
+}			
+			</pre>
+			
 			<pre>
 201 Created
 Content-Type: application/json
 ...
 {
-   "id" : 123
-   "message": "A new product was created",
-   "link": "http://example.com/products/123",
-   "created_at": "2015-01-14T16:00:49Z",
-   "updated_at": "2015-01-14T16:00:49Z",
-   "category" {
-     "id": 3,
-     "category_name": "Toys",
-     "url": "http://example.com/categories/3"
-     "category_url" : "http://example.com/categories"
-  }
-}</pre>
+    "status": 201,
+    "message": "A new product was created",
+    "link": "http://localhost:3000/link/123"
+}			
+			</pre>
 		</article>
-
-
+		
+		
 		<!--Ett exempel -->
 		<article>
 			<h3>Exempel - Skapa en resurs (postman)</h3>
@@ -569,7 +460,7 @@ Content-Type: application/json
 				<img src="images/postman_create.png" height="600px">
 			</p>
 		</article>
-
+		
 		<!--Ett exempel -->
 		<article class="fill">
 			<h3>Exempel - Felmeddelande</h3>
@@ -577,119 +468,141 @@ Content-Type: application/json
 				<img src="images/postman_error.png" height="550px">
 			</p>
 		</article>
-
-
-
-
-
+		
+		
+		
+		<!-- A resource can have multiple representations -->
+		<article class="fill">
+			<h3>Multipla representationer</h3>
+			<img src="http://farm4.staticflickr.com/3363/3432040190_a743501d95_o.jpg">
+			<ul>
+				<li>En representation av en resurs kan ges i flera dataformat</li>
+				<li>Klienten ska kunna efterfråga det dataformat man önskar via sin HTTP förfrågan</li>
+				<li>Anges inte detta av klienten bör resursen returneras i ett "default" dataformat</li>
+				<li>I sitt svar talar servern om i vilket dataformat svaret är</li>
+			</ul>
+			<p class="cc">Foto cc by: 
+				<a href="http://www.flickr.com/photos/crobj/">http://www.flickr.com/photos/crobj/</a> 
+			</p>
+		</article>
+		
+		
+		<!--Ett exempel -->
+		<article class="fill">
+			<h3>Accept-header</h3>
+			<pre>
+// I header från klienten
+Accept: application/xml, text/csv, text/plain
+Accept: application/json
+Accept: application/thajo+json</pre>
+			<p>
+				http://www.api.example.com/users/thajo.json<br />
+				http://www.api.example.com/users/thajo.xml<br />
+			</p>
+			<pre>
+// I header från server - berättar om dataformatet				
+Content-Type: application/thajo+json</pre>	
+		</article>
+		
 		<!-- Hypermedia as the engine of application state (HATEOAS) -->
 		<article class="fill">
 			<h3>HATEOAS</h3>
 			<p>
 				Hypermedia As The Engine Of Application State<br />
-
+				
 			</p>
+			
 			<p>
 				The model of application is an engine that
 				moves from one state to another by
 				picking alternative state transitions
 				in current set of representations
 			</p>
-			<ul style="margin-top: -20px; font-size: 0.85em">
+			<ul>
 				<li>Current state - Beskrivs av representationen och dess dataformat</li>
 				<li>Länkar/URL:er - Beskriver "the transition" till nästa "state"</li>
-				<li>Inkludera länkar/URL:er i ditt APIs response</li>
+				<li>Inkludera länkar/URL:er i ditt APIs alla response</li>
 				<li>Klienter bör kunna navigera sig i ditt API precis som man surfar</li>
-				<li>En klient ska aldrig behöva bygga ihop en URL</li>
-				<li>"Hypertext should be used to find your way through the API."</li>
 			</ul>
 		</article>
-
+		
 		<article>
 			<h1>Exempel</h1>
 			<pre>
 "firstname": "Joe",
 "lastname": "Doe",
-"links": [
+"links": [ 
     {"rel": "self", "href":"http://example.org/user/1"},
-    {"rel": "friends", "href":"http://example.org/user/1/friends"}, ...
+    {"rel": "friends", "href":"http://example.org/user/1/friends"}, ... 
 ]</pre>
 			<pre>
 &lt;firstname&gt;Joe&lt;/firstname&gt;
-&lt;lastname&gt;Doe&lt;/lastname&gt;
+&lt;lastname&gt;Doe&lt;/lastname&gt;			
 &lt;links&gt;
 	&lt;link rel="self" href="http://example.org/user/1" /&gt;
 	&lt;link rel="friends" href="http://example.org/user/1/friends" /&gt;
 &lt;/links&gt;</pre>
 		</article>
-<!--
-		<article class="fill">
-			<iframe src="http://restcookbook.com/Basics/hateoas/" frameborder="0"></iframe>
-			<p class="cc">
-				<a href="http://restcookbook.com/Basics/hateoas/">http://restcookbook.com/Basics/hateoas/</a>
-			</p>
-		</article>
--->
+		
 		<!--
-
+		
 		<article class="fill">
 			<iframe src="http://developer.netflix.com/docs/REST_API_Reference#0_52696"></iframe>
 		</article>
 		-->
-
+		
 		<article class="fill">
 			<iframe src="http://developer.github.com/v3/repos/releases/"></iframe>
-
+				
 		</article>
-
+		
 		<article class="fill">
 			<h3>Varför HATEOAS?</h3>
 			<ul>
-				<li>Bygger på samma koncept som webbens grundpelare - URL, HTTP, HTML (hyperlänkar)</li>
-				<li>Gör det enklare för klienten - Ska inte behöva bygga ihop URLer, kan skriva mer automatiserad kod</li>
+				<li>Gör det enklare för klienten</li>
 				<li>Flexibelt för förändringar, förändringar kommer ske!</li>
 				<li>Förväntade routes kommer brytas!</li>
-				<li>HATEOAS reducerar detta, lösare koppling mellan server och klient</li>
-
-			</ul>
-
+				<li>HATEOAS reducerar detta, lös koppling mellan server klient</li>
+				
+			</ul>			
+			
 		</article>
-
-		<!--
-
+		
+		
 		<article>
 			<h3>RoR - hantera API</h3>
-
+			
 			<pre>
 # request-objektet ger möjlighet att läsa av diverse HTTP headers
 content_type = request.format
 method = request.method
-
-
-# Response-objektet använda för att uppdatera response heders
+				
+	
+# Response-objektet använda för att uppdatera response heders			
 response.status = 400
-response.headers['HEADER NAME'] = 'HEADER VALUE'
+response.headers['HEADER NAME'] = 'HEADER VALUE'	
 
 
-message_hash = {
-  "status" => 400,
+message_hash = {  
+  "status" => 400, 
   "message" => "Bad media-type format; use application/json or application/xml"
 }
 
 respond_to do |format|
   format.xml { render xml:  message_hash.to_xml(:root => 'error')}
   format.json { render json: message_hash.to_json }
-end
+end			
 			</pre>
 		</article>
-
+		
 		<article class="fill">
 			<iframe src="https://coursepress.lnu.se/kurs/webbramverk/rest-1/"></iframe>
 		</article>
--->
-
+		
+		
 	  </section>
 	  </body>
 	</html>
-
-
+	
+	
+	

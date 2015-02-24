@@ -13,13 +13,16 @@
     </p>
 
     </div>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
 
 
 <script>
-   var app = angular.module('app', []);
+   angular.module('app', [])
+   .factory('testFactory', TestFactory)
+   .controller('TestController', TestController)
 
-   app.factory('testFactory', ['$q', '$timeout', function ($q, $timeout) {
+
+   function TestFactory ($q, $timeout) {
 
        var factory = {};
 
@@ -27,23 +30,27 @@
         * En metod som simulerar ett asynkront anrop
         * @returns {promise|*}
         */
-       factory.getID = function() {
+       factory.doA= function() {
+       		console.log("doA called");
             var task = $q.defer();
 
             // Simulerar ett anrop
             $timeout(function() {
                 // Simulerar data vi fått tillbaka
-                var data =  {id : 54};
-                if(typeof(data) !== "undefined") {
-                    task.resolve(data);
+                var someFlag =  true;
+                if(someFlag) {
+                	console.log("doA resolved");
+                    task.resolve();
                 }
                 else {
-                    task.reject("Det blev fel");
+                	console.log("doA rejected");
+                    task.reject("Det blev fel i doA");
                 }
-            }, 2000);
+            }, 1000);
             // returnerar promises
+            console.log("doA returned a promise");
             return task.promise;
-        }
+        };
 
        /**
         * Simulerar ett mer synkront anrop, måste ske efter det
@@ -51,20 +58,36 @@
         * @param id
         * @returns {string}
         */
-       factory.getData = function(id) {
+       factory.doB = function(item) {
+       		
+       		console.log("doB Called");
+       		 var task = $q.defer();
+       		 $timeout(function() {
+       		 	var someFlag = true;
+       		 	if(someFlag) {
+       		 		console.log("doB resolved");
+                    task.resolve("Hurra! Här kommer det data!!!");
+                }
+                else {
+                	console.log("doB rejected");
+                    task.reject("Det blev fel i doB");
+                }
+            }, 1000);
             // Just to see
-            return "Should get data for id: " +id;
+            //return "Should have got data for id: " +obj.id;
+            console.log("doB returned a promise");
+            return task.promise;
        }
        return factory;
-
-   }]);
+   }
 
     function TestController($scope, testFactory) {
 
         $scope.message = "Nothing Yet!"
 
-        // Chaining, errorhandling last
-        testFactory.getID().then(testFactory.getData).then(success, error);
+        // Chaining, errorhandling last OBS then can take a promise as a parameter
+        // not just callbacks!
+        testFactory.doA().then(testFactory.doB).then(success, error);
 
 
         // Handlers

@@ -5,7 +5,7 @@
 
   Authors: Luke Mahé (code)
            Marcin Wichary (code and design)
-           
+
            Dominic Mazzoni (browser compatibility)
            Charles Chen (ChromeVox support)
 
@@ -22,397 +22,759 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
   </head>
-  
+
 
 
   <body style='display: none'>
 
     <section class='slides layout-widescreen template-default'>
-      
-		
+
+
 		<!-- First page -->
     	<article>
 	       	<h3>
 	         Webbramverk, 1DV450
 	          <br />
-	          <span class="small">Linnéuniversitetet, vt 2014</span>
+	          <span class="small">Linnéuniversitetet, vt 2015</span>
 	        </h3>
-       
-		
+
+
 			<br /><br />
-			<h1 class="big c">JavaScriptramverk</h1>
-			<p class="c" style="margin-top: 60px;">
-				AngularJS<br />
-				<span class="c"></span>
-			</p>
+			<h1 class="big c">RESTful Webb-API part 2</h1>
 			<p class="small_footer">
 				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.sv">
-						<img alt="Creative Commons-licens" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>&nbsp;&nbsp;Denna presentation är licensierat under en 
-					
+						<img alt="Creative Commons-licens" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>&nbsp;&nbsp;Denna presentation är licensierat under en
+
 							<a rel="license" href="hhttp://creativecommons.org/licenses/by/3.0/deed.sv">Creative Commons Erkännande 3.0 Unported Licens</a>. (Där inte annat anges)<br/>
 			</p>
       	</article>
-  
-  
-		<!-- Examinationen -->
-		<article>
-			
-		    	<h1>
-					Första examinationen
-				</h1>
-				
-				<ul>
-					<li>Torsdag - release, zipfil, se till att allt är med!</li>
-					<li>Under fredagen delas projekten ut för peer-review (anonymt)</li>
-					<li>En vecka på sig. Besvara ett formulär (ej klart)</li>
-					<li>Registrera sig för den schemalagda examinationstid på kurshemsidan</li>
-					<li>20-30 minuter muntlig examination</li>
-				</ul>
-				
-				<p class="note">					
-				</p>
-		</article>
-		
-		<!-- Webb-API -->
-		<article>
-			
-		    	<h1>
-					Vad bygger vi?
-				</h1>
-				<p class="c">
-				<img src="images/overview_api.png" width="80%"/>
-				</p>
-				<p class="note">
-					Förklara hur jag gjort om kursen.
-					Lite ny mark
-					
-				</p>
-		</article>
-		
-		<!-- new web -->
-		<article class="fill">
-			<h3 class="small">Nya applikationer, nya krav, ändrad kurs</h3>
-			<img src="http://farm4.staticflickr.com/3069/2487028198_8bf54aa52c_b.jpg"  />
-			<p class="cc">Foto cc by: 
-				<a href="http://www.flickr.com/photos/sh1mmer/">http://www.flickr.com/photos/sh1mmer/</a> 
-			</p>
-			<p class="note">
-				Förklara hur webben har utvecklats
-				JavaScript har utvecklats. Snabbare, stöd
-				Javascript som låtsasspråk
-				JS, HTML5, CSS3
-				SPA
-				
-			</p>
-		</article>
-		
-		<!-- Logik på klienten -->
-		<article>
-			<h3>Mer logik på klienten</h3>
-			<br />
-			<p class="c">
-				<img src="images/client_logic.png" width="70%">
-			</p>
-		</article>
-		
-		<!-- CSS ramverk -->
-		<article>
-			<h1>CSS frameworks</h1>
-			<p class="c">
-			<img src="images/css_framework.png" width="70%" />
-			</p>
-			<p class="note">
-				Varför? vad gör dessa?
-			</p>
-		</article>
-		
-		<!-- New tech -->
-		<article class="fill">
-			<h3 class="small">Nya krav på klientapplikationer - SPA</h3>
-			<ul>
-				<li>DOM-manipulering</li>
-				<li>Offline</li>
-				<li>State change in client application</li>
-				<li>Partial page update</li>
-				<li>Server communication (AJAX, Web Sockets)</li>
-				<li>Bookmarking, deep-link, route-handling</li>
-				<li>Browser history</li>
-				<li>More complex javascript software</li>
-			</ul>
-			
-		</article>
-		
-		<!-- Javascript frameworks -->
-		<article class="fill">
-			<h3>JavaScript frameworks</h3>
-			<img src="images/js_framework.png" width="90%" />
-		</article>
-		
-		
-		<!-- AngularJS -->
-		<article>
-			<h1>AngularJS</h1>
-			<p class="c">
-			<img src="images/angular.png" width="500px" />
-			</p>
-			<p class="note">
-				Min erfarenhet av javascriptramverk
-				Varför valde jag angular?
-			</p>
-		</article>
-		
-		<!-- AngularJS - historik -->
-		<article class="fill">
-			<img src="http://farm8.staticflickr.com/7446/9132706772_fb4be24efd_b.jpg" />
-			<h3>AngularJS - Historik</h3>
-			<ul>
-				<li>Miško Hevery and Adam Abrons, 2009</li>
-				<li>Google</li>
-				<li>version 1.2.13 - 2014-02-17</li>
-				<li><a href="http://angularjs.org/">http://angularjs.org/</a></li>
-				<li><a href="https://github.com/angular/angular.js">https://github.com/angular/angular.js</a></li>
-				<li><a href="http://www.youtube.com/channel/UCm9iiIfgmVODUJxINecHQkA">ng-conf 2014</a></li>
-				
-				
-			</ul>
-			<p class="note">
-				Vem, vad, community, utveckling
-			</p>
-		</article>
-		
-		<!-- The team -->
-		<article class="fill">
-			<h3>The team</h3>
-			<img src="http://igorminar.github.io/story-about-angular-passion-and-community/images/team.jpg" width="80%"/>
-		</article>
-		
-		<!-- filosofin  -->
-		<article class="fill">
-			<h3>Filosofi och designmål</h3>
-			<ul>
-				<li>Deklarativ programmering för UI (beskriv VAD som ska göras - inte HUR)</li>
-				<li>Imperativ programmering för logik (beskriv steg för steg vad som ska göras)</li>
-				<li>"Show HTML new tricks"- Utvecklare och designers</li>
-				<li>Data binding</li>
-				<li>Koppla från DOM-manipulering från applikationslogik</li>
-				<li>Modulärt, injections</li>
-				<li>Separation mellan klient och server</li>
-			</ul>
-		</article>
-		
-		<!-- Massa ord! -->
-		<article class="fill">
-			<img src="http://farm9.staticflickr.com/8023/7658298768_e4c2c2635e_b.jpg" />
-			
-			
-				<ul>
-					<li>Directive</li>
-					<li>Scope</li>
-					<li>Filters</li>
-					<li>Controller</li>
-					<li>Model</li>
-					<li>Declarative partial template view</li>
-					
-					<li>Modules</li>
-					<li>Dependency injection</li>
-					<li>Services, factories, providers</li>
-				</ul>	
-			
-			<p class="cc">Foto cc by: 
-				<a href="http://www.flickr.com/photos/83633410@N07/">http://www.flickr.com/photos/83633410@N07/</a> 
-			</p>
-		</article>
-		
-		<!-- Exempel på databindning - HELLO WORLD -->
-		<article class="fill">
-			<h3>Hello World!</h3>
-			<img src="images/ng-1.png" />
-			<p class="note">
-				Visa hello world
-				Prata om directives
-				Bygg vidare med lista på lag
-			</p>
-		</article>
-		
-		
-				
-		<!-- MVC architecture-->
-		<article class="fill">
-			<img src="http://farm5.staticflickr.com/4033/4586127172_bca07fe5b1_b.jpg">
-			<h3>MVC / MVVM / MVW</h3>
-			<ul>
-				<li>MVC är en högnivåarkitektur</li>
-				<li>Har många "varianter" (MVP, MVVM, MTV)</li>
-				<li>Har många tolkningar av olika utvecklare</li>
-				<li>AngularJS == MVW</li>
-			</ul>
-			<p class="cc">Foto cc by: 
-							<a href="http://www.flickr.com/photos/nyuhuhuu/">http://www.flickr.com/photos/nyuhuhuu/</a> 
-						</p>
-		</article>
-		
-		
-		<!-- MVC architecture example-->
-		<article class="fill">
-			<h3>Exempel - MVW</h3>
-			<img src="images/ng-2.png" />
-			<p class="note">
-				Visa exempel där man skapar en controller
-				i inline script
-				Prata om scope
-			</p>
-		</article>
-		
-		<!-- What is scope -->
-		<article>
-			<h3>$scope</h3>
-			<ul>
-				<li>Används som klister mellan controller och vyn</li>
-				<li>Innehåller både data och funktionalitet</li>
-				<li>ViewModel? Modeller är javascriptobject som deklareras på $scope</li>
-				
-			</ul>
-			<p class="c">
-				<img src="images/ng-scope.png" width="700px"/>
-			</p>
-				
-		</article>
-		
-		<!-- scope heirarchy -->
-		<article>
-			<h3>Scopes skapas i en hierarki</h3>
-			<ul>
-				<li>När en applikation kör igång skapas $rootScope</li>
-				<li>Vid t.ex. directivet ng-controller skapas en ny Scope-instans</li>
-				<li>ViewModel? Modeller är javascriptobject som deklareras på $scope</li>
-				<li>Isolerade namespace, undviker namnkrockar, effektiv minneshantering</li>
-			</ul>
-			<br />
-			<p class="c">
-				<img src="images/ng-repeat.png" width="700px" />
-				<img src="images/scope_heirarchy.png" width="700px"/>
-			</p>
-			<p class="cc">Chrome extension: 
-				<a href="https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk">Batarang</a> 
-			</p>
-		</article>
-		
-		<!-- Overview -->
-		<article>
-			<p class="c">
-				<img src="images/angular-arch.png" width="80%"/>
-			</p>
-			<p class="cc">Inspired: 
-				<a href="http://weblogs.asp.net/dwahlin/archive/2013/04/12/video-tutorial-angularjs-fundamentals-in-60-ish-minutes.aspx">http://weblogs.asp.net/dwahlin/archive/2013/04/12/video-tutorial-angularjs-fundamentals-in-60-ish-minutes.aspx</a> 
-			</p>
-			
-		</article>
-		
-		<!-- Routing -->
-		<article>
-			<h3>Routing</h3>
-			<ul>
-				<li>Ladda ner angular-route.js</li>
-				<li>Inkludera ngRoute som modul i din applikation</li>
-				<li>Definiera dina routes i applikationens "config"</li>
-				<li>Flyttades ut från angular.js core från 1.2 RC1</li>
-			</ul>
-		</article>
-		
-		<!-- Partial views -->
-		<article>
-			<h3>Partial views</h3>
-			<ul>
-				<li>SPA skiftar "states" och laddar om views i en och samma sida</li>
-				<li>Vi vill kunna tala om vad som ska laddas in</li>
-			</ul>
-			<p class="c">
-				<img src="images/partial_view.png" height="500px" />
-			</p>
-			
-		</article>
-		
-		<!-- Routing Example -->
-		<article class="fill">
-			<h3>Exempel routing och views</h3>
-			<img src="images/ng-3.png" />
-		</article>
-		
-		
-		
-		<!-- modules and Dependency injection-->
-		<article>
-			<h3>Modules and dependency injection</h3>
-			<ul>
-				<li>Moduler för att organisera sin kod</li>
-				<li>Men också för att beskriva beroenden - Dependency injections</li>
-				<li>Registrera "recept" för olika objekts skapande -använd aldrig "new"</li>
-				<li>"Angular modules solve the problem of removing global state from the application and provide a way of configuring the injector."</li>
-				<li>"Angular modules don't try to solve the problem of script load ordering or lazy script fetching." - require.js</li>
-				
-			</ul>
-			<p>
-				Läs Kozlowski, Darwin sid 27-37!
-			</p>
-		</article>
-		
-		<!-- Services -->
-		<article class="fill">
-			<img src="http://farm9.staticflickr.com/8179/7972185654_e15db45fcc_b.jpg">
-			<h3>Services</h3>
-			<p>
-				Objekt som skapas genom Dependency Injection ($injector) kallas Services
-			</p>
-			<ul>
-				
-				<li>Services</li>
-				<li>Factories</li>
-				<li>Providers</li>
-			</ul>
-			<p class="cc">Foto cc by: 
-				<a href="http://www.flickr.com/photos/seattlemunicipalarchives/">http://www.flickr.com/photos/seattlemunicipalarchives/</a> 
-			</p>
-		</article>
-		
-		<!-- Applikationsstruktur -->
-		<article>
-			<h3>Applikationsstruktur</h3>
-			<p class="c">
-				<img src="images/ng-structure.png" height="500px">
-			</p>
-			<p class="note">
-				Visa ett practice på hur man strukturerar en javascript
-				applikation
-			</p>
-		</article>
-		
-		<!-- Sista exempel -->
-		<article class="fill">
-			<h3>Applikation</h3>
-			<img src="images/football1.png" >
-			<p class="note">
-				Visa ett practice på hur man strukturerar en javascript
-				applikation
-			</p>
-		</article>
-		
-		<!-- nästa gång -->
-		<article>
-			<h3>Nästa gång</h3>
-			<ul>
-				<li>Jobba mot ett RESTful API</li>
-				<li>$http, $resource...</li>
-				<li>Custom Directives</li>
-			</ul>
-		</article>
-		
 
 
-  
-		
-		
+
+
+		<article class="fill">
+			<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Paul_Signac_-_In_the_Time_of_Harmony-_The_Joy_of_Life--Sunday_by_the_Sea_-_Google_Art_Project.jpg/800px-Paul_Signac_-_In_the_Time_of_Harmony-_The_Joy_of_Life--Sunday_by_the_Sea_-_Google_Art_Project.jpg">
+			<h3>RESTful</h3>
+			<ul>
+				<li>Enkelhet</li>
+				<li>Tydlighet</li>
+				<li>Oberoende</li>
+				<li>Behjälpligt</li>
+				<li>Pragmatiskt</li>
+			</ul>
+			<p class="cc">Paul Signac - In the time of harmony:
+				<a href="http://commons.wikimedia.org/">http://commons.wikimedia.org/</a>
+			</p>
+		</article>
+
+		<!--
+		<article>
+			<h3>REST - Vad och varför?</h3>
+			<ul>
+				<li><strong>Adresserbara resurser</strong> - Enkelhet och tydlighet</li>
+				<li><strong>Multipla representationer</strong> av en resurs tillstånd</li>
+				<li><strong>HATEOAS</strong> - Upptäckbarhet av API-användaren, Behjälplig server</li>
+				<li>REST är en <strong>arketonisk stil</strong>, ingen standard</li>
+				<li>REST är ett <strong>exempel som beskriver webbens arkitektur</strong></li>
+				<li>HTTP, URL och media-type är tre viktiga byggstenar</li>
+				<li>All information i request - <strong>statelessness</strong></li>
+				<li>Skalbarhet - fler användare, ökad datamassa, mottaglig för underhåll</li>
+			</ul>
+		</article>
+			-->
+
+<!-- definition of GET -->
+		<article class="fill">
+			<h3>GET</h3>
+			<p>
+				<strong>GET /products</strong><br />
+				<strong>GET /products/1</strong><br />
+				<strong>GET /products/hd-1432</strong><br />
+				&nbsp;&nbsp;Efterfråga en representation av en resurs<br/>
+				&nbsp;&nbsp;Read-only, safe, påverkar inte resursen <br>
+				&nbsp;&nbsp;Idempotent - Flera anrop, samma tillstånd
+				&nbsp;&nbsp;Collection resource vs instance(singelton) resource<br />
+
+			</p>
+			<p>
+				<strong>Servern svarar (exempel)</strong><br />
+				&nbsp;&nbsp;200 OK + data<br />
+				&nbsp;&nbsp;301 Moved Permanently + location<br />
+				&nbsp;&nbsp;404 Not Found
+			</p>
+		</article>
+
+		<!-- definition of DELETE -->
+		<article class="fill">
+			<h3>DELETE</h3>
+			<p>
+				<strong>DELETE /products/12</strong><br />
+				&nbsp;&nbsp;Tar bort en resurs<br/>
+				&nbsp;&nbsp;Not safe, Idempotent<br />
+
+			</p>
+			<p>
+				<strong>Servern svarar (exempel)</strong><br />
+				&nbsp;&nbsp;200 OK + meddelande och/eller info om den borttagna resursen<br />
+				&nbsp;&nbsp;202 Accepted <br />
+				&nbsp;&nbsp;204 No Content<br />
+				&nbsp;&nbsp;404 Not Found
+			</p>
+		</article>
+
+		<!-- definition of POST -->
+		<article class="fill">
+			<h3>POST</h3>
+			<p>
+				<strong>POST /products</strong><br />
+				&nbsp;&nbsp;POST-to-append (skapa) or Overload POST<br/>
+				&nbsp;&nbsp;Data skickas med, tala om för servern vilket format man skickar
+			</p>
+			<p>
+				<strong>Servern svarar (exempel)</strong><br />
+				&nbsp;&nbsp;201 Created + information<br />
+				&nbsp;&nbsp;400 Bad Request + information<br />
+				&nbsp;&nbsp;403 Forbidden
+				</p>
+		</article>
+
+		<!-- definition of PUT -->
+		<article class="fill">
+			<h3>PUT</h3>
+			<p>
+				<strong>PUT /products/1325</strong><br />
+				&nbsp;&nbsp;Uppdaterar en resurs, Om resursen inte finns skapas resursen?<br/>
+				&nbsp;&nbsp;un-safe, indemptens
+			</p>
+			<p>
+				200 OK - Samt representationen av tillståndet<br />
+				204 No content<br />
+
+				</p>
+		</article>
+
+		<!-- definition of PUT -->
+		<article class="fill">
+			<h3>PATCH</h3>
+			<p>
+				<strong>PATCH /products/1325</strong><br />
+				&nbsp;&nbsp;Partial update<br/>
+				&nbsp;&nbsp;Data skickas med som ska uppdateras <br>
+				&nbsp;&nbsp;PATCH {attribue: "name", from: "John", to: "John the great!"} <br>
+				&nbsp;&nbsp;Ej idempotent...
+
+			</p>
+			<p>
+				200 OK<br />
+				204 No content<br />
+				...
+				</p>
+		</article>
+
+		<article>
+			<h1>Men hur i hela friden...?</h1>
+			<pre>
+# I controllern som genererar response
+
+# respond_with rederar ut json/xml
+# serializerar objektet @error (Error är en egen klass)
+# I rails finns massor med fördefinerade statuskoder
+respond_with  @error, status: :not_found
+			</pre>
+
+
+			<a href="https://github.com/thajo/1dv450_demo">https://github.com/thajo/1dv450_demo</a>
+		</article>
+
+		<article>
+			<iframe src="http://guides.rubyonrails.org/layouts_and_rendering.html#the-status-option" frameborder="0"></iframe>
+		</article>
+
+		<article class="fill">
+			<img src="https://c2.staticflickr.com/4/3420/3856456237_054e5b74e9_z.jpg?zz=1" alt="">
+			<h3>Visa koden!</h3>
+			<p>
+			<a href="https://github.com/thajo/1dv450_demo">https://github.com/thajo/1dv450_demo</a>
+			</p>
+			<p class="cc">
+				Image cc from:
+				<a href="https://www.flickr.com/photos/n3wjack/3856456237/">https://www.flickr.com/photos/n3wjack/3856456237/</a>
+			</p>
+		</article>
+
+<!--
+
+		<article class="fill">
+			<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Transmediale-2010-Ryoji_Ikeda-Data-Tron-2.jpg/800px-Transmediale-2010-Ryoji_Ikeda-Data-Tron-2.jpg">
+			<h3>Beskriva en resurs tillstånd</h3>
+			<ul>
+				<li>Accept, Content-Type</li>
+				<li>Du vet inte din användares användarfall</li>
+				<li>"Complete auto-discovery"</li>
+				<li>Var noga med valid JSON/XML</li>
+				<li>Hur gör andra API:er?</li>
+			</ul>
+		</article>
+
+
+		<article>
+			<h3>Information och struktur - Instance</h3>
+
+			<pre>
+GET /notifications/120u76et</pre>
+<pre>
+{
+  "instance" :
+  {
+    "self" : "http://www.example.com/api/v1//notifications/120u76et",
+    "data" : [
+      {"note" : "Köp mjölk!"},
+      {"date_posted" : "2014-01-23T05:10:12.930Z"},
+      {"author" : "thajo"}
+    ],
+    "links" : [
+      {"author" : "http://www.example.com/authors/thajo"},
+      {"author_avatar" : "http://www.example.com/authors/thajo.png"}
+    ]
+  }
+}
+</pre>
+<p class="small">
+	Inspired by: <a href="http://amundsen.com/media-types/collection/">http://amundsen.com/media-types/collection/</a>
+</p>
+		</article>
+
+
+		<article>
+			<h3>Information och struktur - Collection</h3>
+<pre>
+{
+  "collection" :
+  {
+    "self" : "http://www.example.com/api/v1/notifications",
+    "items" : [
+        {
+	      "href" : "http://www.example.com/api/v1//notifications/120u76et",
+	      "data" : [
+	        {"note" : "Köp mjölk!"},
+	        {"date_posted" : "2014-01-23T05:10:12.930Z"},
+	        {"author" : "thajo"}
+	      ],
+	      "links" : [
+	        {"author" : "http://www.example.com/authors/thajo"},
+                 {"author_avatar" : "http://www.example.com/authors/thajo.png"}
+          ]
+        },
+        {
+          /* ... New item here */
+        }
+     ]
+   }
+}
+</pre>
+<p>
+	Inspired by: http://amundsen.com/media-types/collection/
+</p>
+
+		</article>
+
+
+
+
+
+		<article>
+			<h3>Formatera svaret - Felmeddelanden</h3>
+
+<pre>
+# 404 Not Found
+{
+    "status": 404,
+    "code": 40483,
+    "message": "Oops! It looks like that url does not exists.",
+    "developerMessage": "The resource 'http://www.example.com/api/produkter'
+                         does not exist.",
+    links : [
+       {"moreInfo": "http://www.example.com/api/errors/40483"},
+       {"documentation" : "http://www.example.com/api/doc"}
+    ]
+}
+</pre>
+		</article>
+
+
+
+		<article>
+					<h3>Information och struktur</h3>
+					<pre>GET /notifications/120u76et</pre>
+		<pre>
+{
+  "instance" :
+  {
+    "self" : "http://www.example.com/api/v1//notifications/120u76et",
+    "data" : [
+      {"name" : "note", "value" : "Köp mjölk", "type" : "text"},
+      {"name" : "date_posted", "value" : "2014-01-23T05:10:12.930Z", "type" : "datetime"},
+      {"name" : "author", "value" : "thajo", "type" : "string"},
+      {"name" : "category", "value" : "to-do", "type" : "string"}
+    ],
+    "links" : [
+      {"rel"  :"author", "href" : "http://www.example.com/authors/thajo"},
+      {"rel"  :"category", "href" : "http://www.example.com/category/to-do"}
+    ]
+  }
+}</pre>
+		</article>
+
+
+
+
+		<article>
+			<h3>Egen mediatyp (Custom media-type)</h3>
+			<p>
+				Många API:er använder "core JSON/XML"<br />
+				Det finns möjlighet att definiera egna "kontrakt"/media-typer mellan server och klient.
+			</p>
+			<pre>
+Content-Type: application/vnd.collection+json</pre>
+<pre>Content-Type: application/vnd.github+json</pre>
+
+			<pre>
+Content-Type: application/vnd.coursepress-data+json</pre>
+			<p>
+				Man har möjlighet att beskriva strukturen av respresentationerna (dokumenten).
+				<br />
+				Utformad efter egen problemdomän
+			</p>
+		</article>
+-->
+
+		<!-- Versioning -->
+		<article>
+			<h3>Versioning</h3>
+			<p>
+				Precis som all mjukvara kommer ditt API behöva uppdateras
+			</p>
+			<p class="note">
+				Bakåtkompabilitet viktigt. Ge användarna en chans att ställa om. Vi måste kunna hantera versioner!
+				Uppdatera sällan!
+			</p>
+			<pre>
+GET http:&frasl;&frasl;www.api.example.com/v1/products
+GET http:&frasl;&frasl;www.api.example.com/v2/products
+			</pre>
+			<pre>
+# No fun hacking in browser
+Accept: application/vnd.coursepress-data+json;version=2.0
+Accept: application/vnd.github.v3+json
+			</pre>
+			<p class="note">
+				http://stackoverflow.com/questions/389169/best-practices-for-api-versioning
+				URL:er bör hållas kontakta så lnge som möjligt
+			</p>
+		</article>
+
+
+		<!-- Partial response and pagnation -->
+		<article>
+			<h3>Partial response (filtrering) &amp; Pagination</h3>
+
+			<p>
+				I http-protokollet finns Content-Range men...
+			</p>
+
+
+			<pre>&frasl;users&frasl;thajo:(firstname, lastname, email)
+&frasl;users&frasl;thajo?fields=firstname, lastname, email</pre>
+
+			<pre>
+&frasl;users?page=3&rrp=25
+&frasl;users?start=100&count=25
+&frasl;users?offset=100&limit=25</pre>
+			<pre>
+{
+  "prev": "http://localhost/api/v1/users/?offset=0&limit=25",
+  "next": "http://localhost/api/v1/users/?offset=50&limit=25"
+}</pre>
+
+		</article>
+
+
+		<article>
+			<h3>API-keys</h3>
+			<ul>
+				<li>Används främst för att kontrollera anropen (antal anrop, statistik)</li>
+				<li>API nycklar kan lätt snappas upp, Vanskligt för inloggning</li>
+				<li>API-nycklar hör till utvecklaren/applikationen, inte slutanvändarna</li>
+				<li>Spårbarhet, en nyckel per applikation</li>
+				<li>Varje request kräver en nyckel...databasanrop?</li>
+			</ul>
+			<p class="c">
+				<img width="40%" src="http://pixabay.com/static/uploads/photo/2013/07/12/14/49/key-148868_640.png" alt="">
+			</p>
+
+
+		</article>
+
+
+		<!-- rate limit -->
+		<article>
+			<h3>Rate limit</h3>
+			<p>
+				Begränsa antalet anrop till ditt API.<br />
+				Headers som börjar med X har använts som custom headers
+			</p>
+			<ul>
+				<li>X-Rate-Limit-Limit - Antalet anrop inom en tidsperiod<li>
+				<li>X-Rate-Limit-Remaining - Antal kvarstående anrop</li>
+				<li>X-Rate-Limit-Reset - Antal sekunder kvar tills nästa "nollställning"</li>
+			</ul>
+
+			<p>
+
+			<pre>
+429 Too Many Requests</pre>
+		</article>
+
+		<article>
+			<h3>"Web hooks"</h3>
+			<p>
+				Låt användaren av ditt API registrera sig för ett event.<br />
+				Server-to-server<br />
+
+			</p>
+			<p>
+				<img src="images/web_hook.png">
+			</p>
+		</article>
+
+		<article class="fill">
+			<iframe src="http://ifttt.com/channels" frameborder="0"></iframe>
+			<p class="cc">
+				<a href="http://ifttt.com/channels">http://ifttt.com/channels</a>
+			</p>
+		</article>
+
+		<article class="fill">
+			<img src="http://farm8.staticflickr.com/7194/6987570497_1df1fa3c11_b.jpg">
+			<h3>Dokumentation</h3>
+			<ul>
+				<li>Ha en publik öppen dokumentation!</li>
+				<li>Automatgenererad dokumentation?</li>
+				<li>Inkludera exempelkod</li>
+				<li>Inkudera exempel på request och response</li>
+				<li>Förklara authentication och felhantering</li>
+				<li>Tillåt användaren att "surfa" ditt API</li>
+				<li>
+					<a href="http://www.prestwoodboards.com/aspsuite/kb/document_view.asp?qid=102147">
+						http://www.prestwoodboards.com/aspsuite/kb/document_view.asp?qid=102147
+					</a>
+				</li>
+
+				<p class="cc">Foto cc by:
+					<a href="http://www.flickr.com/photos/massimobarbieri/">http://www.flickr.com/photos/massimobarbieri/</a>
+				</p>
+		</article>
+
+
+
+		<!-- Att tänka på -->
+		<article>
+			<h3>Att tänka på!</h3>
+			<p>
+			<strong>Gör det enkelt</strong> och inbjudande för utvecklarna att använda ditt API<br /><br />
+			TTFR - <strong>Time to first request</strong><br /><br />
+			<strong>Analysera/lyssna på användarna</strong> av ditt API<br /><br />
+			<strong>Var behjälplig</strong> mot klienten<br /><br />
+			<strong>Bistå med programmeringsbibliotek?</strong><br /><br />
+			<strong>Ha en bra dokumentation - från början!</strong><br /><br />
+			<strong>Lättfunnen och väldefinierad Terms of Service</strong><br /><br />
+			<strong>Säkerhet, Skalbarhet!</strong>
+			</p>
+		</article>
+
+
+		<article class="fill">
+			<h3>Säkerhet</h3>
+			<img src="http://farm8.staticflickr.com/7308/11406985424_457c44045f_b.jpg">
+			<p class="cc">Foto cc by:
+				<a href="http://www.flickr.com/photos/111692634@N04/">http://www.flickr.com/photos/111692634@N04/</a>
+			</p>
+			<p class="note">
+				Ett api är inte nåt snabbhackat till din mobilapplikation!
+			</p>
+		</article>
+
+		<article class="fill">
+			<img src="http://farm9.staticflickr.com/8201/8229504229_47a07ff41f_b.jpg">
+			<h3>HTTPS - HTTP over SSL/TSL</h3>
+
+			<p class="cc">Foto cc by:
+				<a href="http://www.flickr.com/photos/intelfreepress/">http://www.flickr.com/photos/intelfreepress//</a>
+			</p>
+		</article>
+
+
+		<!-- auth athorize -->
+		<article>
+
+			<h3>Säkerhet</h3>
+			<p>
+				<strong>Authentication (Autentisering)</strong> - Fastställande av identitet
+			</p>
+			<p>
+				<strong>Authorization (Auktorisering)</strong> - Vilka resurser ska en identitet ha tillgång till
+			</p>
+			<p class="c">
+			<img src="http://farm4.staticflickr.com/3094/3163975110_5ecf5f0fb7_o.jpg">
+			</p>
+
+			<p>
+				REST är stateless - ALL information i varje request
+			</p>
+		</article>
+
+
+		<!-- servern svarar -->
+		<article class="fill">
+			<h3>Felkoder från servern</h3>
+			<p>
+				<strong>401 Unauthorized</strong><br />
+				Statuskoden för Autentiseringsfel (Authentication)<br />
+				"Du är inte inloggad, din inloggning misslyckades. Var god försök igen!"
+			</p>
+			<p>
+				<strong>403 Forbidden (Authorization)</strong> <br />
+				Statuskoden för Auktoriseringsfel<br />
+				"Tyvärr! Jag vet kanske vem du är men du är inte tillåten att komma åt dessa resurser. Stör mig inte på denna adressen igen förens du har blivit autentiserad!"<br />
+				Ibland skickas en 404 - Not found
+
+			</p>
+		</article>
+
+
+		<!-- säkerhetsstrategoi för API:er -->
+		<article class="fill">
+			<img src="http://farm6.staticflickr.com/5165/5295557537_a5b0b7fa59_b.jpg">
+			<h3 class="small">Säkerhetsstrategier för RESTful webb-API</h3>
+			<ul>
+				<li>Öppet? Read-only? API-nyckel endast för statistik</li>
+				<li>HTTP Authentication</li>
+				<li>Token-based Authentication</li>
+				<li>JSON Web Token</li>
+				<li>OAuth 2- or 3-legged</li>
+				<li>(Signed HMAC signature (Amazon))</li>
+		</article>
+
+
+
+		<article>
+			<h3>HTTP Basic authentication</h3>
+			<pre>
+# server HTTP Header
+401 Unauthorized HTTP/1.1
+WWW-Authenticate: Basic realm="my api"</pre>
+			<pre>
+# client HTTP header (base64-encodat username/password - ej krypterat)
+Authorization: Basic Kl52osuDS3DH6H12JDe543</pre>
+
+
+			<p>
+				MÅSTE ANVÄNDA HTTPS! Ej krypterat!<br />
+				username/password i varje anrop
+			</p>
+			<p>
+				Enkelt! Stöd i de flesta tekniker!
+			</p>
+			<p>
+				<a href="http://railscasts.com/episodes/352-securing-an-api">
+					http://railscasts.com/episodes/352-securing-an-api
+				</a>
+			</p>
+		</article>
+
+		<article>
+			<h3>HTTP Digest authentication</h3>
+
+			<ul>
+				<li>Klienten skickar en förfrågan om inloggning</li>
+				<li>Servern skickar tillbaka en kod (nonce) samt en textsträng (realm)</li>
+				<li>Klienten svarar med en koden (nonce) och en (MD5)hash bestående av användarnamn, lösenord, samt realm</li>
+				<li>Servern kontrollerar hashen mot de uppgifter som finns</li>
+			</ul>
+
+		</article>
+
+		<article>
+			<h3>Username/password vs. Token-based</h3>
+			<p class="c" style="margin-top: 70px">
+				<img src="images/tokenauth.png" alt="" width="104%">
+			</p>
+
+
+			<pre>
+# beware of history, logging and proxies, unsafe- vs. safe methods
+GET https:&frasl;&frasl;api.example.com/resource/?token=aksaj9dksjfKJLKSh2</pre>
+		</article>
+
+		<p>
+			Slipper skicka lösenord i varje request. Kan sätta timeout på token...
+		</p>
+
+		<article>
+			<h3>JSON Web Token (jwt)</h3>
+			<ul>
+				<li>Ett "standardiserat" sätt använda en mer avancerad token</li>
+				<li>Skickas med varje request</li>
+				<li>Enkelt bygga in tidskontroll</li>
+				<li>Header, Payload, SECRET</li>
+				<li>JSON!</li>
+			</ul>
+			<p>
+				<a href="http://jwt.io/">http://jwt.io/</a>
+			</p>
+		</article>
+
+
+		<article class="fill">
+
+			<img src="https://c2.staticflickr.com/6/5272/5872169307_e86e406041_b.jpg" alt="">
+			<p class="cc">
+				Foto by Elliott Cable
+				<a href="https://www.flickr.com/photos/elliottcable/5872169307/">https://www.flickr.com/photos/elliottcable/5872169307/</a>
+			</p>
+		</article>
+
+		<article class="fill">
+
+			<img width="70%" src="http://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Oauth_logo.svg/598px-Oauth_logo.svg.png">
+
+			<p class="cc">Foto from Wikipedia
+			</p>
+		</article>
+
+		<article>
+			<h3>Varför OAuth?</h3>
+			<p class="c">
+			<img src="images/oauth_why.png" width="600px">
+			</p>
+			<ul>
+				<li>Vill undvika att tredjeparts-applikationer (dina API-consumers) hanterar användarnas lösenord</li>
+				<li>Dina API-klienter vill slippa hantera dina användare</li>
+				<li>Man vill begränsa åtkommsten till resurser</li>
+				<li>Som resursägare kan jag återkalla en tredjepartsapplikations rättigheter</li>
+			</ul>
+
+		</article>
+
+
+
+		<article>
+			<h3>OAuth</h3>
+
+			<ul>
+				<li><s>OAuth 1.0</s></li>
+				<li>OAuth 1.0a (2010)</li>
+				<li>OAuth 2.0 (oktober 2012)</li>
+				<li>3-legged OAuth (user/resource owner - API consumer - service provider)</li>
+				<li>2-legged OAuth (API consumer - service provider)</li>
+			</ul>
+		</article>
+
+
+		<article>
+			<h3>Ska jag implementera en OAuth service?</h3>
+
+			<p>
+				Har din tjänst "resource owners"?
+			</p>
+			<p>
+				Kommer många användare av ditt API bygga klienter
+				där de vill komma åt data som hör till en "resource owners"?
+			</p>
+			<p>
+				Krångligt?
+			</p>
+
+			<ul>
+				<li><a href="https://github.com/applicake/doorkeeper">https://github.com/applicake/doorkeeper</a></li>
+				<li><a href="https://github.com/intridea/omniauth/">https://github.com/intridea/omniauth/</a></li>
+			</ul>
+		</article>
+
+		<!--
+		<article>
+			<h3>2-legged (OAuth 2.0)</h3>
+			<p>
+				OAuth 1.0a använde signerade requests. OAuth 2.0 använder en enklare och osäkrare modell med bearer token. Kräver HTTPS
+			</p>
+			<p class="c">
+			<img src="images/2-legged.png">
+			</p>
+			<ol>
+				<li>
+					Applikationens utvecklare registrerar den hos tjänsten: <br />
+					client_id, client_secret
+				</li>
+				<li>
+					Applikationen skickar en request till
+					serviceproviderns "auth-endpoint": <br />
+					client_id, client_secret, grant_type=client_credentials
+				</li>
+				<li>
+					Tjänstens server svarar med en access-token (Bearer Token)<br />
+					access_token, expires_in, token_type
+				</li>
+				<li>Nu kan access-token (bearer) användas för giltiga anrop</li>
+
+			</ol>
+
+
+
+		</article>
+	-->
+
+		<!--
+		<article class="fill">
+			<iframe src="http://oauthbible.com/"></iframe>
+			<h2>
+			<a href="http://oauthbible.com/">
+				http://oauthbible.com/
+			</a>
+			</h2>
+		</article>
+		-->
+		<!--
+		<article>
+			<h3>2-legged / HMAC</h3>
+			<ul>
+				<li>Verifiera användaren och dess behörighet på resurserna</li>
+				<li>In-transit data protection - Signera dina request med privat nyckel</li>
+				<li>Skydd mot reply-attacks - timestamp (session-token)</li>
+			</ul>
+
+		</article>
+
+		<article>
+			<p class="c"><img src="images/HMAC.png" width="95%"></p>
+			<p>
+				<a class="small" href="http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">
+					http://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html
+				</a><br /><br />
+				<a class="small" href="http://www.thebuzzmedia.com/designing-a-secure-rest-api-without-oauth-authentication/">
+					http://www.thebuzzmedia.com/designing-a-secure-rest-api-without-oauth-authentication/
+				</a>
+			</p>
+		</article>
+		-->
+		<article class="fill">
+			<iframe src="https://coursepress.lnu.se/kurs/webbramverk/rest-ii/" frameborder="0"></iframe>
+		</article>
+
+
+
+
 	  </section>
 	  </body>
 	</html>
-	
-	
+
+

@@ -1,6 +1,3 @@
-	
-
-
 <!DOCTYPE html>
 
 <!--
@@ -8,7 +5,7 @@
 
   Authors: Luke Mahé (code)
            Marcin Wichary (code and design)
-           
+
            Dominic Mazzoni (browser compatibility)
            Charles Chen (ChromeVox support)
 
@@ -25,23 +22,23 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
   </head>
-  
+
 
 
   <body style='display: none'>
 
     <section class='slides layout-widescreen template-default'>
-      
-		
+
+
 		<!-- First page -->
     	<article>
 	       	<h3>
 	         Webbramverk, 1DV450
 	          <br />
-	          <span class="small">Linnéuniversitetet, vt 2014</span>
+	          <span class="small">Linnéuniversitetet, vt 2015</span>
 	        </h3>
-       
-		
+
+
 			<br /><br />
 			<h1 class="big c">JavaScriptramverk</h1>
 			<p class="c" style="margin-top: 60px;">
@@ -50,343 +47,486 @@
 			</p>
 			<p class="small_footer">
 				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.sv">
-						<img alt="Creative Commons-licens" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>&nbsp;&nbsp;Denna presentation är licensierat under en 
-					
+						<img alt="Creative Commons-licens" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>&nbsp;&nbsp;Denna presentation är licensierat under en
+
 							<a rel="license" href="hhttp://creativecommons.org/licenses/by/3.0/deed.sv">Creative Commons Erkännande 3.0 Unported Licens</a>. (Där inte annat anges)<br/>
 			</p>
       	</article>
-		
-		
+
+		<!-- Webb-API -->
+		<article>
+			<img style="margin-left: -65px; margin-top: -30px" src="images/applicationoverview.png" alt="">
+		</article>
+
+		<!-- new web -->
+		<article class="fill">
+			<h3 class="small">Nya typer av applikationer, nya krav</h3>
+			<img src="http://farm4.staticflickr.com/3069/2487028198_8bf54aa52c_b.jpg"  />
+			<p class="cc">Foto cc by:
+				<a href="http://www.flickr.com/photos/sh1mmer/">http://www.flickr.com/photos/sh1mmer/</a>
+			</p>
+			<p class="note">
+				Förklara hur webben har utvecklats
+				JavaScript har utvecklats. Snabbare, stöd
+				Javascript som låtsasspråk
+				JS, HTML5, CSS3
+				SPA
+
+			</p>
+		</article>
+
+		<!-- New tech -->
+		<article class="fill">
+			<h3 class="small">Nya krav på klientapplikationer - SPA</h3>
+			<ul>
+				<li>Single Page Application</li>
+				<li>DOM-manipulering</li>
+				<li>Offline</li>
+				<li>State change in client application</li>
+				<li>Partial page update</li>
+				<li>Server communication (AJAX, Web Sockets)</li>
+				<li>Bookmarking, deep-link, route-handling</li>
+				<li>Browser history</li>
+				<li>More complex software engineering</li>
+			</ul>
+
+		</article>
+
+		<!-- Logik på klienten -->
+		<article>
+			<h3>Mer logik på klienten, BaaS</h3>
+			<br />
+			<p class="c">
+				<img src="images/client_logic.png" width="70%">
+			</p>
+			<p class="note">
+				Baas
+			</p>
+		</article>
+
+		<!-- CSS ramverk
+		<article>
+			<h1>CSS frameworks</h1>
+			<p class="c">
+			<img src="images/css_framework.png" width="70%" />
+			</p>
+			<p class="note">
+				Varför? vad gör dessa?
+			</p>
+		</article>-->
+
+
+
+		<!-- Javascript frameworks -->
+		<article class="fill">
+			<h3>JavaScript frameworks</h3>
+			<img src="images/js_framework.png" width="90%" />
+
+			<p class="cc"><a href="http://github.com/showcases/front-end-javascript-frameworks">http://github.com/showcases/front-end-javascript-frameworks</a></p>
+		</article>
+
 		<!-- AngularJS -->
 		<article>
-			<h3>AngularJS - Förra gången</h3>
+			<h1>AngularJS</h1>
 			<p class="c">
-			<img src="images/angular.png" width="200px" />
+			<img src="images/angular.png" width="500px" />
 			</p>
-			<ul>
-				<li>BaaS och SPA</li>
-				<li>Directives (imperativ vs. deklarativ)</li>
-				<li>Filters</li>
-				<li>Scope</li>
-				<li>MVW</li>
-				<li>Dependency injection</li>
-				<li>Services</li>
-			</ul>
-			
-		</article>
-		
-		<!-- AngularJS -->
-		<article>
-			<h3>AngularJS - Idag</h3>
-			<p class="c">
-			<img src="images/angular.png" width="200px" />
+			<p class="note">
+				Min erfarenhet av javascriptramverk
+				Varför valde jag angular?
 			</p>
-			<ul>
-				<li>Asynkrona anrop</li>
-				<li>$http, $resources</li>
-				<li>Promise API</li>
-				<li>Custom Directives</li>
-				<li>Custom filters</li>
-			</ul>
-			
-		</article>
-		
-		<!-- Asynkront -->
-		<article>
-			<h3>SPA - Asynkrona anrop</h3>
-			
-			<ul>
-				<li>XMLHttpRequest (XHR)</li>
-				<li>Vi vet inte när vi får svar eller i vilken ordning</li>
-				<li>Asynkron programmeringsmodell</li>
-				<li>Koden kan lätt bli rörig vid många av varandra beroende anrop</li>
-				<li>Anropa en tjänst på en annan server?</li>
-			</ul>
-			
-			<p>
-				<strong>Same-orgin security policy:</strong><br />
-				XHR får ske endast till samma källa (protocol, host, port)
-			</p>
-			<p class="c">
-				<img src="images/secure_cross.png" width="800px">
-			</p>
-			
 		</article>
 
-
-		
-		<article>
-			<h3>Lösningar - Same-orgin security policy</h3>
+		<!-- AngularJS - historik -->
+		<article class="fill">
+			<img src="http://farm8.staticflickr.com/7446/9132706772_fb4be24efd_b.jpg" />
+			<h3>AngularJS</h3>
 			<ul>
-				<li>Proxy</li>
-				<li>JSONP</li>
-				<li>CORS - Cross-orgin resource sharing</li>
+				<li>Miško Hevery and Adam Abrons, 2009</li>
+				<li>Google</li>
+				<li>version 1.3.13 - 2015-02-16</li>
+				<li>Stort community, anställt utvecklingsteam</li>
+				<li>AngularJS - 2.0 ????</li>
+				<li><a href="http://angularjs.org/">http://angularjs.org/</a></li>
+				<li><a href="https://github.com/angular/angular.js">https://github.com/angular/angular.js</a></li>
+				<li><a href="http://www.youtube.com/channel/UCm9iiIfgmVODUJxINecHQkA">ng-conf 2014</a></li>
+
+
 			</ul>
-		</article>
-		
-		<article>
-			<h3>JSONP - JSON with padding</h3>
-			
-			<p>Anrop som körs direkt i webbläsaren</p>
-			<pre>
-// Länka in (eller efterfråga) ett javascript från "den andra servern"
-&lt;script src="http://example.com/jsonp.php?callback=parseData">&lt;/script>	
-
-// Svaret från servern anropar den callback du har i din kod
-parseData({"Name": "Foo", "Id": 1234, "Rank": 7});
-
-// Funktion definierad i din JS
-function parseData(obj) {
-  // Do stuff
-}</pre>
-			
-			<p>
-			Endast GET<br />
-			Felhantering - inga HTTP resonse codes<br />
-			XSS - Cross Site Scripting<br />
-			Servern kan injekta kod rakt in i webbläsaren - i en user session
+			<p class="note">
+				Vem, vad, community, utveckling
 			</p>
 		</article>
-		
-		<article>
-			<h3>I angularJS</h3>
-			<pre>
-var url = "http://public-api.wordpress.com/rest/v1/posts?callback=JSON_CALLBACK";
-$http.jsonp(url)
-  .success(function(data){
-    console.log(data.found);
-  }
-);
-			</pre>
-		</article>
-		
-		<article>
-			<h3>CORS (Cross-orgin resource sharing)</h3>
+
+		<!-- The team
+		<article class="fill">
+			<h3>The team</h3>
+			<img src="http://igorminar.github.io/story-about-angular-passion-and-community/images/team.jpg" width="80%"/>
+		</article>-->
+
+		<!-- filosofin  -->
+		<article class="fill">
+			<h3>Filosofi och designmål</h3>
 			<ul>
-				<li>W3C specifikation</li>
-				<li>Kordinerar server och klient - Genom request och response headers</li>
-				<li>Inbyggt i angular</li>
-				<li>Problem med tidigare IE-versioner (delvis stöd i IE8-9 - Ej angular)</li>
-				
-				<li>Simple (GET, POST, HEAD) - non-simple (PUT, DELETE, PATCH)</li>
-				<li>Vid nonsimple måste klienten skicka en OPTIONS och vänta på serverns godkänande</li>
-				
+				<li><strong>Imperativ programmering</strong> för logik (beskriv steg för steg vad som ska göras)</li>
+				<li><strong>Deklarativ programmering</strong> för UI (beskriv VAD som ska göras - inte HUR)</li>
+
+				<li>"Show HTML new tricks"- Utvecklare och designers</li>
+				<li>Data-binding</li>
+				<li>DOM-manipulering skillt ifrån applikationslogik</li>
+				<li>Modulärt, Dependency Injections</li>
+				<li>Kunna skriva testningsbar kod</li>
 			</ul>
-			<p class="c">
-				<img width="400px" src="images/cors.png">
-			</p>	
 		</article>
-		
-		<!-- $http -->
+
+		<!-- MVC architecture-->
+		<article class="fill">
+			<img src="http://farm5.staticflickr.com/4033/4586127172_bca07fe5b1_b.jpg">
+			<h3>MVC / MVVM / MVW</h3>
+			<ul>
+				<li>MVC är en högnivåarkitektur</li>
+				<li>Har många "varianter" (MVP, MVVM, MTV)</li>
+				<li>Har många tolkningar av olika utvecklare...ifrån olika bakgrund</li>
+				<li>AngularJS === MVW</li>
+				<li>MVC Does Not Scale, Use Flux Instead
+					<a href="http://www.infoq.com/news/2014/05/facebook-mvc-flux">
+						http://www.infoq.com/news/2014/05/facebook-mvc-flux
+					</a>
+				</li>
+			</ul>
+			<p class="cc">Foto cc by:
+							<a href="http://www.flickr.com/photos/nyuhuhuu/">http://www.flickr.com/photos/nyuhuhuu/</a>
+						</p>
+		</article>
+
 		<article>
-			<h3>XHR i angularJS - $http</h3>
-			
-			<p>
-				AngularJS har ett inbyggt API som inkuderar XHR, JSONP, CORS m.m.<br />
-				
+			<q style="margin-top: 2px">
+				Having said, I'd rather see developers build kick-ass apps that are well-designed and follow separation of concerns, than see them waste time arguing about MV* nonsense. And for this reason, I hereby declare AngularJS to be MVW framework - Model-View-Whatever. Where Whatever stands for "whatever works for you"
+			</q>
+			- Igor Minar 19 juli 2012
+		</article>
+
+		<!-- Massa ord! -->
+		<article class="fill">
+			<img src="http://farm9.staticflickr.com/8023/7658298768_e4c2c2635e_b.jpg" />
+
+
 				<ul>
-					<li>$http.get(url, config)</li>
-					<li>$http.post(url, data, config)</li>
-					<li>$http.put(url, data, config)</li>
-					<li>$http.delete(url, config)</li>
-					<li>$http.head(url, config)</li>
-					<li>$http.jsonp(url, config)</li>
-				</ul>
-		</article>
-		
-		<!-- $http exempel -->
-		<article>
-			<img src="images/simple_get_ng.png">
-			<img src="images/simple_promise.png" width="600px">
-			
-		</article>
-		
-		<article>
-			<p class="c">
-				<img src="images/http_patch.png" width="800px">
-			</p>
-		</article>
-		
-		
-		
-		
-		
-		<!-- Promises -->
-		<article>
-			<h3>Promise API - Varför?</h3>
-			<p>Ett försök att göra asynkron programmering mer lik synkron</p>
-			<ul>
-				<li>Promise API - ej specifikt för angularJS</li>
-				<li>I AngularJS används $q-service (inspirerat från http://github.com/kriskowal/q)</li>
-				<li>Promises ses som "hållare" för framtida resultat - t.ex. en AJAX-förfrågan</li>
-				<li>Kedja metodanrop, enklare felhantering...</li>
-				<li>$http</li>
-			</ul>
-			<!--
-			<pre>
-SomeService.login(token, function(response) {
-  if (response.authResponse) {
-    SomeService.api('/stuff', successCallback); // Vad händer om det går fel här?
-  } else {
-    error_handler('User cancelled login or did not fully authorize.');
-  }
-});</pre>
-				-->
-		</article>
-		
-		<article>
-			<h3>Bök</h3>
-			<pre>
-function fetchData(id, cb){
-  getDataFromServer(id, function(err, result){
-    if(err){
-	  cb(err, null);
-    }else{
-      transformData(result, function(err, transformedResult){
-        if(err){
-          cb(err, null);
-        }else{
-          saveToIndexDB(result, function(err, savedData){
-            cb(err, savedData);
-          });
-        }
-     });
-   }
- });
-}				
-			</pre>
-		</article>
-		
-		<!-- Promises -->
-		<article>
-			<h3>Promise API i angularJS</h3>
-			<pre>
-// Deferred - "dröjd" - Skapa en uppgift
-var taskToDo = $q.defer() 
-			
-// Ett promise är något som i framtiden kan lyckas eller misslyckas
-var promise = taskToDo.promise;
-			
-// Talar om vad som ska ske i de olika fallen
-promise.then(successHandler, errorHandler);
-			
+					<li>Scope</li>
+					<li>Controller</li>
+					<li>Model/ViewModel</li>
+					<li>Dependency injection</li>
+					<li>Route providing</li>
+					<li>Modules</li>
 
-// När vi ska fullgöra vårt "promise" någon gång i framtiden			
-taskToDo.resolve(params);
-// När något gått fel
-taskToDo.reject(params);
-			</pre>
-			
-		</article>
-		
-		<!-- Active link-->
-		<article class="fill">
-			<h3>Exempel Promise and $http</h3>
-			<img src="images/ng-3.png" />
-		</article>
-		
-		<!-- $resources -->
-		<article>
-			<h3>$resources</h3>
-			<p>
-				Angular har en service som kapslar in RESTful-anrop (CRUD)
-			</p>
-			<p class="c">
-			<img src="images/resource_ng.png" width="800px" />
+					<li>Services, Factories, Providers</li>
+
+					<li>Directive</li>
+					<li>Filters</li>
+
+					<li>Declarative partial template view</li>
+
+				</ul>
+
+			<p class="cc">Foto cc by:
+				<a href="http://www.flickr.com/photos/83633410@N07/">http://www.flickr.com/photos/83633410@N07/</a>
 			</p>
 		</article>
-		
-		
-		
-		<!-- restangular -->
+
 		<article>
-			<h3>
-				<a href="https://github.com/mgonto/restangular">
-					https://github.com/mgonto/restangular
-				</a>
+			<iframe width="854" height="510" src="https://www.youtube.com/embed/i9MHigUZKEM" frameborder="0" allowfullscreen></iframe>
 		</article>
-		
-		<!-- Custom directives -->
+
 		<article>
-			<h3>Custom Directives</h3>
+			<h1>Utvecklingsmiljön</h1>
+
 			<ul>
-				<li>Angular har ett antal built-in directives (ngClick, ngShow)</li>
-				<li>Man kan också utveckla egna! - Utöka HTML</li>
-				<li>Ge möjlighet för mer deklarativ programmering</li>
-				<li>Hanterar DOM-hantering i dina direktiv</li>
-				<li>Återanvända i UI</li>
+				<li> WebStorm - <a href="https://www.jetbrains.com/webstorm/">https://www.jetbrains.com/webstorm/</a> </li>
+				<li>Nitrous.io</li>
+				<li>...</li>
+			</ul>
+
+			<h1>Att tänka på</h1>
+			<ul>
+				<li>Jobba mot ditt API == Två servrar?</li>
+				<li>Same-origin policy? <a href="https://github.com/cyu/rack-cors">https://github.com/cyu/rack-cors</a></li>
+				<li>Single Page Application - Deeplinking?</li>
+			</ul>
+
+		</article>
+
+
+		<!-- Exempel på databindning - HELLO WORLD -->
+		<article class="fill">
+			<h3>Hello John!</h3>
+			<img src="images/ng-1.png" />
+			<p class="note">
+				Visa hello world
+				Prata om directives
+				Bygg vidare med lista på lag
+			</p>
+		</article>
+
+		<!-- What is scope -->
+		<article>
+			<h3>$scope</h3>
+			<ul>
+				<li>Används som klister mellan controller och vyn</li>
+				<li>Innehåller både data och funktionalitet</li>
+				<li>ViewModel? Modeller är javascriptobject som deklareras på $scope</li>
+
 			</ul>
 			<p class="c">
-			<img src="images/directives_example.png" width="600px">
+				<img src="images/ng-scope.png" width="700px"/>
 			</p>
-			
+
 		</article>
-		
-		<!-- Custom directives -->
+
+		<!-- scope heirarchy -->
 		<article>
+			<h3>Scopes skapas i en hierarki</h3>
+			<ul>
+				<li>När en applikation kör igång skapas $rootScope</li>
+				<li>Vid t.ex. directivet ng-controller skapas en ny Scope-instans</li>
+				<li>ViewModel? Modeller är javascriptobject som deklareras på $scope</li>
+				<li>Isolerade namespace, undviker namnkrockar, effektiv minneshantering</li>
+				<li>Hierarkin påminner om DOM-strukturen</li>
+			</ul>
+			<br />
+			<p class="c">
+				<img src="images/ng-repeat.png" width="700px" />
+				<img src="images/scope_heirarchy.png" width="700px"/>
+			</p>
+			<p class="cc">Chrome extension:
+				<a href="https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk">Batarang</a>
+			</p>
+		</article>
+
+		<!-- Exempel på databindning - HELLO WORLD -->
+		<article class="fill">
+			<h3>Hello John! Alternativ syntax</h3>
+			<img src="images/ng-1.png" />
+			<p class="note">
+				Visa hello world
+				Prata om directives
+				Bygg vidare med lista på lag
+			</p>
+		</article>
+
+
+		<!-- Overview -->
+		<article>
+			<p class="c">
+				<img src="images/angular-arch.png" width="80%"/>
+			</p>
+			<p class="cc">Inspired:
+				<a href="http://weblogs.asp.net/dwahlin/archive/2013/04/12/video-tutorial-angularjs-fundamentals-in-60-ish-minutes.aspx">http://weblogs.asp.net/dwahlin/archive/2013/04/12/video-tutorial-angularjs-fundamentals-in-60-ish-minutes.aspx</a>
+			</p>
+
+		</article>
+
+		<!-- Massa ord! -->
+		<article class="fill">
+			<img src="http://farm9.staticflickr.com/8023/7658298768_e4c2c2635e_b.jpg" />
+
+
+				<ul>
+					<li>Scope</li>
+					<li>Controller</li>
+					<li>Model/ViewModel</li>
+					<li>Dependency injection</li>
+					<li>Modules</li>
+
+					<li>Services, Factories, Providers</li>
+					<li>Route providing</li>
+
+
+					<li>Directive</li>
+					<li>Filters</li>
+
+					<li>Declarative partial template view</li>
+
+				</ul>
+
+			<p class="cc">Foto cc by:
+				<a href="http://www.flickr.com/photos/83633410@N07/">http://www.flickr.com/photos/83633410@N07/</a>
+			</p>
+		</article>
+
+		<article>
+			<h3>Moduler och Dependency injection</h3>
+			<ul>
+				<li>Moduler kan användas för att organisera sin kod</li>
+				<li>Vi vill slippa globalt deklarerade objekt/controllers (eget namespace)</li>
+				<li>Men också för att beskriva beroenden - Dependency injections</li>
+				<li>Testbarhet, "Separation of Concerns"</li>
+				<li>Angular har en DI engine</li>
+
+				<li>"Angular modules don't try to solve the problem of script load ordering or lazy script fetching." - require.js</li>
+				<pre>
+// $scope och $http är inbyggt i angularJS
+// TeamService är en egen service/modul som har en specifik uppgift
+TeamListController.$inject = ['$scope', '$http', 'TeamService'];
+				</pre>
+
+			</ul>
 			<p>
-			Kan inkluderas som element, attribut, kommentar och CSS-klass
+				Läs Kozlowski, Darwin sid 27-37!
+			</p>
+		</article>
+
+		!-- MVC architecture example-->
+		<article class="fill">
+			<h3>Exempel - Modules</h3>
+			<img src="images/ng-2.png" />
+			<p>
+				Exempel med egen controller-fil
+			</p>
+		</article>
+
+		<!-- Services -->
+		<article class="fill">
+			<img src="http://farm9.staticflickr.com/8179/7972185654_e15db45fcc_b.jpg">
+			<h3>Services</h3>
+			<p>
+				Objekt (med egenskaper och funktioner) som binds samman via DI. Tänk en service som ett
+				kodblock som har en specifik uppgift. <br>
+
+				Registreras i applikationen via "recept" som bygger upp objekten och gör dessa tillgängliga för DI.
+			</p>
+			<ul>
+				<li>Values - Kan ej ladda in andra "services"</li>
+				<li>Services - Enkel, förvirrande namn, nja...</li>
+				<li>Factories - Vanligast? privata variabler i eget scope</li>
+				<li>Constants - Registerar konstanter för applikationen</li>
+				<li>Providers - Mer avancerad. Ger möjlighet att konfigurera innan användandet</li>
+			</ul>
+			<p class="cc">Foto cc by:
+				<a href="http://www.flickr.com/photos/seattlemunicipalarchives/">http://www.flickr.com/photos/seattlemunicipalarchives/</a>
+			</p>
+		</article>
+
+		!-- MVC architecture example-->
+		<article class="fill">
+			<h3>Exempel - Adding service</h3>
+			<img src="images/ng-2.png" />
+			<p class="note">
+				Visa ett exempel med controllers i olika filer
+			</p>
+		</article>
+
+		<!-- Routing -->
+		<article>
+			<h3>Routing</h3>
+			<ul>
+				<li>Ladda ner angular-route.js</li>
+				<li>Inkludera ngRoute som modul i din applikation</li>
+				<li>Definiera dina routes i applikationens "config"</li>
+				<li>Flyttades ut från angular.js core från 1.2 RC1</li>
+			</ul>
+		</article>
+
+		<!-- Partial views -->
+		<article>
+			<h3>Partial views</h3>
+			<ul>
+				<li>SPA skiftar "states" och laddar om views i en och samma sida</li>
+				<li>Vi vill kunna tala om vad som ska laddas in</li>
+			</ul>
+			<p class="c">
+				<img src="images/partial_view.png" height="500px" />
+			</p>
+
+		</article>
+
+		<!-- Routing Example -->
+		<article class="fill">
+			<h3>Exempel routing och views</h3>
+			<img src="images/ng-3.png" />
+		</article>
+
+
+
+
+		<!-- Applikationsstruktur -->
+		<article>
+			<h3>Applikationsstruktur</h3>
 			<pre>
-&lt;my-directive>&lt;/my-directive>
-&lt;input my-directive="">
-&lt;input class="my-directive">
-&lt;!-- directive: my-directive --&gt;
-</pre>
-			</p>
-			<ol>
-				<li>Browsern skapar DOM-trädet</li>
-				<li>Angular går igenom hela DOM-trädet</li>
-				<li>Matchar element, attribut, css-klasser, kommentarer mot de registrerade "directives" som finns</li>
-				<li>När dessa hittas så körs deras "compile functions" som returnerar "linking functions" - Innan scope skapats</li>
-				<li>Scope skapas och alla "linking functions" anropas</li>
-				<li>Eventuell bindning mellan Scope och DOM kan ske där</li>
-			</ol>
+app/
+----- controllers/
+---------- mainController.js
+---------- otherController.js
+----- directives/
+---------- mainDirective.js
+---------- otherDirective.js
+----- services/
+---------- userService.js
+---------- itemService.js
+----- js/
+---------- bootstrap.js
+---------- jquery.js
+----- app.js
+views/
+----- mainView.html
+----- otherView.html
+index.html</pre>
 		</article>
-		
-		<!-- Custom directives -->
+
+		<!-- Applikationsstruktur -->
 		<article>
-			<p>Deklarativt i HTML</p>
-			<img src="images/dec_example.png" width="600px">
-			
-			<p>Kod i applikationen</p>
-			<img src="images/dir_code.png" width="600px">
-			
-			<p>
-				<a href="http://amitgharat.wordpress.com/2013/06/08/the-hitchhikers-guide-to-the-directive/">
-					http://amitgharat.wordpress.com/2013/06/08/the-hitchhikers-guide-to-the-directive/
-				</a>
-			</p>
-			
+
+			<pre style="margin-top: 5px">
+app/
+----- shared/   // acts as reusable components or partials of our site
+---------- sidebar/
+--------------- sidebarDirective.js
+--------------- sidebarView.html
+----- components/   // each component is treated as a mini Angular app
+---------- home/
+--------------- homeController.js
+--------------- homeService.js
+--------------- homeView.html
+---------- blog/
+--------------- blogController.js
+--------------- blogService.js
+--------------- blogView.html
+----- app.module.js
+----- app.routes.js
+assets/
+----- img/      // Images and icons for your app
+----- css/      // All styles and style related files (SCSS or LESS files)
+----- js/       // JavaScript files written for your app that are not for angular
+----- libs/     // Third-party libraries such as jQuery, Moment, Underscore, etc.
+index.html</pre>
 		</article>
-		
-  
-		<!-- Active link-->
+
+		<!-- Sista exempel
 		<article class="fill">
-			<h3>Exempel Custom directives</h3>
-			<img src="images/ng-3.png" />
-		</article>
-		
-		
-		<!-- Custom filters -->
+			<h3>Applikation</h3>
+			<img src="images/football1.png" >
+			<p class="note">
+				Visa ett practice på hur man strukturerar en javascript
+				applikation
+			</p>
+		</article>-->
+
+		<!-- nästa gång -->
 		<article>
-			<h3>Custom filters</h3>
-			<p class="c">
-				<img src="images/filter.png" width="700px">
-			</p>
-			<p class="c">
-				<img src="images/filter_list.png" width="700px">
-			</p>
+			<h3>Nästa gång</h3>
+			<ul>
+				<li>Jobba mot ett API</li>
+				<li>$http, $resource...</li>
+				<li>Custom Directives</li>
+			</ul>
 		</article>
-		
-		<!-- Custom filters-->
-		<article class="fill">
-			<h3>ExempelCustom filters</h3>
-			<img src="images/ng-3.png" />
-		</article>
-		
+
+
+
+
+
+
 	  </section>
 	  </body>
 	</html>
-	
-	
-	
+
+
