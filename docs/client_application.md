@@ -20,7 +20,7 @@ Applikationen ska kunna bistå sin användare med följande:
 
 * Användaren ska hela tiden veta vad som pågår i applikationen med hjälp av tydliga meddelanden och uppdatering av gränssnitt
 
-* Minst en "custom directives" ~~och ett "custom filter"~~ ska vara implementerat.
+* Minst ett "custom directives" ska vara implementerat.
 
 * Webbapplikationen ska ha en genomarbetad design och vara responsiv. Ett css-ramverk så som bootstrap eller foundation bör användas.
 
@@ -30,7 +30,7 @@ Applikationen ska kunna bistå sin användare med följande:
 
 * Webbläsarens bakåt- och framåtknappar ska fungera som på en "vanlig" webbsida
 
-* Du ska i en readme-fil tydligt reflektera över eventuella förändringar du gjort i ditt API under tiden du byggde klientapplikationen.
+* Du ska i en readme-fil (i md-format) tydligt reflektera över eventuella förändringar du gjort i ditt API under tiden du byggde klientapplikationen.
 
 * Du ska var nogrann med att också dokumentera eventuella saker som personen som kör en peer-review på ditt projekt behöver veta. ALLA STEG i hur man får igång applikationerna!
 
@@ -40,6 +40,7 @@ Applikationen ska kunna bistå sin användare med följande:
 * Du sköter inloggning på annat sätt än HTTP Basic
 * Skriv din applikation med tillhörande testfall med god “code coverage”
 * Implementera en cache-strategi på klienten
+* Stöd för skapande av taggar i samband med skapandet av händelseresurser
 * Paginering av resurser i klienten
 * Stöd för deep-linking
 * Egna intressanta implementationer som visar på ökad kunskap om ramverket
