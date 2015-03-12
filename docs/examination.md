@@ -16,9 +16,10 @@ För att göra den muntliga examinationen ska du ha gjort större delen av kurse
 Frågorna kommer främst grunda sig på det föreläsningingarna tagit upp samt de läshänvisingar/artiklar som funnits till varje del.
 
 Frågorna kommer främst koncentrera sig på att du förstår koncept kring de delar vi tagit upp och inte mindre koddetaljer. Vissa frågor kan dock röra din byggda tjänst. Exempel på frågor kan vara:
-- Förklara begreppet xxxxx
-- På vilket sätt löser det ramverk du jobbat med problemet med xxxxx
-- Hur har du i din tjänst implementerat xxxxx
-- Hur bör en RESTful applikation regera i senario xxxx
+
+* Förklara begreppet xxxxx
+* På vilket sätt löser det ramverk du jobbat med problemet med xxxxx
+* Hur har du i din tjänst implementerat xxxxx
+* Hur bör en RESTful applikation regera i senario xxxx
 
 Varje student bokar en redovisningstid till den muntliga examinationen (se nedan). Varje pass tar ca 20-30 minuter men tiderna är grovt tilltagna för att slippa tidspress.
