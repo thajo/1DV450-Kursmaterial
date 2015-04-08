@@ -1,4 +1,4 @@
 1DV450-Kursmaterial
 ===================
 
-Öppet kursmaterial till kursen webbramverk (1DV450) på Linnéuniversitet vt-2014
+Öppet kursmaterial till kursen webbramverk (1DV450) på Linnéuniversitet vt-2014/vt-2015
