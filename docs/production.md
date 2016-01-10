@@ -1,5 +1,5 @@
 ## Publicering av Ruby on Rails
-I denna guide kommer vi gå igenom lite olika steg man behäver göra för att publicera sin webbapplikation. I guiden kommer vi utgå från VPS-tänsten digitalocean.com. En tjänst som under en viss tid ingår i [github student-pack](https://education.github.com/pack). 
+I denna guide kommer vi gå igenom lite olika steg man behäver göra för att publicera sin webbapplikation. I guiden kommer vi utgå från VPS-tänsten digitalocean.com. En tjänst som under en viss tid ingår i [github student-pack](https://education.github.com/pack). Det finns så klart massor av sätt och tjänster man kan använda för detta. En populär tjänst är t.ex. https://www.heroku.com/ som har en gratis variant som bör duga för denna kurs. De har också smidiga sätt att sätta sin ruby on rails-applikation i produktionsläge. 
 
 
 ## Skapa en webbserver med stöd för Ruby on Rails
@@ -13,7 +13,6 @@ Du kommer då få en webbservern med webbservern nginx och applikationsservern u
 ## Skicka över dina filer till webbservern
 När du följt guiden ovan och startat igång din droplet så måste du ju föra över dina applikationsfiler till servern. Som det beskrivs i guiden finns en ssh-server installerad i paketet vilket vi kan använda för säker filöverföring (ssh/ftps är en säkrare variant av ftp vad gäller filöverföring).. Har du dina filer lokalt kan du använda ett vanligt filöverföringsprogram så som t.ex. filezilla för att föra överfilerna. Uppgifter för inloggning bör du ha fått när du skapat och loggat in på din droplet för första gången.
 
-Arbetar du via nitrous.io och vill använda filezilla för att ladda upp filerna till webbservern måste du installera och köra synkroneringsapplikationen som synkroniserar dian filer lokalt från nitrous (ungefär som dropbox). Då har du dina applikation lokalt på din egen dator och kan skicka upp den via din SSH-klient. Du kan ladda ner programmet här: [https://www.nitrous.io/desktop](https://www.nitrous.io/desktop)
 
 ### Pusha upp filer till webbservern via git
 Vill man kan man också använda git för att pusha upp sian filer till servern. Eftersom vår droplet är en ubuntu-maskin där vi har rättigheter att installera vad vi vill kan vi såklart installera git och använda git för att push upp filerna (precis på samma sätt som vi gör mot GitHub). Detta kräver lite mer inställningar på servern men finns bra beskrivet i denna guide:
