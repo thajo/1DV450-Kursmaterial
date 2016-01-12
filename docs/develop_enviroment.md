@@ -8,7 +8,8 @@ Du är helt fri att välja din egen utvecklingsmiljö. Du har säkert redan hitt
 
 Problemet med ruby on rails, åtminstone för er som använder Windows, är att det av många beskrivits som bökigt att installera och använda på sin egna dator. Därför kan en helt cloud-baserad lösning rekommenderas där man kan köra RoR samt ha ett webbaserat IDE. Tjänster så som [https://www.c9.io/](https://www.c9.io) har tidigare använts v studenter i denna kurs och fungerat. Det ska där finns möjlighet att köra en gratisversion som duger gott till utvecklingen i denna kurs. Tjänsten ska också ha integrering till github samt en möjlighet att synka ner kodutvecklingen lokalt till sin favoriteditor. Väl värt att undersöka.
 
-Jag skulle dock ändå rekommendera att använda en virtuell miljö så som vagrant att köra sin ruby on rails-installation på. Det finns en färdig vagrantfil för detta man kan använda sig av. Den installerar dessutom ett antal olika databashanterare och verktyg (som du kanske inte kommer använda). [https://github.com/rails/rails-dev-box](https://github.com/rails/rails-dev-box). Följ den readme som finns där.
+Jag skulle dock rekommendera att använda en virtuell miljö så som vagrant att köra sin ruby on rails-installation på. Söker man runt på nätet på "vagrant ruby on rails" hittar man guider för hur man sätter ihop sin egna vagrant-fil för att skapa och installera en färdig server. Vill man gå genvägen kan man använda en färdig box, kanske via denna tjänst: https://atlas.hashicorp.com/boxes/. Jag använder en box som heter: bivee/rails
+
 
 Om du trots allt väljer att installera Ruby on Rails på ditt eget system rekommenderar jag att följa guiderna på [http://railsapps.github.io/installing-rails.html](http://railsapps.github.io/installing-rails.html).
 
