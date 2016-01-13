@@ -10,11 +10,11 @@ Klientapplikationen ska vara skriven i angularJS och använda asynkrona anrop mo
 
 Applikationen ska kunna bistå sin användare med följande:
 
-* Möjlighet att på ett genomtänkt och överskådligt sätt visa tjänstens alla resurser. Någon form av karttjänst bör användas.
+* Möjlighet att på ett genomtänkt och överskådligt sätt visa tjänstens alla resurser. Någon form av karttjänst bör användas då det är en positioneringstjänst.
 
 * Möjlighet att kunna söka specifika resurser i tjänsten genom sökord
 
-* Möjlighet att kunna filtrera ut resurser beroende på vald tagg, och resursägare
+* Möjlighet att kunna filtrera ut resurser beroende på vald tagg
 
 * Möjlighet att autentisera (logga in) användare/resursägare så att dessa kan skapa/ändra och ta bort egna resurser.
 
@@ -38,7 +38,7 @@ Applikationen ska kunna bistå sin användare med följande:
 **Extra funktioner som kan anses betygshöjande**
 
 * Du sköter inloggning på annat sätt än HTTP Basic
-* Skriv din applikation med tillhörande testfall med god “code coverage”
+* Skriv din applikation med tillhörande testfall
 * Implementera en cache-strategi på klienten
 * Stöd för skapande av taggar i samband med skapandet av händelseresurser
 * Paginering av resurser i klienten
