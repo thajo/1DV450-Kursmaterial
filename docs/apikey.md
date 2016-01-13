@@ -1,20 +1,18 @@
 ##Webbapplikation för API-nyckel
 
-Till tjänsten ska en registreringsapplikation utvecklas där utvecklare (som vill använda ditt API) ska kunna få tillgång till en giltig API-nyckel som kan användas i API-anropen för samtliga resurser. 
+Till tjänsten ska en registreringsapplikation utvecklas där utvecklare (som vill använda ditt API) ska kunna få tillgång till giltig API-nyckel/nycklar som kan användas i API-anropen för samtliga resurser. 
 
-Detta blir en webbapplikation som är fristående från själva API:et. 
+Registreringsapplikationen bör bestå av ett enkelt formulär där utvecklaren registrerar sin applikation och det genereras en API-nyckel som visas för användaren. 
 
-Registreringsapplikationen bör bestå av ett enkelt formulär där utvecklaren registrerar sin applikation och det genereras en hashad API-nyckel som visas för användaren. 
-
-Applikationsutvecklaren registrerar sig med en e-postadress och gärna lämplig information kring applikationen. En registrerad e-post kan endast ha en giltig API-nyckel. Den registerade applikationsutvecklaren ska kunna logga in i systemet och se/ta bort sin genererade API-nyckel.
-Applikationen ska ha ett administratörskonto (OK att hårdkoda in) med rättigheter att kunna ta bort befintliga API-nycklar (revoke application). Vi behöver alltså även något sätt för en administratör att logga in och enkelt hantera API-nycklar.
+Applikationsutvecklaren registrerar sig på webbplatsen och kan då registrera en eller flera applikationen och på så sätt få en eller flera PI-nycklar. Den registerade applikationsutvecklaren ska kunna logga in i systemet och se/ta bort sina applikationer (och således  API-nyckelar).
+Applikationen ska ha ett administratörskonto (OK att hårdkoda in dennes inloggningsuppgifter) med rättigheter att kunna ta bort befintliga applikationer (revoke application).
 
 För att sammanfatta de minimala kraven på denna webb-applikation:
 
-* Registreringsformulär för en utvecklare där en giltig API-nyckel skapas vid registrering och sparas undan för att använda när man kontrollerar anrop till API:et
-* Inloggning för en registrerad applikationsutvecklare att kunna se / ta bort sin nykel.
-* Inloggningsformulär för en administratör
-* En sida där den inloggade administratören kan ta bort(revoke) befintliga API-nycklar
-* Applikationen ska versionhanteras via ett öppet repo på Github
+* Registreringsformulär för utvecklare som vill använda vårt API
+* En inloggad utvecklare ska kunna registrera en eller flera applikationer och därmed få tillgång till en eller flera API-nycklar
+* En inloggad utvecklare ska kunna se / ta bort sina applikationer (och därmed API-nyklar).
+* Möjlighet att logga in med adminstratörsrättigheter
+* En sida där den inloggade administratören kan ta bort(revoke) befintliga applikationer
+* Applikationen ska versionhanteras via ett repo på Github
 * Applikationen ska fungera väl och det ska i repositoriet finnas en beskrivning hur man installerar och kör igång applikationen (ni kommer göra peer-reviews på varandras applikationer)
-* Eventuella frågor kring registreringsapplikationen kan diskuteras under de schemalagda handledningspassen.
