@@ -8,17 +8,17 @@ Du är helt fri att välja din egen utvecklingsmiljö. Du har säkert redan hitt
 
 Problemet med ruby on rails, åtminstone för er som använder Windows, är att det av många beskrivits som bökigt att installera och använda på sin egna dator. Därför kan en helt cloud-baserad lösning rekommenderas där man kan köra RoR samt ha ett webbaserat IDE. Tjänster så som [https://www.c9.io/](https://www.c9.io) har tidigare använts v studenter i denna kurs och fungerat. Det ska där finns möjlighet att köra en gratisversion som duger gott till utvecklingen i denna kurs. Tjänsten ska också ha integrering till github samt en möjlighet att synka ner kodutvecklingen lokalt till sin favoriteditor. Väl värt att undersöka.
 
-Jag skulle dock rekommendera att använda en virtuell miljö så som vagrant att köra sin ruby on rails-installation på. Söker man runt på nätet på "vagrant ruby on rails" hittar man guider för hur man sätter ihop sin egna vagrant-fil för att skapa och installera en färdig server. Vill man gå genvägen kan man använda en färdig box, kanske via denna tjänst: https://atlas.hashicorp.com/boxes/. Jag använder en box som heter: bivee/rails
+Jag skulle dock rekommendera att använda en virtuell miljö så som vagrant att köra sin ruby on rails-installation på. Söker man runt på nätet på "vagrant ruby on rails" hittar man guider för hur man sätter ihop sin egna vagrant-fil för att skapa och installera en färdig server. Kanske kan det vara värt att lägga någon timme på att få lite förståelse för vagrant. En bra utgångspunkt kan vara denna artikel: https://gorails.com/guides/using-vagrant-for-rails-development
+
+Vill man gå genvägen kan man använda en färdig vagrant-fil: https://github.com/thajo/ruby-on-rails-vagrant. Mer information finns i readme.md
 
 
 Om du trots allt väljer att installera Ruby on Rails på ditt eget system rekommenderar jag att följa guiderna på [http://railsapps.github.io/installing-rails.html](http://railsapps.github.io/installing-rails.html).
 
 
-##Github##
+##Github
 Som vanligt ska all din kod commitas upp till ett github-repositorie som du delar med kursens användare "1DV450". Jag utgår från att du har full koll på hur github och delning av konton fungerar sedan tidigare. Annars finns denna hjälp att tillgå: [http://coursepress.lnu.se/info](http://coursepress.lnu.se/info)
 
 
 ##Datorsalarna på campus##
 Då allt fler av campusstunderna har egna bärbara datorer kommer det inte i denna kurs finnas någon specialanpassad utvecklingsmiljö installerad i salarna. Det finns dock möjlighet att köra vagrant i salarna. 
-
-
