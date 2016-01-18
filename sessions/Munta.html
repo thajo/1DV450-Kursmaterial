@@ -1,0 +1,410 @@
+
+
+
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+
+  <head>
+    <title>Föreläsning</title>
+
+    <meta charset='utf-8'>
+    <script src='slides.js'></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+  </head>
+
+
+
+  <body style='display: none'>
+
+    <section class='slides layout-widescreen template-default'>
+
+
+		<!-- First page -->
+    	<article>
+	       	<h3>
+	         Webbramverk, 1DV450
+	          <br />
+	          <span class="small">Linnéuniversitetet, vt 2015</span>
+	        </h3>
+
+
+			<br /><br />
+			<h1 class="big c">Muntlig examination</h1>
+
+			<p class="small_footer">
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.sv">
+						<img alt="Creative Commons-licens" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>&nbsp;&nbsp;Denna presentation är licensierat under en
+
+							<a rel="license" href="hhttp://creativecommons.org/licenses/by/3.0/deed.sv">Creative Commons Erkännande 3.0 Unported Licens</a>. (Där inte annat anges)<br/>
+			</p>
+      	</article>
+
+
+		<article>
+			<h3>Grundläggande definitioner</h3>
+
+			<ul class="bigger">
+				<li>Default behavior</li>
+				<li>Inversion of control </li>
+				<li>Non-modifiable framework code</li>
+				<li>Extensibility</li>
+			</ul>
+
+		</article>
+
+		<article>
+			<h1>Conventions over Configuration</h1>
+		</article>
+
+		<article>
+			<p class="c">
+				<img src="images/manytomany1.png" alt="" width="70%">
+			</p>
+		</article>
+
+		<article>
+			<p class="c">
+				<img src="images/manytomany1.png" width="70%" alt="">
+			</p>
+			<ul>
+				<li>Hur får man tag i Resource med id 12</li>
+				<li>Hur får man tag i en Resource alla Tags</li>
+				<li>Hur skapar man en ny tag och binder den till Resource med id 30</li>
+				<li>Hur får jag ut de första 10 Taggarna</li>
+			</ul>
+		</article>
+<!--
+		<article>
+			<p class="c">
+				<img src="images/manytomany2.png" alt="" width="70%">
+			</p>
+		</article>
+
+		<article>
+			<p class="c">
+				<img src="images/manytomany2.png" width="70%" alt="">
+			</p>
+			<ul>
+
+				<li>Hur får jag ut de första 3 Meetings</li>
+				<li>Hur får man tag i alla Employees knutna till Meeting med id 1</li>
+				<li>Hur får jag ut alla Employees vars "name" är lika med "John"</li>
+			</ul>
+		</article>
+-->
+		<article>
+			<p class="c">
+				<img src="images/manytomany3.png" alt="" width="70%">
+			</p>
+		</article>
+
+		<article>
+			<p class="c">
+				<img src="images/manytomany3.png" width="70%" alt="">
+			</p>
+			<ul>
+
+				<li>Hur får jag ut de första tre "Teachers"</li>
+				<li>Hur får man tag i alla Courses knutna till Teacher med id 12</li>
+				<li>Hur får jag ut alla Teachers vars "name" är lika med "John"</li>
+				<li>Hur skapar man en ny Course och binder den till Teacher med id 10</li>
+			</ul>
+		</article>
+
+		<article>
+			<p class="c">
+				<img src="images/manytomany4.png" alt="" width="70%">
+			</p>
+		</article>
+
+		<article>
+			<p class="c">
+				<img src="images/manytomany4.png" width="70%" alt="">
+			</p>
+			<ul>
+
+				<li>Hur får jag ut Project med id = 10</li>
+				<li>Hur får man tag i alla Users knutna till ett Project med id 10</li>
+				<li>Hur får jag ut alla Users vars "name" är lika med "John"</li>
+				<li>Hur skapar man en ny User och binder den till Project med id 10</li>
+			</ul>
+		</article>
+
+
+		<article>
+			<p class="c">
+				<img src="images/onetomany2.png" alt="" width="70%">
+			</p>
+		</article>
+
+		<article>
+			<p class="c">
+				<img src="images/onetomany2.png" width="70%" alt="">
+			</p>
+			<ul>
+
+				<li>Hur får jag ut Item med id = 10</li>
+				<li>Hur får man tag i det Item som innehåller Itemrow med id 3</li>
+				<li>Hur får jag ut alla Item vars "name" är lika med "Test"</li>
+				<li>Hur skapar man en ny Itemrow och binder den till Item med id 15</li>
+			</ul>
+		</article>
+
+
+		<article>
+			<p class="c">
+				<img src="images/onetomany3.png" alt="" width="70%">
+			</p>
+		</article>
+
+		<article>
+			<p class="c">
+				<img src="images/onetomany3.png" width="70%" alt="">
+			</p>
+			<ul>
+
+				<li>Hur får jag ut Article med id = 10</li>
+				<li>Hur får man tag i alla Comments knutna till Article med id 8</li>
+				<li>Hur får man ut den Article som är knuten till Comment med id 3</li>
+				<li>Hur skapar jag en ny Comment och binder den till Article med id 77</li>
+			</ul>
+		</article>
+
+		<article>
+<p class="c">
+	<h3>En Owner har många Locations</h3>
+	<h3>En Location har en Owner</h3>
+</p>
+
+<pre>
+locations = Location.limit(10)
+
+locations.each do |l|
+  puts l.owner.username
+end
+</pre>
+<ul>
+	<li>Vad gör ovanstående kod</li>
+	<li>Vad är mindre bra med ovanstående kod</li>
+	<li>Hur löser man det problemet</li>
+
+</ul>
+
+		</article>
+
+		<article>
+			<pre>
+flash.now[message:] = "Here comes the message"
+
+vs.
+
+flash[message:] = "Here comes the message"
+			</pre>
+		</article>
+
+		<article>
+			<pre>
+flash[notice:] = "Wrong username or password"
+
+vs.
+
+flash.now[notice:] = "Wrong username or password"
+			</pre>
+		</article>
+
+		<article>
+<pre>
+# i filen routes.rb
+...
+
+resources :users # Vad innebär denna rad?
+
+get 'users/todos' => 'users#todo', as: user_todo # Vad innebär denna rad?
+</pre>
+		</article>
+
+		<article>
+<pre>
+class UserController &lt; ApplicationController
+  before_filter :require_key
+
+  def create
+    # vad händer här
+  end
+
+  def show
+    # vad händer här
+  end
+
+  def new
+    # vad händer här
+  end
+end
+</pre>
+		</article>
+
+		<article>
+<pre>
+class UserController &lt; ApplicationController
+  before_filter :require_key
+
+  def new
+    # vad händer här
+  end
+
+  def index
+    # vad händer här
+  end
+
+  def show
+    # vad händer här
+  end
+end
+</pre>
+		</article>
+
+		<article>
+<pre>
+&lt;!DOCTYPE html>
+
+&lt;head>
+    &lt;meta charset="utf-8">
+    &lt;title>REST API</title>
+
+    &lt;%= stylesheet_link_tag 'application', 'data-turbolinks-track' => true %>
+    &lt;%= csrf_meta_tags %>
+&lt;/head>
+
+&lt;body>
+  &lt;div class="container">
+
+    &lt;%= yield %>
+  &lt;/div>
+&lt;/body>
+&lt;/html>
+</pre>
+		</article>
+
+		<article>
+<h3>
+	Unexpected error while processing request: Missing `secret_token` and `secret_key_base` for 'development' environment,
+</h3>
+		</article>
+
+		<article>
+			<p class="c">
+				<img src="images/restmodell.png" width="50%" alt="">
+			</p>
+			<ul>
+				<li>Hämta en resurs (id=3) alla taggar</li>
+				<li>Ta bort en Creator</li>
+				<li>Uppdatera en resurstyp</li>
+				<li>Hämta resursen med id = 123</li>
+			</ul>
+		</article>
+
+		<article>
+			<p class="c">
+				<img src="images/restmodell2.png" width="50%" alt="">
+			</p>
+			<ul>
+				<li>Hämta en bloggs(id=2) alla poster</li>
+				<li>Ta bort en Tagg</li>
+				<li>Uppdatera Information om Creator med id 4</li>
+				<li>Hämta alla taggar som finns i bloggen med id=1</li>
+			</ul>
+		</article>
+
+		<article>
+			<p class="c">
+				<img src="images/restmodell3.png" width="50%" alt="">
+			</p>
+			<ul>
+				<li>Hämta alla lagen som spelar i cupen med id=3</li>
+				<li>Ta bort en Player</li>
+				<li>Uppdatera en Ligan med id=18</li>
+				<li>Hämta alla spelare som kan spela i cupen med id = 123</li>
+			</ul>
+		</article>
+
+		<article>
+			<pre class="c">
+				Accept: application/vnd+json;v2
+			</pre>
+		</article>
+
+		<article>
+			<h3>Vad är skillnaden?</h3>
+			<pre class="c">
+&lt;a data-ng-click="onClick()">...
+&lt;a ng-click="onClick()">...
+			</pre>
+		</article>
+
+		<article>
+<pre style="margin-top: 2px">angular.module('components', [])
+    .directive('helloWorld', function () {
+        return {
+            restrict: 'E',
+            replace: true,
+            require: '^firstName',
+            scope:{
+                firstName:'@',
+                lastName: '@'
+            },
+            template: '<span>Hello {{firstName}} {{lastName}}</span>',
+            link: function(s, e, a) {
+                e.addClass("myClass");
+            }
+
+        }
+    })
+    .directive('firstName', function() {
+      return {
+        controller: function($scope) {}
+      }
+    });
+angular.module('HelloApp', ['components']);</pre>
+		</article>
+
+		<article>
+<pre style="margin-top: 2px">angular.module('components', [])
+    .directive('helloWorld', function () {
+      return {
+        restrict: 'A',
+        scope:{
+          times:'@'
+        },
+        template: '<span>Hello</span>',
+        link: function(s, e, a) {
+            var str = "";
+            var l = Number(s.times);
+            for(var i = 0; i &lt; l; i++) {
+               str += "&lt;p>Hello World&lt;/p>";
+            }
+            e.html(str);
+        }
+
+    });
+angular.module('HelloApp', ['components']);</pre>
+		</article>
+
+	  </section>
+	  </body>
+	</html>
+
+
