@@ -526,7 +526,7 @@ class LinksController &lt; ApplicationController # arv
   def new
     @link = Link.new # Anrop till kontrukturn via new
   end
-  
+
   #Inga klammerparanteser, inget krav på tab men standard
   def create
     @link = Link.new(params[:link]) # Hashes och symbols
