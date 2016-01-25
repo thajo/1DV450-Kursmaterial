@@ -35,7 +35,7 @@
 	       	<h3>
 	         Webbramverk, 1DV450
 	          <br />
-	          <span class="small">Linnéuniversitetet, vt 2015</span>
+	          <span class="small">Linnéuniversitetet, vt 2016</span>
 	        </h3>
 
 
@@ -51,6 +51,11 @@
 							<a rel="license" href="hhttp://creativecommons.org/licenses/by/3.0/deed.sv">Creative Commons Erkännande 3.0 Unported Licens</a>. (Där inte annat anges)<br/>
 			</p>
       	</article>
+
+        <!-- Rails -->
+      <article class="fill">
+        <img src="images/ror_architecture.png" width="80%" height="100%">
+      </article>
 
       	<article>
       		<h3>Några mer tester för modellen</h3>
@@ -89,12 +94,15 @@
 
 		<article>
 
-			<h3>Skriv tester för routing/URLer</h3>
+			<h3>URL mapping - routes</h3>
 
 			<ul>
 				<li>GET /teams - ska lista alla lagen</li>
+        <li>GET /teams/1 - ska visa laget med id = 1</li>
 				<li>GET /teams/spurs - Ska visa laget med nickname=spurs</li>
 				<li>GET /teams/1/players - Ska lista alla spelare i laget med id=1</li>
+        <li>POST /teams</li>
+        <li>DELETE /teams/1</li>
 			</ul>
 
 			<p>
@@ -102,7 +110,7 @@
 			</p>
 
 			<p>
-				Var ska dessa anrop hamna...i vilken kontroller?
+				Vart ska dessa anrop hamna...i vilken kontroller?
 			</p>
 		</article>
 
@@ -113,7 +121,7 @@
 		<article class="fill">
 			<img src="images/road.jpg" height="600px"/>
 			<h3>
-				Exempel
+				Exempel, routes.rb
 			</h3>
 			<pre>
 # läggs till när du skapar en controller - ger direkt tillgång
@@ -121,88 +129,103 @@
 root 'welcome#index'
 
 # request /users mappas mot controllern user och dess action index
-get 'users' => 'users#index'
-post 'users' => 'users#create'
-delete 'users' => 'users#delete'
+get 'teams' => 'teams#index'
+post 'teams' => 'teams#create'
+delete 'teams/:id' => 'teams#delete'
 
 # Låt ramverket sköta det á la REST
-resources :users
+resources :teams
 
 # Genererar upp en URL-helper
-get 'users/todos' => 'user#todo', as :user_todo
-# redirect_to(user_todo_path) - Läser ut rätt URL till resurser.
-# Definiera URLer ENDAST i routes.rb
-
-
-
-			</pre>
+get 'teams/info' => 'teams#info', as :team_info
+# redirect_to(teams_info_path) - Läser ut rätt URL till resurser.</pre>
 			<a href="http://guides.rubyonrails.org/routing.html">http://guides.rubyonrails.org/routing.html</a>
 		</article>
 
-		<!-- routing REST default -->
-		<article>
-				<h3>Resource Routing: the Rails Default</h3>
-				<pre>
+    <!-- routing REST default -->
+    <article>
+        <h3>Resource Routing: the Rails Default</h3>
+        <pre>
 # sköter routning för users enligt REST
 resources :users
-				</pre>
+        </pre>
 
-				<p>
-					<table style="font-size: 15pt">
-						<tbody>
-						<tr>
-							<th>HTTP Verb </th>
-							<th>Sökväg</th>
-							<th>Metod i controllern (action) </th>
-							<th>Används för</th>
-						</tr>
-						<tr>
-							<td>GET</td>
-							<td>/users</td>
-							<td>index</td>
-							<td>Listar upp alla användare</td>
-						</tr>
-						<tr>
-							<td>GET</td>
-							<td>/users/new</td>
-							<td>new </td>
-							<td>Returenerar ett HTML-formulär</td>
-						</tr>
-						<tr>
-							<td>POST</td>
-							<td>/users</td>
-							<td>create</td>
-							<td>Försöker skapa i databasen</td>
-						</tr>
-						<tr>
-							<td>GET</td>
-							<td>/users/:id</td>
-							<td>show</td>
-							<td>Visar en användare</td>
-						</tr>
-						<tr>
-							<td>GET</td>
-							<td>/users/:id/edit</td>
-							<td>edit</td>
-							<td>Returnerar ett formulär för ändring</td>
-						</tr>
-						<tr>
-							<td>PUT</td>
-							<td>/users/:id</td>
-							<td>update</td>
-							<td>Updaterar (i db) en användare</td>
-						</tr>
-						<tr>
-							<td>DELETE</td>
-							<td>/users/:id</td>
-							<td>destroy</td>
-							<td>tar bort en användare </td>
-						</tr>
-						</tbody>
-					</table>
-				</p>
+        <p>
+          <table style="font-size: 15pt">
+            <tbody>
+            <tr>
+              <th>HTTP Verb </th>
+              <th>Sökväg</th>
+              <th>Metod i controllern (action) </th>
+              <th>Används för</th>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>/users</td>
+              <td>index</td>
+              <td>Listar upp alla användare</td>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>/users/new</td>
+              <td>new </td>
+              <td>Returenerar ett HTML-formulär</td>
+            </tr>
+            <tr>
+              <td>POST</td>
+              <td>/users</td>
+              <td>create</td>
+              <td>Försöker skapa i databasen</td>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>/users/:id</td>
+              <td>show</td>
+              <td>Visar en användare</td>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>/users/:id/edit</td>
+              <td>edit</td>
+              <td>Returnerar ett formulär för ändring</td>
+            </tr>
+            <tr>
+              <td>PUT</td>
+              <td>/users/:id</td>
+              <td>update</td>
+              <td>Updaterar (i db) en användare</td>
+            </tr>
+            <tr>
+              <td>DELETE</td>
+              <td>/users/:id</td>
+              <td>destroy</td>
+              <td>tar bort en användare </td>
+            </tr>
+            </tbody>
+          </table>
+        </p>
 
-		</article>
+    </article>
+
+    <article>
+
+      <h3>Test - routes</h3>
+
+      <ul>
+        <li>GET /teams - ska lista alla lagen</li>
+        <li>GET /teams/spurs - Ska visa laget med nickname=spurs</li>
+        <li>GET /teams/1/players - Ska lista alla spelare i laget med id=1</li>
+      </ul>
+
+      <ul>
+        <li>Skapa routes</li>
+        <li>Peka på rätt metod i controllern</li>
+        <li>Rendera data som JSON</li>
+      </ul>
+
+    </article>
+
+
 
 		<!-- paths -->
 		<article>
@@ -211,17 +234,17 @@ resources :users
 				En bra routing ger ocks&#xE5; m&#xF6;jlighet att anv&#xE4;nda s&#xE5; kallade url-helpers
 			</p>
 			<pre>
-# in the controller, returns /users
-redirect_to users_path
+# in the controller, returns /teams
+redirect_to teams_path
 
-#In the view, returns /users/new
-<%= link_to new_user_path %>
+#In the view, returns /teams/new
+<%= link_to new_team_path %>
 
-#returns /users/:id/edit - (edit_user_path(@user) returns t.ex. /users/10/edit)
-edit_user_path(:id)
+#returns /teams/:id/edit - (edit_team_path(@team) returns t.ex. /teams/10/edit)
+edit_team_path(:id)
 
-#returns /users/:id - (user_path(@user) returns /users/10)
-user_path(:id)
+#returns /teams/:id - (team_path(@team) returns /teams/10)
+team_path(:id)
 			</pre>
 			<p>
 				använd <strong>rake routes</strong> i terminalen för att enkelt lista dina routes och URL-helpers
@@ -269,31 +292,19 @@ end	</pre>
 			</p>
 		</article>-->
 
-		<!-- Att skapa en controller -->
-		<article>
-			<h3>Controllers</h3>
 
-			<ul>
-				<li>Skriv en test som kontrollerar att vi hamnar i rätt controller </li>
-				<li>Låt kontrollern generera json och med 200 OK</li>
-				<li>Skriv ett test som kontrollerar controllerns json-response</li>
-				<li>Utöka med några tester (om tid finns)</li>
-			</ul>
-
-
-		</article>
 
 		<!-- Redirect -->
 		<article>
 			<h3>Redirect</h3>
 <pre>
-# in users_controller.rb
+# in teams_controller.rb
 def create
-   @user = User.new(user_params)
-   if @user.save
-      redirect_to @user
+   @team = Team.new(team_params)
+   if @team.save
+      redirect_to @team # Blir /teams/:id
    else
-      render 'new' # leter upp en vy som körs (felmeddelanden finns kvar)
+      render 'new' # leter upp en vy som körs (state/felmeddelanden finns kvar)
    end
 end
 </pre>
@@ -310,35 +321,32 @@ end
 		<article class="fill">
 			<h3>Hur får vi tag i Querystrings?</h3>
 			<p>
-				/users?page=5&amp;limit=100
+				/teams?page=5&amp;limit=100
 			</p>
 			<pre>
 # GET- och POST-variabler ligger i arrayen params
 
-# i user_controller.rb - Ta hand om dem i controllern och tilldela instansvariabler
+# i teams_controller.rb - Ta hand om dem i controllern och tilldela instansvariabler
 @page = params[:page]
 			</pre>
-			<pre>
+		<!--	<pre>
 # kan sättas i ERb - OBS :id är reserverat till ramverket
 <%= link_to("länktext", { :action => "list", :page => 5, :limit => 100, :id => 1}) %>
 # ger länken user/list/1?page=5&amp;limit=100
-			</pre>
+			</pre>-->
 		</article>
 
 		<!-- render a template -->
 		<article>
-			<h3>Hur renderar man en vy</h3>
+			<h3>Att rendera ut en vy</h3>
 
 			<p>
-				Skriv en test som kontrollerar urlen /teams/1/players
+				Rendera ut en vy för /teams/1/players
 			</p>
 			<ul>
-				<li>Att rätt controller efterfrågar rätt lag med dess spelare</li>
-				<li>Att instansvariablerna sätts korrekt i controllern</li>
-				<li>Att den resulterade vyn får rätt titel</li>
-				<li>Att vyn renderar ut laget med namn och nickname</li>
-				<li>Att vyn renderar ut rätt antal spelare</li>
-				<li>Att vyn renderar ut en länk till sidan med alla lag</li>
+				<li>Erb - Embedded ruby (index.html.erb)</li>
+				<li>render - metod i controllers som kallar på rätt vy</li>
+        <li>Försök undvika "databasfrågor" i vyn</li>
 			</ul>
 		</article>
 
@@ -347,12 +355,11 @@ end
 			<h3>Hur renderar man en vy - Part II</h3>
 
 			<pre>
-# i app/controller/user_controller.rb
+# i app/controller/teams_controller.rb
 def index
- # Kommer leta efter template views/user/other_view.html.erb
- render('user/other_view')
- # Kan i detta fall utesluta 'user' i sökvägen då vi är user_controller
-end
+ # Kommer leta efter template views/teams/other_view.html.erb
+ render('teams/other_view')
+
 			</pre>
 			<pre>
 # Laddar in en template från en annan controller
