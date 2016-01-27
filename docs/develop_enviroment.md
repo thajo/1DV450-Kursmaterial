@@ -10,7 +10,7 @@ Problemet med ruby on rails, åtminstone för er som använder Windows, är att 
 
 Jag skulle dock rekommendera att använda en virtuell miljö så som vagrant att köra sin ruby on rails-installation på. Söker man runt på nätet på "vagrant ruby on rails" hittar man guider för hur man sätter ihop sin egna vagrant-fil för att skapa och installera en färdig server. Kanske kan det vara värt att lägga någon timme på att få lite förståelse för vagrant. En bra utgångspunkt kan vara denna artikel: https://gorails.com/guides/using-vagrant-for-rails-development
 
-Vill man gå genvägen kan man använda en färdig vagrant-fil: https://github.com/thajo/ruby-on-rails-vagrant. Mer information finns i readme.md. En kortare film om hur man kan använda denna finns också på: http://orion.lnu.se/pub/education/course/1DV450/vt16/vagrantup.mp4
+Vill man gå genvägen kan man använda en färdig vagrant-fil: https://github.com/thajo/ruby-on-rails-vagrant. Mer information finns i readme.md. En kortare film om hur man kan använda denna finns också på: [http://orion.lnu.se/pub/education/course/1DV450/vt16/vagrantup.mp4](http://orion.lnu.se/pub/education/course/1DV450/vt16/vagrantup.mp4)
 
 
 Om du trots allt väljer att installera Ruby on Rails på ditt eget system rekommenderar jag att följa guiderna på [http://railsapps.github.io/installing-rails.html](http://railsapps.github.io/installing-rails.html).
