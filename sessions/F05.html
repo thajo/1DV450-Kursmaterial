@@ -35,7 +35,7 @@
 	       	<h3>
 	         Webbramverk, 1DV450
 	          <br />
-	          <span class="small">Linnéuniversitetet, vt 2015</span>
+	          <span class="small">Linnéuniversitetet, vt 2016</span>
 	        </h3>
 
 
@@ -84,12 +84,15 @@
 				</h3>
 				<ul>
 					<li>Modulärt, "separation of concerns"</li>
-					<li>Utbyta data mellan system/applikationer</li>
 
 					<li>Stöd för olika typer av klienter/plattformer</li>
-					<li>Lös koppling mellan klient och server (stateless) - Cachebarhet, Skalbarhet</li>
-					<li>Använd vår data!</li>
-					<li>Krav på öppen maskinläsbar data (Öppna data)</li>
+					<li>Lös koppling mellan klient och server (stateless) - Cache-barhet, Skalbarhet</li>
+
+          <li>Utbyta data mellan system/applikationer</li>
+          <li>Microservices - Software architecture style</li>
+
+					<li>APIer som produkt</li>
+
 				</ul>
 
 
@@ -112,7 +115,7 @@
 					För vem skriver man ett API?
 				</h3>
 				<p>
-					"API is UI to Data"
+					Andra utvecklare...
 				</p>
 				<p>
 					Du vet inte dina API-användares användningsfall
@@ -146,6 +149,7 @@
 					<li>XML</li>
 					<li>Web Service (WS-*)</li>
 					<li>RESTful Web API</li>
+          <li>MicroServices</li>
 				</ul>
 				<p class="cc">Foto cc by Wilgengebroed on Flickr:
 					<a href="https://www.flickr.com/photos/wilgengebroed/5514783718/">https://www.flickr.com/photos/wilgengebroed/5514783718/</a>
@@ -267,11 +271,8 @@
 			<h1>
 				RESTafarian <br />eller pragmatiker?
 			</h1>
-			<p class="c">
-				<img src="http://lh5.ggpht.com/-k1SJpIAlBPY/UviIyrYyEsI/AAAAAAAAGbM/EKzhj9VEskQ/readImage2.png?imgmax=800" alt="">
-			</p>
-			<p class="cc">Foto linked from:
-				<a href="http://lh5.ggpht.com/-k1SJpIAlBPY/UviIyrYyEsI/AAAAAAAAGbM/EKzhj9VEskQ/readImage2.png?imgmax=800">http://lh5.ggpht.com/-k1SJpIAlBPY/UviIyrYyEsI/AAAAAAAAGbM/EKzhj9VEskQ/readImage2.png?imgmax=800</a>
+			<p>
+			  "But it is not restful if you...."
 			</p>
 
 		</article>
@@ -280,10 +281,10 @@
 		<!-- ReST i  punkter -->
 		<article class="fill">
 			<img src="http://farm2.staticflickr.com/1418/4609230644_0562580ca5_b.jpg">
-			<h3>Vad är REST?</h3>
+			<h3>Begrepp när man pratar REST</h3>
 			<ul>
 				<li>Varje "sak" i vår tjänst/applikation är en resurs (resource)</li>
-				<li>Varje resurs måste kunna adresseras (URI/addressability)</li>
+				<li>Varje resurs måste kunna adresseras (URL/addressability)</li>
 				<li>En representation beskriver en resurs tillstånd (state)</li>
 				<li>En resurs kan ha flera representationer (mutiple representations)</li>
 				<li>REST är tillståndslöst på servern (stateless)</li>
@@ -404,13 +405,14 @@ http://www.api.example.com/v1/users/129387</pre>
 
 
 
-		<!-- Idempotence -->
+		<!-- Idempotence
 		<article class="fill">
 			<h3>Idempotent vs. Safe Methods</h3>
 			<img src="http://farm3.staticflickr.com/2815/9131280504_3f407d7d20_b.jpg">
 			<p>
 				Metoder som kan anropas flera gånger efter varandra och ge samma resultat kallas <strong>idempotenta</strong>.<br />
-				PUT /products/123 {"id": 123, "product_name": "Trolldeg"}
+				PUT /products/123 "id": 123, "product_name": "Trolldeg" <br />
+        DELETE /products/321
 			</p>
 			<p>
 				Vad händer om vi får en timeout? Har resursen ändrats?<br />
@@ -436,7 +438,8 @@ http://www.api.example.com/v1/users/129387</pre>
 				<a href="http://www.flickr.com/photos/dannyfowler/">http://www.flickr.com/photos/dannyfowler/</a>
 			</p>
 		</article>
-
+    -->
+<!--
 		<article>
 			<h2>Vilka metoder är idempotenta?</h2>
 			<ul>
@@ -453,7 +456,7 @@ http://www.api.example.com/v1/users/129387</pre>
 				PATCH {change: 'Name' from: 'benjamin franklin' to: 'john doe'}
 			</p>
 		</article>
-
+-->
 		<!-- A resource can have multiple representations -->
 		<article class="fill">
 			<h3>Multipla representationer</h3>
@@ -606,20 +609,12 @@ Content-Type: application/json
 				<li>Länkar/URL:er - Beskriver "the transition" till nästa "state"</li>
 				<li>Inkludera länkar/URL:er i ditt APIs response</li>
 				<li>Klienter bör kunna navigera sig i ditt API precis som man surfar</li>
-				<li>En klient ska aldrig behöva bygga ihop en URL</li>
+				<li>En klient ska inte behöva bygga ihop en URL</li>
 				<li>"Hypertext should be used to find your way through the API."</li>
 			</ul>
 		</article>
 
-		<article class="fill">
-			<img src="https://blog.apigee.com/sites/blog/files/HATEOAS6%20copy_0.png" alt="">
-			<p class="cc">
-				Foto from:
-				Foto cc by:
-				<a href="https://blog.apigee.com/detail/api_design_honing_in_on_hateoas">https://blog.apigee.com/detail/api_design_honing_in_on_hateoas</a>
-			</p>
-		</article>
-
+	<!--
 		<article>
 			<h1>Exempel</h1>
 			<pre>
@@ -637,6 +632,7 @@ Content-Type: application/json
 	&lt;link rel="friends" href="http://example.org/user/1/friends" /&gt;
 &lt;/links&gt;</pre>
 		</article>
+  -->
 <!--
 		<article class="fill">
 			<iframe src="http://restcookbook.com/Basics/hateoas/" frameborder="0"></iframe>
@@ -657,6 +653,7 @@ Content-Type: application/json
 
 		</article>
 
+<!--
 		<article class="fill">
 			<h3>Varför HATEOAS?</h3>
 			<ul>
@@ -669,7 +666,7 @@ Content-Type: application/json
 			</ul>
 
 		</article>
-
+-->
 		<article class="fill">
 			<iframe src="https://coursepress.lnu.se/kurs/webbramverk/rest-1/" frameborder="0"></iframe>
 		</article>
@@ -710,5 +707,3 @@ end
 	  </section>
 	  </body>
 	</html>
-
-
