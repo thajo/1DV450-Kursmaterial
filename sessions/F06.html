@@ -35,7 +35,7 @@
 	       	<h3>
 	         Webbramverk, 1DV450
 	          <br />
-	          <span class="small">Linnéuniversitetet, vt 2015</span>
+	          <span class="small">Linnéuniversitetet, vt 2016</span>
 	        </h3>
 
 
@@ -49,18 +49,19 @@
 			</p>
       	</article>
 
-
+    <article>
+      <img src="./images/what.png" alt="">
+    </article>
 
 
 		<article class="fill">
 			<img src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Paul_Signac_-_In_the_Time_of_Harmony-_The_Joy_of_Life--Sunday_by_the_Sea_-_Google_Art_Project.jpg/800px-Paul_Signac_-_In_the_Time_of_Harmony-_The_Joy_of_Life--Sunday_by_the_Sea_-_Google_Art_Project.jpg">
 			<h3>RESTful</h3>
 			<ul>
-				<li>Enkelhet</li>
-				<li>Tydlighet</li>
-				<li>Oberoende</li>
-				<li>Behjälpligt</li>
-				<li>Pragmatiskt</li>
+				<li>Enkelhet (vs. WS-*)</li>
+				<li>Oberoende (Stateless server)</li>
+				<li>Behjälpligt (HATEOAS, standard)</li>
+				<li>Pragmatiskt (vs. RESTafarian)</li>
 			</ul>
 			<p class="cc">Paul Signac - In the time of harmony:
 				<a href="http://commons.wikimedia.org/">http://commons.wikimedia.org/</a>
@@ -132,10 +133,13 @@
 			</p>
 			<p>
 				<strong>Servern svarar (exempel)</strong><br />
-				&nbsp;&nbsp;201 Created + information<br />
+				&nbsp;&nbsp;201 Created + data<br />
 				&nbsp;&nbsp;400 Bad Request + information<br />
 				&nbsp;&nbsp;403 Forbidden
 				</p>
+        <p>
+          PRG är ej ett bra pattern när vi tänker stateless
+        </p>
 		</article>
 
 		<!-- definition of PUT -->
@@ -144,7 +148,7 @@
 			<p>
 				<strong>PUT /products/1325</strong><br />
 				&nbsp;&nbsp;Uppdaterar en resurs, Om resursen inte finns skapas resursen?<br/>
-				&nbsp;&nbsp;un-safe, indemptens
+				&nbsp;&nbsp;un-safe, indempotent
 			</p>
 			<p>
 				200 OK - Samt representationen av tillståndet<br />
@@ -160,7 +164,7 @@
 				<strong>PATCH /products/1325</strong><br />
 				&nbsp;&nbsp;Partial update<br/>
 				&nbsp;&nbsp;Data skickas med som ska uppdateras <br>
-				&nbsp;&nbsp;PATCH {attribue: "name", from: "John", to: "John the great!"} <br>
+				&nbsp;&nbsp;PATCH {attribue: "name", to: "John the great!"} <br>
 				&nbsp;&nbsp;Ej idempotent...
 
 			</p>
@@ -172,7 +176,7 @@
 		</article>
 
 		<article>
-			<h1>Men hur i hela friden...?</h1>
+			<h1>Response och statuskoder</h1>
 			<pre>
 # I controllern som genererar response
 
@@ -183,7 +187,7 @@ respond_with  @error, status: :not_found
 			</pre>
 
 
-			<a href="https://github.com/thajo/1dv450_demo">https://github.com/thajo/1dv450_demo</a>
+
 		</article>
 
 		<article>
@@ -378,14 +382,16 @@ Accept: application/vnd.github.v3+json
 		<article>
 			<h3>Partial response (filtrering) &amp; Pagination</h3>
 
-			<p>
-				I http-protokollet finns Content-Range men...
-			</p>
 
 
-			<pre>&frasl;users&frasl;thajo:(firstname, lastname, email)
-&frasl;users&frasl;thajo?fields=firstname, lastname, email</pre>
 
+			<pre>&frasl;users&frasl;thajo:(firstname,lastname,email)
+&frasl;users&frasl;thajo?fields=firstname,lastname,email</pre>
+
+
+<p>
+  I http-protokollet finns Content-Range men...
+</p>
 			<pre>
 &frasl;users?page=3&rrp=25
 &frasl;users?start=100&count=25
@@ -403,10 +409,11 @@ Accept: application/vnd.github.v3+json
 			<h3>API-keys</h3>
 			<ul>
 				<li>Används främst för att kontrollera anropen (antal anrop, statistik)</li>
-				<li>API nycklar kan lätt snappas upp, Vanskligt för inloggning</li>
+        <li>Gäller under lång tid! Ej vettigt för aktorisering!</li>
+				<li>API nycklar kan lätt snappas upp, Vanskligt för aktorisering</li>
 				<li>API-nycklar hör till utvecklaren/applikationen, inte slutanvändarna</li>
 				<li>Spårbarhet, en nyckel per applikation</li>
-				<li>Varje request kräver en nyckel...databasanrop?</li>
+				<li>Varje request kräver en nyckel...databasanrop? In-memory?</li>
 			</ul>
 			<p class="c">
 				<img width="40%" src="http://pixabay.com/static/uploads/photo/2013/07/12/14/49/key-148868_640.png" alt="">
@@ -422,6 +429,7 @@ Accept: application/vnd.github.v3+json
 			<p>
 				Begränsa antalet anrop till ditt API.<br />
 				Headers som börjar med X har använts som custom headers
+        Skickas med i respons från servern
 			</p>
 			<ul>
 				<li>X-Rate-Limit-Limit - Antalet anrop inom en tidsperiod<li>
@@ -443,15 +451,12 @@ Accept: application/vnd.github.v3+json
 
 			</p>
 			<p>
-				<img src="images/web_hook.png">
+				<img src="images/webhook.png">
 			</p>
 		</article>
 
 		<article class="fill">
-			<iframe src="http://ifttt.com/channels" frameborder="0"></iframe>
-			<p class="cc">
-				<a href="http://ifttt.com/channels">http://ifttt.com/channels</a>
-			</p>
+			<h2>IF This Then That - <a href="http://ifttt.com/channels">http://ifttt.com/channels</a></h2>
 		</article>
 
 		<article class="fill">
@@ -477,7 +482,7 @@ Accept: application/vnd.github.v3+json
 
 
 
-		<!-- Att tänka på -->
+		<!-- Att tänka på
 		<article>
 			<h3>Att tänka på!</h3>
 			<p>
@@ -492,7 +497,7 @@ Accept: application/vnd.github.v3+json
 			</p>
 		</article>
 
-
+-->
 		<article class="fill">
 			<h3>Säkerhet</h3>
 			<img src="http://farm8.staticflickr.com/7308/11406985424_457c44045f_b.jpg">
@@ -590,26 +595,16 @@ Authorization: Basic Kl52osuDS3DH6H12JDe543</pre>
 					http://railscasts.com/episodes/352-securing-an-api
 				</a>
 			</p>
+
+      Finns också "HTTP Digest authentication"
 		</article>
 
-		<article>
-			<h3>HTTP Digest authentication</h3>
-
-			<ul>
-				<li>Klienten skickar en förfrågan om inloggning</li>
-				<li>Servern skickar tillbaka en kod (nonce) samt en textsträng (realm)</li>
-				<li>Klienten svarar med en koden (nonce) och en (MD5)hash bestående av användarnamn, lösenord, samt realm</li>
-				<li>Servern kontrollerar hashen mot de uppgifter som finns</li>
-			</ul>
-
-		</article>
-
-		<article>
+			<article>
 			<h3>Username/password vs. Token-based</h3>
 			<p class="c" style="margin-top: 70px">
 				<img src="images/tokenauth.png" alt="" width="104%">
 			</p>
-
+      <p>Har ett visst tidsspan</p>
 
 			<pre>
 # beware of history, logging and proxies, unsafe- vs. safe methods
@@ -624,14 +619,19 @@ GET https:&frasl;&frasl;api.example.com/resource/?token=aksaj9dksjfKJLKSh2</pre>
 			<h3>JSON Web Token (jwt)</h3>
 			<ul>
 				<li>Ett "standardiserat" sätt använda en mer avancerad token</li>
-				<li>Skickas med varje request</li>
-				<li>Enkelt bygga in tidskontroll</li>
-				<li>Header, Payload, SECRET</li>
+				<li>Skickas med varje request (i Authorization header), Stateless på servern</li>
+        <li>Header, Payload, SECRET</li>
+        <li>Enkelt bygga in tidskontroll</li>
+				<li>Single-sign on</li>
 				<li>JSON!</li>
 			</ul>
 			<p>
 				<a href="http://jwt.io/">http://jwt.io/</a>
 			</p>
+
+      <p>
+        There is a gem for that: <a href="https://github.com/jwt/ruby-jwt">https://github.com/jwt/ruby-jwt</a>
+      </p>
 		</article>
 
 
@@ -660,8 +660,8 @@ GET https:&frasl;&frasl;api.example.com/resource/?token=aksaj9dksjfKJLKSh2</pre>
 			<ul>
 				<li>Vill undvika att tredjeparts-applikationer (dina API-consumers) hanterar användarnas lösenord</li>
 				<li>Dina API-klienter vill slippa hantera dina användare</li>
-				<li>Man vill begränsa åtkommsten till resurser</li>
-				<li>Som resursägare kan jag återkalla en tredjepartsapplikations rättigheter</li>
+				<li>Man vill ge resursägare/slutanvändare möjlighet att begränsa åtkomsten till resurser</li>
+				<li>Som resursägare/slutanvändare kan jag återkalla en tredjepartsapplikations rättigheter</li>
 			</ul>
 
 		</article>
@@ -776,5 +776,3 @@ GET https:&frasl;&frasl;api.example.com/resource/?token=aksaj9dksjfKJLKSh2</pre>
 	  </section>
 	  </body>
 	</html>
-
-
