@@ -35,12 +35,12 @@
 	       	<h3>
 	         Webbramverk, 1DV450
 	          <br />
-	          <span class="small">Linnéuniversitetet, vt 2015</span>
+	          <span class="small">Linnéuniversitetet, vt 2016</span>
 	        </h3>
 
 
 			<br /><br />
-			<h1 class="big c">JavaScriptramverk</h1>
+			<h1 class="big c">Klientramverk</h1>
 			<p class="c" style="margin-top: 60px;">
 				AngularJS<br />
 				<span class="c"></span>
@@ -58,7 +58,7 @@
 			<img style="margin-left: -65px; margin-top: -30px" src="images/applicationoverview.png" alt="">
 		</article>
 
-		<!-- new web -->
+		<!-- new web
 		<article class="fill">
 			<h3 class="small">Nya typer av applikationer, nya krav</h3>
 			<img src="http://farm4.staticflickr.com/3069/2487028198_8bf54aa52c_b.jpg"  />
@@ -74,11 +74,12 @@
 
 			</p>
 		</article>
-
+-->
 		<!-- New tech -->
 		<article class="fill">
 			<h3 class="small">Nya krav på klientapplikationer - SPA</h3>
 			<ul>
+        <li>JavaScripts utveckling</li>
 				<li>Single Page Application</li>
 				<li>DOM-manipulering</li>
 				<li>Offline</li>
@@ -87,12 +88,12 @@
 				<li>Server communication (AJAX, Web Sockets)</li>
 				<li>Bookmarking, deep-link, route-handling</li>
 				<li>Browser history</li>
-				<li>More complex software engineering</li>
+
 			</ul>
 
 		</article>
 
-		<!-- Logik på klienten -->
+		<!-- Logik på klienten-->
 		<article>
 			<h3>Mer logik på klienten, BaaS</h3>
 			<br />
@@ -125,6 +126,17 @@
 			<p class="cc"><a href="http://github.com/showcases/front-end-javascript-frameworks">http://github.com/showcases/front-end-javascript-frameworks</a></p>
 		</article>
 
+    <article>
+      <h1>Gemensamma delar</h1>
+      <p>"Full-stack" klientramverk</p>
+      <ul>
+        <li>Återanvändsbara komponenter</li>
+        <li>Dynamic UI binding</li>
+        <li>Routing</li>
+        <li>Template engine</li>
+      </ul>
+    </article>
+
 		<!-- AngularJS -->
 		<article>
 			<h1>AngularJS</h1>
@@ -137,19 +149,29 @@
 			</p>
 		</article>
 
+    <article class="fill">
+			<iframe src="https://angularjs.org/" frameborder="0"></iframe>
+			<p class="note">
+				Min erfarenhet av javascriptramverk
+				Varför valde jag angular?
+			</p>
+		</article>
+
+
 		<!-- AngularJS - historik -->
 		<article class="fill">
 			<img src="http://farm8.staticflickr.com/7446/9132706772_fb4be24efd_b.jpg" />
 			<h3>AngularJS</h3>
 			<ul>
 				<li>Miško Hevery and Adam Abrons, 2009</li>
-				<li>Google</li>
-				<li>version 1.3.13 - 2015-02-16</li>
+				<li>Google - open source</li>
+				<li>Version 1.5.0 - 2016-02</li>
 				<li>Stort community, anställt utvecklingsteam</li>
-				<li>AngularJS - 2.0 ????</li>
+        <li>The A in MEAN</li>
+        <li>AngularJS - 2.0 ???? (<a href="http://angular.io/">http://angular.io</a>)</li>
 				<li><a href="http://angularjs.org/">http://angularjs.org/</a></li>
-				<li><a href="https://github.com/angular/angular.js">https://github.com/angular/angular.js</a></li>
-				<li><a href="http://www.youtube.com/channel/UCm9iiIfgmVODUJxINecHQkA">ng-conf 2014</a></li>
+
+				<li><a href="https://www.youtube.com/user/ngconfvideos">ng-conf 2015</a></li>
 
 
 			</ul>
@@ -173,8 +195,8 @@
 
 				<li>"Show HTML new tricks"- Utvecklare och designers</li>
 				<li>Data-binding</li>
-				<li>DOM-manipulering skillt ifrån applikationslogik</li>
-				<li>Modulärt, Dependency Injections</li>
+				<li>DOM-manipulering skilt från applikationslogik</li>
+				<li>Modulärt, Direktiv, Komponenter, Dependency Injections</li>
 				<li>Kunna skriva testningsbar kod</li>
 			</ul>
 		</article>
@@ -238,17 +260,17 @@
 		</article>
 
 		<article>
-			<h1>Utvecklingsmiljön</h1>
+			<h1>Utvecklingsmiljö</h1>
 
 			<ul>
 				<li> WebStorm - <a href="https://www.jetbrains.com/webstorm/">https://www.jetbrains.com/webstorm/</a> </li>
-				<li>Nitrous.io</li>
+				<li>Atom.io</li>
 				<li>...</li>
 			</ul>
 
 			<h1>Att tänka på</h1>
 			<ul>
-				<li>Jobba mot ditt API == Två servrar?</li>
+				<li>Jobba mot ditt API =>Två servrar?</li>
 				<li>Same-origin policy? <a href="https://github.com/cyu/rack-cors">https://github.com/cyu/rack-cors</a></li>
 				<li>Single Page Application - Deeplinking?</li>
 			</ul>
@@ -269,7 +291,7 @@
 
 		<!-- What is scope -->
 		<article>
-			<h3>$scope</h3>
+			<h3>$scope (angularjs 1.5 and below)</h3>
 			<ul>
 				<li>Används som klister mellan controller och vyn</li>
 				<li>Innehåller både data och funktionalitet</li>
@@ -282,7 +304,7 @@
 
 		</article>
 
-		<!-- scope heirarchy -->
+		<!-- scope heirarchy
 		<article>
 			<h3>Scopes skapas i en hierarki</h3>
 			<ul>
@@ -301,10 +323,10 @@
 				<a href="https://chrome.google.com/webstore/detail/angularjs-batarang/ighdmehidhipcmcojjgiloacoafjmpfk">Batarang</a>
 			</p>
 		</article>
-
+    -->
 		<!-- Exempel på databindning - HELLO WORLD -->
 		<article class="fill">
-			<h3>Hello John! Alternativ syntax</h3>
+			<h3>Alternativ syntax</h3>
 			<img src="images/ng-1.png" />
 			<p class="note">
 				Visa hello world
@@ -325,7 +347,7 @@
 
 		</article>
 
-		<!-- Massa ord! -->
+		<!-- Massa ord!
 		<article class="fill">
 			<img src="http://farm9.staticflickr.com/8023/7658298768_e4c2c2635e_b.jpg" />
 
@@ -352,27 +374,24 @@
 				<a href="http://www.flickr.com/photos/83633410@N07/">http://www.flickr.com/photos/83633410@N07/</a>
 			</p>
 		</article>
-
+    -->
 		<article>
 			<h3>Moduler och Dependency injection</h3>
 			<ul>
-				<li>Moduler kan användas för att organisera sin kod</li>
-				<li>Vi vill slippa globalt deklarerade objekt/controllers (eget namespace)</li>
+				<li>Kod-container för olika delar av din applikation (controllers, services, filters, directives)</li>
+        <li>Testbarhet, "Separation of Concerns"</li>
 				<li>Men också för att beskriva beroenden - Dependency injections</li>
-				<li>Testbarhet, "Separation of Concerns"</li>
 				<li>Angular har en DI engine</li>
-
-				<li>"Angular modules don't try to solve the problem of script load ordering or lazy script fetching." - require.js</li>
-				<pre>
+        <pre>
 // $scope och $http är inbyggt i angularJS
 // TeamService är en egen service/modul som har en specifik uppgift
 TeamListController.$inject = ['$scope', '$http', 'TeamService'];
 				</pre>
 
+				<li>"Angular modules don't try to solve the problem of script load ordering or lazy script fetching." - require.js</li>
+
 			</ul>
-			<p>
-				Läs Kozlowski, Darwin sid 27-37!
-			</p>
+
 		</article>
 
 		!-- MVC architecture example-->
@@ -387,18 +406,18 @@ TeamListController.$inject = ['$scope', '$http', 'TeamService'];
 		<!-- Services -->
 		<article class="fill">
 			<img src="http://farm9.staticflickr.com/8179/7972185654_e15db45fcc_b.jpg">
-			<h3>Services</h3>
+			<h3>Egna moduler</h3>
 			<p>
-				Objekt (med egenskaper och funktioner) som binds samman via DI. Tänk en service som ett
-				kodblock som har en specifik uppgift. <br>
-
 				Registreras i applikationen via "recept" som bygger upp objekten och gör dessa tillgängliga för DI.
+
+        <a href="http://stackoverflow.com/questions/15666048/angularjs-service-vs-provider-vs-factory">http://stackoverflow.com/questions/15666048/angularjs-service-vs-provider-vs-factory</a>
+
 			</p>
 			<ul>
-				<li>Values - Kan ej ladda in andra "services"</li>
-				<li>Services - Enkel, förvirrande namn, nja...</li>
+				<li>Values - Använd ej?</li>
+        <li>Constants - Registerar konstanter för applikationen</li>
 				<li>Factories - Vanligast? privata variabler i eget scope</li>
-				<li>Constants - Registerar konstanter för applikationen</li>
+        <li>Services - Enkel, förvirrande namn, nja...</li>
 				<li>Providers - Mer avancerad. Ger möjlighet att konfigurera innan användandet</li>
 			</ul>
 			<p class="cc">Foto cc by:
@@ -471,7 +490,7 @@ views/
 ----- otherView.html
 index.html</pre>
 		</article>
-
+    <p>What if > 10 controllers?</p>
 		<!-- Applikationsstruktur -->
 		<article>
 
@@ -528,5 +547,3 @@ index.html</pre>
 	  </section>
 	  </body>
 	</html>
-
-
