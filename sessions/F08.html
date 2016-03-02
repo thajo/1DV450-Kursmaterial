@@ -38,12 +38,12 @@
 	       	<h3>
 	         Webbramverk, 1DV450
 	          <br />
-	          <span class="small">Linnéuniversitetet, vt 2015</span>
+	          <span class="small">Linnéuniversitetet, vt 2016</span>
 	        </h3>
 
 
 			<br /><br />
-			<h1 class="big c">JavaScriptramverk</h1>
+			<h1 class="big c">Klientramverk</h1>
 			<p class="c" style="margin-top: 60px;">
 				AngularJS part II<br />
 				<span class="c"></span>
@@ -70,26 +70,29 @@
 				<li>Scope - ViewModel</li>
 				<li>Dependency injection</li>
 				<li>Services</li>
-				<li>ngRoutes (lite...)</li>
+				<li>ngRoutes</li>
 			</ul>
 
 		</article>
 
 		<!-- AngularJS -->
 		<article>
-			<h3>AngularJS - Idag</h3>
+			<h3>Dagens agenda</h3>
 			<p class="c">
 			<img src="images/angular.png" width="200px" />
 			</p>
 			<ul>
-				<li>Exempel - routing</li>
+
 				<li>Promises, $q</li>
 				<li>AJAX, $http</li>
+        <li>Directives</li>
+        <li>Mer headsup på begrepp, <br />
+          Mängder med resurser, demos m.m. på kursens webbplats</li>
 			</ul>
 
 		</article>
 
-		<!-- Routing -->
+		<!-- Routing
 		<article>
 			<h3>Routing</h3>
 			<ul>
@@ -102,7 +105,7 @@
 			</p>
 
 		</article>
-
+ -->
 		<article>
 			<h3>State</h3>
 			<ul>
@@ -125,96 +128,6 @@
 
 		</article>
 
-		<article>
-			<h3>Hashbang #!</h3>
-			<p>
-				Som default använder sig angularjs av hashbang när man skapar upp URL:er för webbläsaren
-			</p>
-			<pre>
-example.com/#!/player/1</pre>
-			<p>
-				Med hjälp av angulars $locationProvider kan vi istället använda
-				HTML5 History API (IE >=10). Sägs ha fallback!
-			</p>
-			<pre>
-// För att undvika detta (vilket du bör göra!)
-$locationProvider.html5Mode(true);</pre>
-
-		</article>
-
-		<!-- Partial views -->
-		<article>
-			<h3>Partial views</h3>
-			<ul>
-				<li>SPA skiftar "states" och laddar om views i en och samma sida</li>
-				<li>Vi vill kunna tala om vad som ska laddas in</li>
-			</ul>
-			<p class="c">
-				<img src="images/partial_view.png" height="500px" />
-			</p>
-
-		</article>
-
-		<!-- Routing Example -->
-		<article class="fill">
-			<h3>Exempel routing och views</h3>
-			<img src="images/ng-3.png" />
-		</article>
-
-
-
-
-		<!-- Applikationsstruktur -->
-		<article>
-			<h3>Applikationsstruktur</h3>
-			<pre>
-app/
------ controllers/
----------- mainController.js
----------- otherController.js
------ directives/
----------- mainDirective.js
----------- otherDirective.js
------ services/
----------- userService.js
----------- itemService.js
------ js/
----------- bootstrap.js
----------- jquery.js
------ app.js
-views/
------ mainView.html
------ otherView.html
-index.html</pre>
-		</article>
-
-		<!-- Applikationsstruktur -->
-		<article>
-
-			<pre style="margin-top: 5px">
-app/
------ shared/   // acts as reusable components or partials of our site
----------- sidebar/
---------------- sidebarDirective.js
---------------- sidebarView.html
------ components/   // each component is treated as a mini Angular app
----------- home/
---------------- homeController.js
---------------- homeService.js
---------------- homeView.html
----------- blog/
---------------- blogController.js
---------------- blogService.js
---------------- blogView.html
------ app.module.js
------ app.routes.js
-assets/
------ img/      // Images and icons for your app
------ css/      // All styles and style related files (SCSS or LESS files)
------ js/       // JavaScript files written for your app that are not for angular
------ libs/     // Third-party libraries such as jQuery, Moment, Underscore, etc.
-index.html</pre>
-		</article>
 
 
 		<!-- Asynkront -->
@@ -225,6 +138,7 @@ index.html</pre>
 				<li>XMLHttpRequest (XHR)</li>
 				<li>Asynkron programmeringsmodell</li>
 				<li>Koden kan lätt bli rörig vid många av varandra beroende anrop</li>
+        <li>Felhantering, testbarhet</li>
 				<li>Anropa en tjänst på en annan server?</li>
 			</ul>
 
@@ -246,12 +160,12 @@ function fetchData(id, callback){
     if(err){
 	  callback(err, null);
     }else{
-      transformData(result, function(err, transformedResult){
+      transformData(result, function(err, result){
         if(err){
           callback(err, null);
         }else{
-          saveToIndexDB(result, function(err, savedData){
-            callback(err, savedData);
+          saveToIndexDB(result, function(err, result){
+            callback(err, result);
           });
         }
      });
@@ -267,38 +181,66 @@ function fetchData(id, callback){
 		<article>
 			<h3>Promise API</h3>
 			<p>Ett försök att göra asynkron programmering mer lik synkron</p>
-			<p>ES6</p>
+			<p>ECMAScript 2015 (ES6)</p>
 			<ul>
 				<li>Promise API - ej specifikt för angularJS</li>
-				<li>I AngularJS används $q-service (inspirerat från http://github.com/kriskowal/q)</li>
 				<li>Promises ses som "hållare för"/"löfte om" framtida resultat - t.ex. en AJAX-förfrågan</li>
 				<li>Kedja metodanrop, enklare felhantering...</li>
-				<li>$http har inbyggt stöd för promise</li>
+
 				<li>pending, fulfilled, rejected, settled</li>
 			</ul>
+
+      <ul>
+        <li>I AngularJS används $q-service (inspirerat från http://github.com/kriskowal/q)</li>
+        <li>$http har inbyggt stöd för promise</li>
+      </ul>
 		</article>
 
 		<article>
-			<h3>Promises with $q</h3>
+			<h3>Promises API</h3>
 			<pre>
 // In a service that will do something async
 // It will be called by someone
 function getSomething() {
-   // "defer" == fördröj
-   var fullfillment = $q.defer();
-   // Here we do someting async that takes time
-   doAsync(function(result){
-      if(result) {
-        fullfillment.resolve(result); // succeed
-      }
-      else {
-         fullfillment.reject('Error'); // error
-      }
-   });
-   return fullfillment.promise; // Returnerar ett promise
-}</pre>
-<h2>EXEMPEL</h2>
+   return new Promise(function(resolve, reject) {
+      getDataAsync(function(err, result) {
+        if(err) {
+          return reject(err);
+        }
+        resolve(result);
+      });
+   })
+ }
+}
+...
+getSomeThing().then(function(result){
+  console.log(result);
+}).catch(function(err) {
+  console.log(err);
+})</pre>
 
+
+		</article>
+
+    <article>
+			<h3>Chaining promises</h3>
+			<pre>
+        getSomeThingA().then(function(resultA){
+          return getSomeThingB(resultA);
+        }).then(function(resultB){
+          return getSomeThingC(resultB);
+        }).catch(function(err) {
+          console.log(err);
+        })
+      </pre>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise</a>
+
+		</article>
+
+    <!-- Active link-->
+		<article class="fill">
+			<h3>Exempel $q in angular.js</h3>
+			<img src="images/ng-3.png" />
 		</article>
 
 		<!-- $http -->
@@ -306,7 +248,7 @@ function getSomething() {
 			<h3>XHR i angularJS - $http</h3>
 
 			<p>
-				AngularJS har ett inbyggt API som inkuderar XHR, JSONP, CORS m.m.<br />
+				AngularJS har ett inbyggt API som inkluderar XHR, JSONP, CORS m.m.<br />
 				Returnerar ett promise
 
 				<ul>
@@ -366,19 +308,9 @@ function getSomething() {
 
 		<!-- Active link-->
 		<article class="fill">
-			<h3>Exempel $http as resourse</h3>
-			<img src="images/ng-3.png" />
+			<iframe src="https://coursepress.lnu.se/kurs/webbramverk/angularjs-ii/" frameborder="0"></iframe>
 		</article>
 
-		<article>
-			<h2>Nästa gång</h2>
-			<ul>
-				<li>Directives</li>
-				<li>Custom directives</li>
-				<li>Custom filters</li>
-				<li>Övrigt...</li>
-			</ul>
-		</article>
 
 		<!-- Custom directives -->
 		<article>
@@ -386,7 +318,7 @@ function getSomething() {
 			<ul>
 				<li>Angular har ett antal built-in directives (ngClick, ngShow)</li>
 				<li>Man kan också utveckla egna! - Utöka HTML</li>
-				<li>Ge möjlighet för mer deklarativ programmering</li>
+				<li>Ge möjlighet för mer deklarativ programmering, Web Components</li>
 				<li>Hanterar DOM-hantering i dina direktiv</li>
 				<li>Återanvända i UI</li>
 			</ul>
@@ -417,28 +349,32 @@ function getSomething() {
 			</ol>
 		</article>
 
-		<!-- Custom directives -->
+
 		<article>
 			<p>Deklarativt i HTML</p>
-			<img src="images/dec_example.png" width="600px">
+			&lt;!-- directive: my-image --&gt;
 
-			<p>Kod i applikationen</p>
-			<img src="images/dir_code.png" width="600px">
+			<pre>
+app.directive('myImage', function() {
+    return {
+        restrict: 'M', // M E C A
+        compile: function(element, attrs) {
+            // domhantering - kan använda JQuery t.ex.
+            var img = document.createElement('img');
+            img.src = 'http://angularjs.org/img/AngularJS-large.png';
 
-			<p>
-				<a href="http://amitgharat.wordpress.com/2013/06/08/the-hitchhikers-guide-to-the-directive/">
-					http://amitgharat.wordpress.com/2013/06/08/the-hitchhikers-guide-to-the-directive/
-				</a>
-			</p>
-
+            // directives as comment
+            if (element[0].nodeType === 8) {
+                element.replaceWith(img);
+            }
+        }
+    }
+});
+			</pre>
 		</article>
 
 
-		<!-- Active link-->
-		<article class="fill">
-			<h3>Exempel Custom directives</h3>
-			<img src="images/ng-3.png" />
-		</article>
+
 
 
 		<!-- Custom filters -->
@@ -452,14 +388,11 @@ function getSomething() {
 			</p>
 		</article>
 
-		<!-- Custom filters-->
-		<article class="fill">
-			<h3>ExempelCustom filters</h3>
-			<img src="images/ng-3.png" />
-		</article>
+    <!-- Active link-->
+    <article class="fill">
+      <iframe src="https://coursepress.lnu.se/kurs/webbramverk/angularjs-ii/" frameborder="0"></iframe>
+    </article>
 
 	  </section>
 	  </body>
 	</html>
-
-
