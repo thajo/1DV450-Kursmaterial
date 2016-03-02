@@ -224,13 +224,13 @@ getSomeThing().then(function(result){
     <article>
 			<h3>Chaining promises</h3>
 			<pre>
-        getSomeThingA().then(function(resultA){
-          return getSomeThingB(resultA);
-        }).then(function(resultB){
-          return getSomeThingC(resultB);
-        }).catch(function(err) {
-          console.log(err);
-        })
+getSomeThingA().then(function(resultA){
+  return getSomeThingB(resultA);
+}).then(function(resultB){
+  return getSomeThingC(resultB);
+}).catch(function(err) {
+  console.log(err);
+})
       </pre>
       <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise</a>
 
